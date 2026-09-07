@@ -1,0 +1,21 @@
+{
+  "run_date": "2026-09-07",
+  "project_id": "ictdata-507912",
+  "dataset_id": "exgraph",
+  "view": "ictdata-507912.exgraph.target_events_20220301_20220901",
+  "location": "US",
+  "address_filter_semantics": "Each source row has at least one endpoint matched to the 27,613 EX-Graph-mapped addresses; the other endpoint is retained.",
+  "dry_run": {
+    "job_reference": {
+      "projectId": "ictdata-507912",
+      "location": "US"
+    },
+    "total_bytes_processed": 0,
+    "total_bytes_billed": 0,
+    "cache_hit": false,
+    "statement_type": "CREATE_VIEW"
+  },
+  "actual_query": null,
+  "metadata": null,
+  "sql": "-- Unified event view over the three six-month BigQuery materializations.\n--\n-- IMPORTANT: each source table already contains rows where at least one\n-- endpoint matches the EX-Graph address set. The non-matching counterparty is\n-- intentionally retained. This view is UNION ALL by design: native\n-- transactions, token transfers, and internal traces have different event\n-- semantics and are not deduplicated by transaction_hash.\nCREATE OR REPLACE VIEW `ictdata-507912.exgraph.target_events_20220301_20220901`\nOPTIONS(\n  description = 'Unified EX-Graph target-touching Ethereum events; 2022-03-01 through 2022-09-01 UTC'\n)\nAS\nSELECT\n  event_family,\n  block_timestamp,\n  block_number,\n  transaction_index,\n  transaction_hash,\n  CAST(NULL AS INT64) AS event_index,\n  from_address,\n  to_address,\n  value,\n  value_lossless,\n  transaction_type,\n  CAST(NULL AS STRING) AS quantity,\n  CAST(NULL AS STRING) AS token_contract_address,\n  CAST(NULL AS STRING) AS token_id,\n  CAST(NULL AS BOOL) AS removed,\n  CAST(NULL AS STRING) AS trace_type,\n  CAST(NULL AS ARRAY<INT64>) AS trace_address,\n  CAST(NULL AS INT64) AS subtrace_count,\n  CAST(NULL AS STRING) AS call_type,\n  CAST(NULL AS STRING) AS error,\n  from_exgraph_node_id,\n  to_exgraph_node_id,\n  touches_target_from,\n  touches_target_to\nFROM `ictdata-507912.exgraph.external_transactions_20220301_20220901`\n\nUNION ALL\n\nSELECT\n  event_family,\n  block_timestamp,\n  block_number,\n  transaction_index,\n  transaction_hash,\n  event_index,\n  from_address,\n  to_address,\n  CAST(NULL AS BIGNUMERIC) AS value,\n  CAST(NULL AS STRING) AS value_lossless,\n  CAST(NULL AS INT64) AS transaction_type,\n  quantity,\n  token_contract_address,\n  token_id,\n  removed,\n  CAST(NULL AS STRING) AS trace_type,\n  CAST(NULL AS ARRAY<INT64>) AS trace_address,\n  CAST(NULL AS INT64) AS subtrace_count,\n  CAST(NULL AS STRING) AS call_type,\n  CAST(NULL AS STRING) AS error,\n  from_exgraph_node_id,\n  to_exgraph_node_id,\n  touches_target_from,\n  touches_target_to\nFROM `ictdata-507912.exgraph.token_transfers_20220301_20220901`\n\nUNION ALL\n\nSELECT\n  event_family,\n  block_timestamp,\n  block_number,\n  transaction_index,\n  transaction_hash,\n  CAST(NULL AS INT64) AS event_index,\n  from_address,\n  to_address,\n  value,\n  value_lossless,\n  CAST(NULL AS INT64) AS transaction_type,\n  CAST(NULL AS STRING) AS quantity,\n  CAST(NULL AS STRING) AS token_contract_address,\n  CAST(NULL AS STRING) AS token_id,\n  CAST(NULL AS BOOL) AS removed,\n  trace_type,\n  trace_address,\n  subtrace_count,\n  call_type,\n  error,\n  from_exgraph_node_id,\n  to_exgraph_node_id,\n  touches_target_from,\n  touches_target_to\nFROM `ictdata-507912.exgraph.internal_traces_20220301_20220901`;\n"
+}

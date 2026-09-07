@@ -1,0 +1,13 @@
+source_name=EX-Graph Ethereum Graph
+source_repository=https://github.com/Persdre/EX-Graph
+source_file=ethereum_graph.gpickle
+source_google_drive_file_id=1VWUGTUniv7-uDISXvJcMLE4OMCtQFPn6
+observed_content_disposition=ethereum_graph.gpickle
+observed_content_range_total_bytes=11616467480
+observed_last_modified=Sat, 19 Aug 2023 07:50:22 GMT
+observed_pickle_header=protocol_5_networkx.classes.digraph.DiGraph
+retrieved_at=2026-09-07
+notes=The file was served through the Google Drive large-file confirmation URL. The range probe returned HTTP 206 and confirmed the 11,616,467,480-byte object without downloading the full file.
+source_repository_commit=298a52564f5d7f8e30f7f8e6919ae1b3168db481
+
+sha256=27c86772e260291863f2d39fe475840b8ef0bcb54d198cea344f8f8f682d5db2

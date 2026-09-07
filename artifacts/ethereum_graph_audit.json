@@ -1,0 +1,96 @@
+{
+  "graph_path": "./data/raw/ethereum_graph.gpickle",
+  "graph_file_bytes": 11616467480,
+  "graph_type": "networkx.classes.digraph.DiGraph",
+  "is_directed": true,
+  "is_multigraph": false,
+  "nodes": 1810641,
+  "edges": 11876618,
+  "official_readme_reference": {
+    "nodes": 2610465,
+    "edges": 29585858,
+    "edge_fields": [
+      "from_address",
+      "to_address",
+      "weight",
+      "block_number"
+    ]
+  },
+  "counts_match_official_readme": {
+    "nodes": false,
+    "edges": false
+  },
+  "edge_key_counts": {
+    "weight": 11876618
+  },
+  "nonempty_edge_attribute_count": 11876618,
+  "missing_block_number": 11876618,
+  "missing_weight": 0,
+  "block_number": {
+    "observed": 0,
+    "numeric": 0,
+    "missing_or_non_numeric": 0
+  },
+  "weight": {
+    "observed": 11876618,
+    "numeric": 11876618,
+    "missing_or_non_numeric": 0,
+    "min": 1,
+    "max": 17173,
+    "mean": 1.3475589599665494,
+    "median": 1.0,
+    "unique_numeric": 675,
+    "integer_like": true
+  },
+  "weight_sum": 16004443,
+  "edges_with_weight_gt_one": 1079058,
+  "edges_with_weight_equal_one": 10797560,
+  "sample_edges": [
+    {
+      "source_node": 0,
+      "target_node": 1,
+      "data": {
+        "weight": 2
+      }
+    },
+    {
+      "source_node": 0,
+      "target_node": 2,
+      "data": {
+        "weight": 2
+      }
+    },
+    {
+      "source_node": 2,
+      "target_node": 1,
+      "data": {
+        "weight": 1
+      }
+    },
+    {
+      "source_node": 2,
+      "target_node": 3,
+      "data": {
+        "weight": 3
+      }
+    },
+    {
+      "source_node": 4,
+      "target_node": 5,
+      "data": {
+        "weight": 1
+      }
+    }
+  ],
+  "temporal_order_assessment": {
+    "parallel_edges_supported": false,
+    "same_ordered_pair_can_have_multiple_graph_edges": false,
+    "safe_to_treat_each_graph_edge_as_a_distinct_transaction": false,
+    "released_graph_has_transaction_level_time_field": false,
+    "weight_looks_like_multiplicity_count": true,
+    "caveat": "A NetworkX DiGraph has at most one edge per ordered node pair. If this is confirmed, repeated transactions for the same (from, to) pair cannot remain as separate parallel edges; inspect weight and block_number before using the file as an event sequence."
+  },
+  "bottom_line": "The released object is a weighted static NetworkX DiGraph, not a transaction-event stream: it has no block_number edge field, cannot represent parallel edges, and its integer weight values are consistent with aggregated transaction multiplicity. Treat this as an evidence-based dataset conclusion; the publisher does not document the exact weight construction in the README.",
+  "load_seconds": 36.34329342842102,
+  "audit_seconds": 62.14466667175293
+}

@@ -1,0 +1,53 @@
+{
+  "project_id": "ictdata-507912",
+  "dataset_id": "exgraph",
+  "window_utc": {
+    "start_inclusive": "2022-03-01",
+    "end_exclusive": "2022-09-01"
+  },
+  "dry_run_bytes_processed": 1007640294,
+  "actual_bytes_processed": 1007640294,
+  "actual_bytes_billed": 1007681536,
+  "rows": [
+    {
+      "event_family": "external_tx",
+      "row_count": "2877009",
+      "distinct_transaction_hashes": "2877009",
+      "min_ts": "2022-03-01T00:00:18+00:00",
+      "max_ts": "2022-08-31T23:59:35+00:00",
+      "null_transaction_hashes": "0",
+      "rows_with_target_node": "2877009",
+      "touches_from": "2344720",
+      "touches_to": "602846",
+      "removed_rows": null,
+      "error_rows": null
+    },
+    {
+      "event_family": "internal_trace",
+      "row_count": "4478515",
+      "distinct_transaction_hashes": "3382252",
+      "min_ts": "2022-03-01T00:00:18+00:00",
+      "max_ts": "2022-08-31T23:59:35+00:00",
+      "null_transaction_hashes": "0",
+      "rows_with_target_node": "4478515",
+      "touches_from": "3137448",
+      "touches_to": "1429218",
+      "removed_rows": null,
+      "error_rows": "122317"
+    },
+    {
+      "event_family": "token_transfer",
+      "row_count": "4275544",
+      "distinct_transaction_hashes": "2088265",
+      "min_ts": "2022-03-01T00:00:18+00:00",
+      "max_ts": "2022-08-31T23:59:35+00:00",
+      "null_transaction_hashes": "0",
+      "rows_with_target_node": "4275544",
+      "touches_from": "1200136",
+      "touches_to": "3149327",
+      "removed_rows": "0",
+      "error_rows": null
+    }
+  ],
+  "script": "src/check_google_event_prep_quality.py"
+}

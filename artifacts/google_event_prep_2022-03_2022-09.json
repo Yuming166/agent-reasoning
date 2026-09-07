@@ -1,0 +1,142 @@
+{
+  "run_date": "2026-09-07",
+  "project_id": "ictdata-507912",
+  "dataset_id": "exgraph",
+  "target_table": "ictdata-507912.exgraph.target_addresses",
+  "public_source": "bigquery-public-data.goog_blockchain_ethereum_mainnet_us",
+  "location": "US",
+  "window_utc": {
+    "start_inclusive": "2022-03-01",
+    "end_exclusive": "2022-09-01"
+  },
+  "max_bytes_billed": 100000000000,
+  "transport_policy": "materialize in BigQuery; do not stream source rows through jump host",
+  "tables": {
+    "external_transactions_20220301_20220901": {
+      "fully_qualified": "ictdata-507912.exgraph.external_transactions_20220301_20220901",
+      "dry_run": {
+        "job_reference": {
+          "projectId": "ictdata-507912",
+          "location": "US"
+        },
+        "total_bytes_processed": 48075704989,
+        "total_bytes_billed": 0,
+        "cache_hit": false,
+        "statement_type": "CREATE_TABLE_AS_SELECT"
+      },
+      "actual_query": {
+        "job_reference": {
+          "projectId": "ictdata-507912",
+          "jobId": "job_wDlAf8KR5DT-AmjXucoAmbbuumc3",
+          "location": "US"
+        },
+        "total_bytes_processed": 48075704989,
+        "total_bytes_billed": 48076161024,
+        "cache_hit": false,
+        "statement_type": "CREATE_TABLE_AS_SELECT",
+        "bytes_billed_source": "jobs.get.statistics.query.totalBytesBilled"
+      },
+      "metadata": {
+        "id": "ictdata-507912:exgraph.external_transactions_20220301_20220901",
+        "type": "TABLE",
+        "num_rows": 2877009,
+        "num_bytes": 729336363,
+        "creation_time": "1788785194285",
+        "last_modified_time": "1788785194285",
+        "time_partitioning": {
+          "type": "DAY",
+          "field": "block_timestamp",
+          "requirePartitionFilter": true
+        },
+        "clustering": {
+          "fields": [
+            "from_address",
+            "to_address"
+          ]
+        },
+        "require_partition_filter": true,
+        "schema_fields": [
+          "event_family",
+          "block_timestamp",
+          "block_number",
+          "transaction_index",
+          "transaction_hash",
+          "from_address",
+          "to_address",
+          "value",
+          "value_lossless",
+          "transaction_type",
+          "from_exgraph_node_id",
+          "to_exgraph_node_id",
+          "touches_target_from",
+          "touches_target_to"
+        ]
+      },
+      "sql": "-- Materialize target-touching native Ethereum transactions.\n-- All counterparties are retained; only one endpoint must be in the target set.\nCREATE OR REPLACE TABLE `ictdata-507912.exgraph.external_transactions_20220301_20220901`\nPARTITION BY DATE(block_timestamp)\nCLUSTER BY from_address, to_address\nOPTIONS(\n  description = 'EX-Graph target-touching native Ethereum transactions; six-month pilot',\n  require_partition_filter = TRUE\n)\nAS\nWITH target AS (\n  SELECT LOWER(ethereum_address) AS address, ANY_VALUE(exgraph_node_id) AS exgraph_node_id\n  FROM `ictdata-507912.exgraph.target_addresses`\n  GROUP BY address\n)\nSELECT\n  'external_tx' AS event_family,\n  t.block_timestamp,\n  t.block_number,\n  t.transaction_index,\n  t.transaction_hash,\n  LOWER(t.from_address) AS from_address,\n  LOWER(t.to_address) AS to_address,\n  t.value,\n  t.value_lossless,\n  t.transaction_type,\n  a_from.exgraph_node_id AS from_exgraph_node_id,\n  a_to.exgraph_node_id AS to_exgraph_node_id,\n  a_from.address IS NOT NULL AS touches_target_from,\n  a_to.address IS NOT NULL AS touches_target_to\nFROM `bigquery-public-data.goog_blockchain_ethereum_mainnet_us.transactions` AS t\nLEFT JOIN target AS a_from\n  ON LOWER(t.from_address) = a_from.address\nLEFT JOIN target AS a_to\n  ON LOWER(t.to_address) = a_to.address\nWHERE t.block_timestamp >= TIMESTAMP('2022-03-01 00:00:00+00')\n  AND t.block_timestamp < TIMESTAMP('2022-09-01 00:00:00+00')\n  AND (a_from.address IS NOT NULL OR a_to.address IS NOT NULL);\n"
+    },
+    "token_transfers_20220301_20220901": {
+      "fully_qualified": "ictdata-507912.exgraph.token_transfers_20220301_20220901",
+      "dry_run": {
+        "job_reference": {
+          "projectId": "ictdata-507912",
+          "location": "US"
+        },
+        "total_bytes_processed": 49088033682,
+        "total_bytes_billed": 0,
+        "cache_hit": false,
+        "statement_type": "CREATE_TABLE_AS_SELECT"
+      },
+      "actual_query": {
+        "job_reference": {
+          "projectId": "ictdata-507912",
+          "jobId": "job_Vj-P6P-Cme1GU7PRCVQzKOZvCWFx",
+          "location": "US"
+        },
+        "total_bytes_processed": 48493917084,
+        "total_bytes_billed": 48494542848,
+        "cache_hit": false,
+        "statement_type": "CREATE_TABLE_AS_SELECT"
+      },
+      "metadata": {
+        "id": "ictdata-507912:exgraph.token_transfers_20220301_20220901",
+        "type": "TABLE",
+        "num_rows": 4275544,
+        "num_bytes": 1164125153,
+        "creation_time": "1788785204837",
+        "last_modified_time": "1788785204837",
+        "time_partitioning": {
+          "type": "DAY",
+          "field": "block_timestamp",
+          "requirePartitionFilter": true
+        },
+        "clustering": {
+          "fields": [
+            "from_address",
+            "to_address",
+            "token_contract_address"
+          ]
+        },
+        "require_partition_filter": true,
+        "schema_fields": [
+          "event_family",
+          "block_timestamp",
+          "block_number",
+          "transaction_index",
+          "transaction_hash",
+          "event_index",
+          "token_contract_address",
+          "from_address",
+          "to_address",
+          "token_id",
+          "quantity",
+          "removed",
+          "from_exgraph_node_id",
+          "to_exgraph_node_id",
+          "touches_target_from",
+          "touches_target_to"
+        ]
+      },
+      "sql": "-- Materialize target-touching token transfer events.\n-- All counterparties are retained; only one endpoint must be in the target set.\nCREATE OR REPLACE TABLE `ictdata-507912.exgraph.token_transfers_20220301_20220901`\nPARTITION BY DATE(block_timestamp)\nCLUSTER BY from_address, to_address, token_contract_address\nOPTIONS(\n  description = 'EX-Graph target-touching token transfers; six-month pilot',\n  require_partition_filter = TRUE\n)\nAS\nWITH target AS (\n  SELECT LOWER(ethereum_address) AS address, ANY_VALUE(exgraph_node_id) AS exgraph_node_id\n  FROM `ictdata-507912.exgraph.target_addresses`\n  GROUP BY address\n)\nSELECT\n  'token_transfer' AS event_family,\n  tt.block_timestamp,\n  tt.block_number,\n  tt.transaction_index,\n  tt.transaction_hash,\n  tt.event_index,\n  LOWER(tt.address) AS token_contract_address,\n  LOWER(tt.from_address) AS from_address,\n  LOWER(tt.to_address) AS to_address,\n  tt.token_id,\n  tt.quantity,\n  tt.removed,\n  a_from.exgraph_node_id AS from_exgraph_node_id,\n  a_to.exgraph_node_id AS to_exgraph_node_id,\n  a_from.address IS NOT NULL AS touches_target_from,\n  a_to.address IS NOT NULL AS touches_target_to\nFROM `bigquery-public-data.goog_blockchain_ethereum_mainnet_us.token_transfers` AS tt\nLEFT JOIN target AS a_from\n  ON LOWER(tt.from_address) = a_from.address\nLEFT JOIN target AS a_to\n  ON LOWER(tt.to_address) = a_to.address\nWHERE tt.block_timestamp >= TIMESTAMP('2022-03-01 00:00:00+00')\n  AND tt.block_timestamp < TIMESTAMP('2022-09-01 00:00:00+00')\n  AND (a_from.address IS NOT NULL OR a_to.address IS NOT NULL);\n"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+# Local environments and caches
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Raw/large/private data: obtain through the documented data-access workflow.
+data/raw/
+*.gpickle
+*.pickle
+*.pkl
+*.zip
+*.rar
+*.7z
+*.parquet
+*.sqlite
+*.db
+
+# Credentials and local configuration
+.env
+.env.*
+*.pem
+*.key
+credentials*.json
+
+# Runtime logs and local job state
+*.log
+*.pid
+*.partial
