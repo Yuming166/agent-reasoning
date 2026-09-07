@@ -19,7 +19,9 @@ Tables:
 external_transactions_20220301_20220901
 token_transfers_20220301_20220901
 internal_traces_20220301_20220901
-target_events_20220301_20220901  # UNION ALL view
+target_events_20220301_20220901           # UNION ALL view
+exgraph_x_matches_v1                      # official address-to-X match dimension
+target_event_sequences_20220301_20220901  # directional target/counterparty roles
 ```
 
 Each event row has at least one endpoint matching the EX-Graph address list.
@@ -92,7 +94,20 @@ for the query. Use your own billing project when possible.
      --output artifacts/trace_prep.json
    ```
 
-7. Create the portable unified view:
+7. Create the official match dimension and the directional sequence table:
+
+   ```bash
+   python src/create_exgraph_sequence_tables.py \
+     --project-id YOUR_PROJECT_ID \
+     --dataset-id exgraph \
+     --output artifacts/sequence_tables.json
+   ```
+
+   The SQL is pinned to the development project in the checked-in file; edit
+   `src/sql/create_exgraph_sequence_tables_ictdata.sql` before using another
+   namespace.
+
+8. Create the portable unified view:
 
    ```bash
    python src/create_target_events_view.py \

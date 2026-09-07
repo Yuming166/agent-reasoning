@@ -1,0 +1,486 @@
+{
+  "run_date": "2026-09-07",
+  "project_id": "ictdata-507912",
+  "dataset_id": "exgraph",
+  "location": "US",
+  "source_mapping": {
+    "repository": "Persdre/EX-Graph",
+    "commit": "298a52564f5d7f8e30f7f8e6919ae1b3168db481",
+    "file": "twitter_matching.csv",
+    "sha256": "1d2e3d5a0dbf44797a2026ac9cdb23b76f20e227630c90393e80f00172c9b5ba",
+    "local_unique_rows": 27613
+  },
+  "tables": {
+    "exgraph_x_matches_v1": {
+      "id": "ictdata-507912:exgraph.exgraph_x_matches_v1",
+      "type": "TABLE",
+      "num_rows": 27613,
+      "num_bytes": 7068928,
+      "description": "Official EX-Graph Ethereum-to-X/Twitter match dimension derived from the released matching file; 27,613 local release rows; no raw handles included.",
+      "time_partitioning": null,
+      "clustering": null,
+      "schema_fields": [
+        {
+          "name": "exgraph_node_id",
+          "type": "INTEGER",
+          "mode": null
+        },
+        {
+          "name": "ethereum_address",
+          "type": "STRING",
+          "mode": null
+        },
+        {
+          "name": "match_status",
+          "type": "STRING",
+          "mode": null
+        },
+        {
+          "name": "mapping_source",
+          "type": "STRING",
+          "mode": null
+        },
+        {
+          "name": "source_repository",
+          "type": "STRING",
+          "mode": null
+        },
+        {
+          "name": "source_repository_commit",
+          "type": "STRING",
+          "mode": null
+        },
+        {
+          "name": "source_file",
+          "type": "STRING",
+          "mode": null
+        },
+        {
+          "name": "source_file_sha256",
+          "type": "STRING",
+          "mode": null
+        },
+        {
+          "name": "source_retrieved_date",
+          "type": "DATE",
+          "mode": null
+        },
+        {
+          "name": "mapping_version",
+          "type": "STRING",
+          "mode": null
+        }
+      ]
+    },
+    "target_event_sequences_20220301_20220901": {
+      "id": "ictdata-507912:exgraph.target_event_sequences_20220301_20220901",
+      "type": "TABLE",
+      "num_rows": 11836196,
+      "num_bytes": 5095709899,
+      "description": "Directional EX-Graph target event sequences for 2022-03-01 through 2022-09-01 UTC. External transactions and token transfers are primary; internal traces are auxiliary. Each matched endpoint gets a target/counterparty role; self-transactions emit one row. Rows with no destination address are retained and marked counterparty_present=false.",
+      "time_partitioning": {
+        "type": "DAY",
+        "field": "block_timestamp",
+        "requirePartitionFilter": true
+      },
+      "clustering": {
+        "fields": [
+          "target_exgraph_node_id",
+          "counterparty_address",
+          "event_family"
+        ]
+      },
+      "schema_fields": [
+        {
+          "name": "target_sequence_index",
+          "type": "INTEGER",
+          "mode": null
+        },
+        {
+          "name": "target_exgraph_node_id",
+          "type": "INTEGER",
+          "mode": null
+        },
+        {
+          "name": "target_address",
+          "type": "STRING",
+          "mode": null
+        },
+        {
+          "name": "target_match_status",
+          "type": "STRING",
+          "mode": null
+        },
+        {
+          "name": "target_is_x_matched",
+          "type": "BOOLEAN",
+          "mode": null
+        },
+        {
+          "name": "counterparty_exgraph_node_id",
+          "type": "INTEGER",
+          "mode": null
+        },
+        {
+          "name": "counterparty_address",
+          "type": "STRING",
+          "mode": null
+        },
+        {
+          "name": "counterparty_match_status",
+          "type": "STRING",
+          "mode": null
+        },
+        {
+          "name": "counterparty_is_x_matched",
+          "type": "BOOLEAN",
+          "mode": null
+        },
+        {
+          "name": "counterparty_present",
+          "type": "BOOLEAN",
+          "mode": null
+        },
+        {
+          "name": "both_endpoints_are_x_matched",
+          "type": "BOOLEAN",
+          "mode": null
+        },
+        {
+          "name": "direction",
+          "type": "STRING",
+          "mode": null
+        },
+        {
+          "name": "self_transaction",
+          "type": "BOOLEAN",
+          "mode": null
+        },
+        {
+          "name": "sequence_role",
+          "type": "STRING",
+          "mode": null
+        },
+        {
+          "name": "event_family",
+          "type": "STRING",
+          "mode": null
+        },
+        {
+          "name": "event_family_order",
+          "type": "INTEGER",
+          "mode": null
+        },
+        {
+          "name": "block_timestamp",
+          "type": "TIMESTAMP",
+          "mode": null
+        },
+        {
+          "name": "block_number",
+          "type": "INTEGER",
+          "mode": null
+        },
+        {
+          "name": "transaction_index",
+          "type": "INTEGER",
+          "mode": null
+        },
+        {
+          "name": "event_index",
+          "type": "INTEGER",
+          "mode": null
+        },
+        {
+          "name": "transaction_hash",
+          "type": "STRING",
+          "mode": null
+        },
+        {
+          "name": "from_address",
+          "type": "STRING",
+          "mode": null
+        },
+        {
+          "name": "to_address",
+          "type": "STRING",
+          "mode": null
+        },
+        {
+          "name": "value",
+          "type": "BIGNUMERIC",
+          "mode": null
+        },
+        {
+          "name": "value_lossless",
+          "type": "STRING",
+          "mode": null
+        },
+        {
+          "name": "transaction_type",
+          "type": "INTEGER",
+          "mode": null
+        },
+        {
+          "name": "token_contract_address",
+          "type": "STRING",
+          "mode": null
+        },
+        {
+          "name": "token_id",
+          "type": "STRING",
+          "mode": null
+        },
+        {
+          "name": "quantity",
+          "type": "STRING",
+          "mode": null
+        },
+        {
+          "name": "removed",
+          "type": "BOOLEAN",
+          "mode": null
+        },
+        {
+          "name": "trace_type",
+          "type": "STRING",
+          "mode": null
+        },
+        {
+          "name": "trace_address",
+          "type": "INTEGER",
+          "mode": "REPEATED"
+        },
+        {
+          "name": "subtrace_count",
+          "type": "INTEGER",
+          "mode": null
+        },
+        {
+          "name": "call_type",
+          "type": "STRING",
+          "mode": null
+        },
+        {
+          "name": "error",
+          "type": "STRING",
+          "mode": null
+        },
+        {
+          "name": "source_from_exgraph_node_id",
+          "type": "INTEGER",
+          "mode": null
+        },
+        {
+          "name": "source_to_exgraph_node_id",
+          "type": "INTEGER",
+          "mode": null
+        },
+        {
+          "name": "touches_target_from",
+          "type": "BOOLEAN",
+          "mode": null
+        },
+        {
+          "name": "touches_target_to",
+          "type": "BOOLEAN",
+          "mode": null
+        }
+      ]
+    }
+  },
+  "semantics": {
+    "window_utc": {
+      "start_inclusive": "2022-03-01",
+      "end_exclusive": "2022-09-01"
+    },
+    "target_role": "Each matched endpoint emits a target/counterparty role; distinct matched endpoints in one event emit two rows; self-transactions emit one row.",
+    "sequence_role": "external_tx and token_transfer=primary; internal_trace=auxiliary.",
+    "ordering": "target_sequence_index is deterministic by timestamp, block, transaction index, event-family order, event index/trace address, direction, counterparty, and transaction hash; cross-family intra-transaction order is a deterministic tie-breaker, not an on-chain canonical order.",
+    "counterparty_null_policy": "Rows without a destination address are retained with counterparty_present=false and should be excluded from next-counterparty labels."
+  },
+  "validation": {
+    "overview": [
+      {
+        "row_count": "11836196",
+        "target_addresses": "21469",
+        "distinct_transactions": "3694058",
+        "target_matched_rows": "11836196",
+        "target_unmatched_rows": "0",
+        "counterparty_matched_rows": "437755",
+        "counterparty_unmatched_rows": "11398441",
+        "both_matched_rows": "437755",
+        "self_rows": "27499",
+        "outgoing_rows": "6654805",
+        "incoming_rows": "5153892",
+        "self_direction_rows": "27499",
+        "rows_with_counterparty": "11832912",
+        "rows_without_counterparty": "3284"
+      }
+    ],
+    "by_family": [
+      {
+        "event_family": "external_tx",
+        "sequence_role": "primary",
+        "direction": "incoming",
+        "row_count": "592682",
+        "distinct_transactions": "592682",
+        "counterparty_matched_rows": "60393",
+        "both_matched_rows": "60393",
+        "rows_with_counterparty": "592682",
+        "rows_without_counterparty": "0"
+      },
+      {
+        "event_family": "external_tx",
+        "sequence_role": "primary",
+        "direction": "outgoing",
+        "row_count": "2334556",
+        "distinct_transactions": "2334556",
+        "counterparty_matched_rows": "60393",
+        "both_matched_rows": "60393",
+        "rows_with_counterparty": "2332914",
+        "rows_without_counterparty": "1642"
+      },
+      {
+        "event_family": "external_tx",
+        "sequence_role": "primary",
+        "direction": "self",
+        "row_count": "10164",
+        "distinct_transactions": "10164",
+        "counterparty_matched_rows": "10164",
+        "both_matched_rows": "10164",
+        "rows_with_counterparty": "10164",
+        "rows_without_counterparty": "0"
+      },
+      {
+        "event_family": "internal_trace",
+        "sequence_role": "auxiliary",
+        "direction": "incoming",
+        "row_count": "1412696",
+        "distinct_transactions": "1310311",
+        "counterparty_matched_rows": "71629",
+        "both_matched_rows": "71629",
+        "rows_with_counterparty": "1412696",
+        "rows_without_counterparty": "0"
+      },
+      {
+        "event_family": "internal_trace",
+        "sequence_role": "auxiliary",
+        "direction": "outgoing",
+        "row_count": "3120926",
+        "distinct_transactions": "2622628",
+        "counterparty_matched_rows": "71629",
+        "both_matched_rows": "71629",
+        "rows_with_counterparty": "3119284",
+        "rows_without_counterparty": "1642"
+      },
+      {
+        "event_family": "internal_trace",
+        "sequence_role": "auxiliary",
+        "direction": "self",
+        "row_count": "16522",
+        "distinct_transactions": "16424",
+        "counterparty_matched_rows": "16522",
+        "both_matched_rows": "16522",
+        "rows_with_counterparty": "16522",
+        "rows_without_counterparty": "0"
+      },
+      {
+        "event_family": "token_transfer",
+        "sequence_role": "primary",
+        "direction": "incoming",
+        "row_count": "3148514",
+        "distinct_transactions": "1375048",
+        "counterparty_matched_rows": "73106",
+        "both_matched_rows": "73106",
+        "rows_with_counterparty": "3148514",
+        "rows_without_counterparty": "0"
+      },
+      {
+        "event_family": "token_transfer",
+        "sequence_role": "primary",
+        "direction": "outgoing",
+        "row_count": "1199323",
+        "distinct_transactions": "918206",
+        "counterparty_matched_rows": "73106",
+        "both_matched_rows": "73106",
+        "rows_with_counterparty": "1199323",
+        "rows_without_counterparty": "0"
+      },
+      {
+        "event_family": "token_transfer",
+        "sequence_role": "primary",
+        "direction": "self",
+        "row_count": "813",
+        "distinct_transactions": "673",
+        "counterparty_matched_rows": "813",
+        "both_matched_rows": "813",
+        "rows_with_counterparty": "813",
+        "rows_without_counterparty": "0"
+      }
+    ],
+    "source_role_audit": [
+      {
+        "event_family": "external_tx",
+        "source_rows": "2877009",
+        "from_target_rows": "2344720",
+        "to_target_rows": "602846",
+        "both_endpoint_target_rows": "70557",
+        "source_self_rows": "10164",
+        "both_distinct_rows": "60393",
+        "null_endpoint_rows": "1642"
+      },
+      {
+        "event_family": "internal_trace",
+        "source_rows": "4478515",
+        "from_target_rows": "3137448",
+        "to_target_rows": "1429218",
+        "both_endpoint_target_rows": "88151",
+        "source_self_rows": "16522",
+        "both_distinct_rows": "71629",
+        "null_endpoint_rows": "1642"
+      },
+      {
+        "event_family": "token_transfer",
+        "source_rows": "4275544",
+        "from_target_rows": "1200136",
+        "to_target_rows": "3149327",
+        "both_endpoint_target_rows": "73919",
+        "source_self_rows": "813",
+        "both_distinct_rows": "73106",
+        "null_endpoint_rows": "0"
+      }
+    ],
+    "null_check": [
+      {
+        "null_target_address": "0",
+        "null_target_node": "0",
+        "null_transaction_hash": "0",
+        "null_sequence_index": "0",
+        "null_target_status": "0",
+        "null_counterparty_address": "3284"
+      }
+    ],
+    "index_uniqueness": [
+      {
+        "bad_groups": "0"
+      }
+    ],
+    "mapping_check": [
+      {
+        "row_count": "27613",
+        "distinct_addresses": "27613",
+        "distinct_nodes": "27613",
+        "official_rows": "27613"
+      }
+    ]
+  },
+  "jobs": {
+    "mapping_job_id": "job_kiIMZPtSCDU8GT6R53Ceg3fTkP_y",
+    "mapping_total_bytes_processed": 1435876,
+    "mapping_total_bytes_billed": 10485760,
+    "sequence_job_id": "job_M_9CsnopVIaacN8DAHtATutjbTDO",
+    "sequence_total_bytes_processed": 3125154467,
+    "sequence_total_bytes_billed": 3125805056
+  }
+}

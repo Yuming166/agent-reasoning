@@ -53,10 +53,10 @@ See `artifacts/google_event_prep_quality_2022-03_2022-09.json` and
 ## Reproduction
 
 ```bash
-cd .
-export HTTPS_PROXY=<your-proxy-if-needed>
-export HTTP_PROXY=<your-proxy-if-needed>
-export ALL_PROXY=<your-proxy-if-needed>
+cd /storage/gaoym/ex-graph-microtransaction-analysis
+export HTTPS_PROXY=http://10.63.0.72:7890
+export HTTP_PROXY=http://10.63.0.72:7890
+export ALL_PROXY=http://10.63.0.72:7890
 python src/prepare_google_event_tables.py \
   --project-id ictdata-507912 \
   --dataset-id exgraph \
@@ -99,3 +99,78 @@ artifacts/google_target_events_view_2022-03_2022-09.json
 The other endpoint is intentionally retained when it is not in EX-Graph so
 that downstream counterparty prediction is not restricted to mapped-to-mapped
 edges.
+
+## Official EX-Graph match dimension and directional sequences
+
+On 2026-09-07, the released local `vendor/EX-Graph-repo/twitter_matching.csv`
+was verified to contain 27,613 unique `(exgraph_node_id, ethereum_address)`
+pairs. The source repository snapshot is commit
+`298a52564f5d7f8e30f7f8e6919ae1b3168db481`; the source file SHA-256 is
+`1d2e3d5a0dbf44797a2026ac9cdb23b76f20e227630c90393e80f00172c9b5ba`.
+
+The mapping dimension was materialized as:
+
+```text
+ictdata-507912.exgraph.exgraph_x_matches_v1
+```
+
+It includes the normalized address, EX-Graph node ID,
+`official_exgraph_match` status, source provenance, and mapping version. It
+does not include a raw X/Twitter handle or user ID.
+
+The directional event table was materialized as:
+
+```text
+ictdata-507912.exgraph.target_event_sequences_20220301_20220901
+```
+
+Its semantics are:
+
+- `target_address` is the matched endpoint and `counterparty_address` is the
+  other endpoint.
+- A source event with two different matched endpoints produces two role rows;
+  a self-transaction produces one row with `direction=self`.
+- `external_tx` and `token_transfer` are `sequence_role=primary`;
+  `internal_trace` is retained as `sequence_role=auxiliary` for ablations.
+- `target_sequence_index` is deterministic for each target address. It orders
+  by timestamp, block, transaction index, event-family order, event index or
+  trace address, then deterministic tie-breakers. Cross-family ordering within
+  the same transaction is a deterministic tie-breaker, not a canonical EVM
+  event order.
+- Rows without a destination address are retained with
+  `counterparty_present=false`; they should not be used as next-counterparty
+  labels.
+
+### Materialization accounting
+
+| Table | Rows | Logical bytes |
+|---|---:|---:|
+| `exgraph_x_matches_v1` | 27,613 | 7,068,928 |
+| `target_event_sequences_20220301_20220901` | 11,836,196 | 5,095,709,899 |
+
+The sequence CTAS read 3,125,154,467 bytes and billed 3,125,805,056 bytes.
+The source event tables were not downloaded to the jump host.
+
+### Sequence quality checks
+
+- All 11,836,196 sequence rows have a non-null target address, target EX-Graph
+  node, transaction hash, sequence index, and official target match status.
+- 21,469 of the 27,613 mapped addresses occur in this six-month window when
+  internal traces are included.
+- 11,832,912 rows have a non-null counterparty; 3,284 rows are retained with
+  `counterparty_present=false`.
+- 27,499 rows are self-transactions.
+- The `(target_address, target_sequence_index)` pair is unique.
+- 437,755 directional rows have an officially matched counterparty.
+
+Reproduction SQL:
+
+```text
+src/sql/create_exgraph_sequence_tables_ictdata.sql
+```
+
+Execution and validation manifest:
+
+```text
+artifacts/google_sequence_tables_2022-03_2022-09.json
+```
