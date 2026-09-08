@@ -82,6 +82,7 @@ Derived tables in BigQuery (`ictdata-507912.exgraph`):
 | `target_events_20220301_20220901` | `UNION ALL` unified view over the three families |
 | `exgraph_x_matches_v1` | Official address-to-X match dimension with provenance |
 | `target_event_sequences_20220301_20220901` | Directional target/counterparty role rows |
+| `exgraph_structural_features_v1` | Per-mapped-address static-graph structural features (degree / weighted degree) |
 
 `target_event_sequences_*` semantics:
 
@@ -108,6 +109,42 @@ Reproduction SQL and manifests:
 - `artifacts/google_trace_prep_2022-03_2022-09.json`
 - `artifacts/google_target_events_view_2022-03_2022-09.json`
 - `artifacts/google_sequence_tables_2022-03_2022-09.json`
+
+### Static-graph structural features (2026-09-08)
+
+Computed locally from the released static weighted graph without re-downloading
+it. Graph nodes are integer EX-Graph node ids, so the features are emitted for
+the 27,613 mapped addresses through the `twitter_matching.csv` address bridge.
+
+- `artifacts/exgraph_structural_features.csv` (27,613 rows):
+  `ethereum_address, exgraph_node_id, graph_node_present, in_degree,
+  out_degree, w_in_degree, w_out_degree, degree, w_degree, pagerank`.
+  `pagerank` is weighted PageRank (alpha 0.85, edge `weight` =
+  transaction multiplicity), computed over the full directed graph.
+- `artifacts/exgraph_structural_features_manifest.json`: provenance, hashes,
+  counts, and degree summary.
+- `exgraph.exgraph_structural_features_v1` in BigQuery (27,613 rows), joined to
+  `exgraph_x_matches_v1` on `ethereum_address` + `exgraph_node_id` with zero
+  mismatches.
+
+Reproduce:
+
+```bash
+# extraction needs networkx (see the analysis virtualenv)
+python src/extract_graph_structural_features.py \
+  --graph /path/to/ethereum_graph.gpickle \
+  --target-addresses data/metadata/target_addresses.csv \
+  --output artifacts/exgraph_structural_features.csv \
+  --manifest artifacts/exgraph_structural_features_manifest.json \
+  --pagerank
+
+# upload needs requests + gcloud Application Default Credentials
+python3 src/upload_graph_structural_features.py \
+  --project-id ictdata-507912 --dataset-id exgraph \
+  --csv artifacts/exgraph_structural_features.csv \
+  --output artifacts/exgraph_structural_features_upload.json \
+  --gcloud-bin /storage/gaoym/tools/google-cloud-sdk/bin/gcloud
+```
 
 ## What is included
 

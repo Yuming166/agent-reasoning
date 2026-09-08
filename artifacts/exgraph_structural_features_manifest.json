@@ -1,0 +1,48 @@
+{
+  "run_seconds": 193.31,
+  "load_seconds": 31.13,
+  "graph_path": "/storage/gaoym/ex-graph-microtransaction-analysis/data/raw/ethereum_graph.gpickle",
+  "graph_file_bytes": 11616467480,
+  "graph_type": "networkx.classes.digraph.DiGraph",
+  "graph_nodes": 1810641,
+  "graph_edges": 11876618,
+  "graph_sha256": "27c86772e260291863f2d39fe475840b8ef0bcb54d198cea344f8f8f682d5db2",
+  "target_addresses_path": "/storage/gaoym/ex-graph-microtransaction-analysis/data/metadata/target_addresses.csv",
+  "target_addresses_sha256": "6666235b1a2c065ebd1333adb2a266575caef6347c1dc28742af56a51e5bb686",
+  "mapped_rows": 27613,
+  "mapped_rows_present_in_graph": 27613,
+  "mapped_rows_missing_from_graph": 0,
+  "output_rows": 27613,
+  "columns": [
+    "ethereum_address",
+    "exgraph_node_id",
+    "graph_node_present",
+    "in_degree",
+    "out_degree",
+    "w_in_degree",
+    "w_out_degree",
+    "degree",
+    "w_degree",
+    "pagerank"
+  ],
+  "degree_summary": {
+    "min_in_degree": 0,
+    "max_in_degree": 39089,
+    "min_out_degree": 0,
+    "max_out_degree": 23089,
+    "min_w_in_degree": 0,
+    "max_w_in_degree": 175181,
+    "min_w_out_degree": 0,
+    "max_w_out_degree": 84670
+  },
+  "pagerank": {
+    "alpha": 0.85,
+    "max_iter": 100,
+    "tol": 1e-06,
+    "compute_seconds": 160.21,
+    "mapped_with_pagerank": 27613,
+    "min": 2.65506869e-07,
+    "max": 0.01491112455,
+    "mean": 1.4127991828038678e-06
+  }
+}

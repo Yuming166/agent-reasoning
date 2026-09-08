@@ -1,0 +1,42 @@
+{
+  "snapshot": "2022-08-01",
+  "test_window": "2022-08-01..2022-08-31 (primary, outgoing, counterparty present, non-self)",
+  "candidates_ranked": 14386,
+  "baseline_candidate_ranking": "global popularity over the same test window (MRR = 1/pop_rank)",
+  "metrics": {
+    "event_cov": "share of August outgoing events covered by selected wallets",
+    "hard_event_cov": "share of events whose true counterparty is outside the global top-100 popular",
+    "headroom_cov": "share of (1 - pop_mrr) * events, i.e. room for an agent to beat popularity",
+    "p2_scored": "selected wallets with a valid June lag-1 trigger score"
+  },
+  "results": [
+    {"method":"P3_importance","k_pct":1, "event_cov":0.198,"hard_event_cov":0.227,"headroom_cov":0.205},
+    {"method":"raw_volume", "k_pct":1, "event_cov":0.130,"hard_event_cov":0.146,"headroom_cov":0.136},
+    {"method":"P2_trigger",  "k_pct":1, "event_cov":0.019,"hard_event_cov":0.018,"headroom_cov":0.019},
+    {"method":"random",      "k_pct":1, "event_cov":0.013,"hard_event_cov":0.013,"headroom_cov":0.013},
+    {"method":"P3_importance","k_pct":5, "event_cov":0.407,"hard_event_cov":0.434,"headroom_cov":0.408},
+    {"method":"raw_volume", "k_pct":5, "event_cov":0.341,"hard_event_cov":0.356,"headroom_cov":0.344},
+    {"method":"P2_trigger",  "k_pct":5, "event_cov":0.133,"hard_event_cov":0.130,"headroom_cov":0.132},
+    {"method":"random",      "k_pct":5, "event_cov":0.052,"hard_event_cov":0.049,"headroom_cov":0.051},
+    {"method":"P3_importance","k_pct":10,"event_cov":0.552,"hard_event_cov":0.579,"headroom_cov":0.551},
+    {"method":"raw_volume", "k_pct":10,"event_cov":0.477,"hard_event_cov":0.489,"headroom_cov":0.478},
+    {"method":"P2_trigger",  "k_pct":10,"event_cov":0.294,"hard_event_cov":0.305,"headroom_cov":0.297},
+    {"method":"random",      "k_pct":10,"event_cov":0.093,"hard_event_cov":0.089,"headroom_cov":0.092},
+    {"method":"P3_importance","k_pct":20,"event_cov":0.722,"hard_event_cov":0.745,"headroom_cov":0.718},
+    {"method":"raw_volume", "k_pct":20,"event_cov":0.649,"hard_event_cov":0.658,"headroom_cov":0.648},
+    {"method":"P2_trigger",  "k_pct":20,"event_cov":0.590,"hard_event_cov":0.599,"headroom_cov":0.592},
+    {"method":"random",      "k_pct":20,"event_cov":0.197,"hard_event_cov":0.193,"headroom_cov":0.196}
+  ],
+  "interpretation": [
+    "P3 (difficulty x future-new-counterparty consequence) dominates raw volume at every budget on event/hard-event/headroom coverage.",
+    "At 1% budget P3 covers 22.7% of hard events vs 14.6% raw volume and 1.3% random (~17x random).",
+    "P2 hourly lag-1 trigger is informative only at >=20% budget with a June-only window; denser daily/weekly aggregation and longer windows are expected improvements (v2).",
+    "Headroom coverage <= event coverage for volume but >= for P3: P3 concentrates budget where the popularity baseline is weak.",
+    "These are SELECTION-layer results only; end-task Recall@K/MRR with the budgeted agents is the next experiment."
+  ],
+  "boundaries": [
+    "importance_proxy_p3 uses fwd30 labels of the SAME snapshot month for ranking demonstration; the production router must be trained on May/June snapshots and frozen for August.",
+    "P2 trigger window is 2022-06 only; hourly grid is sparse for low-volume wallets (2,038 of 14,189 outgoing wallets score).",
+    "No X features used; P6 social fusion pending the GCP extraction of the 34.8 GiB file."
+  ]
+}

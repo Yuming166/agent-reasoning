@@ -1,0 +1,42 @@
+{
+  "snapshot": "2022-08-01",
+  "history_window": "2022-05-01..2022-08-01 (as-of)",
+  "test_window": "2022-08-01..2022-08-31",
+  "method_p1": "event-driven counterfactual bridge: w bridges event u->v if history has u->w incoming and w->v outgoing; signal per bridge = 1/outdeg(w), I_cf(w) = sum of its share of each bridged event's total 2-hop signal",
+  "bridge_table_rows": 516163,
+  "events_bridged": 109895,
+  "events_bridged_share_of_aug_out_events": 0.2404,
+  "wallets_that_bridge": 5100,
+  "median_bridges_per_bridged_event": 9,
+  "p99_bridges_per_bridged_event": 86,
+  "budget_curves": [
+    {"k_pct":1,  "method":"P1_occlusion",         "event_cov":0.071,"hard_cov":0.082,"bridge_cov_as_bridge":0.479,"bridge_cov_as_source":0.120},
+    {"k_pct":1,  "method":"P3_difficulty",        "event_cov":0.198,"hard_cov":0.227,"bridge_cov_as_bridge":0.292,"bridge_cov_as_source":0.261},
+    {"k_pct":1,  "method":"raw_volume",           "event_cov":0.130,"hard_cov":0.146,"bridge_cov_as_bridge":0.367,"bridge_cov_as_source":0.203},
+    {"k_pct":1,  "method":"random",               "event_cov":0.010,"hard_cov":0.009,"bridge_cov_as_bridge":0.055,"bridge_cov_as_source":0.012},
+    {"k_pct":1,  "method":"quota_half_P1_half_P3","event_cov":0.162,"hard_cov":0.192,"bridge_cov_as_bridge":0.405,"bridge_cov_as_source":0.216},
+    {"k_pct":5,  "method":"P1_occlusion",         "event_cov":0.237,"hard_cov":0.247,"bridge_cov_as_bridge":0.805,"bridge_cov_as_source":0.362},
+    {"k_pct":5,  "method":"P3_difficulty",        "event_cov":0.407,"hard_cov":0.434,"bridge_cov_as_bridge":0.539,"bridge_cov_as_source":0.512},
+    {"k_pct":5,  "method":"raw_volume",           "event_cov":0.341,"hard_cov":0.356,"bridge_cov_as_bridge":0.677,"bridge_cov_as_source":0.491},
+    {"k_pct":5,  "method":"quota_half_P1_half_P3","event_cov":0.353,"hard_cov":0.378,"bridge_cov_as_bridge":0.727,"bridge_cov_as_source":0.477},
+    {"k_pct":10, "method":"P1_occlusion",         "event_cov":0.369,"hard_cov":0.375,"bridge_cov_as_bridge":0.912,"bridge_cov_as_source":0.533},
+    {"k_pct":10, "method":"P3_difficulty",        "event_cov":0.552,"hard_cov":0.579,"bridge_cov_as_bridge":0.660,"bridge_cov_as_source":0.658},
+    {"k_pct":10, "method":"quota_half_P1_half_P3","event_cov":0.480,"hard_cov":0.500,"bridge_cov_as_bridge":0.844,"bridge_cov_as_source":0.624},
+    {"k_pct":20, "method":"P1_occlusion",         "event_cov":0.532,"hard_cov":0.530,"bridge_cov_as_bridge":0.979,"bridge_cov_as_source":0.731},
+    {"k_pct":20, "method":"P3_difficulty",        "event_cov":0.722,"hard_cov":0.745,"bridge_cov_as_bridge":0.797,"bridge_cov_as_source":0.812},
+    {"k_pct":20, "method":"quota_half_P1_half_P3","event_cov":0.640,"hard_cov":0.657,"bridge_cov_as_bridge":0.932,"bridge_cov_as_source":0.780},
+    {"k_pct":20, "method":"raw_volume",           "event_cov":0.649,"hard_cov":0.658,"bridge_cov_as_bridge":0.886,"bridge_cov_as_source":0.819}
+  ],
+  "top1pct_overlap": {"budget_wallets": 144, "P1_P3_overlap": 14, "p3_only": 130, "p1_only": 130},
+  "interpretation": [
+    "P1 and P3 are complementary signals: top-1% sets overlap in only 14 of 144 wallets.",
+    "P1 at 1% captures 47.9% of all information-bridge events (vs 29.2% P3, 36.7% raw volume, 5.5% random); at 10% 91.2%, at 20% 97.9%.",
+    "P3 remains best on raw hard-event coverage (22.7% at 1%) because it is defined on event consequence; P1 is best on the information-flow signal it is defined on.",
+    "quota_half_P1_half_P3 gives a balanced allocation (40.5% bridge + 19.2% hard-event coverage at 1%), motivating the learned P4 router to mix both features per budget."
+  ],
+  "boundaries": [
+    "P1 here is a graph-information occlusion proxy (2-hop path availability), not an LLM/GNN leave-one-wallet-out retraining experiment; the latter is the stronger v2 (train cheap sequence model, mask rows, re-score neighbours).",
+    "Bridge existence uses only pre-Aug history; test event identities are used only to measure coverage (selection-layer evaluation). Production router training must use May/Jun snapshots.",
+    "internal_trace (auxiliary) excluded; directional role semantics follow target_event_sequences_v1."
+  ]
+}
