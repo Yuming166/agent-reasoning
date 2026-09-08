@@ -1,0 +1,130 @@
+{
+  "protocol": {
+    "candidate_space": "sampled up-to-50 non-neighbor top-2000 candidate rows per new event",
+    "train_snapshot": "2022-06-01",
+    "gate_tuning_snapshot": "2022-07-01 out-of-sample June ranker",
+    "frozen_test_snapshot": "2022-08-01 ranker trained on June+July",
+    "gate_features_are_event_level": true,
+    "positive_candidate_excluded_from_context_aggregates": true,
+    "token_unit_proxy": {
+      "cheap": 32,
+      "deliberation": 96
+    }
+  },
+  "rows_by_snapshot": {
+    "2022-06-01": 10113299,
+    "2022-07-01": 9787159,
+    "2022-08-01": 8572259
+  },
+  "july_gate_fit": {
+    "n_events": 196345,
+    "learned_wins_share": 0.8612442384578166,
+    "feature_count": 18
+  },
+  "august_event_count": 171700,
+  "august_gate_discrimination": {
+    "AUROC": 0.6353198478383705,
+    "AUPRC": 0.9192808090465556,
+    "base_rate_learned_wins": 0.8640128130460105
+  },
+  "august_scorers": {
+    "cheap_global_sampled_pool": {
+      "n_events": 171700,
+      "MRR": 0.09667727215499919,
+      "R@1": 0.06108910891089109,
+      "R@5": 0.09687245195107747,
+      "R@10": 0.11343622597553873,
+      "median_rank": 48.0
+    },
+    "frozen_learned_sampled_pool": {
+      "n_events": 171700,
+      "MRR": 0.8945749708886227,
+      "R@1": 0.8736575422248107,
+      "R@5": 0.9130926033779848,
+      "R@10": 0.9314618520675597,
+      "median_rank": 1.0
+    },
+    "oracle_best_per_event_sampled_pool": {
+      "MRR": 0.9099643189735046
+    }
+  },
+  "budget_curve": [
+    {
+      "budget_fraction": 0.01,
+      "selected_events": 1717,
+      "learned_gate_MRR": 0.10646402525491641,
+      "learned_gate_gain": 0.009786753099917223,
+      "oracle_gate_MRR": 0.10653214427300957,
+      "oracle_gate_gain": 0.00985487211801038,
+      "random_expected_MRR": 0.10465624914233543,
+      "delta_MRR_per_1000_token_units": 1.746297317325095e-06,
+      "oracle_delta_MRR_per_1000_token_units": 1.7584521205923716e-06,
+      "selected_actual_winner_share": 1.0
+    },
+    {
+      "budget_fraction": 0.05,
+      "selected_events": 8585,
+      "learned_gate_MRR": 0.14404285458110136,
+      "learned_gate_gain": 0.04736558242610217,
+      "oracle_gate_MRR": 0.14589587218225245,
+      "oracle_gate_gain": 0.049218600027253256,
+      "random_expected_MRR": 0.13657215709168036,
+      "delta_MRR_per_1000_token_units": 7.837001380927055e-06,
+      "oracle_delta_MRR_per_1000_token_units": 8.143597452489354e-06,
+      "selected_actual_winner_share": 0.9800815375655213
+    },
+    {
+      "budget_fraction": 0.1,
+      "selected_events": 17170,
+      "learned_gate_MRR": 0.18945336526152612,
+      "learned_gate_gain": 0.09277609310652693,
+      "oracle_gate_MRR": 0.19505244440905412,
+      "oracle_gate_gain": 0.09837517225405493,
+      "random_expected_MRR": 0.17646704202836155,
+      "delta_MRR_per_1000_token_units": 1.4071310956993625e-05,
+      "oracle_delta_MRR_per_1000_token_units": 1.492052093253357e-05,
+      "selected_actual_winner_share": 0.9666860803727432
+    },
+    {
+      "budget_fraction": 0.2,
+      "selected_events": 34340,
+      "learned_gate_MRR": 0.27879744494546166,
+      "learned_gate_gain": 0.18212017279046247,
+      "oracle_gate_MRR": 0.29327279189943006,
+      "oracle_gate_gain": 0.19659551974443087,
+      "random_expected_MRR": 0.2562568119017239,
+      "delta_MRR_per_1000_token_units": 2.3676077043439355e-05,
+      "oracle_delta_MRR_per_1000_token_units": 2.5557908278614964e-05,
+      "selected_actual_winner_share": 0.9533197437390798
+    },
+    {
+      "budget_fraction": 0.5,
+      "selected_events": 85850,
+      "learned_gate_MRR": 0.5255775685715371,
+      "learned_gate_gain": 0.42890029641653793,
+      "oracle_gate_MRR": 0.5873852085579901,
+      "oracle_gate_gain": 0.49070793640299093,
+      "random_expected_MRR": 0.49562612152181096,
+      "delta_MRR_per_1000_token_units": 3.903067636289112e-05,
+      "oracle_delta_MRR_per_1000_token_units": 4.465527959404038e-05,
+      "selected_actual_winner_share": 0.912638322655795
+    },
+    {
+      "budget_fraction": 1.0,
+      "selected_events": 171700,
+      "learned_gate_MRR": 0.8945749708886227,
+      "learned_gate_gain": 0.7978976987336235,
+      "oracle_gate_MRR": 0.8945749708886227,
+      "oracle_gate_gain": 0.7978976987336235,
+      "random_expected_MRR": 0.8945749708886227,
+      "delta_MRR_per_1000_token_units": 4.840672313225729e-05,
+      "oracle_delta_MRR_per_1000_token_units": 4.840672313225729e-05,
+      "selected_actual_winner_share": 0.8640128130460105
+    }
+  ],
+  "gate_top10pct": {
+    "selected_actual_winner_share": 0.9666860803727432,
+    "mean_realized_gain_selected": 0.933069194734705,
+    "positive_realized_gain_share": 0.9666860803727432
+  }
+}

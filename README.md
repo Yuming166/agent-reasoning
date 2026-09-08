@@ -146,6 +146,37 @@ python3 src/upload_graph_structural_features.py \
   --gcloud-bin /storage/gaoym/tools/google-cloud-sdk/bin/gcloud
 ```
 
+
+### Learned candidate ranker and event gate (2026-09-09 pilot)
+
+The next-counterparty pilot uses monthly snapshots (June train, July
+gate-tuning, August frozen test) and features for `(source wallet, candidate)`:
+historical global popularity rank/count, 90-day personal interaction count and
+recency, and 2-hop bridge path/weight signals. BigQuery materialization and
+local training/evaluation code are in:
+
+- `src/pipeline/build_rankertables.py` -> `exgraph.nc_ranker_samples_v2`.
+- `src/pipeline/train_candidate_ranker.py`.
+- `src/pipeline/gate_and_budget.py` (leakage-safe event-level gate prototype).
+- `src/pipeline/evaluate_supported_pool.py` (support-restricted audit).
+
+The exported development table contained 28,472,717 compressed CSV rows
+(966 MB across 30 gzip shards; the data itself is not committed). The first
+naive sampled-pool result (August MRR .896) is **not** a valid full-task
+result: negatives were drawn from the historical global top-2000 support while
+82.2% of observed positives were outside it and received sentinel
+`g_rank=99999`, making them trivially separable.
+
+The valid support-restricted comparison retains 30,610/171,700 August new-event
+instances whose positive is in top-2000. On the comparable approximately-50-row
+sampled pool, global popularity scores MRR .448 and the learned ranker .456
+(+0.0083 absolute; +1.85% relative); oracle best-of-two has MRR .505. A gate
+trained on July out-of-sample events is weak on August (AUROC .557; AUPRC .278
+at 23.0% winner base rate), and captures only a small part of oracle headroom
+at a 10% deliberation budget (+.0029 learned gate vs +.0528 oracle). The cost
+axis uses fixed token-units (32 cheap / 96 deliberation), not measured LLM
+tokens. See `artifacts/nc_v1/RESULTS.md` and `supported_pool_v1.json`.
+
 ## What is included
 
 - EX-Graph graph and temporal-dataset audits under `src/` and `notes/`.
@@ -153,7 +184,7 @@ python3 src/upload_graph_structural_features.py \
 - BigQuery SQL and Python scripts for address upload, overlap validation,
   event-table materialization, quality checks, the unified view, and the
   directional sequence table.
-- Small JSON execution manifests and audit summaries under `artifacts/`.
+- Small JSON execution manifests, candidate-model summaries, and budget curves under `artifacts/`.
 - Data provenance, checksums, and third-party notices.
 
 ## What is intentionally not included
@@ -232,11 +263,19 @@ prediction time (`as-of` joins) to avoid future leakage.
 
 ## Status boundary
 
-What is completed: data preparation, audit, verification, and publication of the
-reproducible preparation pipeline.
+What is completed: data preparation and verification, the directional sequence
+table, structural/wallet features, importance-selection pilots, repeat/new
+baselines, and a bounded learned candidate-ranker/event-gate pilot.
 
-What is **not yet** completed: next-counterparty label table, temporal
-train/validation/test split, prediction baselines, counterfactual agent
-mechanism, and any model result. No report should claim predictive superiority,
-trading alpha, causal influencer effects, or a working end-to-end system before
-those experiments are run and frozen.
+The learned ranker pilot is a support-conditional sampled-candidate result, not
+a full-vocabulary ranking claim. The naive .896 MRR run is documented as a
+negative-support artifact; the honest support-restricted gain is +.0083 MRR
+over global popularity. The event gate is weak out of month, and the
+token-axis numbers are a fixed proxy rather than measured LLM cost.
+
+What is **not yet** completed: full-vocabulary candidate generation, tail and
+bridge strata negatives, embedding/GNN models, social/X as-of features, a real
+LLM token/latency experiment, causal influencer effects, and a frozen
+end-to-end NAACL result. No report should claim broad predictive superiority,
+trading alpha, causal social effects, or realized token savings before those
+experiments are run and frozen.

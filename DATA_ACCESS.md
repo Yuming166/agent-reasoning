@@ -22,6 +22,7 @@ internal_traces_20220301_20220901
 target_events_20220301_20220901           # UNION ALL view
 exgraph_x_matches_v1                      # official address-to-X match dimension
 target_event_sequences_20220301_20220901  # directional target/counterparty roles
+nc_ranker_samples_v2                     # sampled candidate-ranker pilot (top-2000 negatives)
 ```
 
 Each event row has at least one endpoint matching the EX-Graph address list.
@@ -44,6 +45,13 @@ LIMIT 100;
 The dataset owner can grant dataset-level `BigQuery Data Viewer` access. The
 query runner also needs permission to create jobs in the billing project used
 for the query. Use your own billing project when possible.
+
+`nc_ranker_samples_v2` is a 28,472,717-row pilot table for diagnosing candidate
+learning. It is intentionally support-biased: deterministic sampled negatives
+come from each month's historical global top-2000 addresses, while positives
+outside that support retain `g_rank=99999`. Use `evaluate_supported_pool.py`
+for comparable support-conditional metrics; do not interpret the naive
+sampled-pool classifier accuracy/MRR as full-candidate performance.
 
 ## Reproduce in your own Google Cloud project
 
