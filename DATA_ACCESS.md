@@ -22,6 +22,8 @@ internal_traces_20220301_20220901
 target_events_20220301_20220901           # UNION ALL view
 exgraph_x_matches_v1                      # official address-to-X match dimension
 target_event_sequences_20220301_20220901  # directional target/counterparty roles
+target_event_sequences_20220901_20221001  # independent September extension
+wallet_asof_features_20220901             # strict as-of features for September
 nc_ranker_samples_v2                     # sampled candidate-ranker pilot (top-2000 negatives)
 ```
 
@@ -52,6 +54,48 @@ come from each month's historical global top-2000 addresses, while positives
 outside that support retain `g_rank=99999`. Use `evaluate_supported_pool.py`
 for comparable support-conditional metrics; do not interpret the naive
 sampled-pool classifier accuracy/MRR as full-candidate performance.
+
+## Corrected v2 wallet-selection panel
+
+The v2 panel hardens the candidate protocol by adding deterministic
+`unknown_tail` negatives so an unknown positive cannot be identified by a
+sentinel rank alone. The local development run contains four 1,000-event
+snapshots (June, July, August, and an independent September holdout), but the
+full scored panels and candidate shards are intentionally not redistributed in
+Git.
+
+The public compact artifacts are:
+
+- `artifacts/llm_panel_v2/corrected_v2_manifest.json`;
+- `artifacts/llm_panel_v2/RESULTS_CORRECTED_V2.md`;
+- `artifacts/llm_panel_v2/operational_eval_floatfix.jsonl`;
+- per-event corrected audit CSVs and by-stratum JSONL evaluations under
+  `artifacts/llm_panel_v2/runs/` and
+  `artifacts/llm_panel_20220901/runs/`.
+
+The independent September extension is built by
+`src/sql/create_sequence_202209_{table,view}_ictdata.sql` and
+`src/sql/create_wallet_asof_features_202209_ictdata.sql`; it is not a refit of
+the June-August panels.
+
+The run compares a frozen cheap ranker, a one-shot NoCF LLM, and a finite Full
+FSM. Exact ties use average competition ranks. Failed or unparsable LLM outputs
+are retained and fall back to the cheap ranker for operational evaluation.
+The pre-existing `router_dataset_v2.csv` is not a valid release artifact: it
+was generated before the reciprocal-rank correction and must be rebuilt from
+the corrected runs.
+
+To reproduce the local LLM stage after obtaining the private panel files and
+configuring an OpenAI-compatible endpoint, set `LLM_BASE_URL`, `LLM_BEARER`
+(or the local credential provider), and optionally `EXGRAPH_HTTP_PROXY`, then
+run:
+
+```bash
+./run_llm_v2_floatfix.sh
+```
+
+The script is resumable at the per-event CSV level and writes logs locally;
+credentials, endpoint values, full panel files, and logs are not committed.
 
 ## Reproduce in your own Google Cloud project
 

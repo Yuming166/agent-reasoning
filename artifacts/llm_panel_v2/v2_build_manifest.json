@@ -1,0 +1,26 @@
+{
+  "built_at_utc": "2026-09-09T09:55:15Z",
+  "items": [
+    {
+      "snapshot": "2022-06-01",
+      "files": [
+        "artifacts/llm_panel_v2/2022-06-01/candidates/000000000000.csv.gz",
+        "artifacts/llm_panel_v2/2022-06-01/candidates/000000000001.csv.gz"
+      ]
+    },
+    {
+      "snapshot": "2022-07-01",
+      "files": [
+        "artifacts/llm_panel_v2/2022-07-01/candidates/000000000000.csv.gz",
+        "artifacts/llm_panel_v2/2022-07-01/candidates/000000000001.csv.gz"
+      ]
+    },
+    {
+      "snapshot": "2022-08-01",
+      "files": [
+        "artifacts/llm_panel_v2/2022-08-01/candidates/000000000000.csv.gz",
+        "artifacts/llm_panel_v2/2022-08-01/candidates/000000000001.csv.gz"
+      ]
+    }
+  ]
+}

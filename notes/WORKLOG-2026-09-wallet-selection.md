@@ -1,6 +1,6 @@
 # 工作日记：链上重要钱包筛选与预算化路由（2026-09-08 ~ 2026-09-09）
 
-项目目录：`/storage/gaoym/ex-graph-microtransaction-analysis`
+项目目录：本地 EX-Graph 研究工作区
 云端：`ictdata-507912.exgraph`（BigQuery，US）；GCS bucket `ictdata-exgraph-artifacts`。
 分支：`codex/wallet-selection-router`（独立分支，不改动 main）。
 
@@ -90,3 +90,22 @@
 - 下一步：扩展 top-2000 之外的 bridge/tail/stratified negatives，做全候选或
   分桶 recall；给 gate 增加严格 as-of 钱包/合约/token 特征；等 X 特征抽取后
   做社交消融；最后接真实 LLM 调用测 token/latency。
+
+## 2026-09-09（晚）：corrected v2 LLM panel 完成
+
+- 修复 tie-aware reciprocal-rank 实现后，`glm-5.3` corrected v2 运行完成：June、July、August、September 各 1,000 个事件；Full FSM、NoCF 和 frozen cheap 三个臂均有逐事件输出。运行脚本为 `run_llm_v2_floatfix.sh`，原始本地运行日志不入 Git。
+- 失败口径固定为生产回退：Full/NoCF 解析失败的事件保留，并使用 cheap reciprocal rank；没有静默删除失败样本。`artifacts/llm_panel_v2/operational_eval_floatfix.jsonl` 记录回退后的 weighted MRR 和 paired bootstrap 区间，`corrected_v2_manifest.json` 记录文件哈希、行数和解析率。
+- corrected v2 的回退后 Full MRR（June/July/August/September）为 `.5088/.5029/.5605/.5499`，Cheap 为 `.3281/.2831/.2795/.3003`；Full-Cheap delta 均为正。Full-NoCF delta 也均为正，收益主要集中在 `repeat_hard`，`new_tail` 的收益较小。
+- July/August/September 解析率为高/完整；June 解析率异常低（Full `.322`、NoCF `.339`），需要在 router 训练前诊断或重跑。该异常结果只作为明确 fallback 的审计证据，不应伪装成干净的 LLM 成功率。
+- 旧的 `artifacts/llm_panel_v2/router_dataset_v2.csv` 是 float-RR 修复前生成的，不能使用；下一步必须从 corrected 输出重新构建 router dataset。
+
+## 研究主线升级
+
+研究主线从“是否调用 LLM 的事件门控”升级为“影响力感知的选择性可信递归推理”：
+
+1. 先用严格 as-of 历史估计钱包/钱包群体的动态未来 spillover relevance，而不是把静态 PageRank 当作真实市场影响；
+2. 为每个 wallet-event 分配 low/medium/high reasoning depth，在固定 token/latency 预算下选择性递归；
+3. 每一步递归输出证据事件、反事实干预、belief update、置信度、约束检查和 stop/continue，而不是无限制的自由文本递归；
+4. 从下一 counterparty/action 的微观预测，扩展到钱包群体的 K-step 策略，再聚合为协议流量、网络结构和其他 market-relevant 状态。
+
+详细定义、可证伪假说、消融和执行路线见 `notes/RESEARCH_MAINLINE.md`。当前 corrected v2 只验证了 one-step counterfactual component；dynamic influence、adaptive depth、shared-state K-step rollout 和 macro aggregation 尚未完成。

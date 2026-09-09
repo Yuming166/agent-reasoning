@@ -9,29 +9,48 @@ The repository keeps large/raw data outside Git while preserving the code,
 schemas, manifests, checksums, and bounded validation results needed to
 reproduce the workflow and to rerun the planned experiments.
 
-## Research direction
+## Research mainline
 
-Predicting the next transaction object for every wallet is not feasible at
-scale. The project therefore follows a three-stage pipeline:
+The project has been upgraded from a single next-counterparty ranker into an
+**influence-adaptive, trustworthy recursive reasoning system** for temporal
+wallet graphs. The central premise is that deeper reasoning is not uniformly
+useful: only some wallet-events have enough market relevance or counterfactual
+headroom to justify high-cost recursion.
 
-1. **Influence-aware wallet selection** — select a small influential subset of
-   the EX-Graph-mapped wallets using structural influence, predictive
-   uncertainty, and counterfactual sensitivity rather than analyzing all
-   27,613 addresses.
-2. **Counterfactual step-level reasoning** — a wallet-behavior agent performs a
-   finite set of auditable reasoning steps (observe history, compare behavior,
-   mask a node/tweet/transaction, request neighbor evidence, update belief,
-   stop-and-predict), instead of unrestricted long LLM chain-of-thought.
-3. **Budget-aware multi-agent forecasting** — in a fixed compute budget, compare
-   no-LLM, all-LLM, random, centrality, uncertainty, and counterfactual routing.
-   The main output is `next_counterparty` (top-K) plus direction, event family,
-   token/contract, confidence, evidence citations, recursion depth, and cost.
+The research pipeline is:
 
-The core claim under evaluation is not "LLM reads everything better", but:
+1. **Dynamic wallet influence** — identify wallet addresses or wallet clusters
+   whose future behavior is likely to create measurable downstream spillover.
+   Static degree/PageRank are priors; the main selection target must be built
+   from strict pre-snapshot history and evaluated on future spillover.
+2. **Adaptive reasoning depth** — choose low, medium, or high depth per
+   `(wallet, event, time)` under a fixed token/latency budget. Low depth uses the
+   cheap predictor; medium depth uses one counterfactual FSM; high depth performs
+   a bounded shared-state recursive rollout.
+3. **Step-level trustworthy reasoning** — every recursive transition records
+   evidence event IDs, the intervention, belief update, confidence, temporal
+   validity, candidate support, and a stop/continue decision. Invalid or
+   unverifiable calls abstain and fall back to the cheap path; this is not an
+   unrestricted chain-of-thought requirement.
+4. **Micro-to-macro outputs** — predict the next counterparty/action at the
+   micro level, a short wallet/community strategy at the meso level, and
+   aggregated flow, protocol-exposure, and network-state statistics at the macro
+   level. The rollout updates a shared state so agents are not simulated as
+   independent isolated forecasts.
 
-> Under the same reasoning budget, does counterfactual-driven selective
-> recursive reasoning improve next-counterparty prediction while reducing
-> unnecessary LLM calls?
+The formal mainline is documented in
+[`notes/RESEARCH_MAINLINE.md`](notes/RESEARCH_MAINLINE.md). The main claim under
+evaluation is:
+
+> Under a matched reasoning budget, influence-adaptive selective recursion with
+> counterfactual and step-level verification should outperform uniform shallow
+> or uniform deep reasoning on multi-step wallet/action forecasting per unit of
+> cost.
+
+This claim is deliberately narrower than “LLM is better for every wallet.”
+The current v2 experiment validates the one-step counterfactual component; the
+adaptive depth policy, future-spillover influence label, coupled multi-step
+rollout, and market aggregation are the next experiments.
 
 ## Data scope
 
@@ -42,7 +61,8 @@ Available and used in this repository:
   released as part of Persdre/EX-Graph). This provides the address-to-X
   match dimension, not raw tweet text.
 - **Temporal Ethereum events**: Google Blockchain Analytics materializations
-  for 2022-03-01 (inclusive) through 2022-09-01 (exclusive), UTC.
+  for the primary 2022-03-01 (inclusive) through 2022-09-01 (exclusive) window,
+  plus a separately materialized 2022-09 holdout extension through 2022-10-01.
 - **External social context**: the Crypto Influencer tweet dataset is used as a
   second modality for asset- and market-level sentiment, **not** as a
   "wallet owner's tweets". We do not require influencers to own the sampled
@@ -143,7 +163,7 @@ python3 src/upload_graph_structural_features.py \
   --project-id ictdata-507912 --dataset-id exgraph \
   --csv artifacts/exgraph_structural_features.csv \
   --output artifacts/exgraph_structural_features_upload.json \
-  --gcloud-bin /storage/gaoym/tools/google-cloud-sdk/bin/gcloud
+  --gcloud-bin "${GCLOUD_BIN:-gcloud}"
 ```
 
 
@@ -177,6 +197,32 @@ at a 10% deliberation budget (+.0029 learned gate vs +.0528 oracle). The cost
 axis uses fixed token-units (32 cheap / 96 deliberation), not measured LLM
 tokens. See `artifacts/nc_v1/RESULTS.md` and `supported_pool_v1.json`.
 
+## Corrected v2 LLM panel (2026-09-09)
+
+The corrected v2 run completed four 1,000-event snapshots with `glm-5.3`:
+June, July, August, and an independent September temporal holdout. Exact score
+ties use average competition ranks. Parse failures are retained and fall back
+to the cheap ranker for operational scoring.
+
+| Snapshot | Full parse | NoCF parse | Cheap MRR | NoCF MRR | Full MRR | Full-Cheap |
+|---|---:|---:|---:|---:|---:|---:|
+| 2022-06 | 0.322 | 0.339 | 0.3281 | 0.4647 | 0.5088 | +0.1807 |
+| 2022-07 | 0.959 | 0.974 | 0.2831 | 0.3579 | 0.5029 | +0.2198 |
+| 2022-08 | 1.000 | 0.999 | 0.2795 | 0.3797 | 0.5605 | +0.2810 |
+| 2022-09 | 1.000 | 1.000 | 0.3003 | 0.4089 | 0.5499 | +0.2496 |
+
+The corrected results support the counterfactual component, with the largest
+benefits concentrated in difficult repeated interactions and much smaller
+benefits on `new_tail`. They do **not** yet establish that a learned budget
+router beats simple routing policies. June also has an anomalously low parse
+rate and must be diagnosed or rerun before it is treated as clean router
+training evidence.
+
+Reproducible compact artifacts are under
+`artifacts/llm_panel_v2/RESULTS_CORRECTED_V2.md`. The old
+`artifacts/llm_panel_v2/router_dataset_v2.csv` is intentionally not published:
+it was generated before the reciprocal-rank correction and must be rebuilt.
+
 ## What is included
 
 - EX-Graph graph and temporal-dataset audits under `src/` and `notes/`.
@@ -185,6 +231,11 @@ tokens. See `artifacts/nc_v1/RESULTS.md` and `supported_pool_v1.json`.
   event-table materialization, quality checks, the unified view, and the
   directional sequence table.
 - Small JSON execution manifests, candidate-model summaries, and budget curves under `artifacts/`.
+- The corrected v2 Full/NoCF/cheap runner, tie-aware evaluator, operational
+  fallback evaluator, frozen ranker utilities, and router-training utilities
+  under `src/agent/`.
+- v2 panel construction scripts under `src/pipeline/`, plus compact corrected
+  per-event audit outputs and evaluation summaries.
 - Data provenance, checksums, and third-party notices.
 
 ## What is intentionally not included
@@ -197,85 +248,139 @@ derived embeddings/labels and rehydration instructions are used instead.
 
 ## Planned experiments
 
-### Prediction baselines
+### Main hypothesis tests
 
-- Most-recent counterparty.
-- Global popularity.
-- Wallet-level frequency.
-- Recency-frequency score.
-- First-order Markov.
-
-### Ablations
-
-| Experiment | Input / treatment |
+| Question | Required comparison |
 |---|---|
-| A | Ethereum native transactions only |
-| B | A + token transfers |
-| C | B + internal traces |
-| D | C + EX-Graph static graph features |
-| E | D + external social sentiment context |
-| F | Counterfactual multi-agent routing (full method) |
+| Does the counterfactual operator help? | Full FSM vs NoCF vs Cheap |
+| Is deeper reasoning selectively useful? | learned depth vs all-low, all-high, random, uncertainty, repeat-only |
+| Does dynamic influence improve selection? | future-spillover scorer vs degree/PageRank/activity-only |
+| Does verification stabilize recursion? | verified vs unverified recursive rollout |
+| Does micro behavior aggregate to market state? | coupled shared-state rollout vs independent wallet forecasts |
 
-### Reasoning routing ablations
+### Prediction and influence baselines
 
-| Setting | LLM routing policy |
+- Most-recent counterparty;
+- global popularity;
+- wallet-level frequency and recency-frequency;
+- first-order Markov;
+- temporal sequence ranker;
+- degree/PageRank and transaction-volume influence;
+- uncertainty-only and repeat-only selection;
+- unstructured recursive LLM calls at matched depth and budget.
+
+### Depth/routing policies
+
+| Setting | Policy |
 |---|---|
-| No-LLM | No language model |
-| All-LLM | Every candidate event |
-| Random | Random subset at equal coverage |
-| Centrality | High structural-influence nodes |
-| Uncertainty | High model-uncertainty nodes |
-| Counterfactual | High counterfactual-sensitivity nodes |
+| All-cheap | No LLM / low-depth predictor for every event |
+| All-FSM | Full counterfactual FSM for every event |
+| Random | Random events at equal budget |
+| Centrality | Route structurally influential wallets |
+| Uncertainty | Route high cheap-ranker uncertainty |
+| Repeat-only | Route repeated interactions first |
+| Influence-only | Route high predicted future spillover |
+| Learned adaptive depth | Main policy: choose low/medium/high depth from as-of features |
+| Oracle | Upper bound only; uses realized gain and is never a deployable policy |
 
-### Metrics
+### Trust and recursive ablations
 
-- Next-counterparty: `Recall@1`, `Recall@5`, `Recall@10`, `MRR`, `NDCG`,
-  candidate coverage.
-- Auxiliary: direction accuracy, event-family accuracy.
-- Selection: LLM call coverage, selective risk, accuracy-cost curve, call
-  reduction at a fixed budget.
-- Reasoning: evidence grounding, counterfactual consistency, prediction
-  stability, step-level auditability.
+- remove the counterfactual mask;
+- remove belief update;
+- remove evidence/constraint verification;
+- fixed recursion depth;
+- independent rather than shared-state rollouts;
+- no influence features;
+- no external context;
+- failure deletion versus explicit cheap fallback (the latter is the
+  production protocol).
+
+### Outputs and metrics
+
+- Micro: next-counterparty/action `Recall@1/5/10`, `MRR`, `NDCG`, direction and
+  event-family accuracy;
+- Meso: K-step path likelihood, trajectory hit rate, strategy calibration, and
+  error accumulation across recursion depth;
+- Macro: future flow/protocol-exposure error, concentration and graph-statistic
+  distance, and interval calibration;
+- Influence: future-spillover Recall@K, NDCG, AUROC, and reach/flow impact;
+- Trust: evidence coverage, as-of violations, invalid transition rate,
+  counterfactual consistency, abstention risk/coverage;
+- Efficiency: measured token usage, latency, failure/fallback rate, and utility
+  per budget.
+
+All main deltas must be paired, bootstrap-tested, reported by
+`new_popular`, `new_tail`, `repeat_easy`, and `repeat_hard`, and evaluated on
+both August and the September temporal holdout.
 
 ## Temporal split
 
-No random splitting; chronological split only:
+No random splitting; chronological evaluation only:
 
-- Train: `2022-03-01` to `2022-06-30`
-- Validation: `2022-07-01` to `2022-07-31`
-- Test: `2022-08-01` to `2022-08-31`
+- Historical feature construction: strict as-of windows before each event;
+- Router training: June 2022;
+- Router/treatment tuning: July 2022;
+- Frozen primary test: August 2022;
+- Independent temporal holdout: September 2022.
 
-Node selection and social context must use only information available up to the
-prediction time (`as-of` joins) to avoid future leakage.
+The current four-month LLM panel contains 1,000 events per snapshot. Any
+future-spillover or market-impact label is computed after the prediction time
+and is never used as an input feature. Static full-window graph statistics may
+be used only as explicitly labelled priors, not as time-valid dynamic features.
 
-## NAACL 2027 timeline
+## NAACL 2027 execution roadmap
 
-- **Week 1 (Sep 08-14)**: freeze task/labels, build next-counterparty labels,
-  split temporally, run simple baselines and related-work/title overlap audit.
-- **Week 2 (Sep 15-21)**: finish Markov/recency/frequency baselines; native-only
-  and native+token ablations; confirm whether social context can be aligned.
-- **Week 3 (Sep 22-28)**: counterfactual sensitivity, selective LLM routing,
-  compare routing policies.
-- **Week 4 (Sep 29-Oct 05)**: recursion-depth experiments, cost-performance
-  curves, case studies, ethics/privacy/leakage audit.
-- **Week 5 (Oct 06-12)**: freeze main results, write the paper, finalize
-  appendix/manifests and the ARR submission.
+1. **Protocol and validity freeze** — preserve the v2 candidate-support and
+   tie-aware rules; diagnose the June parse anomaly; rebuild the router data with
+   explicit fallback.
+2. **Budget router** — train on June, tune on July, freeze on August, and test
+   again on September against all routing baselines.
+3. **Influence selection** — add strict as-of future-spillover labels and test
+   dynamic influence against static centrality/activity baselines.
+4. **Adaptive recursion** — replace binary routing with low/medium/high depth and
+   matched-cost evaluation.
+5. **Trustworthy rollout** — implement evidence-backed K-step shared-state
+   transitions, stop/abstain checks, and failure analysis.
+6. **Micro-to-macro evaluation** — aggregate selected wallet trajectories into
+   group and market-relevant flow/network forecasts.
+7. **Robustness and paper freeze** — add strong non-LLM baselines, cross-model
+   checks, ablations, dated novelty audit, appendix, and reproducibility package.
 
 ## Status boundary
 
-What is completed: data preparation and verification, the directional sequence
-table, structural/wallet features, importance-selection pilots, repeat/new
-baselines, and a bounded learned candidate-ranker/event-gate pilot.
+### Completed
 
-The learned ranker pilot is a support-conditional sampled-candidate result, not
-a full-vocabulary ranking claim. The naive .896 MRR run is documented as a
-negative-support artifact; the honest support-restricted gain is +.0083 MRR
-over global popularity. The event gate is weak out of month, and the
-token-axis numbers are a fixed proxy rather than measured LLM cost.
+- Leakage-audited Ethereum temporal event preparation and directional
+  next-counterparty sequence construction;
+- EX-Graph structural/address feature extraction and wallet-selection pilots;
+- v2 candidate-pool repair with unknown-tail negatives and tie-aware ranking;
+- frozen June-trained v2 cheap ranker;
+- Full counterfactual FSM, one-shot NoCF ablation, strict parsing, measured
+  token/latency logging, and explicit failure fallback;
+- corrected v2 LLM runs for June, July, August, and September, with compact
+  per-event audit outputs and paired by-stratum evaluation.
 
-What is **not yet** completed: full-vocabulary candidate generation, tail and
-bridge strata negatives, embedding/GNN models, social/X as-of features, a real
-LLM token/latency experiment, causal influencer effects, and a frozen
-end-to-end NAACL result. No report should claim broad predictive superiority,
-trading alpha, causal social effects, or realized token savings before those
-experiments are run and frozen.
+### In progress or not yet complete
+
+- Diagnose or rerun the anomalously low June parse-rate run;
+- rebuild and freeze the v2 budget router from corrected outputs;
+- dynamic future-spillover influence labels and adaptive low/medium/high depth;
+- strong temporal/sequence baselines and cross-model robustness;
+- verified K-step shared-state wallet/group rollout;
+- macro flow/network aggregation and a frozen end-to-end NAACL result.
+
+### Claim boundaries
+
+The earlier `.896` candidate-ranker MRR is a support artifact, not a
+full-vocabulary result; the honest support-restricted gain is documented in
+`artifacts/nc_v1/RESULTS.md`. The corrected v2 Full-vs-Cheap result is a
+candidate-panel component result, not proof that a budget router or a complete
+market simulator is superior. We do not claim causal influencer effects,
+real-person identity, trading alpha, full-market coverage, or realized token
+savings without the corresponding as-of, causal, coverage, and frozen-budget
+evidence.
+
+The GitHub repository contains code, manifests, compact evaluation outputs, and
+research notes. Raw graph pickles, BigQuery tables, candidate shards, full
+panel-scoring tables, credentials, virtual environments, and runtime logs stay
+outside Git; see [`DATA_ACCESS.md`](DATA_ACCESS.md).

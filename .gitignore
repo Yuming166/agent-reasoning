@@ -28,3 +28,9 @@ credentials*.json
 *.log
 *.pid
 *.partial
+# Generated panel inputs and large scored tables
+artifacts/llm_panel_v2/panel_scored*.csv.gz
+artifacts/llm_panel_v2/*/candidates/
+artifacts/llm_panel_20220901/panel_scored*.csv.gz
+artifacts/llm_panel_20220901/events/
+artifacts/llm_panel_20220901/candidates/
