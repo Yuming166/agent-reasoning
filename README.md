@@ -9,6 +9,27 @@ The repository keeps large/raw data outside Git while preserving the code,
 schemas, manifests, checksums, and bounded validation results needed to
 reproduce the workflow and to rerun the planned experiments.
 
+## At a glance
+
+This README separates **validated components** from the proposed end-to-end
+research system. The project is not yet claiming a complete market simulator or
+that deeper reasoning helps every wallet.
+
+| Area | Current state | Boundary |
+|---|---|---|
+| Temporal event substrate | **Validated** | Six months of BigQuery event families have been materialized and converted into directional target/counterparty sequences for 27,613 mapped addresses. |
+| One-step counterfactual reasoning | **Component result** | Corrected v2 Full/NoCF/cheap panels cover four 1,000-event snapshots; June has an anomalously low parse rate. |
+| Wallet influence selection | **In progress** | Dynamic future-spillover labels and chronological evaluation are specified, but are not yet an end-to-end result. |
+| Adaptive reasoning depth | **In progress** | The intended policy selects low/medium/high depth under a matched budget; the binary v2 component does not validate the final policy. |
+| K-step wallet/group rollout | **Planned** | Shared-state recursive transitions, abstention, and trajectory evaluation remain to be implemented and tested. |
+| Market-level aggregation | **Planned** | Flow, protocol-exposure, and network-state forecasts are a downstream evaluation layer, not a current claim. |
+| Social modality | **Available context** | Crypto Influencer text is asset/project/market context; it is not a verified wallet-owner tweet corpus. |
+
+**Core contribution in one sentence:** allocate bounded, auditable reasoning to
+the wallet-events where counterfactual influence and expected predictive value
+justify it, then evaluate whether those local forecasts remain reliable when
+rolled forward from micro behavior to group and market state.
+
 ## Research mainline
 
 The project has been upgraded from a single next-counterparty ranker into an
@@ -79,6 +100,23 @@ Important distinction:
 Consequently the first paper version treats social information as **external
 social context** (asset-conditioned or global sentiment) rather than claiming to
 recover a wallet owner's personal tweets or intentions.
+
+## How to read the evidence
+
+- **Data preparation is not prediction.** The BigQuery materializations and
+  directional sequences establish a leakage-aware temporal substrate; they do
+  not by themselves show that any model predicts future transactions.
+- **Component gains are not end-to-end superiority.** The corrected v2 numbers
+  test the one-step counterfactual component on a bounded candidate panel. They
+  do not validate the future-spillover selector, adaptive depth policy, K-step
+  rollout, or market aggregation.
+- **Operational fallback is part of the protocol.** Parse failures are retained
+  and scored through the cheap fallback rather than silently dropped. Results
+  should therefore be read together with parse yield, failure rate, token use,
+  latency, and support coverage.
+- **Predictive influence is not causal influence.** A wallet can be selected for
+  measurable downstream predictive spillover without establishing that it
+  causes market behavior or that an X account owns the wallet.
 
 ## Validated data preparation
 
@@ -222,6 +260,27 @@ Reproducible compact artifacts are under
 `artifacts/llm_panel_v2/RESULTS_CORRECTED_V2.md`. The old
 `artifacts/llm_panel_v2/router_dataset_v2.csv` is intentionally not published:
 it was generated before the reciprocal-rank correction and must be rebuilt.
+
+## Reproduction order
+
+The intended low-egress, audit-first workflow is:
+
+1. Read [`DATA_ACCESS.md`](DATA_ACCESS.md) and inspect the data manifests before
+   querying or downloading large files.
+2. Reproduce the address overlap, event-family materializations, and directional
+   sequence tables with the SQL under `src/sql/`.
+3. Rebuild static structural features and cheap candidate baselines, keeping
+   full-window graph statistics labelled as priors rather than as-of features.
+4. Reproduce the corrected Full/NoCF/cheap component panel from the compact
+   artifacts and the runner under `src/agent/`.
+5. Only after the validity checks pass, train the budget router and add the
+   future-spillover, adaptive-depth, K-step, and macro experiments in the
+   roadmap below.
+
+Expensive model calls require an explicitly configured, approved
+OpenAI-compatible project endpoint. Credentials and machine-specific endpoint
+configuration must remain in environment variables or local configuration and
+must never be committed to this repository.
 
 ## What is included
 
