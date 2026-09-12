@@ -1,0 +1,54 @@
+{
+ "task": "Budgeted wallet selection at cutoff 2022-09-01 (autoresearch_phase1.md \u00a79/\u00a713/\u00a714/\u00a716)",
+ "protocol_ref": "research/audit/temporal_protocol.yaml v1.0 (frozen 2026-09-11)",
+ "data_audit_ref": "research/audit/DATA_AUDIT.md",
+ "generated_by": "research/selection_eval/src/run_eval.py",
+ "generated_at_utc": "2026-09-11T11:07:06.121072+00:00",
+ "cutoff": "2022-09-01",
+ "reused_inputs": {
+  "random": "in-house (deterministic seed)",
+  "volume": "groupA feature_matrix_20220901.parquet",
+  "volume_usd": "groupA usd_capital_20220901.csv",
+  "eth_flow": "groupA feature_matrix_20220901.parquet",
+  "activity": "groupA feature_matrix_20220901.parquet",
+  "recency": "groupA feature_matrix_20220901.parquet",
+  "persistence": "groupA feature_matrix_20220901.parquet",
+  "behavioral": "groupA persona_assignments_20220901.csv + feature matrix",
+  "behavioral_act": "groupA persona_assignments_20220901.csv + feature matrix",
+  "predictive_act": "groupB holdout09_predictions.csv",
+  "predictive_new": "groupB holdout09_predictions.csv",
+  "hybrid_pred_vol": "groupB predictions + groupA feature matrix",
+  "degree": "groupC wallet_importance_20220901.csv",
+  "weighted_degree": "groupC wallet_importance_20220901.csv",
+  "pagerank": "groupC wallet_importance_20220901.csv",
+  "kcore": "groupC wallet_importance_20220901.csv",
+  "betweenness": "groupC wallet_importance_20220901.csv",
+  "bridge_score": "groupC wallet_importance_20220901.csv",
+  "static_degree": "groupC wallet_importance_20220901.csv",
+  "static_pagerank": "groupC wallet_importance_20220901.csv",
+  "ig_cp": "groupD ig_vs_baselines_20220901.csv",
+  "ig_active": "groupD ig_vs_baselines_20220901.csv",
+  "hybrid_pred_ig": "groupB predictions + groupD IG",
+  "random_expected": "in-house analytic expectation K*mean(label|support)",
+  "oracle": "post-hoc (uses future labels)"
+ },
+ "support_sets": {
+  "full": 18519,
+  "usd": 16910,
+  "structural": 7929,
+  "ig": 2999
+ },
+ "leakage_notes": {
+  "no_future_leakage": "all selector scores are computable from events strictly before 2022-09-01",
+  "static_prior_leaky": "static_degree/static_pagerank are full-window priors (leaky); reported as baseline tier only",
+  "ig_subset": "IG selectors are restricted to the 2,999-wallet Group D subset; no extrapolation",
+  "structural_subset": "structural selectors restricted to the 7,929 matched-matched subgraph; no extrapolation",
+  "oracle": "oracle reference uses future labels (post-hoc); not a selector",
+  "no_k_tuning": "K is NOT tuned on the final holdout; the full K frontier is reported as analysis (\u00a716)"
+ },
+ "outputs": [
+  "results/selection_results_20220901.json",
+  "results/budget_frontier.csv",
+  "results/figures/*.png"
+ ]
+}

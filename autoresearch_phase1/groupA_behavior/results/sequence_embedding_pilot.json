@@ -1,0 +1,18 @@
+{
+  "cutoff": "2022-09-01",
+  "sample_scope": "800 deterministic wallets (seed 2022) from the 18,519-wallet bounded sample",
+  "embedding": "local TF-IDF bag-of-2-gram action symbols (deterministic, no LLM/GPU)",
+  "symbols_used": [
+    "ON",
+    "IN",
+    "OT",
+    "IT",
+    "S",
+    "X"
+  ],
+  "n_embedding_dims": 20,
+  "silhouette_numeric_k5": 0.19216640699897508,
+  "silhouette_sequence_embedding_k5": 0.23167680124409723,
+  "mean_seq_len": 119.83625,
+  "n_wallets_with_seq": 800
+}

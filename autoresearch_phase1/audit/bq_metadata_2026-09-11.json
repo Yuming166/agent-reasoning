@@ -1,0 +1,1223 @@
+{
+  "exgraph_structural_features_v1": {
+    "table_type": "TABLE",
+    "num_rows": 27613,
+    "size_bytes": 3009817,
+    "created_utc": "2026-09-08T06:59:12.152000+00:00",
+    "modified_utc": "2026-09-08T07:19:43.562000+00:00",
+    "partitioning": null,
+    "require_partition_filter": null,
+    "clustering": null,
+    "schema": [
+      "ethereum_address:STRING",
+      "exgraph_node_id:INTEGER",
+      "graph_node_present:BOOLEAN",
+      "in_degree:INTEGER",
+      "out_degree:INTEGER",
+      "w_in_degree:INTEGER",
+      "w_out_degree:INTEGER",
+      "degree:INTEGER",
+      "w_degree:INTEGER",
+      "pagerank:FLOAT"
+    ],
+    "description": ""
+  },
+  "exgraph_x_matches_v1": {
+    "table_type": "TABLE",
+    "num_rows": 27613,
+    "size_bytes": 7068928,
+    "created_utc": "2026-09-07T15:22:22.643000+00:00",
+    "modified_utc": "2026-09-07T15:22:22.643000+00:00",
+    "partitioning": null,
+    "require_partition_filter": null,
+    "clustering": null,
+    "schema": [
+      "exgraph_node_id:INTEGER",
+      "ethereum_address:STRING",
+      "match_status:STRING",
+      "mapping_source:STRING",
+      "source_repository:STRING",
+      "source_repository_commit:STRING",
+      "source_file:STRING",
+      "source_file_sha256:STRING",
+      "source_retrieved_date:DATE",
+      "mapping_version:STRING"
+    ],
+    "description": "Official EX-Graph Ethereum-to-X/Twitter match dimension derived from the released matching file; 27,613 local release rows; no raw handles included."
+  },
+  "external_transactions_20220301_20220901": {
+    "table_type": "TABLE",
+    "num_rows": 2877009,
+    "size_bytes": 729336363,
+    "created_utc": "2026-09-07T12:46:34.285000+00:00",
+    "modified_utc": "2026-09-07T12:46:34.285000+00:00",
+    "partitioning": {
+      "type": "DAY",
+      "field": "block_timestamp"
+    },
+    "require_partition_filter": true,
+    "clustering": [
+      "from_address",
+      "to_address"
+    ],
+    "schema": [
+      "event_family:STRING",
+      "block_timestamp:TIMESTAMP",
+      "block_number:INTEGER",
+      "transaction_index:INTEGER",
+      "transaction_hash:STRING",
+      "from_address:STRING",
+      "to_address:STRING",
+      "value:BIGNUMERIC",
+      "value_lossless:STRING",
+      "transaction_type:INTEGER",
+      "from_exgraph_node_id:INTEGER",
+      "to_exgraph_node_id:INTEGER",
+      "touches_target_from:BOOLEAN",
+      "touches_target_to:BOOLEAN"
+    ],
+    "description": "EX-Graph target-touching native Ethereum transactions; six-month pilot"
+  },
+  "external_transactions_20220901_20221001": {
+    "table_type": "TABLE",
+    "num_rows": 333303,
+    "size_bytes": 84253496,
+    "created_utc": "2026-09-09T08:38:01.059000+00:00",
+    "modified_utc": "2026-09-09T08:38:01.060000+00:00",
+    "partitioning": {
+      "type": "DAY",
+      "field": "block_timestamp"
+    },
+    "require_partition_filter": true,
+    "clustering": [
+      "from_address",
+      "to_address"
+    ],
+    "schema": [
+      "event_family:STRING",
+      "block_timestamp:TIMESTAMP",
+      "block_number:INTEGER",
+      "transaction_index:INTEGER",
+      "transaction_hash:STRING",
+      "from_address:STRING",
+      "to_address:STRING",
+      "value:BIGNUMERIC",
+      "value_lossless:STRING",
+      "transaction_type:INTEGER",
+      "from_exgraph_node_id:INTEGER",
+      "to_exgraph_node_id:INTEGER",
+      "touches_target_from:BOOLEAN",
+      "touches_target_to:BOOLEAN"
+    ],
+    "description": "EX-Graph target-touching native Ethereum transactions; six-month pilot"
+  },
+  "internal_traces_20220301_20220901": {
+    "table_type": "TABLE",
+    "num_rows": 4478515,
+    "size_bytes": 1229594363,
+    "created_utc": "2026-09-07T12:49:36.394000+00:00",
+    "modified_utc": "2026-09-07T12:49:36.394000+00:00",
+    "partitioning": {
+      "type": "DAY",
+      "field": "block_timestamp"
+    },
+    "require_partition_filter": true,
+    "clustering": [
+      "from_address",
+      "to_address"
+    ],
+    "schema": [
+      "event_family:STRING",
+      "block_timestamp:TIMESTAMP",
+      "block_number:INTEGER",
+      "transaction_index:INTEGER",
+      "transaction_hash:STRING",
+      "trace_type:STRING",
+      "trace_address:INTEGER",
+      "subtrace_count:INTEGER",
+      "from_address:STRING",
+      "to_address:STRING",
+      "call_type:STRING",
+      "value:BIGNUMERIC",
+      "value_lossless:STRING",
+      "error:STRING",
+      "from_exgraph_node_id:INTEGER",
+      "to_exgraph_node_id:INTEGER",
+      "touches_target_from:BOOLEAN",
+      "touches_target_to:BOOLEAN"
+    ],
+    "description": "EX-Graph target-touching internal Ethereum traces; six-month pilot"
+  },
+  "internal_traces_20220901_20221001": {
+    "table_type": "TABLE",
+    "num_rows": 571343,
+    "size_bytes": 157156119,
+    "created_utc": "2026-09-09T08:38:15.814000+00:00",
+    "modified_utc": "2026-09-09T08:38:15.814000+00:00",
+    "partitioning": {
+      "type": "DAY",
+      "field": "block_timestamp"
+    },
+    "require_partition_filter": true,
+    "clustering": [
+      "from_address",
+      "to_address"
+    ],
+    "schema": [
+      "event_family:STRING",
+      "block_timestamp:TIMESTAMP",
+      "block_number:INTEGER",
+      "transaction_index:INTEGER",
+      "transaction_hash:STRING",
+      "trace_type:STRING",
+      "trace_address:INTEGER",
+      "subtrace_count:INTEGER",
+      "from_address:STRING",
+      "to_address:STRING",
+      "call_type:STRING",
+      "value:BIGNUMERIC",
+      "value_lossless:STRING",
+      "error:STRING",
+      "from_exgraph_node_id:INTEGER",
+      "to_exgraph_node_id:INTEGER",
+      "touches_target_from:BOOLEAN",
+      "touches_target_to:BOOLEAN"
+    ],
+    "description": "EX-Graph target-touching internal Ethereum traces; six-month pilot"
+  },
+  "llm_panel_candidates_20220901": {
+    "table_type": "TABLE",
+    "num_rows": 41411,
+    "size_bytes": 7195143,
+    "created_utc": "2026-09-09T09:20:29.010000+00:00",
+    "modified_utc": "2026-09-09T09:20:29.011000+00:00",
+    "partitioning": {
+      "type": "DAY",
+      "field": "snapshot_date"
+    },
+    "require_partition_filter": null,
+    "clustering": [
+      "target_address"
+    ],
+    "schema": [
+      "snapshot_date:DATE",
+      "target_address:STRING",
+      "target_sequence_index:INTEGER",
+      "candidate_address:STRING",
+      "label:INTEGER",
+      "cand_source:STRING",
+      "g_rank:INTEGER",
+      "g_cnt:INTEGER",
+      "personal_cnt:INTEGER",
+      "days_since:INTEGER",
+      "bridge_paths:INTEGER",
+      "bridge_signal:FLOAT"
+    ],
+    "description": ""
+  },
+  "llm_panel_candidates_v1": {
+    "table_type": "TABLE",
+    "num_rows": 118901,
+    "size_bytes": 20662303,
+    "created_utc": "2026-09-09T05:44:44.897000+00:00",
+    "modified_utc": "2026-09-09T05:44:44.898000+00:00",
+    "partitioning": {
+      "type": "DAY",
+      "field": "snapshot_date"
+    },
+    "require_partition_filter": null,
+    "clustering": [
+      "target_address"
+    ],
+    "schema": [
+      "snapshot_date:DATE",
+      "target_address:STRING",
+      "target_sequence_index:INTEGER",
+      "candidate_address:STRING",
+      "label:INTEGER",
+      "cand_source:STRING",
+      "g_rank:INTEGER",
+      "g_cnt:INTEGER",
+      "personal_cnt:INTEGER",
+      "days_since:INTEGER",
+      "bridge_paths:INTEGER",
+      "bridge_signal:FLOAT"
+    ],
+    "description": ""
+  },
+  "llm_panel_candidates_v2_20220601": {
+    "table_type": "TABLE",
+    "num_rows": 43215,
+    "size_bytes": 7511386,
+    "created_utc": "2026-09-09T09:52:12.918000+00:00",
+    "modified_utc": "2026-09-09T09:52:12.919000+00:00",
+    "partitioning": {
+      "type": "DAY",
+      "field": "snapshot_date"
+    },
+    "require_partition_filter": null,
+    "clustering": [
+      "target_address"
+    ],
+    "schema": [
+      "snapshot_date:DATE",
+      "target_address:STRING",
+      "target_sequence_index:INTEGER",
+      "candidate_address:STRING",
+      "label:INTEGER",
+      "cand_source:STRING",
+      "g_rank:INTEGER",
+      "g_cnt:INTEGER",
+      "personal_cnt:INTEGER",
+      "days_since:INTEGER",
+      "bridge_paths:INTEGER",
+      "bridge_signal:FLOAT"
+    ],
+    "description": ""
+  },
+  "llm_panel_candidates_v2_20220701": {
+    "table_type": "TABLE",
+    "num_rows": 42572,
+    "size_bytes": 7398415,
+    "created_utc": "2026-09-09T09:52:48.180000+00:00",
+    "modified_utc": "2026-09-09T09:52:48.181000+00:00",
+    "partitioning": {
+      "type": "DAY",
+      "field": "snapshot_date"
+    },
+    "require_partition_filter": null,
+    "clustering": [
+      "target_address"
+    ],
+    "schema": [
+      "snapshot_date:DATE",
+      "target_address:STRING",
+      "target_sequence_index:INTEGER",
+      "candidate_address:STRING",
+      "label:INTEGER",
+      "cand_source:STRING",
+      "g_rank:INTEGER",
+      "g_cnt:INTEGER",
+      "personal_cnt:INTEGER",
+      "days_since:INTEGER",
+      "bridge_paths:INTEGER",
+      "bridge_signal:FLOAT"
+    ],
+    "description": ""
+  },
+  "llm_panel_candidates_v2_20220801": {
+    "table_type": "TABLE",
+    "num_rows": 42114,
+    "size_bytes": 7318502,
+    "created_utc": "2026-09-09T09:53:06.862000+00:00",
+    "modified_utc": "2026-09-09T09:53:06.863000+00:00",
+    "partitioning": {
+      "type": "DAY",
+      "field": "snapshot_date"
+    },
+    "require_partition_filter": null,
+    "clustering": [
+      "target_address"
+    ],
+    "schema": [
+      "snapshot_date:DATE",
+      "target_address:STRING",
+      "target_sequence_index:INTEGER",
+      "candidate_address:STRING",
+      "label:INTEGER",
+      "cand_source:STRING",
+      "g_rank:INTEGER",
+      "g_cnt:INTEGER",
+      "personal_cnt:INTEGER",
+      "days_since:INTEGER",
+      "bridge_paths:INTEGER",
+      "bridge_signal:FLOAT"
+    ],
+    "description": ""
+  },
+  "llm_panel_candidates_v2_20220901": {
+    "table_type": "TABLE",
+    "num_rows": 41411,
+    "size_bytes": 7195143,
+    "created_utc": "2026-09-09T09:53:47.193000+00:00",
+    "modified_utc": "2026-09-09T09:53:47.193000+00:00",
+    "partitioning": {
+      "type": "DAY",
+      "field": "snapshot_date"
+    },
+    "require_partition_filter": null,
+    "clustering": [
+      "target_address"
+    ],
+    "schema": [
+      "snapshot_date:DATE",
+      "target_address:STRING",
+      "target_sequence_index:INTEGER",
+      "candidate_address:STRING",
+      "label:INTEGER",
+      "cand_source:STRING",
+      "g_rank:INTEGER",
+      "g_cnt:INTEGER",
+      "personal_cnt:INTEGER",
+      "days_since:INTEGER",
+      "bridge_paths:INTEGER",
+      "bridge_signal:FLOAT"
+    ],
+    "description": ""
+  },
+  "llm_panel_events_20220901": {
+    "table_type": "TABLE",
+    "num_rows": 1000,
+    "size_bytes": 192250,
+    "created_utc": "2026-09-09T09:13:42.661000+00:00",
+    "modified_utc": "2026-09-09T09:13:42.661000+00:00",
+    "partitioning": {
+      "type": "DAY",
+      "field": "snapshot_date"
+    },
+    "require_partition_filter": null,
+    "clustering": [
+      "target_address"
+    ],
+    "schema": [
+      "snapshot_date:DATE",
+      "target_address:STRING",
+      "counterparty_address:STRING",
+      "target_sequence_index:INTEGER",
+      "block_timestamp:TIMESTAMP",
+      "cp_type:STRING",
+      "truth_g_rank:INTEGER",
+      "bridge_candidate_n:INTEGER",
+      "evt_cnt_90d:INTEGER",
+      "cp_entropy_90d:FLOAT",
+      "cp_new_rate_30d:FLOAT",
+      "active_days_90d:INTEGER",
+      "activity:STRING",
+      "stratum:STRING",
+      "hsh:INTEGER",
+      "pop_weight:FLOAT"
+    ],
+    "description": ""
+  },
+  "llm_panel_events_v1": {
+    "table_type": "TABLE",
+    "num_rows": 3000,
+    "size_bytes": 576750,
+    "created_utc": "2026-09-09T05:37:33.365000+00:00",
+    "modified_utc": "2026-09-09T05:37:33.365000+00:00",
+    "partitioning": {
+      "type": "DAY",
+      "field": "snapshot_date"
+    },
+    "require_partition_filter": null,
+    "clustering": [
+      "target_address"
+    ],
+    "schema": [
+      "snapshot_date:DATE",
+      "target_address:STRING",
+      "counterparty_address:STRING",
+      "target_sequence_index:INTEGER",
+      "block_timestamp:TIMESTAMP",
+      "cp_type:STRING",
+      "truth_g_rank:INTEGER",
+      "bridge_candidate_n:INTEGER",
+      "evt_cnt_90d:INTEGER",
+      "cp_entropy_90d:FLOAT",
+      "cp_new_rate_30d:FLOAT",
+      "active_days_90d:INTEGER",
+      "activity:STRING",
+      "stratum:STRING",
+      "hsh:INTEGER",
+      "pop_weight:FLOAT"
+    ],
+    "description": ""
+  },
+  "nc_bridge_cand_v1": {
+    "table_type": "TABLE",
+    "num_rows": 64624260,
+    "size_bytes": 6720923040,
+    "created_utc": "2026-09-08T17:18:10.676000+00:00",
+    "modified_utc": "2026-09-08T17:18:10.676000+00:00",
+    "partitioning": null,
+    "require_partition_filter": null,
+    "clustering": null,
+    "schema": [
+      "u:STRING",
+      "v:STRING",
+      "bridge_paths:INTEGER",
+      "bridge_signal:FLOAT"
+    ],
+    "description": ""
+  },
+  "nc_bridge_hits_v1": {
+    "table_type": "TABLE",
+    "num_rows": 10134,
+    "size_bytes": 1135008,
+    "created_utc": "2026-09-08T17:32:13.774000+00:00",
+    "modified_utc": "2026-09-08T17:32:13.774000+00:00",
+    "partitioning": null,
+    "require_partition_filter": null,
+    "clustering": null,
+    "schema": [
+      "u:STRING",
+      "target_sequence_index:INTEGER",
+      "candidate:STRING",
+      "bridge_rank:INTEGER",
+      "bridge_score:FLOAT"
+    ],
+    "description": ""
+  },
+  "nc_bridge_poolsize_v1": {
+    "table_type": "TABLE",
+    "num_rows": 10465,
+    "size_bytes": 544180,
+    "created_utc": "2026-09-08T17:33:42.318000+00:00",
+    "modified_utc": "2026-09-08T17:33:42.318000+00:00",
+    "partitioning": null,
+    "require_partition_filter": null,
+    "clustering": null,
+    "schema": [
+      "u:STRING",
+      "pool_size:INTEGER"
+    ],
+    "description": ""
+  },
+  "nc_edges_hist_v1": {
+    "table_type": "TABLE",
+    "num_rows": 1156621,
+    "size_bytes": 129541552,
+    "created_utc": "2026-09-08T17:17:36.522000+00:00",
+    "modified_utc": "2026-09-08T17:17:36.522000+00:00",
+    "partitioning": null,
+    "require_partition_filter": null,
+    "clustering": null,
+    "schema": [
+      "u:STRING",
+      "v:STRING",
+      "cnt:INTEGER",
+      "last_seen:TIMESTAMP",
+      "days_since_last:INTEGER"
+    ],
+    "description": ""
+  },
+  "nc_events_v1": {
+    "table_type": "TABLE",
+    "num_rows": 3532237,
+    "size_bytes": 419533914,
+    "created_utc": "2026-09-08T17:16:22.884000+00:00",
+    "modified_utc": "2026-09-08T17:16:22.885000+00:00",
+    "partitioning": {
+      "type": "DAY",
+      "field": "month"
+    },
+    "require_partition_filter": null,
+    "clustering": null,
+    "schema": [
+      "month:DATE",
+      "u:STRING",
+      "v:STRING",
+      "block_timestamp:TIMESTAMP",
+      "target_sequence_index:INTEGER",
+      "cp_type:STRING"
+    ],
+    "description": ""
+  },
+  "nc_global_pop_v1": {
+    "table_type": "TABLE",
+    "num_rows": 352623,
+    "size_bytes": 18336396,
+    "created_utc": "2026-09-08T17:17:40.887000+00:00",
+    "modified_utc": "2026-09-08T17:17:40.887000+00:00",
+    "partitioning": null,
+    "require_partition_filter": null,
+    "clustering": null,
+    "schema": [
+      "v:STRING",
+      "hist_cnt:INTEGER"
+    ],
+    "description": ""
+  },
+  "nc_ranker_samples_v2": {
+    "table_type": "TABLE",
+    "num_rows": 28472717,
+    "size_bytes": 4555634720,
+    "created_utc": "2026-09-08T17:59:28.698000+00:00",
+    "modified_utc": "2026-09-08T17:59:28.699000+00:00",
+    "partitioning": {
+      "type": "DAY",
+      "field": "snapshot_date"
+    },
+    "require_partition_filter": null,
+    "clustering": null,
+    "schema": [
+      "snapshot_date:DATE",
+      "u:STRING",
+      "c:STRING",
+      "target_sequence_index:INTEGER",
+      "label:INTEGER",
+      "g_rank:INTEGER",
+      "g_cnt:INTEGER",
+      "personal_cnt:INTEGER",
+      "days_since:INTEGER",
+      "bridge_paths:INTEGER",
+      "bridge_signal:FLOAT"
+    ],
+    "description": ""
+  },
+  "p1_bridge_events_v1": {
+    "table_type": "TABLE",
+    "num_rows": 516163,
+    "size_bytes": 124020033,
+    "created_utc": "2026-09-08T16:04:59.513000+00:00",
+    "modified_utc": "2026-09-08T16:04:59.514000+00:00",
+    "partitioning": null,
+    "require_partition_filter": null,
+    "clustering": null,
+    "schema": [
+      "event_key:STRING",
+      "u:STRING",
+      "v:STRING",
+      "target_sequence_index:INTEGER",
+      "bridge_w:STRING",
+      "w_outdeg:INTEGER"
+    ],
+    "description": ""
+  },
+  "p1_bridge_events_v2": {
+    "table_type": "TABLE",
+    "num_rows": 2075572,
+    "size_bytes": 515433349,
+    "created_utc": "2026-09-08T16:45:49.069000+00:00",
+    "modified_utc": "2026-09-08T16:45:49.070000+00:00",
+    "partitioning": {
+      "type": "DAY",
+      "field": "snapshot_date"
+    },
+    "require_partition_filter": null,
+    "clustering": null,
+    "schema": [
+      "snapshot_date:DATE",
+      "event_key:STRING",
+      "u:STRING",
+      "v:STRING",
+      "target_sequence_index:INTEGER",
+      "bridge_w:STRING",
+      "w_outdeg:INTEGER"
+    ],
+    "description": ""
+  },
+  "p1_wallet_icf_v1": {
+    "table_type": "TABLE",
+    "num_rows": 5100,
+    "size_bytes": 346800,
+    "created_utc": "2026-09-08T16:07:05.193000+00:00",
+    "modified_utc": "2026-09-08T16:07:05.193000+00:00",
+    "partitioning": null,
+    "require_partition_filter": null,
+    "clustering": null,
+    "schema": [
+      "target_address:STRING",
+      "bridges_events:INTEGER",
+      "icf_score_p1:FLOAT",
+      "icf_raw_signal:FLOAT"
+    ],
+    "description": ""
+  },
+  "p1_wallet_icf_v2": {
+    "table_type": "TABLE",
+    "num_rows": 17433,
+    "size_bytes": 1324908,
+    "created_utc": "2026-09-08T16:45:55.652000+00:00",
+    "modified_utc": "2026-09-08T16:45:55.653000+00:00",
+    "partitioning": null,
+    "require_partition_filter": null,
+    "clustering": null,
+    "schema": [
+      "snapshot_date:DATE",
+      "target_address:STRING",
+      "bridges_events:INTEGER",
+      "icf_score_p1:FLOAT",
+      "icf_raw_signal:FLOAT"
+    ],
+    "description": ""
+  },
+  "p2_trigger_v2": {
+    "table_type": "TABLE",
+    "num_rows": 42871,
+    "size_bytes": 3310820,
+    "created_utc": "2026-09-08T16:46:50.879000+00:00",
+    "modified_utc": "2026-09-08T16:46:50.880000+00:00",
+    "partitioning": null,
+    "require_partition_filter": null,
+    "clustering": null,
+    "schema": [
+      "snapshot_date:DATE",
+      "target_address:STRING",
+      "trigger_pairs:INTEGER",
+      "trigger_total_vol:INTEGER",
+      "trigger_score_p2:FLOAT",
+      "trigger_strong_pairs:INTEGER"
+    ],
+    "description": ""
+  },
+  "router_dataset_v1": {
+    "table_type": "TABLE",
+    "num_rows": 59137,
+    "size_bytes": 18724181,
+    "created_utc": "2026-09-08T16:47:33.513000+00:00",
+    "modified_utc": "2026-09-08T16:47:33.514000+00:00",
+    "partitioning": null,
+    "require_partition_filter": null,
+    "clustering": null,
+    "schema": [
+      "snapshot_date:DATE",
+      "target_address:STRING",
+      "target_exgraph_node_id:INTEGER",
+      "target_is_x_matched:BOOLEAN",
+      "evt_cnt_90d:INTEGER",
+      "evt_out_90d:INTEGER",
+      "evt_in_90d:INTEGER",
+      "evt_self_90d:INTEGER",
+      "evt_native_90d:INTEGER",
+      "evt_token_90d:INTEGER",
+      "active_days_90d:INTEGER",
+      "tx_cnt_90d:INTEGER",
+      "active_span_days_90d:INTEGER",
+      "cp_distinct_90d:INTEGER",
+      "cp_out_distinct_90d:INTEGER",
+      "cp_in_distinct_90d:INTEGER",
+      "cp_out_interact_90d:INTEGER",
+      "cp_in_interact_90d:INTEGER",
+      "token_distinct_90d:INTEGER",
+      "cp_entropy_90d:FLOAT",
+      "cp_new_30d:INTEGER",
+      "cp_new_rate_30d:FLOAT",
+      "cp_both_dir_90d:INTEGER",
+      "cp_reciprocity_90d:FLOAT",
+      "self_tx_rate_90d:FLOAT",
+      "token_event_rate_90d:FLOAT",
+      "token_hhi_90d:FLOAT",
+      "events_per_active_day_90d:FLOAT",
+      "icf_score_p1:FLOAT",
+      "p1_bridges_events:INTEGER",
+      "trigger_score_p2:FLOAT",
+      "trigger_strong_pairs:INTEGER",
+      "y_fwd_out_events:INTEGER",
+      "y_headroom_sum:FLOAT",
+      "y_hard_events:INTEGER",
+      "y_pop_mrr:FLOAT"
+    ],
+    "description": ""
+  },
+  "selection_eval_v1": {
+    "table_type": "TABLE",
+    "num_rows": 14386,
+    "size_bytes": 3184416,
+    "created_utc": "2026-09-08T15:54:57.780000+00:00",
+    "modified_utc": "2026-09-08T15:54:57.780000+00:00",
+    "partitioning": null,
+    "require_partition_filter": null,
+    "clustering": null,
+    "schema": [
+      "snapshot_date:DATE",
+      "target_address:STRING",
+      "target_exgraph_node_id:INTEGER",
+      "evt_cnt_90d:INTEGER",
+      "cp_distinct_90d:INTEGER",
+      "cp_entropy_90d:FLOAT",
+      "cp_new_rate_30d:FLOAT",
+      "cp_reciprocity_90d:FLOAT",
+      "token_hhi_90d:FLOAT",
+      "token_distinct_90d:INTEGER",
+      "self_tx_rate_90d:FLOAT",
+      "fwd30_evt_cnt:INTEGER",
+      "fwd30_cp_distinct:INTEGER",
+      "fwd30_new_cp:INTEGER",
+      "importance_proxy_p3:FLOAT",
+      "p3_rank:INTEGER",
+      "p3_percentile:FLOAT",
+      "trigger_score_p2:FLOAT",
+      "trigger_strong_pairs:INTEGER",
+      "trigger_pairs:INTEGER",
+      "aug_out_events:INTEGER",
+      "pop_mrr:FLOAT",
+      "hard_events_pop100plus:INTEGER",
+      "pop_recall100:FLOAT",
+      "headroom_vs_pop:FLOAT"
+    ],
+    "description": ""
+  },
+  "target_addresses": {
+    "table_type": "TABLE",
+    "num_rows": 27613,
+    "size_bytes": 1435876,
+    "created_utc": "2026-09-07T12:32:21.729000+00:00",
+    "modified_utc": "2026-09-07T12:32:37.287000+00:00",
+    "partitioning": null,
+    "require_partition_filter": null,
+    "clustering": null,
+    "schema": [
+      "ethereum_address:STRING",
+      "exgraph_node_id:INTEGER"
+    ],
+    "description": ""
+  },
+  "target_event_sequences_20220301_20220901": {
+    "table_type": "TABLE",
+    "num_rows": 11836196,
+    "size_bytes": 5095709899,
+    "created_utc": "2026-09-07T15:24:43.803000+00:00",
+    "modified_utc": "2026-09-07T15:24:43.804000+00:00",
+    "partitioning": {
+      "type": "DAY",
+      "field": "block_timestamp"
+    },
+    "require_partition_filter": true,
+    "clustering": [
+      "target_exgraph_node_id",
+      "counterparty_address",
+      "event_family"
+    ],
+    "schema": [
+      "target_sequence_index:INTEGER",
+      "target_exgraph_node_id:INTEGER",
+      "target_address:STRING",
+      "target_match_status:STRING",
+      "target_is_x_matched:BOOLEAN",
+      "counterparty_exgraph_node_id:INTEGER",
+      "counterparty_address:STRING",
+      "counterparty_match_status:STRING",
+      "counterparty_is_x_matched:BOOLEAN",
+      "counterparty_present:BOOLEAN",
+      "both_endpoints_are_x_matched:BOOLEAN",
+      "direction:STRING",
+      "self_transaction:BOOLEAN",
+      "sequence_role:STRING",
+      "event_family:STRING",
+      "event_family_order:INTEGER",
+      "block_timestamp:TIMESTAMP",
+      "block_number:INTEGER",
+      "transaction_index:INTEGER",
+      "event_index:INTEGER",
+      "transaction_hash:STRING",
+      "from_address:STRING",
+      "to_address:STRING",
+      "value:BIGNUMERIC",
+      "value_lossless:STRING",
+      "transaction_type:INTEGER",
+      "token_contract_address:STRING",
+      "token_id:STRING",
+      "quantity:STRING",
+      "removed:BOOLEAN",
+      "trace_type:STRING",
+      "trace_address:INTEGER",
+      "subtrace_count:INTEGER",
+      "call_type:STRING",
+      "error:STRING",
+      "source_from_exgraph_node_id:INTEGER",
+      "source_to_exgraph_node_id:INTEGER",
+      "touches_target_from:BOOLEAN",
+      "touches_target_to:BOOLEAN"
+    ],
+    "description": "Directional EX-Graph target event sequences for 2022-03-01 through 2022-09-01 UTC. External transactions and token transfers are primary; internal traces are auxiliary. Each matched endpoint gets a ta"
+  },
+  "target_event_sequences_20220301_20221001": {
+    "table_type": "VIEW",
+    "num_rows": 0,
+    "size_bytes": 0,
+    "created_utc": "2026-09-09T08:47:11.732000+00:00",
+    "modified_utc": "2026-09-09T08:47:11.732000+00:00",
+    "partitioning": null,
+    "require_partition_filter": null,
+    "clustering": null,
+    "schema": [
+      "target_sequence_index:INTEGER",
+      "target_exgraph_node_id:INTEGER",
+      "target_address:STRING",
+      "target_match_status:STRING",
+      "target_is_x_matched:BOOLEAN",
+      "counterparty_exgraph_node_id:INTEGER",
+      "counterparty_address:STRING",
+      "counterparty_match_status:STRING",
+      "counterparty_is_x_matched:BOOLEAN",
+      "counterparty_present:BOOLEAN",
+      "both_endpoints_are_x_matched:BOOLEAN",
+      "direction:STRING",
+      "self_transaction:BOOLEAN",
+      "sequence_role:STRING",
+      "event_family:STRING",
+      "event_family_order:INTEGER",
+      "block_timestamp:TIMESTAMP",
+      "block_number:INTEGER",
+      "transaction_index:INTEGER",
+      "event_index:INTEGER",
+      "transaction_hash:STRING",
+      "from_address:STRING",
+      "to_address:STRING",
+      "value:BIGNUMERIC",
+      "value_lossless:STRING",
+      "transaction_type:INTEGER",
+      "token_contract_address:STRING",
+      "token_id:STRING",
+      "quantity:STRING",
+      "removed:BOOLEAN",
+      "trace_type:STRING",
+      "trace_address:STRING",
+      "subtrace_count:INTEGER",
+      "call_type:STRING",
+      "error:STRING",
+      "source_from_exgraph_node_id:INTEGER",
+      "source_to_exgraph_node_id:INTEGER",
+      "touches_target_from:BOOLEAN",
+      "touches_target_to:BOOLEAN"
+    ],
+    "description": ""
+  },
+  "target_event_sequences_20220901_20221001": {
+    "table_type": "TABLE",
+    "num_rows": 1428845,
+    "size_bytes": 615740888,
+    "created_utc": "2026-09-09T08:46:11.421000+00:00",
+    "modified_utc": "2026-09-09T08:46:11.422000+00:00",
+    "partitioning": {
+      "type": "DAY",
+      "field": "block_timestamp"
+    },
+    "require_partition_filter": true,
+    "clustering": [
+      "target_exgraph_node_id",
+      "counterparty_address",
+      "event_family"
+    ],
+    "schema": [
+      "target_sequence_index:INTEGER",
+      "target_exgraph_node_id:INTEGER",
+      "target_address:STRING",
+      "target_match_status:STRING",
+      "target_is_x_matched:BOOLEAN",
+      "counterparty_exgraph_node_id:INTEGER",
+      "counterparty_address:STRING",
+      "counterparty_match_status:STRING",
+      "counterparty_is_x_matched:BOOLEAN",
+      "counterparty_present:BOOLEAN",
+      "both_endpoints_are_x_matched:BOOLEAN",
+      "direction:STRING",
+      "self_transaction:BOOLEAN",
+      "sequence_role:STRING",
+      "event_family:STRING",
+      "event_family_order:INTEGER",
+      "block_timestamp:TIMESTAMP",
+      "block_number:INTEGER",
+      "transaction_index:INTEGER",
+      "event_index:INTEGER",
+      "transaction_hash:STRING",
+      "from_address:STRING",
+      "to_address:STRING",
+      "value:BIGNUMERIC",
+      "value_lossless:STRING",
+      "transaction_type:INTEGER",
+      "token_contract_address:STRING",
+      "token_id:STRING",
+      "quantity:STRING",
+      "removed:BOOLEAN",
+      "trace_type:STRING",
+      "trace_address:STRING",
+      "subtrace_count:INTEGER",
+      "call_type:STRING",
+      "error:STRING",
+      "source_from_exgraph_node_id:INTEGER",
+      "source_to_exgraph_node_id:INTEGER",
+      "touches_target_from:BOOLEAN",
+      "touches_target_to:BOOLEAN"
+    ],
+    "description": "Directional EX-Graph target event sequences for 2022-09-01 through 2022-10-01 UTC, same semantics as the frozen Mar-Aug sequence table."
+  },
+  "target_events_20220301_20220901": {
+    "table_type": "VIEW",
+    "num_rows": 0,
+    "size_bytes": 0,
+    "created_utc": "2026-09-07T13:24:43.978000+00:00",
+    "modified_utc": "2026-09-07T13:24:43.978000+00:00",
+    "partitioning": null,
+    "require_partition_filter": null,
+    "clustering": null,
+    "schema": [
+      "event_family:STRING",
+      "block_timestamp:TIMESTAMP",
+      "block_number:INTEGER",
+      "transaction_index:INTEGER",
+      "transaction_hash:STRING",
+      "event_index:INTEGER",
+      "from_address:STRING",
+      "to_address:STRING",
+      "value:BIGNUMERIC",
+      "value_lossless:STRING",
+      "transaction_type:INTEGER",
+      "quantity:STRING",
+      "token_contract_address:STRING",
+      "token_id:STRING",
+      "removed:BOOLEAN",
+      "trace_type:STRING",
+      "trace_address:INTEGER",
+      "subtrace_count:INTEGER",
+      "call_type:STRING",
+      "error:STRING",
+      "from_exgraph_node_id:INTEGER",
+      "to_exgraph_node_id:INTEGER",
+      "touches_target_from:BOOLEAN",
+      "touches_target_to:BOOLEAN"
+    ],
+    "description": "Unified EX-Graph target-touching Ethereum events; 2022-03-01 through 2022-09-01 UTC"
+  },
+  "token_transfers_20220301_20220901": {
+    "table_type": "TABLE",
+    "num_rows": 4275544,
+    "size_bytes": 1164125153,
+    "created_utc": "2026-09-07T12:46:44.837000+00:00",
+    "modified_utc": "2026-09-07T12:46:44.837000+00:00",
+    "partitioning": {
+      "type": "DAY",
+      "field": "block_timestamp"
+    },
+    "require_partition_filter": true,
+    "clustering": [
+      "from_address",
+      "to_address",
+      "token_contract_address"
+    ],
+    "schema": [
+      "event_family:STRING",
+      "block_timestamp:TIMESTAMP",
+      "block_number:INTEGER",
+      "transaction_index:INTEGER",
+      "transaction_hash:STRING",
+      "event_index:INTEGER",
+      "token_contract_address:STRING",
+      "from_address:STRING",
+      "to_address:STRING",
+      "token_id:STRING",
+      "quantity:STRING",
+      "removed:BOOLEAN",
+      "from_exgraph_node_id:INTEGER",
+      "to_exgraph_node_id:INTEGER",
+      "touches_target_from:BOOLEAN",
+      "touches_target_to:BOOLEAN"
+    ],
+    "description": "EX-Graph target-touching token transfers; six-month pilot"
+  },
+  "token_transfers_20220901_20221001": {
+    "table_type": "TABLE",
+    "num_rows": 497746,
+    "size_bytes": 135869859,
+    "created_utc": "2026-09-09T08:38:08.859000+00:00",
+    "modified_utc": "2026-09-09T08:38:08.860000+00:00",
+    "partitioning": {
+      "type": "DAY",
+      "field": "block_timestamp"
+    },
+    "require_partition_filter": true,
+    "clustering": [
+      "from_address",
+      "to_address",
+      "token_contract_address"
+    ],
+    "schema": [
+      "event_family:STRING",
+      "block_timestamp:TIMESTAMP",
+      "block_number:INTEGER",
+      "transaction_index:INTEGER",
+      "transaction_hash:STRING",
+      "event_index:INTEGER",
+      "token_contract_address:STRING",
+      "from_address:STRING",
+      "to_address:STRING",
+      "token_id:STRING",
+      "quantity:STRING",
+      "removed:BOOLEAN",
+      "from_exgraph_node_id:INTEGER",
+      "to_exgraph_node_id:INTEGER",
+      "touches_target_from:BOOLEAN",
+      "touches_target_to:BOOLEAN"
+    ],
+    "description": "EX-Graph target-touching token transfers; six-month pilot"
+  },
+  "wallet_asof_features_20220901": {
+    "table_type": "TABLE",
+    "num_rows": 18519,
+    "size_bytes": 5413939,
+    "created_utc": "2026-09-09T08:51:01.933000+00:00",
+    "modified_utc": "2026-09-09T08:51:01.934000+00:00",
+    "partitioning": {
+      "type": "DAY",
+      "field": "snapshot_date"
+    },
+    "require_partition_filter": null,
+    "clustering": [
+      "target_address"
+    ],
+    "schema": [
+      "snapshot_date:DATE",
+      "target_address:STRING",
+      "target_exgraph_node_id:INTEGER",
+      "target_is_x_matched:BOOLEAN",
+      "evt_cnt_90d:INTEGER",
+      "evt_out_90d:INTEGER",
+      "evt_in_90d:INTEGER",
+      "evt_self_90d:INTEGER",
+      "evt_native_90d:INTEGER",
+      "evt_token_90d:INTEGER",
+      "active_days_90d:INTEGER",
+      "tx_cnt_90d:INTEGER",
+      "active_span_days_90d:INTEGER",
+      "cp_distinct_90d:INTEGER",
+      "cp_out_distinct_90d:INTEGER",
+      "cp_in_distinct_90d:INTEGER",
+      "cp_out_interact_90d:INTEGER",
+      "cp_in_interact_90d:INTEGER",
+      "token_distinct_90d:INTEGER",
+      "cp_entropy_90d:FLOAT",
+      "cp_new_30d:INTEGER",
+      "cp_new_rate_30d:FLOAT",
+      "cp_both_dir_90d:INTEGER",
+      "cp_reciprocity_90d:FLOAT",
+      "self_tx_rate_90d:FLOAT",
+      "token_event_rate_90d:FLOAT",
+      "token_hhi_90d:FLOAT",
+      "events_per_active_day_90d:FLOAT",
+      "fwd30_evt_cnt:INTEGER",
+      "fwd30_cp_distinct:INTEGER",
+      "fwd30_cp_out_distinct:INTEGER",
+      "fwd30_new_cp:INTEGER",
+      "importance_proxy_p3:FLOAT"
+    ],
+    "description": ""
+  },
+  "wallet_asof_features_v1": {
+    "table_type": "TABLE",
+    "num_rows": 78786,
+    "size_bytes": 23057594,
+    "created_utc": "2026-09-08T15:49:36.688000+00:00",
+    "modified_utc": "2026-09-08T15:49:36.688000+00:00",
+    "partitioning": {
+      "type": "DAY",
+      "field": "snapshot_date"
+    },
+    "require_partition_filter": null,
+    "clustering": [
+      "target_address"
+    ],
+    "schema": [
+      "snapshot_date:DATE",
+      "target_address:STRING",
+      "target_exgraph_node_id:INTEGER",
+      "target_is_x_matched:BOOLEAN",
+      "evt_cnt_90d:INTEGER",
+      "evt_out_90d:INTEGER",
+      "evt_in_90d:INTEGER",
+      "evt_self_90d:INTEGER",
+      "evt_native_90d:INTEGER",
+      "evt_token_90d:INTEGER",
+      "active_days_90d:INTEGER",
+      "tx_cnt_90d:INTEGER",
+      "active_span_days_90d:INTEGER",
+      "cp_distinct_90d:INTEGER",
+      "cp_out_distinct_90d:INTEGER",
+      "cp_in_distinct_90d:INTEGER",
+      "cp_out_interact_90d:INTEGER",
+      "cp_in_interact_90d:INTEGER",
+      "token_distinct_90d:INTEGER",
+      "cp_entropy_90d:FLOAT",
+      "cp_new_30d:INTEGER",
+      "cp_new_rate_30d:FLOAT",
+      "cp_both_dir_90d:INTEGER",
+      "cp_reciprocity_90d:FLOAT",
+      "self_tx_rate_90d:FLOAT",
+      "token_event_rate_90d:FLOAT",
+      "token_hhi_90d:FLOAT",
+      "events_per_active_day_90d:FLOAT",
+      "fwd30_evt_cnt:INTEGER",
+      "fwd30_cp_distinct:INTEGER",
+      "fwd30_cp_out_distinct:INTEGER",
+      "fwd30_new_cp:INTEGER",
+      "importance_proxy_p3:FLOAT"
+    ],
+    "description": ""
+  },
+  "wallet_future_headroom_v1": {
+    "table_type": "TABLE",
+    "num_rows": 40036,
+    "size_bytes": 4003600,
+    "created_utc": "2026-09-08T16:46:57.670000+00:00",
+    "modified_utc": "2026-09-08T16:46:57.671000+00:00",
+    "partitioning": null,
+    "require_partition_filter": null,
+    "clustering": null,
+    "schema": [
+      "snapshot_date:DATE",
+      "target_address:STRING",
+      "fwd_out_events:INTEGER",
+      "fwd_out_cps:INTEGER",
+      "pop_score_sum:FLOAT",
+      "pop_mrr:FLOAT",
+      "headroom_sum:FLOAT",
+      "hard_events:INTEGER"
+    ],
+    "description": ""
+  },
+  "wallet_importance_ranking_v1": {
+    "table_type": "TABLE",
+    "num_rows": 60260,
+    "size_bytes": 10837200,
+    "created_utc": "2026-09-08T15:51:39.046000+00:00",
+    "modified_utc": "2026-09-08T15:51:39.046000+00:00",
+    "partitioning": {
+      "type": "DAY",
+      "field": "snapshot_date"
+    },
+    "require_partition_filter": null,
+    "clustering": [
+      "target_address"
+    ],
+    "schema": [
+      "snapshot_date:DATE",
+      "target_address:STRING",
+      "target_exgraph_node_id:INTEGER",
+      "evt_cnt_90d:INTEGER",
+      "cp_distinct_90d:INTEGER",
+      "cp_entropy_90d:FLOAT",
+      "cp_new_rate_30d:FLOAT",
+      "cp_reciprocity_90d:FLOAT",
+      "self_tx_rate_90d:FLOAT",
+      "token_hhi_90d:FLOAT",
+      "token_distinct_90d:INTEGER",
+      "active_days_90d:INTEGER",
+      "fwd30_evt_cnt:INTEGER",
+      "fwd30_cp_distinct:INTEGER",
+      "fwd30_new_cp:INTEGER",
+      "importance_proxy_p3:FLOAT",
+      "p3_rank:INTEGER",
+      "p3_percentile:FLOAT"
+    ],
+    "description": ""
+  },
+  "wallet_trigger_proxy_v1": {
+    "table_type": "TABLE",
+    "num_rows": 14189,
+    "size_bytes": 997460,
+    "created_utc": "2026-09-08T15:53:40.819000+00:00",
+    "modified_utc": "2026-09-08T15:53:40.820000+00:00",
+    "partitioning": null,
+    "require_partition_filter": null,
+    "clustering": null,
+    "schema": [
+      "target_address:STRING",
+      "trigger_pairs:INTEGER",
+      "trigger_total_vol:INTEGER",
+      "trigger_pos_corr_mean:FLOAT",
+      "trigger_score_p2:FLOAT",
+      "trigger_strong_pairs:INTEGER"
+    ],
+    "description": ""
+  }
+}

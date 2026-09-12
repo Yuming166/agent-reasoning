@@ -1,0 +1,29 @@
+{
+  "phase": "chat",
+  "model": "Qwen3.5-4B",
+  "endpoint": "http://127.0.0.1:31518/v1",
+  "protocol": {
+    "temperature": 0.0,
+    "max_tokens": 700,
+    "reasoning_effort": "omitted"
+  },
+  "n_profiles": 200,
+  "n_cached_at_first_run": 0,
+  "n_new_calls": 200,
+  "n_total_rows": 200,
+  "n_parse_ok": 200,
+  "parse_yield": 1.0,
+  "n_failed_calls": 0,
+  "total_prompt_tokens": 174399,
+  "total_completion_tokens": 38840,
+  "cache_path": "/storage/gaoym/ex-graph-microtransaction-analysis/research/groupE_qwen/results/qwen_summaries_20220901.jsonl",
+  "phase2": "embedding",
+  "embed_model": "Qwen3-Embedding-0.6B",
+  "embed_endpoint": "http://127.0.0.1:31522/v1",
+  "n_embedded": 200,
+  "n_embedding_calls": 13,
+  "embed_dim": 1024,
+  "embed_cache_path": "/storage/gaoym/ex-graph-microtransaction-analysis/research/groupE_qwen/results/qwen_embeddings_20220901.jsonl",
+  "embed_npy_path": "/storage/gaoym/ex-graph-microtransaction-analysis/research/groupE_qwen/results/qwen_embeddings_20220901.npy",
+  "note": "n_new_calls/n_embedding_calls are the ORIGINAL run counts; subsequent resume runs are fully cached (0 new calls)."
+}

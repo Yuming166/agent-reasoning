@@ -30,6 +30,34 @@ the wallet-events where counterfactual influence and expected predictive value
 justify it, then evaluate whether those local forecasts remain reliable when
 rolled forward from micro behavior to group and market state.
 
+## Autoresearch Phase I — dynamic wallet importance (2026-09)
+
+A parallel research-tournament run (`autoresearch_phase1.md`) completed all
+Phase-I tasks **before** high-order recursive reasoning. Full outputs, runnable
+scripts, SQL, and compact results live in [`autoresearch_phase1/`](autoresearch_phase1/);
+a dated summary is in [`WORKLOG.md`](WORKLOG.md).
+
+Verified positive results (independently re-run, official protocol):
+
+- **Multi-cutoff walk-forward**: a predictive-influence wallet selector
+  significantly beats volume/activity baselines on out-of-sample future utility
+  (U(K) mean diff +78.6, 95% CI [50.0, 114.2], dev cutoffs 06/07/08, frozen
+  09-01 holdout). [`autoresearch_phase1/walkforward/WALK_REPORT.md`](autoresearch_phase1/walkforward/WALK_REPORT.md)
+- **TGB tgbl-coin-v2**: a leak-free 23-feature, torch-only MLP scores test MRR
+  **0.8550** under the official split/evaluator/negative sampling, above the
+  current leaderboard top (TPNet 0.832±0.001, as of 2026-09-11). This is a
+  local official-protocol measurement, not an official leaderboard submission.
+  [`autoresearch_phase1/benchmark_tgb_v2/TGB2_REPORT.md`](autoresearch_phase1/benchmark_tgb_v2/TGB2_REPORT.md)
+
+Empirical/audit findings with evidence labels: static EX-Graph is an aggregated
+graph (no `block_number`); the official LP graph is the training subgraph;
+low-volume/high-structure wallets are essentially absent; structural importance
+is not predictive influence; information-gain defines an orthogonal dimension.
+Except for the two verified items above, all numbers are single-cutoff
+(2022-09-01) descriptive diagnostics, not superiority/causal claims; support-set
+boundaries are reported per artifact.
+
+
 ## Research mainline
 
 The project has been upgraded from a single next-counterparty ranker into an

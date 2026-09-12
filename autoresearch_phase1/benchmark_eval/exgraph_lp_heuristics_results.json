@@ -1,0 +1,95 @@
+{
+  "benchmark": "EX-Graph Ethereum Link Prediction (official split, graph-level external validation)",
+  "protocol_ref": "research/audit/temporal_protocol.yaml v1.0; EX-Graph paper Table 5 (ICLR 2024)",
+  "paper_table5_auc": {
+    "DeepWalk": 0.72,
+    "GCN": 0.76,
+    "GraphSAGE_woX": 0.84,
+    "APPNP_withX": 0.89
+  },
+  "graph": {
+    "nodes": 1709575,
+    "full_edges": 13153096,
+    "training_topology_edges": 13153018
+  },
+  "split_sizes": {
+    "train_pos": 842821,
+    "val_pos": 111582,
+    "test_pos": 201780
+  },
+  "audit_split_vs_graph": {
+    "pos_train_in_full_graph": 842821,
+    "pos_val_in_full_graph": 25,
+    "pos_test_in_full_graph": 53,
+    "neg_train_in_full_graph": 1,
+    "neg_val_in_full_graph": 0,
+    "neg_test_in_full_graph": 0
+  },
+  "results": {
+    "val_CN": {
+      "AUC": 0.6581122588098354,
+      "AP": 0.6534491922543861,
+      "support_frac": 0.19818160635227905,
+      "time_s": 2.73
+    },
+    "val_AA": {
+      "AUC": 0.6585980683150179,
+      "AP": 0.6590137031214763,
+      "support_frac": 0.19818160635227905,
+      "time_s": 3.11
+    },
+    "val_RA": {
+      "AUC": 0.6583251770382825,
+      "AP": 0.6578473613370461,
+      "support_frac": 0.19818160635227905,
+      "time_s": 2.93
+    },
+    "val_Jaccard": {
+      "AUC": 0.656748323768894,
+      "AP": 0.6442192174216178,
+      "support_frac": 0.19818160635227905,
+      "time_s": 2.81
+    },
+    "val_PA": {
+      "AUC": 0.8036533861461571,
+      "AP": 0.8005171836954791,
+      "support_frac": 1.0,
+      "time_s": 0.09
+    },
+    "test_CN": {
+      "AUC": 0.6353728327327758,
+      "AP": 0.6306070827358536,
+      "support_frac": 0.17470760233918128,
+      "time_s": 6.44
+    },
+    "test_AA": {
+      "AUC": 0.6358148733581069,
+      "AP": 0.635848869033116,
+      "support_frac": 0.17470760233918128,
+      "time_s": 6.95
+    },
+    "test_RA": {
+      "AUC": 0.635609007747589,
+      "AP": 0.6347760540675906,
+      "support_frac": 0.17470760233918128,
+      "time_s": 6.73
+    },
+    "test_Jaccard": {
+      "AUC": 0.6344389512828343,
+      "AP": 0.6241165582569407,
+      "support_frac": 0.17470760233918128,
+      "time_s": 6.46
+    },
+    "test_PA": {
+      "AUC": 0.7754019786640499,
+      "AP": 0.7622220956035716,
+      "support_frac": 1.0,
+      "time_s": 0.15
+    }
+  },
+  "notes": [
+    "graph-level external validation only; 27,613-wallet mapping into LP node space unavailable",
+    "undirected neighborhood used for heuristics",
+    "training topology = official graph edges minus official positive val/test edges (no future leakage)"
+  ]
+}

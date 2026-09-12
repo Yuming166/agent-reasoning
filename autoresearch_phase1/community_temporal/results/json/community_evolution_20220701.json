@@ -1,0 +1,72 @@
+{
+  "snapshot": "2022-07-01",
+  "lookback_window": [
+    "2022-04-02T00:00:00",
+    "2022-07-01"
+  ],
+  "graph_stats": {
+    "nodes": 10172,
+    "edges": 19331,
+    "event_weight": 124810,
+    "n_communities": 375,
+    "betweenness_method": "sampled_k1000_seed42",
+    "modularity": 0.5119,
+    "n_boundary_wallets": 1133,
+    "boundary_share": 0.1114,
+    "top10_community_sizes": [
+      3319,
+      2526,
+      487,
+      449,
+      379,
+      359,
+      346,
+      271,
+      145,
+      124
+    ],
+    "singleton_communities": 0,
+    "mean_community_size": 27.13
+  },
+  "community_sizes": {
+    "n_communities": 375,
+    "top10_sizes": [
+      3319,
+      2526,
+      487,
+      449,
+      379,
+      359,
+      346,
+      271,
+      145,
+      124
+    ],
+    "mean_size": 27.13,
+    "median_size": 2.0,
+    "max_size": 3319,
+    "size_gini": -0.9044
+  },
+  "role_analysis": {
+    "role_class_counts": {
+      "hub": 937,
+      "bridge": 937,
+      "both": 81,
+      "neither": 8217
+    },
+    "n_boundary": 1133,
+    "boundary_share": 0.1114,
+    "hub_threshold_p90": 0.4416,
+    "bridge_threshold_p90": 0.0022
+  },
+  "role_class_counts": {
+    "hub": 937,
+    "bridge": 937,
+    "both": 81,
+    "neither": 8217
+  },
+  "membership_file": "monthly_communities.csv (snapshot=2022-07-01)",
+  "edge_file": "edges_asof_20220701.csv",
+  "protocol_ref": "research/audit/temporal_protocol.yaml v1.0",
+  "method": "networkx.community.greedy_modularity_communities (weight), nodes sorted; roles per Group C definitions"
+}

@@ -1,0 +1,50 @@
+{
+  "": {
+    "auc_woX": "AUC-ROC",
+    "auc_withX": "AUC-ROC"
+  },
+  "DeepWalk": {
+    "auc_woX": "0.72+/-0.00",
+    "auc_withX": "0.74+/-0.00"
+  },
+  "Node2Vec": {
+    "auc_woX": "0.72+/-0.00",
+    "auc_withX": "0.74+/-0.00"
+  },
+  "GCN": {
+    "auc_woX": "0.76+/-0.01",
+    "auc_withX": "0.81+/-0.00"
+  },
+  "GAT": {
+    "auc_woX": "0.77+/-0.01",
+    "auc_withX": "0.81+/-0.02"
+  },
+  "GATv2": {
+    "auc_woX": "0.77+/-0.01",
+    "auc_withX": "0.79+/-0.00"
+  },
+  "GraphSage": {
+    "auc_woX": "0.84+/-0.00",
+    "auc_withX": "0.86+/-0.00"
+  },
+  "TAGCN": {
+    "auc_woX": "0.81+/-0.01",
+    "auc_withX": "0.88+/-0.00"
+  },
+  "Cluster-GCN": {
+    "auc_woX": "0.82+/-0.01",
+    "auc_withX": "0.86+/-0.00"
+  },
+  "DAGNN": {
+    "auc_woX": "0.79+/-0.00",
+    "auc_withX": "0.87+/-0.00"
+  },
+  "APPNP": {
+    "auc_woX": "0.82+/-0.01",
+    "auc_withX": "0.89+/-0.02"
+  },
+  "GGNN": {
+    "auc_woX": "0.82+/-0.01",
+    "auc_withX": "0.84+/-0.00"
+  }
+}

@@ -1,0 +1,309 @@
+{
+  "dev": [
+    {
+      "K": 10,
+      "K_prime": 16,
+      "K_ratio": 1.6,
+      "saving_pct": 37.5,
+      "u_predictive": 18420.0,
+      "u_volume_at_Kp": 19026.0,
+      "cutoff": "2022-06-01"
+    },
+    {
+      "K": 25,
+      "K_prime": 46,
+      "K_ratio": 1.84,
+      "saving_pct": 45.652173913043484,
+      "u_predictive": 25154.0,
+      "u_volume_at_Kp": 25181.0,
+      "cutoff": "2022-06-01"
+    },
+    {
+      "K": 50,
+      "K_prime": 79,
+      "K_ratio": 1.58,
+      "saving_pct": 36.70886075949367,
+      "u_predictive": 33881.0,
+      "u_volume_at_Kp": 33881.0,
+      "cutoff": "2022-06-01"
+    },
+    {
+      "K": 100,
+      "K_prime": 158,
+      "K_ratio": 1.58,
+      "saving_pct": 36.70886075949367,
+      "u_predictive": 49531.0,
+      "u_volume_at_Kp": 50138.0,
+      "cutoff": "2022-06-01"
+    },
+    {
+      "K": 250,
+      "K_prime": 355,
+      "K_ratio": 1.42,
+      "saving_pct": 29.5774647887324,
+      "u_predictive": 73780.0,
+      "u_volume_at_Kp": 73883.0,
+      "cutoff": "2022-06-01"
+    },
+    {
+      "K": 500,
+      "K_prime": 645,
+      "K_ratio": 1.29,
+      "saving_pct": 22.480620155038757,
+      "u_predictive": 101259.0,
+      "u_volume_at_Kp": 101348.0,
+      "cutoff": "2022-06-01"
+    },
+    {
+      "K": 1000,
+      "K_prime": 1093,
+      "K_ratio": 1.093,
+      "saving_pct": 8.508691674290947,
+      "u_predictive": 134628.0,
+      "u_volume_at_Kp": 134664.0,
+      "cutoff": "2022-06-01"
+    },
+    {
+      "K": 10,
+      "K_prime": 16,
+      "K_ratio": 1.6,
+      "saving_pct": 37.5,
+      "u_predictive": 18359.0,
+      "u_volume_at_Kp": 18787.0,
+      "cutoff": "2022-07-01"
+    },
+    {
+      "K": 25,
+      "K_prime": 41,
+      "K_ratio": 1.64,
+      "saving_pct": 39.02439024390244,
+      "u_predictive": 24291.0,
+      "u_volume_at_Kp": 24663.0,
+      "cutoff": "2022-07-01"
+    },
+    {
+      "K": 50,
+      "K_prime": 74,
+      "K_ratio": 1.48,
+      "saving_pct": 32.432432432432435,
+      "u_predictive": 33065.0,
+      "u_volume_at_Kp": 33189.0,
+      "cutoff": "2022-07-01"
+    },
+    {
+      "K": 100,
+      "K_prime": 146,
+      "K_ratio": 1.46,
+      "saving_pct": 31.506849315068497,
+      "u_predictive": 45406.0,
+      "u_volume_at_Kp": 45418.0,
+      "cutoff": "2022-07-01"
+    },
+    {
+      "K": 250,
+      "K_prime": 329,
+      "K_ratio": 1.316,
+      "saving_pct": 24.012158054711243,
+      "u_predictive": 69776.0,
+      "u_volume_at_Kp": 69983.0,
+      "cutoff": "2022-07-01"
+    },
+    {
+      "K": 500,
+      "K_prime": 681,
+      "K_ratio": 1.362,
+      "saving_pct": 26.578560939794414,
+      "u_predictive": 100621.0,
+      "u_volume_at_Kp": 100661.0,
+      "cutoff": "2022-07-01"
+    },
+    {
+      "K": 1000,
+      "K_prime": 1251,
+      "K_ratio": 1.251,
+      "saving_pct": 20.06394884092726,
+      "u_predictive": 141059.0,
+      "u_volume_at_Kp": 141153.0,
+      "cutoff": "2022-07-01"
+    },
+    {
+      "K": 10,
+      "K_prime": 15,
+      "K_ratio": 1.5,
+      "saving_pct": 33.333333333333336,
+      "u_predictive": 19151.0,
+      "u_volume_at_Kp": 19315.0,
+      "cutoff": "2022-08-01"
+    },
+    {
+      "K": 25,
+      "K_prime": 38,
+      "K_ratio": 1.52,
+      "saving_pct": 34.210526315789465,
+      "u_predictive": 25127.0,
+      "u_volume_at_Kp": 25377.0,
+      "cutoff": "2022-08-01"
+    },
+    {
+      "K": 50,
+      "K_prime": 75,
+      "K_ratio": 1.5,
+      "saving_pct": 33.333333333333336,
+      "u_predictive": 32588.0,
+      "u_volume_at_Kp": 32778.0,
+      "cutoff": "2022-08-01"
+    },
+    {
+      "K": 100,
+      "K_prime": 126,
+      "K_ratio": 1.26,
+      "saving_pct": 20.63492063492064,
+      "u_predictive": 43258.0,
+      "u_volume_at_Kp": 43426.0,
+      "cutoff": "2022-08-01"
+    },
+    {
+      "K": 250,
+      "K_prime": 285,
+      "K_ratio": 1.14,
+      "saving_pct": 12.28070175438597,
+      "u_predictive": 65728.0,
+      "u_volume_at_Kp": 65940.0,
+      "cutoff": "2022-08-01"
+    },
+    {
+      "K": 500,
+      "K_prime": 494,
+      "K_ratio": 0.988,
+      "saving_pct": -1.2145748987854255,
+      "u_predictive": 90453.0,
+      "u_volume_at_Kp": 90514.0,
+      "cutoff": "2022-08-01"
+    },
+    {
+      "K": 1000,
+      "K_prime": 1083,
+      "K_ratio": 1.083,
+      "saving_pct": 7.663896583564178,
+      "u_predictive": 131367.0,
+      "u_volume_at_Kp": 131372.0,
+      "cutoff": "2022-08-01"
+    }
+  ],
+  "holdout_groupB": [
+    {
+      "K": 10,
+      "K_prime": 16,
+      "K_ratio": 1.6,
+      "saving_pct": 37.5,
+      "u_predictive": 20723.0,
+      "u_volume_at_Kp": 20855.0
+    },
+    {
+      "K": 25,
+      "K_prime": 33,
+      "K_ratio": 1.32,
+      "saving_pct": 24.242424242424242,
+      "u_predictive": 27593.0,
+      "u_volume_at_Kp": 27600.0
+    },
+    {
+      "K": 50,
+      "K_prime": 64,
+      "K_ratio": 1.28,
+      "saving_pct": 21.875,
+      "u_predictive": 34799.0,
+      "u_volume_at_Kp": 34953.0
+    },
+    {
+      "K": 100,
+      "K_prime": 115,
+      "K_ratio": 1.15,
+      "saving_pct": 13.043478260869568,
+      "u_predictive": 45840.0,
+      "u_volume_at_Kp": 45880.0
+    },
+    {
+      "K": 250,
+      "K_prime": 296,
+      "K_ratio": 1.184,
+      "saving_pct": 15.540540540540537,
+      "u_predictive": 69680.0,
+      "u_volume_at_Kp": 69701.0
+    },
+    {
+      "K": 500,
+      "K_prime": 552,
+      "K_ratio": 1.104,
+      "saving_pct": 9.420289855072461,
+      "u_predictive": 93838.0,
+      "u_volume_at_Kp": 93869.0
+    },
+    {
+      "K": 1000,
+      "K_prime": 1094,
+      "K_ratio": 1.094,
+      "saving_pct": 8.59232175502742,
+      "u_predictive": 130715.0,
+      "u_volume_at_Kp": 130723.0
+    }
+  ],
+  "holdout_wf": [
+    {
+      "K": 10,
+      "K_prime": 17,
+      "K_ratio": 1.7,
+      "saving_pct": 41.17647058823529,
+      "u_predictive": 21001.0,
+      "u_volume_at_Kp": 21958.0
+    },
+    {
+      "K": 25,
+      "K_prime": 30,
+      "K_ratio": 1.2,
+      "saving_pct": 16.666666666666664,
+      "u_predictive": 26971.0,
+      "u_volume_at_Kp": 27039.0
+    },
+    {
+      "K": 50,
+      "K_prime": 61,
+      "K_ratio": 1.22,
+      "saving_pct": 18.032786885245898,
+      "u_predictive": 34410.0,
+      "u_volume_at_Kp": 34489.0
+    },
+    {
+      "K": 100,
+      "K_prime": 121,
+      "K_ratio": 1.21,
+      "saving_pct": 17.355371900826444,
+      "u_predictive": 46689.0,
+      "u_volume_at_Kp": 46712.0
+    },
+    {
+      "K": 250,
+      "K_prime": 288,
+      "K_ratio": 1.152,
+      "saving_pct": 13.194444444444443,
+      "u_predictive": 68629.0,
+      "u_volume_at_Kp": 68762.0
+    },
+    {
+      "K": 500,
+      "K_prime": 542,
+      "K_ratio": 1.084,
+      "saving_pct": 7.749077490774903,
+      "u_predictive": 92918.0,
+      "u_volume_at_Kp": 92989.0
+    },
+    {
+      "K": 1000,
+      "K_prime": 1095,
+      "K_ratio": 1.095,
+      "saving_pct": 8.675799086757996,
+      "u_predictive": 130770.0,
+      "u_volume_at_Kp": 130780.0
+    }
+  ]
+}

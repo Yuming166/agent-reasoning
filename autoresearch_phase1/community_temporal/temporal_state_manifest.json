@@ -1,0 +1,254 @@
+{
+  "file": "temporal_state_manifest.json",
+  "role": "COMM group (Phase-I autoresearch, temporal state construction summary, plan section 2)",
+  "created": "2026-09-11",
+  "machine": "cloud82 (10.63.0.82)",
+  "protocol_ref": {
+    "file": "research/audit/temporal_protocol.yaml",
+    "version": "1.0",
+    "status": "FROZEN",
+    "sha256": "07126f9e4cca86207501b9c44d5e305eb88b7a129eb407d23b5b1a316997227a"
+  },
+  "audit_ref": {
+    "file": "research/audit/DATA_AUDIT.md",
+    "sha256": "e8ce1c96c819ba9abae66a7c8d23220ae2a687f3919ce1429aa4555b49f35d70"
+  },
+  "canonical_windows": {
+    "dev_events": [
+      "2022-03-01T00:00:00Z",
+      "2022-09-01T00:00:00Z"
+    ],
+    "holdout_events": [
+      "2022-09-01T00:00:00Z",
+      "2022-10-01T00:00:00Z"
+    ],
+    "feature_lookback": {
+      "duration_days": 90,
+      "end_relation": "strictly before cutoff t"
+    },
+    "label_horizon": {
+      "duration_days": 30,
+      "start_relation": "at or after cutoff t"
+    },
+    "cutoffs": {
+      "walk_forward": [
+        "2022-05-01",
+        "2022-06-01",
+        "2022-07-01",
+        "2022-08-01"
+      ],
+      "frozen_split": {
+        "train": "2022-06-01",
+        "validation": "2022-07-01",
+        "frozen_test": "2022-08-01"
+      },
+      "final_untouched_holdout": "2022-09-01"
+    }
+  },
+  "object_definition": {
+    "S_i(t)": "all wallet-level information observable strictly before cutoff t",
+    "Z_i(t)": "as-of feature vector constructed from S_i(t) (90d lookback, no future)",
+    "P_i(t)": "dynamic persona/cluster label from Z_i(t) (Group A) or community label from as-of graph (COMM)"
+  },
+  "groups": {
+    "groupA_behavior": {
+      "S_i(t)_source": "wallet_asof_features_20220901 (compact aggregated; 18,519 rows, snapshot 2022-09-01) and wallet_asof_features_v1 (monthly 05-08, 78,786 rows)",
+      "Z_i(t)": "57 feature cols: activity/capital/counterparty/trajectory (100% coverage) + USD (91.3% native, 35.8% token USD) + as-of matched-matched network (42.8%, 7,929/18,519)",
+      "P_i(t)": "K-means/GMM/HDBSCAN on standardized 54-col matrix; primary = full_asof K-means K=4 (silhouette 0.236, bootstrap ARI 0.418 [0.410,0.428])",
+      "windows_09": {
+        "lookback": [
+          "2022-06-03T00:00:00",
+          "2022-09-01"
+        ],
+        "labels": [
+          "2022-09-01",
+          "2022-10-01"
+        ]
+      },
+      "windows_monthly": "each snapshot in 2022-05-01..08-01 uses its own [t-90d, t) and [t, t+30d)",
+      "scripts": [
+        "sql/asof_features_20220901.sql",
+        "sql/asof_features_monthly.sql",
+        "sql/network_edges_asof.sql",
+        "src/build_features.py",
+        "src/cluster_personas.py",
+        "src/pull_monthly.py"
+      ],
+      "results": {
+        "asof_monthly_2022.parquet": "4378246bc6d48e3d24e1519876ed6cc73f65298e2dc7a9c99851a09f537f1f5c",
+        "feature_matrix_20220901.parquet": "e7ab6cf1920e405fad4e26a0daaa9f1c66b724ecdee35b51503b7d2d1feb6c10"
+      },
+      "leakage_notes": [
+        "static full-window structural prior isolated in static_prior_20220901.csv (leaky, not as-of)",
+        "P3 demo label excluded from clustering",
+        "social/X features not used (no crosswalk)"
+      ]
+    },
+    "groupB_predictive": {
+      "S_i(t)_source": "Group A monthly parquet (wallet_asof_features_v1 06/07/08) + wallet_asof_features_20220901 (09); 09-01 labels from fresh bounded BQ pull (parity 0 diff with Group A)",
+      "Z_i(t)": "24 BASE_FEATURES as-of (activity/capital/counterparty); EXTRA_09 (trajectory/network/USD) only in post-hoc ablation, not frozen OOS",
+      "P_i(t)_usage": "consumes Group A personas for community concentration (top-2 personas hold ~93% of predicted top-10%)",
+      "split": {
+        "train": "2022-06-01",
+        "val": "2022-07-01",
+        "frozen_test": "2022-08-01",
+        "final_holdout": "2022-09-01"
+      },
+      "labels": {
+        "T1": "fwd30_evt_cnt (log1p)",
+        "T2": "fwd30_new_cp (log1p)"
+      },
+      "scripts": [
+        "run_predictive.py",
+        "fetch_labels.py",
+        "run_extended09.py"
+      ],
+      "results": {
+        "holdout09_predictions.csv": "082a7de07cb930c3570f57609d1d04db5c17a55e8381c45082ce64e622c7f077",
+        "labels_20220901_bq.csv": "e57eac2ec4a6ac62b3df36a44e0343812839e6670625fd733390efbcb09711d5"
+      },
+      "leakage_notes": [
+        "strict chronological split only",
+        "static prior baseline only (leaky label)",
+        "extended-09 ablation = post-hoc, labeled"
+      ]
+    },
+    "groupC_temporal_graph": {
+      "S_i(t)_source": "target_event_sequences_20220301_20220901 (sequence view; primary events only)",
+      "G_le_t": "as-of matched-matched directed graph [2022-06-03, 2022-09-01): both endpoints EX-Graph-mapped, counterparty_present, not self_transaction; 7,929 nodes / 13,281 undirected edges / event weight 105,592",
+      "Z_i(t)": "27 structural/temporal/community features per node (degree/wdeg/pagerank/kcore/clustering/betweenness/recency/trend/persistence/motif/community hub-bridge)",
+      "community": "greedy_modularity_communities on weighted undirected graph -> 387 communities; boundary (cross_comm_share>=0.5) 799 (10.1%)",
+      "windows": {
+        "lookback": [
+          "2022-06-03T00:00:00",
+          "2022-09-01"
+        ],
+        "labels": [
+          "2022-09-01",
+          "2022-10-01"
+        ],
+        "monthly_slices": [
+          "2022-06",
+          "2022-07",
+          "2022-08"
+        ]
+      },
+      "scripts": [
+        "sql/edges_asof.sql",
+        "src/build_temporal_features.py",
+        "src/evaluate_importance.py"
+      ],
+      "results": {
+        "edges_asof_20220901.csv": "bd6f094d1f7b91ab53e7f256c7cd94d65068bf7c116a4c5c09562b82b0697657",
+        "structural_features_20220901.csv": "af63dd914d8ab42dc503cf0eaf73a3559df936daf96bef3819c10b32bbca3575",
+        "wallet_importance_20220901.csv": "9e13b1c3e936ff8bc5622ba456cb2f8c9897840c4549242d3c483dece1a17b8d"
+      },
+      "leakage_notes": [
+        "static full-window prior separate (leaky)",
+        "rough monthly switch rate 58.0/56.3 was calendar-month slices with greedy no-threshold matching + overwrite-weight month graphs (see COMM formalization)"
+      ]
+    },
+    "groupD_infogain": {
+      "S_i(t)_source": "Group A feature_matrix_20220901.parquet (no new BQ); p1_wallet_icf_v2 (snapshot 08-01) as external proxy table",
+      "Z_i(t)": "52 as-of features (activity/capital/counterparty/trajectory/network/USD); static prior only as baseline",
+      "targets": {
+        "y_cp_ge10": "fwd30_cp_distinct >= 10",
+        "y_active30": "fwd30_evt_cnt > 0"
+      },
+      "IG_definition": "IG_i(t) = H(Y|C_t) - H(Y|C_t, X_i(t)) via 5-fold wallet-level CV + occlusion (median-masking) dNLL; out-of-sample",
+      "sample": "representative subset n=2,999 of 18,519 (stratified by y_cp_ge10, seed=20220901)",
+      "scripts": [
+        "src/build_dataset.py",
+        "src/run_wallet_masking.py",
+        "src/run_community_masking.py",
+        "src/run_residual.py"
+      ],
+      "results": {
+        "wallet_ig_20220901.csv": "df921eafc0e90cf5bc6440af53bf86a45ba0d82adaf633b9684e20e9609fa1ab"
+      },
+      "leakage_notes": [
+        "single-cutoff wallet-level CV (no cross-window mixing) -> not a walk-forward OOS verdict",
+        "P3 demo label excluded"
+      ]
+    }
+  },
+  "consistency_matrix": {
+    "cutoff_semantics": {
+      "A": "ok",
+      "B": "ok",
+      "C": "ok",
+      "D": "ok",
+      "note": "all use strictly-before-cutoff as-of; 09-01 = final untouched holdout"
+    },
+    "lookback_90d": {
+      "A": "ok",
+      "B": "ok",
+      "C": "ok",
+      "D": "ok",
+      "note": "[t-90d, t) half-open, verified calendar math for 06/07/08/09 cutoffs"
+    },
+    "label_30d": {
+      "A": "ok",
+      "B": "ok",
+      "C": "ok",
+      "D": "ok",
+      "note": "[t, t+30d); 09-01 labels in holdout window"
+    },
+    "matched_matched_edge_filters": {
+      "A": "ok",
+      "C": "ok",
+      "note": "identical filters (primary, counterparty_present, not self); A aggregates (u,v,direction), C adds month grouping; COMM verified event weight parity 105,592"
+    },
+    "feature_set": {
+      "note": "A uses 57 cols, B frozen uses 24 base (EXTRA_09 post-hoc), D uses 52; network/trajectory/USD inclusion differs by group - labeled"
+    },
+    "split_protocol": {
+      "B": "strict chronological train/val/test/holdout",
+      "D": "single-cutoff wallet-level CV (labeled, not walk-forward)",
+      "A": "descriptive clustering, no split",
+      "C": "descriptive + single cutoff"
+    },
+    "static_prior": {
+      "all": "kept separate and labeled leaky; never as-of features"
+    },
+    "social_X": {
+      "all": "not used as features (no reliable eth<->X crosswalk)"
+    }
+  },
+  "known_differences": [
+    "Group A network subgraph (asof_mm_*) and Group C edge graph use identical source filters and window; Group A covers 42.8% of wallets (7,929/18,519) - Group C computes node-level features only inside that subgraph",
+    "Group B frozen OOS uses 24 base as-of features; trajectory/network/USD only in labeled post-hoc ablation (run_extended09.py)",
+    "Group D uses 52 features including network/trajectory/USD at single cutoff with wallet-level CV; strictly a within-snapshot predictive-IG estimate, not cross-window OOS",
+    "wallet_asof_features_20220901 target pool was built from Mar-Oct combined view (low risk: every row has >=1 event in [06-03,09-01), so no future-only wallet enters; protocol recommends <cutoff for future snapshots)",
+    "Group C betweenness is full on 09-01; COMM uses sampled k=1000 seed=42 on 06/07/08 (documented approximation)"
+  ],
+  "reproducibility_checklist": {
+    "protocol": "research/audit/temporal_protocol.yaml (frozen v1.0)",
+    "metadata_snapshot": "research/audit/bq_metadata_2026-09-11.json",
+    "bq_pull_evidence": "COMM: single bounded day-level pull bytesBilled=444,596,224 B (~0.41 GiB) -> results/data/edges_day_20220303_20220901.csv",
+    "local_scripts": [
+      "research/community_temporal/run_all.sh",
+      "research/community_temporal/src/config.py",
+      "research/community_temporal/src/bq_client.py",
+      "research/community_temporal/src/pull_edges.py",
+      "research/community_temporal/src/build_graphs.py",
+      "research/community_temporal/src/community_evolution.py",
+      "research/community_temporal/src/groupC_comparison.py",
+      "research/community_temporal/src/emit_per_snapshot.py"
+    ],
+    "sql": [
+      "research/community_temporal/sql/edges_asof_day.sql (sha256 26649eeea5cef2c5ca222b836e761d89a62bf13241aa0bf0246d10f96f54394e)"
+    ],
+    "comm_outputs": {
+      "edges_day_20220303_20220901.csv": "197ffe1de4678e23f9110ceb76cd01cc21190c06be9598177dd2d33ff8a95c52",
+      "monthly_communities.csv": "07b7344e207ed416c462c32816e287c77f829316ed0456bec317a60c5d366aaa",
+      "community_evolution_summary.json": "f6f2ec411259a86c6d1a48325ed5e6169fa2e5a75cb4f3d63f5c5c69bfa0b4d2"
+    },
+    "parity_checks": [
+      "09-01 as-of graph nodes 7,929 / undirected edges 13,281 / communities 387 / boundary 799 == Group C (build_manifest.json, community_summary.json)",
+      "09-01 event weight 105,592 == sum of Group C monthly event weights 28,946+39,588+37,058",
+      "calendar months 07/08 nodes 4,578/4,239 == Group C monthly_graph_stats.json; June differs (COMM full-month includes 06-01..06-02)",
+      "Group C rough switch rate reproduced exactly (58.02%/56.31%) from their edges file with their exact algorithm"
+    ]
+  }
+}

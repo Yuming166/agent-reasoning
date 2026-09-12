@@ -1,0 +1,25 @@
+{
+  "cutoff": "2022-09-01",
+  "n_target": 200,
+  "n_picked": 200,
+  "seed": 2022,
+  "strata_used": 23,
+  "selection_features": "as-of only: evt_cnt_90d tercile, trajectory__kmeans cluster, in_mm_subgraph",
+  "future_labels_in_selection": false,
+  "tier_counts": {
+    "low": 77,
+    "mid": 66,
+    "high": 57
+  },
+  "traj_cluster_counts": {
+    "0": 45,
+    "1": 43,
+    "2": 72,
+    "3": 27,
+    "4": 13
+  },
+  "net_cov_counts": {
+    "no_mm": 112,
+    "mm": 88
+  }
+}

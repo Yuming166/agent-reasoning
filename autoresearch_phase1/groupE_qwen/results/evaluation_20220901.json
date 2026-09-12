@@ -1,0 +1,273 @@
+{
+  "cutoff": "2022-09-01",
+  "protocol_ref": "research/audit/temporal_protocol.yaml (v1.0, frozen 2026-09-11)",
+  "n_wallets": 200,
+  "n_folds": 5,
+  "seed": 2022,
+  "scope": "descriptive small-sample pilot on the 200-wallet representative subset",
+  "tables": [
+    {
+      "target": "fwd30_evt_cnt",
+      "R_num": {
+        "oof_ridge_r2": 0.6354153042645825,
+        "oof_spearman": 0.7517378169310511
+      },
+      "R_traj": {
+        "oof_ridge_r2": 0.5438145144158071,
+        "oof_spearman": 0.7212649345699433
+      },
+      "R_qwen_pca": {
+        "oof_ridge_r2": 0.22833426179359617,
+        "oof_spearman": 0.6137508540487892
+      },
+      "R_num+qwen": {
+        "oof_ridge_r2": 0.054892505686975235,
+        "oof_spearman": 0.5907728729926806
+      },
+      "R_traj+qwen": {
+        "oof_ridge_r2": 0.17686073243722578,
+        "oof_spearman": 0.6320158309366029
+      },
+      "R_num@a10": {
+        "oof_ridge_r2": 0.65777211370767,
+        "oof_spearman": 0.7647565997679968
+      },
+      "R_traj@a10": {
+        "oof_ridge_r2": 0.5427553697346164,
+        "oof_spearman": 0.7216684347610038
+      },
+      "R_qwen_pca@a10": {
+        "oof_ridge_r2": 0.3118014345024741,
+        "oof_spearman": 0.6231101188438901
+      },
+      "R_num+qwen@a10": {
+        "oof_ridge_r2": 0.27392191843681635,
+        "oof_spearman": 0.6261113028628702
+      },
+      "R_traj+qwen@a10": {
+        "oof_ridge_r2": 0.32238455794438703,
+        "oof_spearman": 0.6390883709863854
+      },
+      "R_qwen_pca_knn_k5_r2": 0.4889298177083806
+    },
+    {
+      "target": "fwd30_cp_distinct",
+      "R_num": {
+        "oof_ridge_r2": 0.6359509237526808,
+        "oof_spearman": 0.7502239517069943
+      },
+      "R_traj": {
+        "oof_ridge_r2": 0.544264473804919,
+        "oof_spearman": 0.7197077781293393
+      },
+      "R_qwen_pca": {
+        "oof_ridge_r2": 0.24303167996265662,
+        "oof_spearman": 0.617179007395838
+      },
+      "R_num+qwen": {
+        "oof_ridge_r2": 0.06682973386503088,
+        "oof_spearman": 0.594084481977983
+      },
+      "R_traj+qwen": {
+        "oof_ridge_r2": 0.18880059055567044,
+        "oof_spearman": 0.6373360912063579
+      },
+      "R_num@a10": {
+        "oof_ridge_r2": 0.6589291391664499,
+        "oof_spearman": 0.762660865592117
+      },
+      "R_traj@a10": {
+        "oof_ridge_r2": 0.5430512324049026,
+        "oof_spearman": 0.71899710994434
+      },
+      "R_qwen_pca@a10": {
+        "oof_ridge_r2": 0.32340640600242565,
+        "oof_spearman": 0.6272040792176182
+      },
+      "R_num+qwen@a10": {
+        "oof_ridge_r2": 0.2787697160298297,
+        "oof_spearman": 0.6320163867307969
+      },
+      "R_traj+qwen@a10": {
+        "oof_ridge_r2": 0.3317916238383185,
+        "oof_spearman": 0.6424783205112202
+      },
+      "R_qwen_pca_knn_k5_r2": 0.4898802320816782
+    },
+    {
+      "target": "fwd30_cp_out_distinct",
+      "R_num": {
+        "oof_ridge_r2": 0.6281417273390113,
+        "oof_spearman": 0.6878008788855587
+      },
+      "R_traj": {
+        "oof_ridge_r2": 0.5460999063294244,
+        "oof_spearman": 0.7020260405070554
+      },
+      "R_qwen_pca": {
+        "oof_ridge_r2": 0.2945190793788911,
+        "oof_spearman": 0.573519660302051
+      },
+      "R_num+qwen": {
+        "oof_ridge_r2": -0.017817060646953875,
+        "oof_spearman": 0.5152429210268298
+      },
+      "R_traj+qwen": {
+        "oof_ridge_r2": 0.202051711587252,
+        "oof_spearman": 0.5836860983396652
+      },
+      "R_num@a10": {
+        "oof_ridge_r2": 0.6505816988854465,
+        "oof_spearman": 0.7018272806191436
+      },
+      "R_traj@a10": {
+        "oof_ridge_r2": 0.5444104863940746,
+        "oof_spearman": 0.7024103303859074
+      },
+      "R_qwen_pca@a10": {
+        "oof_ridge_r2": 0.341023272212127,
+        "oof_spearman": 0.5875359492730305
+      },
+      "R_num+qwen@a10": {
+        "oof_ridge_r2": 0.2918373600807078,
+        "oof_spearman": 0.5627635704140649
+      },
+      "R_traj+qwen@a10": {
+        "oof_ridge_r2": 0.35344296053127444,
+        "oof_spearman": 0.5928894902153261
+      },
+      "R_qwen_pca_knn_k5_r2": 0.5070878774343766
+    },
+    {
+      "target": "fwd30_new_cp",
+      "R_num": {
+        "oof_ridge_r2": 0.5939307827035465,
+        "oof_spearman": 0.6641230226211783
+      },
+      "R_traj": {
+        "oof_ridge_r2": 0.48796880122799635,
+        "oof_spearman": 0.6621930297979763
+      },
+      "R_qwen_pca": {
+        "oof_ridge_r2": 0.28866596470576456,
+        "oof_spearman": 0.5776515758402567
+      },
+      "R_num+qwen": {
+        "oof_ridge_r2": 0.028562630287331747,
+        "oof_spearman": 0.5189809469278994
+      },
+      "R_traj+qwen": {
+        "oof_ridge_r2": 0.25736191648919193,
+        "oof_spearman": 0.5737802263516069
+      },
+      "R_num@a10": {
+        "oof_ridge_r2": 0.6169287031595467,
+        "oof_spearman": 0.6833803630875438
+      },
+      "R_traj@a10": {
+        "oof_ridge_r2": 0.4883789216280594,
+        "oof_spearman": 0.6626395779433608
+      },
+      "R_qwen_pca@a10": {
+        "oof_ridge_r2": 0.32034523149735283,
+        "oof_spearman": 0.5867173343432271
+      },
+      "R_num+qwen@a10": {
+        "oof_ridge_r2": 0.3036301796774894,
+        "oof_spearman": 0.5623468461214226
+      },
+      "R_traj+qwen@a10": {
+        "oof_ridge_r2": 0.33882885601278245,
+        "oof_spearman": 0.5929389487853491
+      },
+      "R_qwen_pca_knn_k5_r2": 0.4585967828379742
+    }
+  ],
+  "complementarity_deltas": {
+    "fwd30_evt_cnt": {
+      "delta_r2_qwen_over_num": -0.4071,
+      "delta_r2_num_qwen_over_num": -0.5805,
+      "delta_r2_traj_qwen_over_traj": -0.367
+    },
+    "fwd30_cp_distinct": {
+      "delta_r2_qwen_over_num": -0.3929,
+      "delta_r2_num_qwen_over_num": -0.5691,
+      "delta_r2_traj_qwen_over_traj": -0.3555
+    },
+    "fwd30_cp_out_distinct": {
+      "delta_r2_qwen_over_num": -0.3336,
+      "delta_r2_num_qwen_over_num": -0.646,
+      "delta_r2_traj_qwen_over_traj": -0.344
+    },
+    "fwd30_new_cp": {
+      "delta_r2_qwen_over_num": -0.3053,
+      "delta_r2_num_qwen_over_num": -0.5654,
+      "delta_r2_traj_qwen_over_traj": -0.2306
+    }
+  },
+  "qwen_embedding_redundancy": {
+    "note": "OOF R2 of predicting each Qwen-embedding PCA dim from numeric features; high = largely redundant, low = carries new info",
+    "mean_r2_embed_dims_predictable_from_num": -0.1782690479924246,
+    "n_dims": 64,
+    "dims_r2_gt0_5": 3,
+    "first10_r2": [
+      0.8295485504100857,
+      0.6324664869000713,
+      0.6448016421622025,
+      0.303783008522716,
+      0.27262462724635705,
+      0.08486433860577192,
+      0.09171526477384673,
+      0.028002522629536175,
+      0.1448780642800932,
+      -0.18224299347677153
+    ]
+  },
+  "fidelity_activity_regime": {
+    "note": "ordinal agreement between Qwen activity_regime token and numeric evt_cnt tercile; NOT ground truth",
+    "n_with_regime_token": 200,
+    "kendall_tau": 0.8074825698548196,
+    "spearman_rho": 0.85755596447983,
+    "regime_token_counts": {
+      "very_low": 95,
+      "low": 57,
+      "high": 41,
+      "medium": 4,
+      "very_high": 3
+    }
+  },
+  "parse_yield": 1.0,
+  "n_parse_ok": 200,
+  "qualitative_examples": [
+    {
+      "address": "0x00111cc24163b91011ff9b6e92e7db29b645b9f2",
+      "parse_ok": true,
+      "behavior_pattern": "The wallet exhibits a highly active, diverse interaction pattern with frequent exchanges across many counterparties and multiple token types over a concentrated 21-day active period.",
+      "uncertainty": "Specific counterparty identities and token names are not provided; USD valuations for token events are only available in the 90-day aggregate, not in monthly snapshots."
+    },
+    {
+      "address": "0x004c1e5be68337c33deff01e23de067c234bf874",
+      "parse_ok": true,
+      "behavior_pattern": "The wallet exhibits extremely low activity with a single active day containing seven events, characterized by highly concentrated single-token usage and no observed state transitions.",
+      "uncertainty": "Token USD values are unavailable (n/a), and the lack of monthly data prevents definitive assessment of long-term stability versus transient behavior."
+    },
+    {
+      "address": "0x0059b216929ef8f8c1af9effc34cd0187c793206",
+      "parse_ok": true,
+      "behavior_pattern": "The wallet exhibits low-frequency, sporadic activity characterized by a high volume of distinct counterparties and broad multi-token interactions with minimal concentration.",
+      "uncertainty": "Network context is uncertain as the wallet is not present in the as-of matched-matched subgraph; specific counterparty identities and token names are unknown."
+    },
+    {
+      "address": "0x035239bcd05bb3d00f98b143c45a4fd438a59a51",
+      "parse_ok": true,
+      "behavior_pattern": "The wallet exhibits very low activity with a single concentrated token interaction and minimal native value movement over a 90-day period.",
+      "uncertainty": "Token USD values are unavailable (n/a), preventing precise valuation of activity magnitude; specific token identities and counterparty details are not provided."
+    },
+    {
+      "address": "0x0523dbfa086483164bb773c920e6a868a5cd40a1",
+      "parse_ok": true,
+      "behavior_pattern": "The wallet exhibits a highly active, sporadic trading pattern with frequent interactions across a diverse set of counterparties and multiple token types.",
+      "uncertainty": "Specific token identities and counterparties are not named; USD valuations for tokens are based on limited pricing rows."
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "cutoff": "2022-09-01",
+  "primary_ig": "ig_y_cp_ge10_histgbm",
+  "n_wallets": 2999,
+  "residual_model": "IG ~ log1p(volume_usd), OLS (linregress)",
+  "residual_slope": 0.03320617974828637,
+  "residual_intercept": 0.1968649146781504,
+  "residual_r2": 0.024974200822648063,
+  "rank_correlations": {
+    "log_volume_usd": {
+      "label": "log USD volume (as-of)",
+      "n": 2999,
+      "spearman": 0.30648599216130695,
+      "p": 3.0200690294185184e-66
+    },
+    "volume_usd": {
+      "label": "USD volume (as-of)",
+      "n": 2999,
+      "spearman": 0.30648599216130695,
+      "p": 3.0200690294185184e-66
+    },
+    "asof_mm_undir_degree": {
+      "label": "as-of undirected degree (mm subgraph)",
+      "n": 1283,
+      "spearman": 0.3645838430231917,
+      "p": 1.2899057752464157e-41
+    },
+    "asof_mm_pagerank": {
+      "label": "as-of PageRank (mm subgraph)",
+      "n": 1283,
+      "spearman": 0.24576467658152107,
+      "p": 4.191418042949193e-19
+    },
+    "degree": {
+      "label": "static-prior degree (LEAKY baseline)",
+      "n": 2999,
+      "spearman": 0.1962882966351242,
+      "p": 1.9812531849478228e-27
+    },
+    "pagerank": {
+      "label": "static-prior PageRank (LEAKY baseline)",
+      "n": 2999,
+      "spearman": 0.2190614367667311,
+      "p": 6.544815372432406e-34
+    },
+    "icf_v1_score": {
+      "label": "ICF v1 score (existing ranking, comparison)",
+      "n": 796,
+      "spearman": 0.2144695987348946,
+      "p": 9.796607747527772e-10
+    },
+    "icf_v2_score": {
+      "label": "ICF v2 score snapshot 08-01 (comparison, cutoff-mismatch)",
+      "n": 781,
+      "spearman": 0.22683197408459838,
+      "p": 1.429185966039169e-10
+    }
+  },
+  "groups": {
+    "low_volume_high_ig": {
+      "n": 15,
+      "mean_ig": 1.6126348886361792,
+      "mean_ig_resid": 1.4077625938315095,
+      "mean_volume_usd": 2.3834481333333333,
+      "mean_asof_degree": 1.0,
+      "examples": [
+        "0x142fff68d724736be20e632107bc896473e1395c",
+        "0x7cf7733f3d5f9bca02af4658b53b113cb9a87ffa",
+        "0xbeb53ec61e0e6bd156e3f063d33d78f4d1b005bb",
+        "0x8c2b143b0276bafd2613bb41d7058583cf6706c7",
+        "0x0cfb79b53795b8e9f541f017e833e40fdde61e8d",
+        "0x8d210bcaa3fef22a9d3882d5ebfc7f4c6d710a19",
+        "0xa8c44fa54c0f2caca3f5e97e2f561714a4c46f19",
+        "0x54d63a8fdb477fd50c910f93217dc8880e04b522"
+      ]
+    },
+    "high_volume_low_ig": {
+      "n": 87,
+      "mean_ig": -1.3185509274773706,
+      "mean_ig_resid": -1.8540088307728808,
+      "mean_volume_usd": 47807.353783747116,
+      "mean_asof_degree": 2.7755102040816326,
+      "examples": [
+        "0x16701552e6a60f58f54b5647be33da8250b86ba9",
+        "0x5b63416b60387865705e316e63b86d05888a81be",
+        "0x3130e0127edda3e5690459db82392d78285444bd",
+        "0x47194f91a8e5c80fcc8b5a8046c6e3bb3cb74950",
+        "0xc084eecda4970b1bbd6a70e3c515213324c79e77",
+        "0x89f80b800da2e6b331ca77fa6fc268060c9a86f9",
+        "0x8b804e1e1004a1726f7e87df94ff83a506f411a8",
+        "0x1cdfc0c528ca57f312db261e0096dc2635a25748"
+      ]
+    },
+    "high_centrality_low_ig": {
+      "n": 6,
+      "mean_ig": -1.4596885072045147,
+      "mean_ig_resid": -1.9458887951865098,
+      "mean_volume_usd": 12409.828517333333,
+      "mean_asof_degree": 9.833333333333334,
+      "examples": [
+        "0x8318b9c0e640114f7ed71de8b65142654573a152",
+        "0x0762301bd516fe5d37a89c944515011be4fe1b6f",
+        "0x3d5078da5ae6c6608f987f8cb00ea2fe31956490",
+        "0x5972a0b205881659aa8cbf287fca3f3bdfd33e36",
+        "0xdc7617d4224fcd303d1c9c1504dcdca67cf06be2",
+        "0x0e8dff089deb65e592e6b7bc6fe2dd9ab255205f"
+      ]
+    },
+    "low_centrality_high_ig": {
+      "n": 62,
+      "mean_ig": 1.676161506309755,
+      "mean_ig_resid": 1.1796856696815579,
+      "mean_volume_usd": 169285.43317046776,
+      "mean_asof_degree": 1.0,
+      "examples": [
+        "0xcab90bb2b3a2f57f40326093de037c655c7fa8ae",
+        "0x43e61bd20737b71e003021524020d9c3d03c90ae",
+        "0xf4b3f12cbd74dfd9d35cf7e49005f1c62f80a383",
+        "0xec9f5840d3ef9a212ff19be4352efd4a2b2846ed",
+        "0xb910bc25fc55b48fb073517487dc5ac71d90f601",
+        "0xa93025df18866119c3b3a2360904b6fe6d966c06",
+        "0xa7f059f678e367d5aa12b3f565c630fc7724b86d",
+        "0xfb3a85aff7cab85e7e2b7461703f57ed0105645e"
+      ]
+    },
+    "thresholds": {
+      "volume_q1": 47.5691075,
+      "volume_q3": 9684.171624999999,
+      "ig_resid_p10": -0.8064722153355045,
+      "ig_resid_p90": 1.039252784325605
+    }
+  },
+  "leaky_static_prior_note": "static-prior degree/PageRank are full-window and may contain future-window structure; used ONLY as comparison baselines",
+  "icf_cutoff_mismatch_note": "ICF v2 exists only at snapshots 06/07/08; 08-01 used with explicit cutoff mismatch"
+}

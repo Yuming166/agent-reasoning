@@ -1,0 +1,10 @@
+build 54.2s
+batch 0/3422 cur_mrr=0.7093
+batch 500/3422 cur_mrr=0.7149
+batch 1000/3422 cur_mrr=0.7148
+batch 1500/3422 cur_mrr=0.7177
+batch 2000/3422 cur_mrr=0.7226
+batch 2500/3422 cur_mrr=0.7262
+batch 3000/3422 cur_mrr=0.7332
+PREFIX-based val MRR (7-feature baseline model): 0.737297534942627
+Recorded streaming val MRR: 0.76105696

@@ -1,0 +1,11 @@
+{
+  "model": "EdgeBank",
+  "memory_mode": "fixed_time_window",
+  "data": "tgbl-coin",
+  "seed": 1,
+  "metric": "mrr",
+  "val_mrr": 0.49149057269096375,
+  "test_mrr": 0.5795822143554688,
+  "total_time_s": 2148.41,
+  "leaderboard_reference": "Heuristic(LocalRecencyLocalPopularity) MRR 0.774 (2026-01-20, tgb.complexdatalab.com)"
+}

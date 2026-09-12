@@ -1,0 +1,26 @@
+{
+  "model": "MLP-edge-scoring (torch-only)",
+  "data": "tgbl-coin-v2",
+  "seed": 1,
+  "eval_split": "val",
+  "mrr": 0.7610569596290588,
+  "train_subset": 2000000,
+  "epochs": 8,
+  "hidden": 256,
+  "lr": 0.001,
+  "device": "cuda:5",
+  "total_time_s": 1065.07,
+  "leaderboard_refs": {
+    "TPNet": "0.832\u00b10.001",
+    "Heuristic(LocalRecencyLocalPopularity)": 0.774
+  },
+  "features": [
+    "pair_count_prev",
+    "pair_last_gap",
+    "has_pair",
+    "src_total_prev",
+    "src_last_gap",
+    "dst_total_prev",
+    "dst_last_gap"
+  ]
+}
