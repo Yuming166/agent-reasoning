@@ -58,6 +58,29 @@ Except for the two verified items above, all numbers are single-cutoff
 boundaries are reported per artifact.
 
 
+
+## Latest research status — 2026-09-24
+
+The current public handoff includes the later result boundaries, not only the
+original Phase-I proposal:
+
+- **Phase II-A reasoning-worthiness:** reasoning gain is heterogeneous and a
+  pre-reasoning selector beats random at matched event-count budget on August
+  and September; September versus volume remains statistically inconclusive,
+  and formal K-step entry is **NO-GO**.
+- **OW-010B open-world branch:** recent temporal dynamics improve future
+  behavioral-change prediction, but the preregistered independent structural
+  signal gate fails; the Temporal-GNN/latent-strategy branch is closed.
+- **Decision-State V1:** structured LLM hypotheses are parse-valid and
+  intervention-responsive, but the verified LLM augmentation worsens frozen
+  August future-behavior log loss; Level-1 effectiveness is **NO-GO**.
+
+See [`research/phase2/FINAL_SYNTHESIS.md`](research/phase2/FINAL_SYNTHESIS.md),
+[`research/openworld/ow010b/reports/OW010B_DECISION.md`](research/openworld/ow010b/reports/OW010B_DECISION.md),
+and [`research/decision_state/DECISION_STATE_DECISION_20260919.md`](research/decision_state/DECISION_STATE_DECISION_20260919.md).
+Raw event-level data, LLM panels, credentials, relay responses, and local
+runtime files remain intentionally outside Git.
+
 ## Research mainline
 
 The project has been upgraded from a single next-counterparty ranker into an

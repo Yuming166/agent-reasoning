@@ -1,0 +1,35 @@
+{
+  "experiment_id": "OW-010B",
+  "frozen_before_primary_results": true,
+  "unit": "anchor_wallet x cutoff_time",
+  "train": {
+    "cutoff": "2022-06-01T00:00:00Z",
+    "role": "fit features/target transformer and select ridge alpha for July"
+  },
+  "dev": {
+    "cutoff": "2022-07-01T00:00:00Z",
+    "role": "select among frozen alpha grid and record development losses"
+  },
+  "test": {
+    "cutoff": "2022-08-01T00:00:00Z",
+    "role": "refit on June+July and evaluate exactly once"
+  },
+  "random_split": false,
+  "primary_discovery_filter": "history_event_count_30d >= 1",
+  "future_evaluation_filters": {
+    "primary_7d": "future7_window_coverage_status == OBSERVED_FULL_WINDOW and finite Y7",
+    "secondary_30d": "future30_window_coverage_status == OBSERVED_FULL_WINDOW and finite Y30"
+  },
+  "wallet_strata": {
+    "repeated": "August primary-evaluation wallet has an eligible June or July primary row",
+    "unseen": "August primary-evaluation wallet has no eligible June or July primary row",
+    "unseen_formal_min_wallets": 500
+  },
+  "activity_strata": ["1-2", "3-9", "10-19", ">=20"],
+  "resampling": {
+    "unit": "August anchor_wallet cluster",
+    "replicates": 2000,
+    "seed": 20260918,
+    "interval": "percentile 95% CI"
+  }
+}

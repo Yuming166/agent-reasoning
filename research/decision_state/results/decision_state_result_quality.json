@@ -1,0 +1,30 @@
+{
+  "panel_records": 12000,
+  "panel_cases": 3000,
+  "parse_valid_by_variant": {
+    "full": 3000,
+    "minus_self": 3000,
+    "minus_market": 3000,
+    "placebo": 3000
+  },
+  "parse_valid_rate_by_variant": {
+    "full": 1.0,
+    "minus_self": 1.0,
+    "minus_market": 1.0,
+    "placebo": 1.0
+  },
+  "full_valid_hypothesis_count": {
+    "2": 1,
+    "3": 2999
+  },
+  "full_exact_three_rate": 0.9996666666666667,
+  "full_abstain_probability_mean": 0.00019999999999999998,
+  "full_abstain_probability_nonzero_rate": 0.002,
+  "full_claim_e_self_rate": 1.0,
+  "full_claim_e_market_rate": 0.976,
+  "full_claim_e_coverage_rate": 0.9223333333333333,
+  "full_claim_e_placebo_rate": 0.08866666666666667,
+  "full_unknown_evidence_case_rate": 0.0,
+  "full_e_placebo_case_rate": 0.08866666666666667,
+  "panel_sha256": "047f999c1dde6b2f47d7601f3bb41fe6a457b6dbad028932e0469b95e7effe2b"
+}

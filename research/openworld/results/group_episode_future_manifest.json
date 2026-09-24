@@ -1,0 +1,16 @@
+{
+  "experiment_id": "OW-008",
+  "edge_background": "PROJECT_ROOT/research/community_temporal/results/data/edges_day_20220303_20220901.csv",
+  "edge_background_sha256": "197ffe1de4678e23f9110ceb76cd01cc21190c06be9598177dd2d33ff8a95c52",
+  "label_access": "none",
+  "lookback_days": 7,
+  "horizon_days": 30,
+  "participant_budget": 100,
+  "episode_rule": "connected_components_of_weight>=50th_percentile_excluding_components_over_50_nodes",
+  "cutoffs": [
+    "2022-05-01",
+    "2022-06-01",
+    "2022-07-01",
+    "2022-08-01"
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "as_of": "2026-09-18",
+  "project": "EX-Graph open-world Phase III-Explore",
+  "decision": "HOLD_BEFORE_ASTRA6_LATENT_STRATEGY_TRACK",
+  "reason": "external label overlap is sparse and temporally incomplete; graph-only baselines show future-consequence association but no matched-control proof of group-level anomaly superiority",
+  "completed": [
+    "protocol/data boundary freeze",
+    "external label staging and temporal overlap audit",
+    "BigQuery transaction-level label-free baseline grid",
+    "synthetic motif injection benchmark",
+    "edge-count/volume-matched synthetic control",
+    "history-only future-consequence baseline",
+    "static graph embedding anomaly probe",
+    "temporal group episode future-consequence probe",
+    "Astra6 bounded structured experiment-design call",
+    "OW-009 fixed temporal structure-residual pilot and critique",
+    "OW-010 candidate attrition and substrate diagnosis"
+  ],
+  "external_label_audit": {
+    "label_rows": 22702,
+    "unique_hashes": 22551,
+    "matched_hashes_in_target_sequence_window": 77,
+    "matched_sequence_rows": 255,
+    "august_matched_hashes": 0,
+    "label_policy": "evaluation_only"
+  },
+  "graph_only_findings": {
+    "top_1000_external_hits_march_to_july": 0,
+    "synthetic_control": "small_inconsistent_motif_advantage; volume often competitive",
+    "future_consequence": "active_days/breadth associated with future activity and new counterparties; independent group signal pending",
+    "static_embedding": "temporally unstable; weak/negative future association in July/August",
+    "group_episode": "some burst/reciprocity/volume excess over random groups, but below strong node baseline; H2 unsupported",
+    "temporal_structure_residual": {
+      "strict_candidates_by_cutoff": [
+        370,
+        282,
+        359
+      ],
+      "expanded_candidates_by_cutoff": [
+        1059,
+        811,
+        898
+      ],
+      "coverage_gate": "not_met_2000_candidates_and_top100",
+      "strict_median_open_world_lift": 0.5357142857142857,
+      "strict_mean_adjacent_top5_jaccard": 0.06350806451612903,
+      "expanded_median_open_world_lift": 0.8,
+      "expanded_mean_adjacent_top5_jaccard": 0.05308641975308642,
+      "matching": "some absolute SMD above 0.10; not decision-grade",
+      "decision": "stop_as_underpowered_no_detector_gate_pass"
+    }
+  },
+  "astra6": {
+    "healthcheck": "chat_completion_success_model_gpt-6-astra",
+    "research_calls": 2,
+    "reason": "linked protocol defers large LLM work until after graph-only discovery gate",
+    "model": "gpt-6-astra",
+    "routing": "private relay; structured JSON only; no hidden reasoning stored",
+    "design_artifact": "results/ASTRA6_ADVICE_20260918.json",
+    "critique_artifact": "results/ASTRA6_CRITIQUE_20260918.json",
+    "critique_decision": "stop_as_underpowered"
+  },
+  "next": [
+    "freeze OW-009 and OW-010; do not tune detector or matching against outcomes",
+    "materialize compact event-level features from BigQuery without exporting raw source rows",
+    "outer-join mapped wallets to discovery features and keep future outcomes separate",
+    "rerun only if each cutoff has at least 2000 discovery candidates and matching absolute SMD <= 0.10",
+    "keep Astra6 limited to structured design/critique; do not enter latent-strategy track yet"
+  ],
+  "substrate_audit": {
+    "status": "DESIGN_REVISION_NEEDED",
+    "current_local_representation": "SUBSTRATE_UNDERPOWERED",
+    "mapped_wallets": 27613,
+    "local_unique_endpoint_nodes": 13020,
+    "strict_candidates_by_cutoff": [
+      370,
+      282,
+      359
+    ],
+    "largest_global_loss": "upstream primary/counterparty-present/non-self/both-endpoints-mapped day-level substrate plus 30-day local history",
+    "largest_explicit_code_loss": "history_active_days_ge_3",
+    "full_asof_90d_strict_candidates_by_cutoff": [
+      16326,
+      15554,
+      14557
+    ],
+    "future_conditioned_discovery_filter": false,
+    "matching": "all treated receive assignments but post-match |SMD| often > 0.10 and control reuse is substantial",
+    "artifacts": "research/openworld/substrate/"
+  }
+}

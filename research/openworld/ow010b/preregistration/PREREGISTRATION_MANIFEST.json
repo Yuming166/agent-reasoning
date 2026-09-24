@@ -1,0 +1,98 @@
+{
+  "experiment_id": "OW-010B",
+  "freeze_timestamp_utc": "2026-09-18T15:30:00Z",
+  "status": "FROZEN_BEFORE_PRIMARY_RESULTS",
+  "workspace_commit": null,
+  "workspace_commit_status": "No Git repository exists at PROJECT_ROOT; commit hash unavailable and not fabricated.",
+  "preregistration_path": "research/openworld/ow010b/preregistration/OW010B_PREREGISTRATION.md",
+  "preregistration_sha256": "be137e844be4013080f158c31c2d42419f806f11dca25809168958020592255d",
+  "codex_design_review": "research/openworld/ow010b/preregistration/CODEX_DESIGN_REVIEW.md",
+  "astra6_advice": {
+    "path": "research/openworld/ow010b/preregistration/ASTRA6_PREREGISTRATION_ADVICE.json",
+    "response_sha256": "af5d9964420bf9f945a773b448c7ab00ba5786ec5c7ceee2c13b983a06a39d11",
+    "requested_model": "gpt-6-astra",
+    "returned_model": "gpt-6-astra",
+    "wash_label_accessed": false
+  },
+  "source_tables": {
+    "anchor_events": "ictdata-507912.exgraph.openworld_anchor_events_v1",
+    "discovery_features": "ictdata-507912.exgraph.openworld_wallet_cutoff_features_v1",
+    "future_outcomes_evaluation_only": "ictdata-507912.exgraph.openworld_wallet_cutoff_future_outcomes_v1",
+    "score7_asof_aggregate_source": "ictdata-507912.exgraph.openworld_anchor_events_v1"
+  },
+  "source_sql_sha256": {
+    "anchor_events": "ba89be65f08ae24f75fe1b31002d55674aa3054e46b7a9d581f14631de25f819",
+    "discovery_features": "739d6fd9477b51f454a82edc38f242ebfd188d67e89f13ad310b00e5e7312623",
+    "future_outcomes": "bc35b41317640b624fcdd88dbf52486577e782cac04f5b1ecf195c86cbb013f2",
+    "score7_asof_composition": "0e1e9784aab0c30ba1d739a9788f9aca61d4756d5285378c1405815ce49fa51c"
+  },
+  "cutoffs": [
+    "2022-06-01T00:00:00Z",
+    "2022-07-01T00:00:00Z",
+    "2022-08-01T00:00:00Z"
+  ],
+  "candidate_definition": {
+    "discovery": "history_event_count_30d >= 1",
+    "primary_evaluation": "discovery and future7_window_coverage_status == OBSERVED_FULL_WINDOW and finite seven-dimensional target",
+    "secondary_30d_evaluation": "discovery and future30_window_coverage_status == OBSERVED_FULL_WINDOW and finite three-dimensional target",
+    "future_activity_required_for_discovery": false,
+    "score_activity_required_for_discovery": false
+  },
+  "target_definition": {
+    "primary": "signed seven-dimensional 7-day change vector relative to the pre-cutoff 7-day score window, with log1p count changes, active-day change, two direction-share changes, and two event-family-share changes",
+    "scalar_secondary": "sqrt(mean(training-standardized signed target dimensions squared))",
+    "secondary_30d": "three-dimensional event-count, unique-counterparty, and active-day change vector",
+    "smoothing_alpha": 0.5,
+    "target_scaling": "fit on fitting cutoffs only"
+  },
+  "feature_sets": {
+    "M0": "scale/activity/volume/degree levels",
+    "M1": "M0 plus frozen temporal gaps, burst/activity dynamics, novelty, repeat, turnover, growth",
+    "M2_CORE": "M1 plus entropy, reciprocal rates, fan-in/fan-out, exact frozen rapid-forwarding proxy, identifier-free degree ratios",
+    "M2_EXTENDED": "excluded from primary; amendment-only exploratory"
+  },
+  "models": {
+    "primary": {
+      "class": "sklearn.linear_model.Ridge",
+      "multioutput": true,
+      "alpha_grid": [0.01, 0.1, 1.0, 10.0, 100.0],
+      "selection": "July multivariate standardized MSE; larger alpha if loss tie within 0.001"
+    },
+    "secondary": {
+      "class": "sklearn.ensemble.HistGradientBoostingRegressor wrapped for multi-output",
+      "settings": {
+        "learning_rate": 0.05,
+        "max_iter": 200,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 50,
+        "l2_regularization": 1.0,
+        "random_state": 20260918
+      }
+    }
+  },
+  "protocol": {
+    "train": "June 2022 cutoff",
+    "dev": "July 2022 cutoff",
+    "test": "August 2022 cutoff",
+    "random_split": false,
+    "repeated_wallet_audit": true,
+    "unseen_wallet_audit": true,
+    "unseen_formal_test_min_wallets": 500
+  },
+  "metrics": {
+    "primary": "paired August multivariate standardized MSE improvement",
+    "secondary": ["per-dimension MSE/MAE", "scalar surprise MSE/MAE/rank correlation", "30-day target", "activity/volume/degree strata", "repeated/unseen wallets", "negative controls"],
+    "ci": "percentile 95% cluster bootstrap over August wallets, 2000 replicates",
+    "multiplicity": "Holm adjustment for three nested contrasts when treated as formal claims"
+  },
+  "null_hypotheses": ["M1 no improvement over M0", "M2_CORE no improvement over M1", "M2_CORE no improvement over M0"],
+  "go_modify_no_go": {
+    "temporal": ">=2% relative improvement, paired CI lower bound >0, >=4/7 dimensions positive/nonnegative",
+    "structural": ">=2% relative improvement M2_CORE over M1, paired CI lower bound >0, >=3/7 dimensions positive",
+    "go_to_ow010c": "structural support plus temporal/QA/negative-control/no-deviation conditions",
+    "otherwise": "NO_GO_OPENWORLD_STRUCTURAL_SIGNAL or MODIFY_BEFORE_EXTERNAL_VALIDATION; no external labels"
+  },
+  "pre_result_amendment": "research/openworld/ow010b/PREREGISTRATION_AMENDMENT_20260918_PRE_RESULT.md",
+  "wash_label_accessed": false,
+  "old_ow009_local_artifact_used": false
+}

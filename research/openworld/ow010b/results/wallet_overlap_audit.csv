@@ -1,0 +1,6 @@
+audit,left_cutoff,right_cutoff,left_n,right_n,intersection_n,union_n,jaccard,stratum,n_wallets,definition
+eligible_wallet_overlap,2022-06-01,2022-07-01,17156.0,15736.0,14459.0,18433.0,0.7844083979818803,,,
+eligible_wallet_overlap,2022-06-01,2022-08-01,17156.0,14683.0,13458.0,18381.0,0.7321690876448507,,,
+eligible_wallet_overlap,2022-07-01,2022-08-01,15736.0,14683.0,13046.0,17373.0,0.7509353594658378,,,
+test_wallet_stratum,,,,,,,,repeated,13989.0,August wallet with eligible June or July primary row
+test_wallet_stratum,,,,,,,,unseen,694.0,August wallet with no eligible June or July primary row

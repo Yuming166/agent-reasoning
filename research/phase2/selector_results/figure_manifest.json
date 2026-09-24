@@ -1,0 +1,16 @@
+{
+  "experiment_id": "FIG_PHASE2_001",
+  "figures": {
+    "reasoning_gain_distribution.pdf": "PROJECT_ROOT/research/phase2/figures/reasoning_gain_distribution.pdf",
+    "selector_ndcg.pdf": "PROJECT_ROOT/research/phase2/figures/selector_ndcg.pdf",
+    "budget_utility_curve.pdf": "PROJECT_ROOT/research/phase2/figures/budget_utility_curve.pdf",
+    "influence_vs_volume.pdf": "PROJECT_ROOT/research/phase2/figures/influence_vs_volume.pdf",
+    "temporal_generalization.pdf": "PROJECT_ROOT/research/phase2/figures/temporal_generalization.pdf",
+    "efficiency_frontier.pdf": "PROJECT_ROOT/research/phase2/figures/efficiency_frontier.pdf"
+  },
+  "source_tables": [
+    "selector_benchmark.csv",
+    "selector_scores.parquet",
+    "adversarial_audit.csv"
+  ]
+}

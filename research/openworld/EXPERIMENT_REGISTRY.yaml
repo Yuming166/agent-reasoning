@@ -1,0 +1,363 @@
+version: 1
+project: exgraph-openworld-phase3-explore
+label_policy: external_evaluation_only
+entries:
+  - experiment_id: OW-000
+    group: protocol
+    hypothesis: data_and_label_boundary_is_explicit
+    commit: working-tree
+    data_version: exgraph-sequence-20220301-20220901
+    cutoff: null
+    lookback: null
+    horizon: null
+    label_access: overlap_audit_only
+    graph_construction: target_event_sequences
+    model: none
+    objective: audit
+    anomaly_score: none
+    seed: null
+    compute: local
+    metrics: [row_count, unique_hash_count, endpoint_overlap]
+    CI: null
+    leakage_audit: pass_pending_timestamp_coverage
+    result: in_progress
+    decision: continue
+  - experiment_id: OW-001
+    group: external_validation
+    hypothesis: wash_label_timestamp_and_event_overlap_is_recoverable
+    commit: working-tree
+    data_version: exgraph-sequence-20220301-20220901
+    cutoff: 2022-09-01
+    lookback: 2022-03-01_to_2022-09-01
+    horizon: not_applicable
+    label_access: evaluation_only
+    graph_construction: target_event_sequences
+    model: none
+    objective: coverage_audit
+    anomaly_score: none
+    seed: null
+    compute: BigQuery_bounded_join
+    metrics: [matched_hashes, matched_rows, min_timestamp, max_timestamp]
+    CI: null
+    leakage_audit: no_training_use
+    result: pending
+    decision: pending
+
+  - experiment_id: OW-001_STATUS
+    group: external_validation
+    hypothesis: temporal_external_label_coverage_supports_held_out_enrichment
+    commit: working-tree
+    data_version: exgraph-sequence-20220301-20220901
+    cutoff: 2022-09-01
+    lookback: 2022-03-01_to_2022-09-01
+    horizon: not_applicable
+    label_access: evaluation_only
+    graph_construction: target_event_sequences
+    model: none
+    objective: coverage_audit
+    anomaly_score: none
+    seed: null
+    compute: BigQuery
+    metrics: [matched_hashes=77, matched_sequence_rows=255, august_hashes=0]
+    CI: null
+    leakage_audit: pass_labels_not_used_for_training_or_selection
+    result: sparse_temporally_incomplete_overlap
+    decision: hold
+  - experiment_id: OW-004_STATUS
+    group: synthetic_benchmark
+    hypothesis: graph_baselines_recover_controlled_temporal_motifs
+    commit: working-tree
+    data_version: community_edges_day_20220303_20220831
+    cutoff: per_background_day
+    lookback: single_day_background
+    horizon: not_applicable
+    label_access: none
+    graph_construction: directed_daily_edge_background_plus_injection
+    model: tier0_structural_scores
+    objective: synthetic_recovery
+    anomaly_score: volume_reciprocity_triangles_structural
+    seed: 0-9
+    compute: local_cpu
+    metrics: [node_recall_at_k, group_hit_rate, mean_best_iou]
+    CI: pending_matched_control_bootstrap
+    leakage_audit: pass_no_external_labels
+    result: sensitivity_only_volume_not_matched
+    decision: continue_matched_control
+  - experiment_id: OW-002
+    group: external_validation
+    hypothesis: simple_label_free_scores_enrich_external_wash_reference
+    commit: working-tree
+    data_version: exgraph-sequence-20220301-20220901
+    cutoff: monthwise_2022-03_to_2022-08
+    lookback: transaction_aggregate
+    horizon: not_applicable
+    label_access: evaluation_only
+    graph_construction: transaction_sequence_aggregate
+    model: none
+    objective: held_out_enrichment_sanity
+    anomaly_score: activity_breadth_complexity_direction_self
+    seed: null
+    compute: BigQuery
+    metrics: [enrichment_at_k, precision_at_k, recall_at_k]
+    CI: pending
+    leakage_audit: pass_scores_frozen_before_label_join
+    result: no_top1000_hits_and_no_temporal_replication
+    decision: hold
+  - experiment_id: OW-003
+    group: external_validation
+    hypothesis: wider_topk_recovers_external_reference_without_activity_only_bias
+    commit: working-tree
+    data_version: exgraph-sequence-20220301-20220901
+    cutoff: monthwise_2022-03_to_2022-08
+    lookback: transaction_aggregate
+    horizon: not_applicable
+    label_access: evaluation_only
+    graph_construction: transaction_sequence_aggregate
+    model: none
+    objective: wide_topk_diagnostic
+    anomaly_score: activity_breadth_complexity_direction_self
+    seed: null
+    compute: BigQuery
+    metrics: [enrichment_at_k, precision_at_k, recall_at_k]
+    CI: null
+    leakage_audit: pass_scores_frozen_before_label_join
+    result: isolated_wide_k_enrichment_sparse_labels
+    decision: hold
+  - experiment_id: OW-005
+    group: synthetic_benchmark
+    hypothesis: motif_specific_scores_survive_edge_count_and_volume_matching
+    commit: working-tree
+    data_version: community_edges_day_20220303_20220831
+    cutoff: per_background_day
+    lookback: single_day_background
+    horizon: not_applicable
+    label_access: none
+    graph_construction: motif_or_matched_random_group_injection
+    model: tier0_structural_scores
+    objective: matched_control_recovery
+    anomaly_score: volume_reciprocity_triangles_structural
+    seed: 0-9
+    compute: local_cpu
+    metrics: [paired_recall_delta, paired_group_hit_delta]
+    CI: pending
+    leakage_audit: pass_no_external_labels
+    result: small_inconsistent_motif_advantage
+    decision: continue
+  - experiment_id: OW-006
+    group: future_validation
+    hypothesis: history_only_anomaly_scores_predict_future_behavioral_change
+    commit: working-tree
+    data_version: community_edges_day_20220303_20220831
+    cutoff: 2022-05-01_to_2022-08-01
+    lookback: 30_days
+    horizon: 30_days
+    label_access: none
+    graph_construction: node_incidence_temporal_edges
+    model: tier0_temporal_statistics
+    objective: future_consequence
+    anomaly_score: volume_activity_breadth_entropy_burst_novelty_surprise
+    seed: fixed
+    compute: local_cpu
+    metrics: [future_volume, future_new_counterparties, future_active_days, spearman]
+    CI: volume_decile_random_control
+    leakage_audit: pass_features_pre_cutoff_only
+    result: activity_and_breadth_predict_future_change;_independent_signal_pending
+    decision: continue_matched_controls
+  - experiment_id: OW-007
+    group: static_embedding
+    hypothesis: graph_embedding_anomaly_predicts_future_change
+    commit: working-tree
+    data_version: community_edges_day_20220303_20220831
+    cutoff: 2022-05-01_to_2022-08-01
+    lookback: 30_days
+    horizon: 30_days
+    label_access: none
+    graph_construction: directed_weighted_adjacency
+    model: TruncatedSVD_IsolationForest
+    objective: unsupervised_embedding_anomaly
+    anomaly_score: isolation_forest_and_nearest_embedding_distance
+    seed: fixed
+    compute: local_cpu
+    metrics: [future_volume, future_new_counterparties, spearman]
+    CI: random_topk_control
+    leakage_audit: pass_pre_cutoff_embedding
+    result: temporally_unstable_weak_future_association
+    decision: retain_baseline_only
+  - experiment_id: OW-008
+    group: group_discovery
+    hypothesis: temporal_group_episodes_outperform_node_scores
+    commit: working-tree
+    data_version: community_edges_day_20220303_20220831
+    cutoff: 2022-05-01_to_2022-08-01
+    lookback: 7_days
+    horizon: 30_days
+    label_access: none
+    graph_construction: high_weight_connected_components
+    model: tier0_group_statistics
+    objective: group_future_consequence
+    anomaly_score: volume_density_burst_reciprocity
+    seed: fixed
+    compute: local_cpu
+    metrics: [future_new_counterparties, future_active_days, participant_budget]
+    CI: random_episode_control
+    leakage_audit: pass_pre_cutoff_groups
+    result: some_random_excess_but_below_strong_node_baseline
+    decision: no_group_superiority_yet
+  - experiment_id: OW-009
+    group: future_validation
+    hypothesis: structure_residuals_predict_future_open_world_behavior_after_activity_matching
+    commit: working-tree
+    data_version: community_edges_day_20220303_20220831
+    cutoff: 2022-06-01_to_2022-08-01
+    lookback: 30_days
+    horizon: 7_and_30_days
+    label_access: none
+    graph_construction: day_level_directed_matched_matched_primary_edges
+    model: fixed_linear_structure_residual
+    objective: matched_control_future_consequence
+    anomaly_score: residualized_novelty_growth_reciprocity_burst
+    seed: 20260918
+    compute: local_cpu
+    metrics: [future7_new_counterparty_lift, open_world_lift, adjacent_top5_jaccard]
+    CI: bootstrap_2000_draws
+    leakage_audit: pass_pre_cutoff_features_and_matching
+    result: underpowered; unstable; no_primary_gate_pass; match_SMD_above_0.10
+    decision: stop_as_underpowered_before_event_level_refresh
+    artifacts:
+      - results/ASTRA6_ADVICE_20260918.json
+      - results/ASTRA6_CRITIQUE_20260918.json
+      - results/temporal_structure_residual_manifest.json
+      - results/temporal_structure_residual_panel.csv
+      - baselines/temporal_structure_residual.py
+  - experiment_id: OW-010
+    group: substrate_audit
+    hypothesis: ow009_candidate_attrition_is_driven_by_upstream_substrate_and_population_filters
+    commit: working-tree
+    data_version: edges_day_20220303_20220901_plus_wallet_asof_features_v1_discovery_columns
+    cutoff: 2022-06-01_to_2022-08-01
+    lookback: 30_days_local_and_90_days_crosscheck
+    horizon: not_used_for_discovery_audit
+    label_access: none
+    graph_construction: day_level_matched_matched_primary_projection_vs_all_primary_asof_compact_table
+    model: none
+    objective: candidate_attrition_and_substrate_diagnosis
+    anomaly_score: none
+    seed: 20260918
+    compute: local_cpu
+    metrics: [stagewise_wallet_attrition, feature_coverage, matching_SMD, cohort_sensitivity]
+    CI: not_applicable
+    leakage_audit: pass_discovery_columns_only_future_labels_not_read
+    result: upstream_population_restriction_and_outgoing_role_filter_explain_undercoverage; matching_balance_not_met
+    decision: design_revision_needed_substrate_underpowered
+    artifacts:
+      - substrate/CANDIDATE_ATTRITION_AUDIT.md
+      - substrate/candidate_attrition_by_cutoff.csv
+      - substrate/filter_registry.csv
+      - substrate/feature_coverage.csv
+      - substrate/matching_diagnostics.csv
+      - substrate/cohort_sensitivity.csv
+      - substrate/substrate_counts_by_cutoff.csv
+      - substrate/bigquery_substrate_counts_20260918.json
+      - substrate/BIGQUERY_FEATURE_SPEC.md
+      - substrate/SUBSTRATE_REPAIR_PLAN.md
+      - substrate/run_candidate_attrition_audit.py
+      - substrate/AUDIT_MANIFEST.json
+  - experiment_id: OW-010A
+    group: substrate_reconstruction
+    hypothesis: event_level_asof_reconstruction_restores_open_world_wallet_cutoff_population_without_future_leakage
+    commit: working-tree
+    data_version: exgraph_target_events_20220301_20220901_event_level_v1
+    cutoff: 2022-06-01_to_2022-08-01
+    lookback: history_30d_prior_23d_score_7d
+    horizon: evaluation_only_7d_and_30d
+    label_access: none
+    graph_construction: anchor_expanded_external_token_internal_event_table
+    model: none
+    objective: substrate_reconstruction_population_and_leakage_audit
+    anomaly_score: none
+    seed: 20260918
+    compute: BigQuery_US_plus_compact_local_audit
+    metrics: [source_identity_integrity, discovery_population_coverage, direction_counterparty_coverage, missingness, temporal_leakage]
+    CI: not_applicable
+    leakage_audit: pass_half_open_asof_and_physical_future_separation
+    result: event_level_tables_materialized;_old_local_undercoverage_explained;_leakage_QA_pass;_OW010B_not_started
+    decision: substrate_ready_for_OW010B_stop_before_execution
+    label_blind: true
+    raw_event_rows_exported: false
+    artifacts:
+      - substrate/ow010a/README.md
+      - substrate/ow010a/DATA_CONTRACT.md
+      - substrate/ow010a/EVENT_SCHEMA.md
+      - substrate/ow010a/EVENT_IDENTITY_POLICY.md
+      - substrate/ow010a/BIGQUERY_MATERIALIZATION.md
+      - substrate/ow010a/BIGQUERY_FEATURE_SPEC.md
+      - substrate/ow010a/MISSINGNESS_POLICY.md
+      - substrate/ow010a/POPULATION_AUDIT.md
+      - substrate/ow010a/QA_REPORT.md
+      - substrate/ow010a/OW010A_FINAL_REPORT.md
+      - substrate/ow010a/SUBSTRATE_REPAIR_PLAN.md
+      - substrate/ow010a/filter_registry.csv
+      - substrate/ow010a/candidate_counts_by_cutoff.csv
+      - substrate/ow010a/cohort_sensitivity.csv
+      - substrate/ow010a/feature_coverage.csv
+      - substrate/ow010a/matching_diagnostics.csv
+      - substrate/ow010a/temporal_leakage_audit.csv
+      - substrate/ow010a/sql/00_source_audit.sql
+      - substrate/ow010a/sql/01_anchor_events.sql
+      - substrate/ow010a/sql/02_event_identity_audit.sql
+      - substrate/ow010a/sql/03_discovery_features.sql
+      - substrate/ow010a/sql/04_future_outcomes.sql
+      - substrate/ow010a/sql/05_population_summary.sql
+
+  - experiment_id: OW-010B
+    group: blind_incremental_temporal_structural_signal
+    hypothesis: pre_cutoff_temporal_structural_behavior_predicts_future_behavioral_change_beyond_scale_activity_volume_degree
+    commit: null
+    data_version: ow010a_event_level_asof_v1_plus_compact_score7_aggregate
+    cutoff: 2022-06-01_train;_2022-07-01_dev;_2022-08-01_frozen_test
+    lookback: history_30d;_score_7d_reference
+    horizon: future_7d_primary;_future_30d_secondary
+    label_access: none
+    graph_construction: event_level_asof_anchor_wallet_cutoff_features;_no_local_ow009_artifact
+    model: ridge_multioutput_primary;_histogram_gradient_boosting_secondary
+    objective: incremental_prediction_of_future_behavioral_change
+    anomaly_score: none;_signed_multivariate_change_target_with_secondary_S7_magnitude
+    seed: 20260918
+    compute: local_cpu_after_compact_BigQuery_materialization
+    metrics: [multivariate_standardized_mse, paired_incremental_loss, per_dimension_mse_mae, scalar_S7_secondary]
+    CI: wallet_cluster_bootstrap_2000_percentile_95
+    leakage_audit: pass_asof_future_separation_key_reconciliation_transform_fit_on_fitting_cutoffs
+    result: M1_recent_dynamics_improves_M0;_M2_CORE_below_2pct_gate_and_not_HGB_robust;_one_frozen_test_cutoff
+    decision: NO_GO_OPENWORLD_STRUCTURAL_SIGNAL
+    label_blind: true
+    external_label_accessed: false
+    primary_protocol_changed_after_test: false
+    matching_run: false
+    gnn_run: false
+    latent_strategy_llm_run: false
+    artifacts:
+      - ow010b/preregistration/ASTRA6_PREREGISTRATION_ADVICE.json
+      - ow010b/preregistration/CODEX_DESIGN_REVIEW.md
+      - ow010b/preregistration/OW010B_PREREGISTRATION.md
+      - ow010b/preregistration/PREREGISTRATION_MANIFEST.json
+      - ow010b/PREREGISTRATION_AMENDMENT_20260918_PRE_RESULT.md
+      - ow010b/data/FEATURE_SET_REGISTRY.json
+      - ow010b/data/TARGET_SPECIFICATION.md
+      - ow010b/data/SPLIT_MANIFEST.json
+      - ow010b/data/DATA_QA.md
+      - ow010b/results/primary_metrics.csv
+      - ow010b/results/incremental_gain.csv
+      - ow010b/results/per_cutoff_metrics.csv
+      - ow010b/results/per_dimension_incremental.csv
+      - ow010b/results/bootstrap_intervals.csv
+      - ow010b/results/confound_audit.csv
+      - ow010b/results/negative_control_results.csv
+      - ow010b/results/wallet_overlap_audit.csv
+      - ow010b/results/wallet_stratum_metrics.csv
+      - ow010b/results/scalar_surprise_incremental.csv
+      - ow010b/results/RUN_MANIFEST.json
+      - ow010b/reports/ASTRA6_POSTHOC_CRITIQUE.json
+      - ow010b/reports/CODEX_RESPONSE_TO_CRITIQUE.md
+      - ow010b/reports/OW010B_RED_TEAM_REPORT.md
+      - ow010b/reports/OW010B_RESULT_REPORT.md
+      - ow010b/reports/OW010B_DECISION.md

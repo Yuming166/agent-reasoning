@@ -1,0 +1,7 @@
+{
+  "prompt_rows": 3000,
+  "eval_rows": 3000,
+  "forbidden_prompt_columns": [],
+  "case_id_unique": true,
+  "status": "PASS"
+}

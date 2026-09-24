@@ -1,0 +1,352 @@
+{
+  "artifact": "reasoning_gain_dataset.parquet",
+  "version": "v1",
+  "builder": "research/phase2/build_reasoning_gain_dataset.py",
+  "build_date": "2026-09-12",
+  "n_rows": 4000,
+  "n_events": 4000,
+  "months": [
+    "2022-06-01",
+    "2022-07-01",
+    "2022-08-01",
+    "2022-09-01"
+  ],
+  "split_protocol": {
+    "2022-06-01": "train_dev",
+    "2022-07-01": "tune",
+    "2022-08-01": "test_frozen",
+    "2022-09-01": "holdout_sept"
+  },
+  "join_keys": {
+    "event": [
+      "snapshot_date",
+      "target_address",
+      "target_sequence_index"
+    ],
+    "wallet_asof": [
+      "snapshot_date",
+      "target_address"
+    ],
+    "community": [
+      "snapshot_date",
+      "target_exgraph_node_id"
+    ],
+    "structure09_ig09": "2022-09-01 only, key=target_address (masked to 09, no leakage)",
+    "dynamic_influence": [
+      "snapshot_date",
+      "target_address"
+    ]
+  },
+  "sources": [
+    {
+      "path": "artifacts/llm_panel_v2/runs/{jun,jul,aug}_gonogo_local_vllm4b_rerun_20260910.csv",
+      "role": "authoritative LLM arms (cheap/full/nocf ranks, tokens, latency, parse, audit)",
+      "coverage": "1000/1000 per month"
+    },
+    {
+      "path": "artifacts/llm_panel_20220901/runs/sept_gonogo_local_vllm4b_rerun_20260910.csv",
+      "role": "sept holdout LLM arms",
+      "coverage": "1000/1000"
+    },
+    {
+      "path": "artifacts/llm_panel_v2/router_dataset_v2.csv",
+      "role": "pre-call features only (pool_n, cheap_top_score/margin/entropy, frac_*, n_bridge/personal, pop_weight, logs); gain labels there are LEGACY (pre-float-fix era) and not used as RV basis",
+      "coverage": "3000/3000 jun-aug"
+    },
+    {
+      "path": "artifacts/llm_panel_20220901/sept_router_scores.csv",
+      "role": "pre-call features for sept (rr/token cols there are from an earlier eval; NOT used)",
+      "coverage": "1000/1000"
+    },
+    {
+      "path": "artifacts/llm_panel_v2/panel_scored_v2.csv.gz",
+      "role": "candidate-level cheap scores: cheap top-1 prediction + truth counterparty metadata",
+      "coverage": "4000/4000 events"
+    },
+    {
+      "path": "research/groupA_behavior/results/data/asof_monthly_2022.parquet",
+      "role": "as-of wallet behavior features, cutoffs 05-08",
+      "coverage": "2939/3000 (97.97%)"
+    },
+    {
+      "path": "research/groupA_behavior/results/data/feature_matrix_20220901.parquet",
+      "role": "as-of wallet behavior+network features, cutoff 09",
+      "coverage": "969/1000 (96.9%)"
+    },
+    {
+      "path": "research/community_temporal/results/data/community_membership_202{06,07,08,09}01.csv",
+      "role": "community membership/importance, matched per cutoff",
+      "coverage": "2407/4000 (60.2%)"
+    },
+    {
+      "path": "research/groupC_temporal_graph/results/data/wallet_importance_20220901.csv",
+      "role": "structural features, 09-only",
+      "coverage": "547/1000 sept (13.7% of all events)"
+    },
+    {
+      "path": "research/groupD_infogain/results/wallet_ig_20220901.csv",
+      "role": "wallet information gain, 09 subset only",
+      "coverage": "175/1000 sept (4.4% of all events)"
+    },
+    {
+      "path": "research/phase2/dynamic_influence_dataset.parquet",
+      "role": "wallet dynamic influence at event cutoff (FUTURE-derived; supervision-only)",
+      "coverage": "3908/4000 (97.7%)"
+    }
+  ],
+  "rv_definitions": {
+    "rv_mrr": "full_rr - cheap_rr (frozen Phase-I go/nogo protocol). full_rr = 1/(cheap-order average-competition rank of the Full-CF predicted address); cheap_rr = 1/(cheap-order average-competition rank of the true counterparty); both in the shared frozen-cheap-rank candidate ordering",
+    "rv_nocf": "nocf_rr - cheap_rr (ablation arm, same ordering)",
+    "rv_ll": "NaN - no calibrated per-candidate probabilities in the Qwen panel (ranks only)",
+    "rv_ll_available": false,
+    "z0": "1[rv_mrr > 0.0] (pre-registered delta 0)",
+    "z1": "1[rv_mrr > 0.1] (pre-registered delta +0.1)",
+    "rv_cost_lambda1": "rv_mrr / (total_tokens + 1.0*latency_s)",
+    "rv_cost_tokens_only": "rv_mrr / total_tokens",
+    "cost_lambda": 1.0,
+    "parse_success": "1000/1000 per month (full_parse_ok=1); internal fallback count = 0 -> operational gain equals raw rv_mrr here"
+  },
+  "reasoning_gain_type": "stratum (new_tail/new_popular/repeat_easy/repeat_hard)",
+  "rv_summary_by_month": {
+    "n": {
+      "2022-06-01": 1000,
+      "2022-07-01": 1000,
+      "2022-08-01": 1000,
+      "2022-09-01": 1000
+    },
+    "rv_mean": {
+      "2022-06-01": 0.1682,
+      "2022-07-01": 0.1136,
+      "2022-08-01": 0.1099,
+      "2022-09-01": 0.0828
+    },
+    "rv_median": {
+      "2022-06-01": 0.0,
+      "2022-07-01": 0.0,
+      "2022-08-01": 0.0,
+      "2022-09-01": 0.0
+    },
+    "z0_rate": {
+      "2022-06-01": 0.493,
+      "2022-07-01": 0.482,
+      "2022-08-01": 0.492,
+      "2022-09-01": 0.425
+    },
+    "z1_rate": {
+      "2022-06-01": 0.409,
+      "2022-07-01": 0.381,
+      "2022-08-01": 0.39,
+      "2022-09-01": 0.341
+    }
+  },
+  "rv_summary_by_stratum": {
+    "n": {
+      "new_popular": 1000,
+      "new_tail": 1000,
+      "repeat_easy": 1000,
+      "repeat_hard": 1000
+    },
+    "rv_mean": {
+      "new_popular": 0.0428,
+      "new_tail": 0.0059,
+      "repeat_easy": 0.0976,
+      "repeat_hard": 0.3283
+    },
+    "rv_median": {
+      "new_popular": 0.0,
+      "new_tail": -0.1896,
+      "repeat_easy": 0.0,
+      "repeat_hard": 0.2778
+    },
+    "z0_rate": {
+      "new_popular": 0.392,
+      "new_tail": 0.351,
+      "repeat_easy": 0.446,
+      "repeat_hard": 0.703
+    },
+    "z1_rate": {
+      "new_popular": 0.266,
+      "new_tail": 0.262,
+      "repeat_easy": 0.385,
+      "repeat_hard": 0.608
+    }
+  },
+  "rv_summary_overall": {
+    "n": 4000,
+    "mean": 0.1186,
+    "median": 0.0,
+    "z0_rate": 0.473,
+    "z1_rate": 0.3802
+  },
+  "column_coverage": {
+    "core_llm_arms": {
+      "rv_mrr": 0.0,
+      "rv_nocf": 0.0,
+      "rv_ll": 1.0,
+      "rv_ll_available": 0.0,
+      "z0": 0.0,
+      "z1": 0.0,
+      "rv_cost_lambda1": 0.0,
+      "rv_cost_tokens_only": 0.0,
+      "total_tokens": 0.0,
+      "nocf_total_tokens": 0.0,
+      "latency_s": 0.0,
+      "prompt_tokens": 0.0,
+      "completion_tokens": 0.0,
+      "llm_calls": 0.0
+    },
+    "precall_router": {
+      "pool_n": 0.0,
+      "cheap_top_score": 0.0,
+      "cheap_margin": 0.0,
+      "cheap_score_entropy": 0.0,
+      "frac_bridge": 0.0,
+      "frac_personal": 0.0,
+      "frac_tail": 0.0,
+      "frac_top2000": 0.0,
+      "n_bridge": 0.0,
+      "n_personal": 0.0,
+      "top1_is_personal": 0.0,
+      "top1_is_bridge": 0.0,
+      "pop_weight": 0.0,
+      "log_evt_cnt": 0.0,
+      "log_pool_n": 0.0,
+      "log_n_bridge": 0.0,
+      "log_n_personal": 0.0,
+      "cp_type_repeat": 0.0
+    },
+    "behavior_asof": {
+      "evt_cnt_90d": 0.023,
+      "evt_out_90d": 0.023,
+      "evt_in_90d": 0.023,
+      "evt_self_90d": 0.023,
+      "evt_native_90d": 0.023,
+      "evt_token_90d": 0.023,
+      "active_days_90d": 0.023,
+      "tx_cnt_90d": 0.023,
+      "active_span_days_90d": 0.023,
+      "cp_distinct_90d": 0.023,
+      "cp_out_distinct_90d": 0.023,
+      "cp_in_distinct_90d": 0.023,
+      "cp_out_interact_90d": 0.023,
+      "cp_in_interact_90d": 0.023,
+      "token_distinct_90d": 0.023,
+      "cp_entropy_90d": 0.023,
+      "cp_new_30d": 0.023,
+      "cp_new_rate_30d": 0.0348,
+      "cp_both_dir_90d": 0.023,
+      "cp_reciprocity_90d": 0.023,
+      "self_tx_rate_90d": 0.023,
+      "token_event_rate_90d": 0.023,
+      "token_hhi_90d": 0.023,
+      "events_per_active_day_90d": 0.023
+    },
+    "network_asof_09only": {
+      "asof_mm_in_degree": 0.8632,
+      "asof_mm_out_degree": 0.8632,
+      "asof_mm_undir_degree": 0.8632,
+      "asof_mm_w_in_degree": 0.8632,
+      "asof_mm_w_out_degree": 0.8632,
+      "asof_mm_pagerank": 0.8632,
+      "asof_mm_kcore": 0.8632,
+      "asof_mm_clustering": 0.8632,
+      "asof_mm_hub_neighbors": 0.8632
+    },
+    "structure_09only": {
+      "static_degree": 0.8632,
+      "static_w_degree": 0.8632,
+      "static_pagerank": 0.8632,
+      "deg_und": 0.8632,
+      "wdeg_und": 0.8632,
+      "pagerank": 0.8632,
+      "kcore": 0.8632,
+      "betweenness": 0.8632,
+      "recency_wdeg": 0.8632,
+      "activity_trend": 0.8632,
+      "active_months": 0.8632,
+      "persistent_edges": 0.8632,
+      "mutual_pairs": 0.8632,
+      "triangles": 0.8632,
+      "new_edges_recent": 0.8632,
+      "cross_comm_share": 0.8632,
+      "bridge_score": 0.8632,
+      "hub_score": 0.8632,
+      "structure_novol_pct": 0.8632
+    },
+    "community": {
+      "comm_community_id": 0.3982,
+      "comm_community_size": 0.3982,
+      "comm_within_comm_wdeg": 0.3982,
+      "comm_cross_comm_wdeg": 0.3982,
+      "comm_cross_comm_share": 0.3982,
+      "comm_within_comm_deg": 0.3982,
+      "comm_cross_comm_deg": 0.3982,
+      "comm_bridge_score": 0.3982,
+      "comm_hub_score": 0.3982,
+      "comm_is_boundary": 0.3982,
+      "comm_betweenness": 0.3982
+    },
+    "ig_09subset": {
+      "ig_occ_active30_histgbm": 0.9563,
+      "ig_occ_active30_logistic": 0.9563,
+      "ig_occ_cp_ge10_histgbm": 0.9563,
+      "ig_occ_cp_ge10_logistic": 0.9563,
+      "ig_occ_mean": 0.9563,
+      "ig_perm_mean": 0.9563
+    },
+    "legacy_gain_router": {
+      "legacy_gain_full_router": 0.0,
+      "legacy_gain_nocf_router": 0.0,
+      "legacy_full_wins_router": 0.25
+    },
+    "future_derived": {
+      "future_spillover_new_cp_30d": 0.023,
+      "future_spillover_evt_cnt_30d": 0.023,
+      "future_spillover_cp_distinct_30d": 0.023,
+      "future_spillover_horizon_days": 0.0,
+      "dyn_influence_new_cp_histgbm": 0.023,
+      "dyn_influence_new_cp_logistic": 0.023,
+      "dyn_influence_evt_histgbm": 0.023,
+      "dyn_influence_mean": 0.023,
+      "dyn_resid_new_histgbm": 0.023,
+      "dyn_resid_new_logistic": 0.023,
+      "dyn_resid_evt_histgbm": 0.023,
+      "dyn_influence_uses_future": 0.0
+    }
+  },
+  "missing_columns_report": {
+    "rv_ll": "entirely NaN; no calibrated probabilities recorded in run CSVs (only ranks)",
+    "regime_change_score": "entirely NaN; requires multi-period trajectory state (Group E/F feature not built yet)",
+    "fullcf_prediction/fullcf_score": "not recorded in run CSVs; only the rank of the Full-CF predicted address was persisted. fullcf_correct is the frozen R1 metric (full_rank==1); full_pick_matches_truth_proxy=(full_rr==cheap_rr) is a necessary-condition proxy",
+    "asof_mm_*/degree_asof/pagerank_asof/kcore_asof": "86.3% missing; network features exist only in feature_matrix_20220901 (09) and only for wallets in the monthly mm subgraph",
+    "structure09/ig09": "09-only; NaN for all 05-08 cutoffs (masked to prevent leakage)",
+    "community": "39.8% missing; community membership available for 06-09 and covers ~60% of event wallets",
+    "legacy_*_router": "jun-aug only (sept router file lacks gain columns)"
+  },
+  "leakage_declaration": {
+    "as_of_features": "all feature columns are computed strictly at/before the event cutoff; fwd30 future labels are isolated in future_spillover_* columns",
+    "future_derived_columns": [
+      "future_spillover_new_cp_30d",
+      "future_spillover_evt_cnt_30d",
+      "future_spillover_cp_distinct_30d",
+      "future_spillover_horizon_days",
+      "dyn_influence_new_cp_histgbm",
+      "dyn_influence_new_cp_logistic",
+      "dyn_influence_evt_histgbm",
+      "dyn_influence_mean",
+      "dyn_resid_new_histgbm",
+      "dyn_resid_new_logistic",
+      "dyn_resid_evt_histgbm",
+      "dyn_influence_uses_future"
+    ],
+    "dyn_influence_note": "dyn_influence_*/dyn_resid_* are derived from fwd30 outcomes -> may be used ONLY as selector supervision on train/tune cutoffs, never as test-time features",
+    "structure_ig_mask": "structure09/ig09 values masked to 09-01 events to avoid cross-cutoff leakage",
+    "importance_proxy_p3": "excluded from features (used by Group A only)"
+  },
+  "caveats": [
+    "legacy_gain_full/nocf/wins in router CSVs come from the pre-float-fix (buggy) run era and are retained only as diagnostic columns; they are NOT the RV basis",
+    "cheap_prediction is the argmax cheap_score candidate in panel_scored_v2 with candidate_address tie-break, consistent with the frozen cheap_tie_ranks ordering",
+    "RV is incremental predictive utility under the frozen shared cheap-order evaluation oracle, not a causal treatment effect",
+    "mask_sensitive=True for all events; belief_shift='reinforce' except 1 sept event ('flip')"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "audit_date": "2026-09-18",
+  "label_blind": true,
+  "mapped_wallet_count": 27613,
+  "sequence_table_row_count_from_metadata": 11836196,
+  "bigquery_aggregate_evidence": "PROJECT_ROOT/research/openworld/substrate/bigquery_substrate_counts_20260918.json",
+  "bigquery_aggregate_evidence_sha256": "d77340fb097709b0593dd48c60a87d60e091a94e76feecc66e5e957ce2191ae4",
+  "edge_artifact": "PROJECT_ROOT/research/community_temporal/results/data/edges_day_20220303_20220901.csv",
+  "edge_artifact_sha256": "197ffe1de4678e23f9110ceb76cd01cc21190c06be9598177dd2d33ff8a95c52",
+  "mapping_artifact": "PROJECT_ROOT/vendor/EX-Graph-repo/twitter_matching.csv",
+  "mapping_artifact_sha256": "1d2e3d5a0dbf44797a2026ac9cdb23b76f20e227630c90393e80f00172c9b5ba",
+  "asof_artifact": "PROJECT_ROOT/research/groupA_behavior/results/data/asof_monthly_2022.parquet",
+  "asof_artifact_sha256": "4378246bc6d48e3d24e1519876ed6cc73f65298e2dc7a9c99851a09f537f1f5c",
+  "ow009_code": "PROJECT_ROOT/research/openworld/baselines/temporal_structure_residual.py",
+  "ow009_code_sha256": "afe23a6c1957e7f54f0522fc98582c9837fdfe5eab13830e29f965ea6544bd84",
+  "edge_sql": "PROJECT_ROOT/research/community_temporal/sql/edges_asof_day.sql",
+  "edge_sql_sha256": "26649eeea5cef2c5ca222b836e761d89a62bf13241aa0bf0246d10f96f54394e",
+  "cutoffs": [
+    "2022-06-01",
+    "2022-07-01",
+    "2022-08-01"
+  ],
+  "local_raw_aggregate_rows": 142300,
+  "local_outgoing_aggregate_rows": 71150,
+  "local_unique_endpoint_nodes": 13020,
+  "local_unique_outgoing_source_nodes": 10765,
+  "outputs": [
+    "CANDIDATE_ATTRITION_AUDIT.md",
+    "candidate_attrition_by_cutoff.csv",
+    "filter_registry.csv",
+    "feature_coverage.csv",
+    "matching_diagnostics.csv",
+    "cohort_sensitivity.csv",
+    "substrate_counts_by_cutoff.csv",
+    "BIGQUERY_FEATURE_SPEC.md",
+    "SUBSTRATE_REPAIR_PLAN.md"
+  ]
+}

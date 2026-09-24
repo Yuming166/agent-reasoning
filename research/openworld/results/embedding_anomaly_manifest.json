@@ -1,0 +1,17 @@
+{
+  "experiment_id": "OW-007",
+  "edge_background": "PROJECT_ROOT/research/community_temporal/results/data/edges_day_20220303_20220901.csv",
+  "edge_background_sha256": "197ffe1de4678e23f9110ceb76cd01cc21190c06be9598177dd2d33ff8a95c52",
+  "label_access": "none",
+  "model": "TruncatedSVD+IsolationForest",
+  "components": 16,
+  "cutoffs": [
+    "2022-05-01",
+    "2022-06-01",
+    "2022-07-01",
+    "2022-08-01"
+  ],
+  "lookback_days": 30,
+  "future_targets": "joined_after_score_freeze",
+  "rows": 22328
+}

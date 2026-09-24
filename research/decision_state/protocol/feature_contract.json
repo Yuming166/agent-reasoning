@@ -1,0 +1,90 @@
+{
+  "version": "decision_state_v1",
+  "freeze_date": "2026-09-19",
+  "cutoffs": {
+    "train": "2022-06-01",
+    "dev": "2022-07-01",
+    "test": "2022-08-01"
+  },
+  "sample": {
+    "n_per_cutoff": 1000,
+    "eligible": "observed_before_cutoff == true and history_event_count_30d > 0",
+    "strata": "history_event_count_30d bins [1,2], [3,9], [10,19], [20,inf)",
+    "selection": "stable SHA256(address|cutoff) within each cutoff/stratum; no outcome fields"
+  },
+  "outcomes": {
+    "horizon_days": 7,
+    "dimensions": [
+      "activity",
+      "active_days",
+      "counterparty_breadth",
+      "new_counterparties"
+    ],
+    "comparison": "future7 value versus prior 7-day as-of value; up/same/down"
+  },
+  "m0_features": [
+    "history_event_count_30d",
+    "event_count_7d",
+    "active_days_30d",
+    "active_days_7d",
+    "unique_counterparties_30d",
+    "unique_event_count_7d",
+    "incoming_event_count_30d",
+    "outgoing_event_count_30d",
+    "native_event_count_30d",
+    "token_event_count_30d",
+    "internal_event_count_30d"
+  ],
+  "m1_feature_prefixes": [
+    "history_",
+    "event_count_",
+    "unique_event_count_",
+    "active_days_",
+    "active_hours_",
+    "native_",
+    "token_",
+    "internal_",
+    "incoming_",
+    "outgoing_",
+    "self_",
+    "inter_event_gap_",
+    "mean_events_per_active_hour_",
+    "std_events_per_active_hour_",
+    "unique_counterparties_",
+    "mapped_counterparties_",
+    "unmapped_counterparties_",
+    "score_unique_counterparties_",
+    "prior_unique_counterparties_",
+    "new_counterparties_",
+    "repeat_counterparties_",
+    "reciprocal_counterparties_",
+    "counterparty_entropy_",
+    "rapid_forwarding_",
+    "max_events_per_active_hour_",
+    "max_fan_in_counterparties_per_hour_",
+    "max_fan_out_counterparties_per_hour_"
+  ],
+  "excluded_columns": [
+    "anchor_wallet",
+    "anchor_exgraph_node_id",
+    "cutoff_time",
+    "history_start",
+    "score_start",
+    "history_end",
+    "first_event_timestamp",
+    "observed_before_cutoff",
+    "*_status",
+    "data_role",
+    "feature_version",
+    "all future outcome fields",
+    "static full-window graph features",
+    "evaluation-only labels"
+  ],
+  "market_context": [
+    "eth_return_1d",
+    "eth_return_7d",
+    "eth_volatility_7d",
+    "eth_drawdown_30d"
+  ],
+  "llm_variants": ["full", "minus_self", "minus_market", "placebo"]
+}
