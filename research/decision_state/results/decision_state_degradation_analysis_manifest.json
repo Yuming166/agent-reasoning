@@ -1,0 +1,25 @@
+{
+  "analysis_protocol": "frozen_prediction_degradation_v1",
+  "prediction_files_read_only": true,
+  "prompt_cases": 3000,
+  "descriptor_cases": 3000,
+  "oos_loss_cases": 2000,
+  "train_cases_without_existing_oos_predictions": 1000,
+  "loss_rows": 8000,
+  "target_rows_per_oos_case": 4,
+  "prediction_sha256": "bdba1b317ad1bcc2a09297f138ff3153668ff756f188cf50d2a215b60b396765",
+  "prompt_sha256": "664c0118dfba37d52f6c39127b98607565fad14cc8861d72554a16f9500f322a",
+  "llm_features_sha256": "df2cc26ae26ca5b3f704d79da64fbc3a8becbf594fea643bdf3ca3048c7e8e45",
+  "panel_sha256": "047f999c1dde6b2f47d7601f3bb41fe6a457b6dbad028932e0469b95e7effe2b",
+  "note": "All 3,000 frozen cases are retained in case_degradation_analysis.csv. Delta/loss analyses use only the 2,000 rows with pre-existing July/August out-of-sample predictions; June train rows are not assigned newly generated in-sample losses.",
+  "plots": [
+    "plots_degradation/b4_degradation_by_condition.png",
+    "plots_degradation/intervention_sensitivity_vs_b4_gain.png",
+    "plots_degradation/model_degradation_by_target.png",
+    "plots_degradation/test_gain_correlation_heatmap.png"
+  ],
+  "top_case_tables": [
+    "decision_state_top_100_degradation_cases.csv",
+    "decision_state_top_100_gain_cases.csv"
+  ]
+}

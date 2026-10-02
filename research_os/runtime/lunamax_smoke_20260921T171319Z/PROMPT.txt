@@ -1,0 +1,2 @@
+Reply with exactly: LUNAMAX_CONNECTION_OK
+This is only a service smoke test. Do not inspect project files or perform scientific reasoning.

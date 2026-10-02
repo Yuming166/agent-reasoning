@@ -1,0 +1,17 @@
+{
+  "checked_at_utc": "2026-09-20T16:31:05Z",
+  "model": "gpt-6-astra",
+  "base_url": "https://openapi.center",
+  "wire_api": "responses",
+  "astra_only": true,
+  "fallback_allowed": false,
+  "models_http_status": 200,
+  "model_listed": true,
+  "listed_model_count": 7,
+  "responses_http_status": 502,
+  "responses_request_id": "e9bdf859-376c-4188-8512-840dfc7ebd1d",
+  "responses_error": "Upstream service temporarily unavailable",
+  "status": "KEY_ACCEPTED_MODEL_LISTED_BUT_GENERATION_UNAVAILABLE",
+  "billing_note": "One real minimal Responses POST was sent; a 502 was returned and no usage payload was available.",
+  "secrets_recorded": false
+}

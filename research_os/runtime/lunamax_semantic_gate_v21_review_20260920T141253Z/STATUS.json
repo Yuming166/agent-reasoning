@@ -1,0 +1,24 @@
+{
+  "state": "COMPLETE_EXPLORATORY_ONLY",
+  "mode": "OFF_CHARTER_EXPLORATORY_FALLBACK",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "max",
+  "official_astra_cycle_untouched": true,
+  "large_llm_experiment_allowed": false,
+  "promotion_to_official_ledger": false,
+  "updated_at": "2026-09-20T14:14:43Z",
+  "call": {
+    "event": "call_completed",
+    "timestamp": "2026-09-20T14:14:43Z",
+    "task_id": "lunamax_semantic_gate_v21_review_20260920T141253Z_FINAL_REVIEW",
+    "parent_task_id": "20260920T101512Z",
+    "role": "SEMANTIC_GATE_V21_FINAL_REVIEW",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "max",
+    "exit_code": 0,
+    "response_path": "/storage/gaoym/ex-graph-microtransaction-analysis/research_os/runtime/lunamax_semantic_gate_v21_review_20260920T141253Z/FINAL_REVIEW.md",
+    "response_exists": true,
+    "response_hash": "dcfc3df3450a6e0c62ede3c9d8cc04886352f1b89f6c4493c6e6778b9dc00cfc",
+    "response_chars": 1234
+  }
+}

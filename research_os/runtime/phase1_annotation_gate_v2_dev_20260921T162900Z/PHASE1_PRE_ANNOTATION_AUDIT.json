@@ -1,0 +1,39 @@
+{
+  "conclusion": "READY_TO_ANNOTATE",
+  "checks": {
+    "no_august_cases": true,
+    "balanced_cutoffs": true,
+    "balanced_double_code": true,
+    "case_cluster_primary": true,
+    "undefined_kappa_frozen": true,
+    "gates_separate": true,
+    "executable_falsifier_field": true,
+    "descriptive_predictive_evidence_labels": true,
+    "placebo_negative_control": true,
+    "pass_a_horizon_rule": true,
+    "pass_a_schema_smoke": true,
+    "blank_reliability_smoke": true,
+    "invalid_fixture_fail_closed": true,
+    "old_package_hashes_preserved": true,
+    "no_future_outcomes": true
+  },
+  "source_cutoffs": {
+    "2022-06-01": 1000,
+    "2022-07-01": 1000,
+    "2022-08-01": 1000
+  },
+  "v2_case_cutoffs": {
+    "2022-06-01": 50,
+    "2022-07-01": 50
+  },
+  "v2_double_cutoffs": {
+    "2022-06-01": 10,
+    "2022-07-01": 10
+  },
+  "old_package_hash_checks": {
+    "PASS_A_TEXT_ONLY_BLIND.csv": true,
+    "PASS_B_STRUCTURED_REVIEW_LOCKED.csv": true,
+    "DOUBLE_CODE_ROW_HANDLES.csv": true,
+    "BLINDING_AUDIT.json": true
+  }
+}

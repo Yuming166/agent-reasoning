@@ -1,0 +1,1 @@
+{"cycle_id": "20260920T123459Z_identity", "event": "identity_check", "http_status": 200, "latency_seconds": 0.539, "listed_model_count": 7, "requested_model": "gpt-6-astra", "requested_model_listed": true, "timestamp": "2026-09-20T12:34:59Z"}

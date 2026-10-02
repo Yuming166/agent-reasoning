@@ -1,0 +1,11 @@
+{
+  "state": "CANCELED_FAIL_CLOSED",
+  "mode": "OFF_CHARTER_PUBLICATION_GATE_REVIEW",
+  "model": "gpt-5.6-luna",
+  "source_run": "20260921T112103Z",
+  "completed_at": "2026-09-21T11:33:00Z",
+  "exit_code": 1,
+  "official_astra_cycle_untouched": true,
+  "no_new_llm_experiment": true,
+  "reason": "superseded_after_codex_tool_router_stall; no scientific output produced"
+}

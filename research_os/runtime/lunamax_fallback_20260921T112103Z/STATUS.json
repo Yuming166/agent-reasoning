@@ -1,0 +1,21 @@
+{
+  "completed_at": "2026-09-21T11:28:47Z",
+  "deadline_seconds_per_call": 1800,
+  "mode": "OFF_CHARTER_EXPLORATORY_FALLBACK",
+  "model": "gpt-5.6-luna",
+  "no_large_llm_experiment": true,
+  "official_astra_cycle_untouched": true,
+  "promotion_to_claim_ledger": false,
+  "promotion_to_experiment_registry": false,
+  "reason": "user explicitly requested temporary Luna Max reasoning after Astra6 upstream failures",
+  "roles_completed": [
+    "NLP_ARCHITECT",
+    "EXPERIMENT_DESIGNER",
+    "FALSIFIER",
+    "RESEARCH_MANAGER"
+  ],
+  "run_id": "20260921T112103Z",
+  "source_cycle": "20260920T101512Z",
+  "started_at": "2026-09-21T11:21:03Z",
+  "state": "COMPLETE_EXPLORATORY_ONLY"
+}

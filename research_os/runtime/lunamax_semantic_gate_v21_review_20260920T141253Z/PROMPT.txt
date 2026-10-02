@@ -1,0 +1,22 @@
+You are the local Codex CLI model gpt-5.6-luna at maximum configured reasoning effort. This is an OFF_CHARTER_EXPLORATORY_FALLBACK review, not Astra6. Do not present output as an Astra6 result, official claim, preregistration, or final scientific conclusion. Do not modify files and do not reveal private chain-of-thought; return only a concise audit report.
+
+The Astra6 relay and the supplied Claude relay are not available for actual inference. Continue the EX-Graph NAACL research with local Luna reasoning plus deterministic work only. No new large LLM experiment is allowed. The official Astra6 cycle remains paused and immutable.
+
+Review the current Semantic Gate V2.1 package before human annotation begins. Read the files under:
+- /storage/gaoym/ex-graph-microtransaction-analysis/research_os/runtime/lunamax_artifact_audit_20260920T132829Z/semantic_gate_v2_1/SEMANTIC_GATE_V2_PROTOCOL.md
+- /storage/gaoym/ex-graph-microtransaction-analysis/research_os/runtime/lunamax_artifact_audit_20260920T132829Z/semantic_gate_v2_1/SEMANTIC_GATE_V2_MANIFEST.json
+- /storage/gaoym/ex-graph-microtransaction-analysis/research_os/runtime/lunamax_artifact_audit_20260920T132829Z/semantic_gate_v2_1/BLINDING_AUDIT.json
+- /storage/gaoym/ex-graph-microtransaction-analysis/research_os/runtime/lunamax_artifact_audit_20260920T132829Z/semantic_gate_v2_1/SCHEMA_VALIDATION_BLANK.json
+- /storage/gaoym/ex-graph-microtransaction-analysis/research_os/runtime/lunamax_artifact_audit_20260920T132829Z/semantic_gate_v2_1/RELIABILITY_BLANK_SMOKE.json
+- research/decision_state/src/prepare_semantic_gate_v2.py
+- research/decision_state/src/validate_semantic_gate_annotations.py
+- research/decision_state/src/score_semantic_gate_reliability.py
+
+Required sections:
+1. FINAL_GATE_DECISION: GO_FOR_HUMAN_ANNOTATION, MODIFY_BEFORE_ANNOTATION, or REJECT.
+2. BLINDING_AND_LEAKAGE: inspect Pass A/Pass B separation, opaque row ordering, evidence-label handling, probabilities/ranks, model metadata, and whether F/Delta/future outcomes can enter.
+3. SCHEMA_AND_STATISTICS: check allowed labels, exact-span requirements, not_applicable handling, missingness, Cohen kappa, Gwet AC1, and whole-case bootstrap logic. Identify concrete implementation bugs only.
+4. CLAIM_BOUNDARY: list what cannot be claimed even if the gate passes.
+5. NEXT_ACTION: give only the smallest deterministic correction if any. Do not propose a new LLM experiment. Set large_llm_experiment_allowed=false and promotion_to_official_ledger=false.
+
+Do not inspect or use future outcomes, F, Delta, split/date, wallet identity, model losses, or August membership beyond confirming that the worksheets hide them.

@@ -1,0 +1,14 @@
+{
+  "created_at": "2026-09-21T16:56:59Z",
+  "status": "WAITING_FOR_TWO_SUBMISSIONS",
+  "protocol_version": "phase1_annotation_gate_v2_dev",
+  "pass_b_access": "LOCKED_PRE_PASS_A",
+  "future_outcomes_read": false,
+  "prediction_scores_read": false,
+  "phase_2_or_phase_3_accessed": false,
+  "submissions": {},
+  "missing": [
+    "/storage/gaoym/ex-graph-microtransaction-analysis/research_os/runtime/phase1_annotation_gate_v2_dev_20260921T162900Z/submissions/PASS_A_CODER_A.csv",
+    "/storage/gaoym/ex-graph-microtransaction-analysis/research_os/runtime/phase1_annotation_gate_v2_dev_20260921T162900Z/submissions/PASS_A_CODER_B.csv"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": "nlp_behavior_v1",
+  "task": "forecast_any_new_counterparty_in_next_7d",
+  "primary_design": "event_sequence_to_behavior_state_to_selective_forecast",
+  "cutoff_rule": "event_time < cutoff",
+  "future_rule": "cutoff <= event_time < cutoff + 7d",
+  "splits": {"train": "2022-06-01", "dev": "2022-07-01", "test": "2022-08-01"},
+  "input_policy": {
+    "allowed": ["pre_cutoff_event_sequence", "pre_cutoff_time_intervals", "pre_cutoff_counterparty_novelty", "pre_cutoff_event_family", "pre_cutoff_direction", "pre_cutoff_multiscale_summary"],
+    "forbidden": ["label_any_new_cp_7d", "future_event_count", "future_new_cp_count", "numeric_pred", "numeric_prob", "split_label", "post_cutoff_event", "post_cutoff_counterparty"],
+    "counterparty_policy": "stable aliases only; no address identities"
+  },
+  "behavior_states": ["dormant", "reactivation", "stable_repeat", "exploration", "expansion", "consolidation", "routing"],
+  "output_schema": {
+    "state": "one behavior state",
+    "transition": "optional previous_to_current state transition",
+    "forecast": "NEW|NONE|ABSTAIN",
+    "confidence": "0..1",
+    "evidence_ids": "1-3 pre-cutoff event ids",
+    "uncertainty": "short reason for uncertainty",
+    "abstain": "boolean"
+  },
+  "evaluation": ["accuracy", "balanced_accuracy", "macro_f1", "brier", "ece", "risk_coverage", "evidence_validity", "temporal_validity", "paired_delta_vs_m0"],
+  "models": ["M0_numeric", "M1_sequence_deterministic", "M2_language_state", "M3_language_state_plus_jev", "M4_selective_fusion"],
+  "llm_policy": {"temperature": 0, "max_tokens": 420, "model": "Qwen3.5-4B", "endpoint_env": "LLM_BASE_URL", "default_endpoint": "http://10.63.0.82:31518/v1"}
+}

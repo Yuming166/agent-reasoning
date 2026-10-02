@@ -1,0 +1,19 @@
+{
+  "protocol": "decision_state_v1",
+  "output": "/storage/gaoym/ex-graph-microtransaction-analysis/research/decision_state/results/hypothesis_panel_full.jsonl",
+  "n_cases": 3000,
+  "n_calls": 12000,
+  "valid": 12000,
+  "http_200": 12000,
+  "model_returned": [
+    "Qwen3.5-4B"
+  ],
+  "variants": {
+    "full": 3000,
+    "minus_self": 3000,
+    "minus_market": 3000,
+    "placebo": 3000
+  },
+  "errors": 0,
+  "endpoint": "http://10.63.0.82:31518/v1"
+}

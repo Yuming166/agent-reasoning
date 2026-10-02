@@ -1,0 +1,9 @@
+{
+  "event": "identity_check",
+  "requested_model": "gpt-6-astra",
+  "timestamp": "2026-09-20T14:01:27Z",
+  "http_status": 200,
+  "listed_model_count": 7,
+  "requested_model_listed": true,
+  "latency_seconds": 0.564
+}

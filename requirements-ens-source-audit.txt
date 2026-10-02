@@ -1,0 +1,2 @@
+# Optional dependency for scripts/audit_ens_x_local_asof_sources.py
+pyarrow==19.0.1

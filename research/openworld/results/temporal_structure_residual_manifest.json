@@ -1,0 +1,163 @@
+{
+  "experiment_id": "OW-009",
+  "date": "2026-09-18",
+  "experiment": "temporal_structure_residual_pilot",
+  "input": "research/community_temporal/results/data/edges_day_20220303_20220901.csv",
+  "input_sha256": "197ffe1de4678e23f9110ceb76cd01cc21190c06be9598177dd2d33ff8a95c52",
+  "source_boundary": "local day-level matched-matched primary edge extract; no external labels",
+  "event_level_limitation": "timestamp/event_family/native_value/token fields are unavailable in this local extract; rapid-forward and in/out-change signals are not claimed",
+  "canonicalization": "keep direction=outgoing rows; aggregate u,v,day; paired incoming role rows are excluded",
+  "cutoffs": [
+    "2022-06-01",
+    "2022-07-01",
+    "2022-08-01"
+  ],
+  "lookback_days": 30,
+  "score_days": 7,
+  "short_horizon_days": 7,
+  "horizon_days": 30,
+  "top_fraction": 0.05,
+  "match_k": 5,
+  "seed": 20260918,
+  "primary_method": "structure_residual",
+  "methods": [
+    "volume_activity",
+    "fine_temporal_activity",
+    "simple_temporal",
+    "raw_structure",
+    "structure_residual"
+  ],
+  "base_features": [
+    "log_hist_events",
+    "hist_active_days",
+    "log_hist_counterparties",
+    "log_score_events",
+    "score_active_days",
+    "activity_change"
+  ],
+  "structure_features": [
+    "counterparty_novelty",
+    "counterparty_growth",
+    "reciprocity_change",
+    "score_burstiness"
+  ],
+  "match_features": [
+    "log_hist_events",
+    "hist_active_days",
+    "log_hist_counterparties",
+    "log_score_events",
+    "score_active_days",
+    "activity_change"
+  ],
+  "coverage_gate": {
+    "min_candidates_per_cutoff": 2000,
+    "min_top_per_cutoff": 100
+  },
+  "feature_diagnostics": [
+    {
+      "eligibility": "registered_strict_10_events",
+      "cutoff": "2022-06-01",
+      "history_rows": 12185,
+      "prior_rows": 9631,
+      "score_rows": 2554,
+      "candidate_count": 370,
+      "min_events": 10,
+      "min_active_days": 3,
+      "missing_event_level_features": 1
+    },
+    {
+      "eligibility": "registered_strict_10_events",
+      "cutoff": "2022-07-01",
+      "history_rows": 9247,
+      "prior_rows": 7239,
+      "score_rows": 2008,
+      "candidate_count": 282,
+      "min_events": 10,
+      "min_active_days": 3,
+      "missing_event_level_features": 1
+    },
+    {
+      "eligibility": "registered_strict_10_events",
+      "cutoff": "2022-08-01",
+      "history_rows": 9398,
+      "prior_rows": 7355,
+      "score_rows": 2043,
+      "candidate_count": 359,
+      "min_events": 10,
+      "min_active_days": 3,
+      "missing_event_level_features": 1
+    },
+    {
+      "eligibility": "expanded_diagnostic_3_events",
+      "cutoff": "2022-06-01",
+      "history_rows": 12185,
+      "prior_rows": 9631,
+      "score_rows": 2554,
+      "candidate_count": 1059,
+      "min_events": 3,
+      "min_active_days": 3,
+      "missing_event_level_features": 1
+    },
+    {
+      "eligibility": "expanded_diagnostic_3_events",
+      "cutoff": "2022-07-01",
+      "history_rows": 9247,
+      "prior_rows": 7239,
+      "score_rows": 2008,
+      "candidate_count": 811,
+      "min_events": 3,
+      "min_active_days": 3,
+      "missing_event_level_features": 1
+    },
+    {
+      "eligibility": "expanded_diagnostic_3_events",
+      "cutoff": "2022-08-01",
+      "history_rows": 9398,
+      "prior_rows": 7355,
+      "score_rows": 2043,
+      "candidate_count": 898,
+      "min_events": 3,
+      "min_active_days": 3,
+      "missing_event_level_features": 1
+    }
+  ],
+  "decisions": [
+    {
+      "eligibility": "registered_strict_10_events",
+      "decision": "NO_GO_UNDERPOWERED_COVERAGE",
+      "coverage_ok": false,
+      "primary_median_new_cp_lift": 6.206896551724139,
+      "primary_new_cp_ci_lower_pass_count": 1,
+      "primary_median_open_world_lift": 0.5357142857142857,
+      "primary_mean_open_world_rate": 0.2637426900584795,
+      "primary_mean_adjacent_jaccard": 0.06350806451612903,
+      "lift_ok": false,
+      "open_world_ok": false,
+      "stability_ok": false,
+      "baseline_delta_ok": false,
+      "coverage_min_candidates": 2000,
+      "coverage_min_top": 100
+    },
+    {
+      "eligibility": "expanded_diagnostic_3_events",
+      "decision": "NO_GO_UNDERPOWERED_COVERAGE",
+      "coverage_ok": false,
+      "primary_median_new_cp_lift": 6.526717557251908,
+      "primary_new_cp_ci_lower_pass_count": 1,
+      "primary_median_open_world_lift": 0.8,
+      "primary_mean_open_world_rate": 0.2330146068756285,
+      "primary_mean_adjacent_jaccard": 0.05308641975308642,
+      "lift_ok": false,
+      "open_world_ok": false,
+      "stability_ok": false,
+      "baseline_delta_ok": false,
+      "coverage_min_candidates": 2000,
+      "coverage_min_top": 100
+    }
+  ],
+  "outputs": {
+    "panel": "research/openworld/results/temporal_structure_residual_panel.csv",
+    "selected": "research/openworld/results/temporal_structure_residual_selected.csv",
+    "summary": "research/openworld/results/temporal_structure_residual_summary.csv"
+  }
+}

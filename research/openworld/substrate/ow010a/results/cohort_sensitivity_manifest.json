@@ -1,0 +1,12 @@
+{
+  "query_name": "cohort_sensitivity",
+  "sql_sha256": "a551e61c555bbe30215e1cc2e5f22f84cf63d3cebd5581ebc3bea0d77a5fafdb",
+  "job_id": "job_SZqNACodVAqtQD85wmZBHPIoBSaY",
+  "dry_bytes_processed": 2650848,
+  "bytes_processed": 0,
+  "bytes_billed": 0,
+  "cache_hit": true,
+  "row_count": 45,
+  "raw_rows_not_exported": true,
+  "output": "/storage/gaoym/ex-graph-microtransaction-analysis/research/openworld/substrate/ow010a/results/cohort_sensitivity.csv"
+}

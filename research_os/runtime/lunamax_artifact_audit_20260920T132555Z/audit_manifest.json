@@ -1,0 +1,39 @@
+{
+  "august_frozen_test_retuned": false,
+  "claim_ledger_touched": false,
+  "cluster_bootstrap_reps": 2000,
+  "created_at": "2026-09-20T13:27:51Z",
+  "delta_definition": "B4_M1_VERIFIED_LLM macro log loss minus B0_M1 macro log loss; negative means B4 gain",
+  "dev_rows": 1000,
+  "experiment_registry_touched": false,
+  "f_definition": "existing intervention_sensitivity; no semantic-validity inference",
+  "input_sha256": {
+    "case_degradation": "b0ffa7075fc86586e617e2e99234418c25f11d714ca849baad6c04dc90a1e486",
+    "evaluation_code": "2498df853381a30f9a940b15065ee8124f0834715ced9869d2d1542bd0590903",
+    "hypothesis_panel": "047f999c1dde6b2f47d7601f3bb41fe6a457b6dbad028932e0469b95e7effe2b",
+    "llm_features": "df2cc26ae26ca5b3f704d79da64fbc3a8becbf594fea643bdf3ca3048c7e8e45",
+    "loss_delta_long": "bacd06b82e36c554be35d7eee083eb54cdb0f2056167dd014ff56da7e9e451b7",
+    "prompt_cases": "664c0118dfba37d52f6c39127b98607565fad14cc8861d72554a16f9500f322a",
+    "protocol": "2a03aaf9d726c756e6b62b6683ac2b7862f1d1a8d89c6576cf063432b8b13b94"
+  },
+  "mode": "DETERMINISTIC_ARTIFACT_FIRST_AUDIT",
+  "new_llm_outputs": false,
+  "official_astra_cycle_untouched": true,
+  "oos_rows": 2000,
+  "oos_wallets": 1946,
+  "output_files": [
+    "AUDIT_REPORT.md",
+    "audit_manifest.json",
+    "cluster_correlations.csv",
+    "dimension_correlations.csv",
+    "model_strata_summary.csv",
+    "overall_correlations.csv",
+    "strata_summary.csv",
+    "variant_summary.csv"
+  ],
+  "run_id": "20260920T132555Z",
+  "seed": 20260920,
+  "source_rows": 3000,
+  "status": "COMPLETE",
+  "test_rows": 1000
+}

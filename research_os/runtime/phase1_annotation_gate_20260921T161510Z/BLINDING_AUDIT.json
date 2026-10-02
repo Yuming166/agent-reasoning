@@ -1,0 +1,61 @@
+[
+  {
+    "pass": "pass_a",
+    "rows": 300,
+    "columns": [
+      "row_handle",
+      "hypothesis_text",
+      "proposition_boundary",
+      "proposition_span",
+      "scope_status",
+      "scope_span",
+      "time_horizon_status",
+      "time_horizon_span",
+      "consequence_activity_text",
+      "consequence_active_days_text",
+      "consequence_counterparty_breadth_text",
+      "consequence_new_counterparties_text",
+      "falsifier_status",
+      "falsifier_span",
+      "qualification_status",
+      "qualification_span",
+      "pass_a_notes"
+    ],
+    "unexpected_forbidden_columns": [],
+    "raw_wallet_or_outcome_like_values": [],
+    "pass_a_lock_required_before_pass_b_distribution": false,
+    "blinding_ok": true
+  },
+  {
+    "pass": "pass_b",
+    "rows": 300,
+    "columns": [
+      "row_handle",
+      "hypothesis_text",
+      "recorded_activity",
+      "recorded_active_days",
+      "recorded_counterparty_breadth",
+      "recorded_new_counterparties",
+      "recorded_horizon_days",
+      "evidence_labels",
+      "alignment_activity",
+      "alignment_active_days",
+      "alignment_counterparty_breadth",
+      "alignment_new_counterparties",
+      "alignment_span_activity",
+      "alignment_span_active_days",
+      "alignment_span_counterparty_breadth",
+      "alignment_span_new_counterparties",
+      "horizon_compatibility",
+      "evidence_pointer_E_SELF",
+      "evidence_pointer_E_MARKET",
+      "evidence_pointer_E_COVERAGE",
+      "evidence_pointer_E_PLACEBO",
+      "pass_b_notes"
+    ],
+    "unexpected_forbidden_columns": [],
+    "raw_wallet_or_outcome_like_values": [],
+    "pass_a_lock_required_before_pass_b_distribution": true,
+    "blinding_ok": true
+  }
+]

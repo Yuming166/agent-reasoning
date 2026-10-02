@@ -1,0 +1,6 @@
+# Dependencies verified by the EX-Graph ENS/X complete unittest run on 2026-09-26.
+# Install with: .venv/bin/python -m pip install -r requirements-ens-tests.txt
+-r requirements-ens-asof.txt
+-r requirements-ens-source-audit.txt
+pandas==3.0.6
+requests==2.34.2

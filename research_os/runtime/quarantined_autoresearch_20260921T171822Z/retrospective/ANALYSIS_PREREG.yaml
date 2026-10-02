@@ -1,0 +1,12 @@
+status: FROZEN_EXPLORATORY_PLAN
+classification: EXPLORATORY_QUARANTINED_LUNA_AUTHORIZED
+scope: retrospective_only
+primary_unit: wallet_cluster_when_raw_data_is_allowed
+primary_comparison: faithfulness_proxy_vs_future_gain
+models: [R0_faithfulness_only, R1_plus_confidence, R2_plus_behavioral_controls, R3_plus_month_event_controls]
+negative_controls: [shuffle_future_target_within_month, cross_wallet_pairing, predeclared_nonclaimed_future_dimension]
+phase1_future_outcomes_accessed: false
+phase1_submission_accessed: false
+phase2_launched: false
+phase3_launched: false
+note: No row-level new outcome analysis is executed in this quarantine because Phase 1 protection is absolute; only pre-existing aggregate summaries may be interpreted.

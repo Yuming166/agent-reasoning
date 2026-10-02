@@ -1,0 +1,5 @@
+variant,records,unique_cases,parse_valid_rate,mean_hypotheses,mean_consequence_valid,mean_text_chars,nonempty_text_rate,model_returned_nunique
+full,3000,3000,1.0,2.9996666666666667,2.9996666666666667,531.526,1.0,1
+minus_market,3000,3000,1.0,2.9996666666666667,2.9996666666666667,491.81966666666665,1.0,1
+minus_self,3000,3000,1.0,3.0,3.0,471.89566666666667,1.0,1
+placebo,3000,3000,1.0,3.0,3.0,525.122,1.0,1

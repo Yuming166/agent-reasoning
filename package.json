@@ -1,0 +1,9 @@
+{
+  "name": "exgraph-ens-asof-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pinned ENSIP-15 normalizer used by offline ENS as-of audit scripts.",
+  "dependencies": {
+    "@adraffy/ens-normalize": "1.11.1"
+  }
+}

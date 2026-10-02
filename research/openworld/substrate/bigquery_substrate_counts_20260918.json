@@ -1,0 +1,69 @@
+{
+  "audit_date": "2026-09-18",
+  "source_table": "ictdata-507912.exgraph.target_event_sequences_20220301_20220901",
+  "source_window": "[2022-03-01,2022-09-01)",
+  "label_blind": true,
+  "raw_rows_not_exported": true,
+  "queries": {
+    "full_window_endpoint_summary": {
+      "job_id": "5a780b09-08e5-45db-893a-0ccdfb2c7edd",
+      "bytes_processed": 332179620,
+      "bytes_billed": 332398592,
+      "result": {
+        "sequence_rows": 11836196,
+        "target_nodes_all": 21469,
+        "counterparty_nodes_all": 13900,
+        "counterparty_nodes_present": 13900,
+        "primary_matched_target_nodes": 13147,
+        "primary_matched_counterparty_nodes": 13147
+      }
+    },
+    "full_window_accepted_endpoint_summary": {
+      "job_id": "75584a44-19e1-4484-aa15-4259fda232ad",
+      "bytes_processed": 332179620,
+      "bytes_billed": 332398592,
+      "result": {
+        "unique_endpoint_nodes_all": 21469,
+        "unique_endpoint_nodes_accepted": 13147,
+        "accepted_rows": 266998,
+        "primary_rows": 7286052,
+        "counterparty_present_rows": 11832912,
+        "nonself_rows": 11808697
+      }
+    },
+    "per_cutoff_pre_cutoff_summary": {
+      "job_id": "6d3c4f98-cbf0-4c7e-bd5e-b8143f2cc145",
+      "bytes_processed": 332179620,
+      "bytes_billed": 332398592,
+      "rows": [
+        {
+          "cutoff": "2022-06-01",
+          "raw_sequence_rows_pre_cutoff": 7095200,
+          "unique_endpoint_wallets_pre_cutoff_all_roles": 20461,
+          "unique_endpoint_wallets_upstream_accepted": 11532,
+          "accepted_target_wallets": 11532,
+          "accepted_counterparty_wallets": 11532,
+          "upstream_accepted_rows": 158770
+        },
+        {
+          "cutoff": "2022-07-01",
+          "raw_sequence_rows_pre_cutoff": 8671849,
+          "unique_endpoint_wallets_pre_cutoff_all_roles": 20818,
+          "unique_endpoint_wallets_upstream_accepted": 12241,
+          "accepted_target_wallets": 12241,
+          "accepted_counterparty_wallets": 12241,
+          "upstream_accepted_rows": 190352
+        },
+        {
+          "cutoff": "2022-08-01",
+          "raw_sequence_rows_pre_cutoff": 10344286,
+          "unique_endpoint_wallets_pre_cutoff_all_roles": 21123,
+          "unique_endpoint_wallets_upstream_accepted": 12747,
+          "accepted_target_wallets": 12747,
+          "accepted_counterparty_wallets": 12747,
+          "upstream_accepted_rows": 229940
+        }
+      ]
+    }
+  }
+}

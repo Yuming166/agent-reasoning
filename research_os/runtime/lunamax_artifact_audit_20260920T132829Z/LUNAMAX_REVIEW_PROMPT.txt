@@ -1,0 +1,156 @@
+You are the local Codex CLI model gpt-5.6-luna running at maximum configured reasoning effort. This is an OFF_CHARTER_EXPLORATORY_FALLBACK review, not Astra6. Do not present any conclusion as an Astra6 result, official claim, preregistered result, or final scientific conclusion. Do not modify files and do not reveal private chain-of-thought; return only a concise auditable scientific review.
+
+Review the deterministic artifact-first audit in this directory and the frozen Decision-State protocol. The official Astra6 cycle remains paused and immutable. No new LLM experiment is allowed in this review. The August 2022 frozen test is immutable. Address-level behavior is only an actor proxy; do not claim owner identity, true belief, psychology, causal intent, or verified social exposure.
+
+Required output sections:
+1. VERDICT: whether the simple intervention-sensitivity -> B4 effectiveness story survives; distinguish artifact falsification from absence of semantic validity.
+2. EVIDENCE: cite the exact audit numbers, including pooled/dev/test correlations, activity-bin residualized correlation, wallet-cluster bootstrap CI, strata/model findings, and variant parse/text audit.
+3. FALSIFIERS: list the strongest remaining confounds and what would kill the proposed language-centered branch; explicitly address activity/autoregression, repeat-wallet clustering, prompt/template sensitivity, consequence-dimension aggregation, and the fact that downstream B2/B3/B4 artifacts use consequence distributions rather than narrative text.
+4. NEXT GATE: propose the smallest no-new-LLM next step. If recommending a human audit, specify a pre-outcome, pre-F/Delta sampling rule and a locked rubric; do not select cases by success, failure, F, Delta, or August results.
+5. CLAIM BOUNDARY: state exactly what may and may not be said now. Set large_llm_experiment_allowed=false and promotion_to_official_ledger=false.
+
+Use only the supplied audit artifacts and protocol; do not browse the web or invent literature claims.
+
+===== AUDIT_REPORT.md =====
+# Decision-State frozen artifact-first falsification audit
+
+- Run time: `2026-09-20T13:30:23Z`
+- Mode: `DETERMINISTIC_ARTIFACT_FIRST_AUDIT`
+- Source rows: `3000`; OOS rows used: `2000` (dev `1000`, test `1000`)
+- Wallets in OOS: `1946`
+- Bootstrap: wallet-clustered, `2000` replicates, seed `20260920`
+
+## Scope and immutability
+
+This is a deterministic audit of already-frozen artifacts. It does not generate new LLM outputs, fit a new predictor, change a probability, select cases by outcome, or reopen the August frozen test. The official Astra6 cycle and claim/experiment ledgers are untouched.
+
+## Main F–Delta audit
+
+`F` is the existing intervention-response magnitude (`intervention_sensitivity`), not semantic validity or faithfulness. `Delta` is frozen B4 macro log-loss minus frozen B0/M1 macro log-loss; negative means B4 improved.
+
+- OOS pooled Pearson(F, Delta): `-0.0334`; Spearman: `-0.0194`; n=`2000`.
+- July development Pearson: `-0.0213`; August frozen test Pearson: `-0.0549`.
+- Activity-bin residualized OOS Pearson: `-0.0366`; this removes only fixed activity-bin means and is not a causal adjustment.
+- Wallet-cluster bootstrap Pearson 95% CI: `[-0.0807, 0.0140]`; wallet-collapsed estimates are in `cluster_correlations.csv`.
+
+A correlation near zero, or a confidence interval crossing zero, is a falsification of a simple monotone F-to-effectiveness story in this artifact set; it is not evidence that true belief, intent, or semantic validity is absent.
+
+## Decomposition and controls
+
+The CSV outputs report intervention type (self/market/placebo), each consequence dimension, split, activity strata, repeat-wallet status, dominant event family, event-history quartiles, and wallet-clustered estimates. They are descriptive audits over the frozen OOS rows, not post-hoc model tuning.
+
+## Representation boundary
+
+The panel contains narrative hypothesis text, but the frozen B2/B3/B4 evaluation lineage converts hypotheses into closed consequence distributions and intervention features. This artifact set does not contain a text-only/text-free matched downstream ablation or embeddings. Therefore it cannot attribute any observed B2/B3/B4 behavior to narrative text itself; B1 and B0 are text-free comparator baselines, not a controlled text ablation.
+
+## Current deterministic conclusion
+
+The next defensible action is a falsification/reliability gate, not a large new LLM experiment. If semantic human audit is later considered, its sampling and rubric must be locked before inspecting F, Delta, success/failure, or August outcomes. Any Luna Max interpretation of this directory remains `OFF_CHARTER_EXPLORATORY_FALLBACK` and cannot be promoted to the official claim ledger or experiment registry.
+
+## Files
+
+- `audit_manifest.json`: input fingerprints and protocol metadata.
+- `overall_correlations.csv`: raw and activity-bin-adjusted correlations.
+- `cluster_correlations.csv`: wallet-cluster bootstrap and wallet-collapsed correlations.
+- `dimension_correlations.csv`: consequence-dimension level associations.
+- `strata_summary.csv`: descriptive stratified audit.
+- `model_strata_summary.csv`: frozen model loss summaries by scope/stratum.
+- `variant_summary.csv`: frozen panel variant parse/text presence audit.
+
+===== variant_summary.csv =====
+variant,records,unique_cases,parse_valid_rate,mean_hypotheses,mean_consequence_valid,mean_text_chars,nonempty_text_rate,model_returned_nunique
+full,3000,3000,1.0,2.9996666666666667,2.9996666666666667,531.526,1.0,1
+minus_market,3000,3000,1.0,2.9996666666666667,2.9996666666666667,491.81966666666665,1.0,1
+minus_self,3000,3000,1.0,3.0,3.0,471.89566666666667,1.0,1
+placebo,3000,3000,1.0,3.0,3.0,525.122,1.0,1
+
+===== key overall correlations =====
+scope,adjustment,x,y,cluster_note,n,pearson_r,pearson_p,spearman_rho,spearman_p,mean_x,mean_y,median_x,median_y,n_wallets
+oos,none,intervention_sensitivity,delta_B4_vs_B0_macro_audit,,2000,-0.0334210751411183,0.1351445511297422,-0.0193664155122238,0.3866919213883018,0.2133368336668212,0.0234954224895016,0.1995840671516392,-0.0112816792079411,1946
+oos,activity_bin,intervention_sensitivity,delta_B4_vs_B0_macro_audit,,2000,-0.0365798618511235,0.101959829414459,-0.0219449162073788,0.3266366075184681,0.2133368336668212,0.0234954224895016,0.1995840671516392,-0.0112816792079411,1946
+oos,none,intervention_sensitivity,gain_B4_vs_B0_macro_audit,,2000,0.0334210751411183,0.1351445511297422,0.0193664155122238,0.3866919213883018,0.2133368336668212,-0.0234954224895016,0.1995840671516392,0.0112816792079411,1946
+oos,none,self_sensitivity,delta_B4_vs_B0_macro_audit,,2000,-0.0203254657106524,0.3636098733874003,-0.0113993153133774,0.6104083019500592,0.2688888955577835,0.0234954224895016,0.25065053496593,-0.0112816792079411,1946
+oos,activity_bin,self_sensitivity,delta_B4_vs_B0_macro_audit,,2000,-0.020421813677293,0.3613395906959218,-0.0154894533444383,0.4887377272534299,0.2688888955577835,0.0234954224895016,0.25065053496593,-0.0112816792079411,1946
+oos,none,self_sensitivity,gain_B4_vs_B0_macro_audit,,2000,0.0203254657106524,0.3636098733874003,0.0113993153133774,0.6104083019500592,0.2688888955577835,-0.0234954224895016,0.25065053496593,0.0112816792079411,1946
+oos,none,market_sensitivity,delta_B4_vs_B0_macro_audit,,2000,-0.0290254517187998,0.1944524986691149,-0.0284655727190939,0.2032022395436466,0.157784771775859,0.0234954224895016,0.1275644132432289,-0.0112816792079411,1946
+oos,activity_bin,market_sensitivity,delta_B4_vs_B0_macro_audit,,2000,-0.0342990156869895,0.125179593469496,-0.0234360949885406,0.2948309305732683,0.157784771775859,0.0234954224895016,0.1275644132432289,-0.0112816792079411,1946
+oos,none,market_sensitivity,gain_B4_vs_B0_macro_audit,,2000,0.0290254517187998,0.1944524986691149,0.0284655727190939,0.2032022395436466,0.157784771775859,-0.0234954224895016,0.1275644132432289,0.0112816792079411,1946
+oos,none,placebo_sensitivity,delta_B4_vs_B0_macro_audit,,2000,0.0486016519973229,0.0297458984488374,0.0345328582246667,0.1226243564490064,0.0934863081025712,0.0234954224895016,0.0666121716933732,-0.0112816792079411,1946
+oos,activity_bin,placebo_sensitivity,delta_B4_vs_B0_macro_audit,,2000,0.047095531474474,0.0352019159319631,0.0333343413986833,0.1361613506004304,0.0934863081025712,0.0234954224895016,0.0666121716933732,-0.0112816792079411,1946
+oos,none,placebo_sensitivity,gain_B4_vs_B0_macro_audit,,2000,-0.0486016519973229,0.0297458984488374,-0.0345328582246667,0.1226243564490064,0.0934863081025712,-0.0234954224895016,0.0666121716933732,0.0112816792079411,1946
+dev,none,intervention_sensitivity,delta_B4_vs_B0_macro_audit,,1000,-0.0212528789509842,0.5020228824824503,-0.0504352034611934,0.1109537630174332,0.2174909024191595,0.0174304409752082,0.1997287034081101,-0.0158741731425571,1000
+dev,none,intervention_sensitivity,gain_B4_vs_B0_macro_audit,,1000,0.0212528789509842,0.5020228824824503,0.0504352034611934,0.1109537630174332,0.2174909024191595,-0.0174304409752082,0.1997287034081101,0.0158741731425571,1000
+dev,none,self_sensitivity,delta_B4_vs_B0_macro_audit,,1000,-0.015432457126688,0.6259495299913177,-0.044050383332658,0.1639439411562699,0.2684562093110612,0.0174304409752082,0.221949026465995,-0.0158741731425571,1000
+dev,none,self_sensitivity,gain_B4_vs_B0_macro_audit,,1000,0.015432457126688,0.6259495299913177,0.044050383332658,0.1639439411562699,0.2684562093110612,-0.0174304409752082,0.221949026465995,0.0158741731425571,1000
+dev,none,market_sensitivity,delta_B4_vs_B0_macro_audit,,1000,-0.0168270680934133,0.5950787750431861,-0.0539588872914299,0.0881127233703264,0.1665255955272577,0.0174304409752082,0.1313046215841426,-0.0158741731425571,1000
+dev,none,market_sensitivity,gain_B4_vs_B0_macro_audit,,1000,0.0168270680934133,0.5950787750431861,0.0539588872914299,0.0881127233703264,0.1665255955272577,-0.0174304409752082,0.1313046215841426,0.0158741731425571,1000
+dev,none,placebo_sensitivity,delta_B4_vs_B0_macro_audit,,1000,0.0071960380011553,0.8202083311711487,-0.023071573920184,0.4661413113641244,0.0888856298225598,0.0174304409752082,0.0580822779181484,-0.0158741731425571,1000
+dev,none,placebo_sensitivity,gain_B4_vs_B0_macro_audit,,1000,-0.0071960380011553,0.8202083311711487,0.023071573920184,0.4661413113641244,0.0888856298225598,-0.0174304409752082,0.0580822779181484,0.0158741731425571,1000
+test,none,intervention_sensitivity,delta_B4_vs_B0_macro_audit,,1000,-0.0549150537013541,0.0826161230955883,0.0240175112337501,0.448056027889559,0.209182764914483,0.029560404003795,0.1989799201098502,-0.0063181066043929,1000
+test,none,intervention_sensitivity,gain_B4_vs_B0_macro_audit,,1000,0.0549150537013541,0.0826161230955883,-0.0240175112337501,0.448056027889559,0.209182764914483,-0.029560404003795,0.1989799201098502,0.0063181066043929,1000
+test,none,self_sensitivity,delta_B4_vs_B0_macro_audit,,1000,-0.029675094744891,0.3485314219429513,0.0207799634354742,0.5115866416224804,0.2693215818045056,0.029560404003795,0.268044874679607,-0.0063181066043929,1000
+test,none,self_sensitivity,gain_B4_vs_B0_macro_audit,,1000,0.029675094744891,0.3485314219429513,-0.0207799634354742,0.5115866416224804,0.2693215818045056,-0.029560404003795,0.268044874679607,0.0063181066043929,1000
+test,none,market_sensitivity,delta_B4_vs_B0_macro_audit,,1000,-0.0451558675268621,0.1536099276271524,0.0051666334281545,0.870376683616128,0.1490439480244604,0.029560404003795,0.1252877574211402,-0.0063181066043929,1000
+test,none,market_sensitivity,gain_B4_vs_B0_macro_audit,,1000,0.0451558675268621,0.1536099276271524,-0.0051666334281545,0.870376683616128,0.1490439480244604,-0.029560404003795,0.1252877574211402,0.0063181066043929,1000
+test,none,placebo_sensitivity,delta_B4_vs_B0_macro_audit,,1000,0.0974199996755463,0.0020411646561263,0.0910910191755111,0.0039397799111354,0.0980869863825826,0.029560404003795,0.0765850184800253,-0.0063181066043929,1000
+test,none,placebo_sensitivity,gain_B4_vs_B0_macro_audit,,1000,-0.0974199996755463,0.0020411646561263,-0.0910910191755111,0.0039397799111354,0.0980869863825826,-0.029560404003795,0.0765850184800253,0.0063181066043929,1000
+
+===== key cluster correlations =====
+scope,x,y,n_rows,n_wallets,point_pearson_r,point_spearman_rho,bootstrap_reps,seed,pearson_ci_low,pearson_ci_high,spearman_ci_low,spearman_ci_high,cluster_note,pearson_r,pearson_p,spearman_rho,spearman_p
+oos,intervention_sensitivity,delta_B4_vs_B0_macro_audit,2000,1946,-0.0334210751411183,-0.0193664155122238,2000.0,20260920.0,-0.0807196323637747,0.0139759654844621,-0.0631592277073463,0.0245122120368147,cluster_bootstrap,,,,
+oos,intervention_sensitivity,delta_B4_vs_B0_macro_audit,2000,1946,,,,,,,,,wallet_collapsed,-0.0211956787630836,0.3500359495927109,-0.0066349508177654,0.7698997788778627
+oos,self_sensitivity,delta_B4_vs_B0_macro_audit,2000,1946,-0.0203254657106524,-0.0113993153133774,2000.0,20260920.0,-0.0672922168124345,0.0244749271986742,-0.0567432820563994,0.0337202867243807,cluster_bootstrap,,,,
+oos,self_sensitivity,delta_B4_vs_B0_macro_audit,2000,1946,,,,,,,,,wallet_collapsed,-0.0073279831290175,0.7466501505871626,0.0002465812892394,0.9913267090876076
+oos,market_sensitivity,delta_B4_vs_B0_macro_audit,2000,1946,-0.0290254517187998,-0.0284655727190939,2000.0,20260920.0,-0.0739730552241087,0.0200384191878067,-0.0727527548925477,0.0174021149537168,cluster_bootstrap,,,,
+oos,market_sensitivity,delta_B4_vs_B0_macro_audit,2000,1946,,,,,,,,,wallet_collapsed,-0.0250673418817377,0.2690421423832256,-0.025234906083662,0.2658537566533562
+oos,placebo_sensitivity,delta_B4_vs_B0_macro_audit,2000,1946,0.0486016519973229,0.0345328582246667,2000.0,20260920.0,0.0033422766564077,0.0949938914327986,-0.0101919162721264,0.0783326940181032,cluster_bootstrap,,,,
+oos,placebo_sensitivity,delta_B4_vs_B0_macro_audit,2000,1946,,,,,,,,,wallet_collapsed,0.0561686285898502,0.0132062408712367,0.0459670492562416,0.0426076473602635
+dev,intervention_sensitivity,delta_B4_vs_B0_macro_audit,1000,1000,-0.0212528789509842,-0.0504352034611934,2000.0,20260920.0,-0.0833800141381154,0.0375987313721588,-0.1152165483684525,0.0127895532253618,cluster_bootstrap,,,,
+dev,intervention_sensitivity,delta_B4_vs_B0_macro_audit,1000,1000,,,,,,,,,wallet_collapsed,-0.0212528789509842,0.5020228824824503,-0.0504352034611934,0.1109537630174332
+dev,self_sensitivity,delta_B4_vs_B0_macro_audit,1000,1000,-0.015432457126688,-0.044050383332658,2000.0,20260920.0,-0.0785298748240422,0.0471477929016348,-0.1088934012578237,0.0199508315541653,cluster_bootstrap,,,,
+dev,self_sensitivity,delta_B4_vs_B0_macro_audit,1000,1000,,,,,,,,,wallet_collapsed,-0.015432457126688,0.6259495299913177,-0.044050383332658,0.1639439411562699
+dev,market_sensitivity,delta_B4_vs_B0_macro_audit,1000,1000,-0.0168270680934133,-0.0539588872914299,2000.0,20260920.0,-0.0771065966640524,0.0427969073464714,-0.1161432060320526,0.0060744556934197,cluster_bootstrap,,,,
+dev,market_sensitivity,delta_B4_vs_B0_macro_audit,1000,1000,,,,,,,,,wallet_collapsed,-0.0168270680934133,0.5950787750431861,-0.0539588872914299,0.0881127233703264
+dev,placebo_sensitivity,delta_B4_vs_B0_macro_audit,1000,1000,0.0071960380011553,-0.023071573920184,2000.0,20260920.0,-0.0586753107001657,0.0722555166591163,-0.0871112879576649,0.0402211688740988,cluster_bootstrap,,,,
+dev,placebo_sensitivity,delta_B4_vs_B0_macro_audit,1000,1000,,,,,,,,,wallet_collapsed,0.0071960380011553,0.8202083311711487,-0.023071573920184,0.4661413113641244
+test,intervention_sensitivity,delta_B4_vs_B0_macro_audit,1000,1000,-0.0549150537013541,0.0240175112337501,2000.0,20260920.0,-0.1314203656886378,0.0164876351097098,-0.0370903700347182,0.0856417948666212,cluster_bootstrap,,,,
+test,intervention_sensitivity,delta_B4_vs_B0_macro_audit,1000,1000,,,,,,,,,wallet_collapsed,-0.0549150537013541,0.0826161230955883,0.0240175112337501,0.448056027889559
+test,self_sensitivity,delta_B4_vs_B0_macro_audit,1000,1000,-0.029675094744891,0.0207799634354742,2000.0,20260920.0,-0.0986999641583973,0.0371212093726908,-0.0458140095123043,0.0800521292999696,cluster_bootstrap,,,,
+test,self_sensitivity,delta_B4_vs_B0_macro_audit,1000,1000,,,,,,,,,wallet_collapsed,-0.029675094744891,0.3485314219429513,0.0207799634354742,0.5115866416224804
+test,market_sensitivity,delta_B4_vs_B0_macro_audit,1000,1000,-0.0451558675268621,0.0051666334281545,2000.0,20260920.0,-0.1230359962272369,0.0293020109688639,-0.054794621859029,0.0682061612206232,cluster_bootstrap,,,,
+test,market_sensitivity,delta_B4_vs_B0_macro_audit,1000,1000,,,,,,,,,wallet_collapsed,-0.0451558675268621,0.1536099276271524,0.0051666334281545,0.870376683616128
+test,placebo_sensitivity,delta_B4_vs_B0_macro_audit,1000,1000,0.0974199996755463,0.0910910191755111,2000.0,20260920.0,0.0285062810394258,0.167368384701742,0.0289093674323905,0.1533638824172264,cluster_bootstrap,,,,
+test,placebo_sensitivity,delta_B4_vs_B0_macro_audit,1000,1000,,,,,,,,,wallet_collapsed,0.0974199996755463,0.0020411646561263,0.0910910191755111,0.0039397799111354
+
+===== model all-scope summary =====
+scope,dimension,stratum,model,n_rows,n_wallets,mean_macro_log_loss,median_macro_log_loss,mean_delta_vs_B0,median_delta_vs_B0,gain_rate_vs_B0
+oos,all,all,B0_M1,2000,1946,0.8020518733161053,0.4637270336750204,0.0,0.0,0.0
+oos,all,all,B1_M1_DETERMINISTIC,2000,1946,0.807041144275716,0.4524914032892987,0.0049892709596108,-0.0002513952362613,0.5035
+oos,all,all,B2_M1_SINGLE_LLM,2000,1946,0.7988157339196593,0.4388115051500707,-0.0032361393964459,-0.0004931758438628,0.506
+oos,all,all,B3_M1_MULTI_LLM,2000,1946,0.8157491784882539,0.4473738224969953,0.0136973051721486,-0.0052505080059261,0.519
+oos,all,all,B4_M1_VERIFIED_LLM,2000,1946,0.8255472958056068,0.4343028240399772,0.0234954224895016,-0.0112816792079411,0.5365
+dev,all,all,B0_M1,1000,1000,0.7934709131421374,0.411356232481935,0.0,0.0,0.0
+dev,all,all,B1_M1_DETERMINISTIC,1000,1000,0.795231068268284,0.4242691219744374,0.0017601551261467,0.0005381512520495,0.468
+dev,all,all,B2_M1_SINGLE_LLM,1000,1000,0.7859353032362784,0.401387821070312,-0.0075356099058589,-0.0004931758438628,0.53
+dev,all,all,B3_M1_MULTI_LLM,1000,1000,0.8177282740950159,0.4062565043323726,0.0242573609528785,-0.0041775790627105,0.516
+dev,all,all,B4_M1_VERIFIED_LLM,1000,1000,0.8109013541173455,0.391309106844687,0.0174304409752082,-0.0158741731425571,0.557
+test,all,all,B0_M1,1000,1000,0.8106328334900732,0.488470144225284,0.0,0.0,0.0
+test,all,all,B1_M1_DETERMINISTIC,1000,1000,0.8188512202831482,0.4670297921030202,0.0082183867930749,-0.0002513952362613,0.539
+test,all,all,B2_M1_SINGLE_LLM,1000,1000,0.8116961646030402,0.4871053109483407,0.0010633311129671,0.0012724525661235,0.482
+test,all,all,B3_M1_MULTI_LLM,1000,1000,0.8137700828814918,0.4966386583187827,0.0031372493914186,-0.0070308823733932,0.522
+test,all,all,B4_M1_VERIFIED_LLM,1000,1000,0.8401932374938682,0.4920574344870002,0.029560404003795,-0.0063181066043929,0.516
+
+===== activity strata =====
+dimension,stratum,n_rows,n_wallets,mean_intervention_sensitivity,median_intervention_sensitivity,mean_delta_B4_vs_B0_macro,median_delta_B4_vs_B0_macro,b4_gain_rate,pearson_r_F_delta,spearman_rho_F_delta
+activity_bin,1-2,500,494,0.2172716708919098,0.2026190815784023,0.0582579808129339,-0.0187600541311819,0.584,-0.0183694557609714,-0.0473373273570157
+activity_bin,10-19,500,496,0.1974829120137743,0.1858260869033521,0.0178006174870612,-0.0010924681125041,0.506,-0.0094353906335441,-0.0266236603857473
+activity_bin,20+,500,494,0.2364680042017476,0.2139270657514659,0.0221323807962012,0.004823682294618,0.49,-0.0259820859944271,0.0144182607462714
+activity_bin,3-9,500,498,0.2021247475598532,0.1965016845772025,-0.0042092891381898,-0.0164920675734938,0.566,-0.1084632882381825,-0.0482060602230091
+
+===== history quartiles =====
+dimension,stratum,n_rows,n_wallets,mean_intervention_sensitivity,median_intervention_sensitivity,mean_delta_B4_vs_B0_macro,median_delta_B4_vs_B0_macro,b4_gain_rate,pearson_r_F_delta,spearman_rho_F_delta
+history_event_count_30d_quartile,history_event_count_30d_Q1,500,494,0.2172716708919098,0.2026190815784023,0.0582579808129339,-0.0187600541311819,0.584,-0.0183694557609714,-0.0473373273570157
+history_event_count_30d_quartile,history_event_count_30d_Q2,500,498,0.2021247475598532,0.1965016845772025,-0.0042092891381898,-0.0164920675734938,0.566,-0.1084632882381825,-0.0482060602230091
+history_event_count_30d_quartile,history_event_count_30d_Q3,500,496,0.1974829120137743,0.1858260869033521,0.0178006174870612,-0.0010924681125041,0.506,-0.0094353906335441,-0.0266236603857473
+history_event_count_30d_quartile,history_event_count_30d_Q4,500,494,0.2364680042017476,0.2139270657514659,0.0221323807962012,0.004823682294618,0.49,-0.0259820859944271,0.0144182607462714
+

@@ -1,0 +1,49 @@
+[
+  {
+    "pass": "pass_a",
+    "rows": 300,
+    "columns": [
+      "row_handle",
+      "hypothesis_text",
+      "pass_a_commitment",
+      "pass_a_operationality",
+      "pass_a_text_span",
+      "pass_a_notes"
+    ],
+    "duplicate_row_handles": 0,
+    "bad_column_names": [],
+    "raw_wallet_like_values": [],
+    "pass_a_hidden_until_locked": false,
+    "blinding_ok": true
+  },
+  {
+    "pass": "pass_b",
+    "rows": 300,
+    "columns": [
+      "row_handle",
+      "hypothesis_text",
+      "recorded_activity",
+      "recorded_active_days",
+      "recorded_counterparty_breadth",
+      "recorded_new_counterparties",
+      "horizon_days",
+      "evidence_labels",
+      "alignment_activity",
+      "alignment_active_days",
+      "alignment_counterparty_breadth",
+      "alignment_new_counterparties",
+      "alignment_span_activity",
+      "alignment_span_active_days",
+      "alignment_span_counterparty_breadth",
+      "alignment_span_new_counterparties",
+      "horizon_compatibility",
+      "evidence_relevance",
+      "pass_b_notes"
+    ],
+    "duplicate_row_handles": 0,
+    "bad_column_names": [],
+    "raw_wallet_like_values": [],
+    "pass_a_hidden_until_locked": true,
+    "blinding_ok": true
+  }
+]

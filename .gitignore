@@ -1,0 +1,37 @@
+# --- big data / artifacts: never commit ---
+data/
+artifacts/
+logs/
+node_modules/
+.venv*/
+*.pkl
+*.parquet
+*.gpickle
+*.zip
+*.pt
+*.log
+logs_fetch_x.log
+
+# local experiment scratch (pipeline scripts preserved under .tmp/ are kept
+# only selectively; default exclude to avoid accidental big files)
+.tmp/*.log
+.tmp/*.pkl
+.tmp/*.parquet
+.tmp/*.jsonl
+
+# misc
+*.bak.*
+*.tmp.*
+.DS_Store
+
+# large result payloads inside research/ (keep code + small reports)
+research/**/*.pt
+research/**/*.npz
+research/**/*.parquet
+research/**/*.pkl
+research/**/*.zip
+research/**/*.csv
+research/**/*.jsonl
+vendor/
+
+.codex/

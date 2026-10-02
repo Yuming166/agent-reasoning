@@ -1,0 +1,35 @@
+{
+  "experiment_id": "OW-004",
+  "edge_background": "/storage/gaoym/ex-graph-microtransaction-analysis/research/community_temporal/results/data/edges_day_20220303_20220901.csv",
+  "edge_background_sha256": "197ffe1de4678e23f9110ceb76cd01cc21190c06be9598177dd2d33ff8a95c52",
+  "label_access": "none",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "stages": [
+    "S1_obvious",
+    "S2_noise",
+    "S3_camouflage",
+    "S4_high_camouflage"
+  ],
+  "motifs": [
+    "cycle",
+    "fan_in",
+    "fan_out",
+    "rapid_forwarding",
+    "split_merge",
+    "reciprocal"
+  ],
+  "n_groups": 8,
+  "notes": "Structural sensitivity only; not realistic criminal simulation.",
+  "rows": 1120
+}

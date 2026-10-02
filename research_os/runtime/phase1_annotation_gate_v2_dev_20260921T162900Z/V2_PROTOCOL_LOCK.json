@@ -1,0 +1,130 @@
+{
+  "lock_version": "phase1_v2_protocol_lock_v1",
+  "created_at": "2026-09-21T16:51:46Z",
+  "state": "FROZEN_PRE_ANNOTATION",
+  "protocol_version": "phase1_annotation_gate_v2_dev",
+  "pre_annotation_audit": {
+    "status": "READY_TO_ANNOTATE",
+    "path": "PHASE1_PRE_ANNOTATION_AUDIT.md",
+    "sha256": "075d475d9a94f07a9f8fafefbf944d9650793a3963cc317eae1faa0f14ec9246"
+  },
+  "frozen_artifacts": {
+    "protocol": {
+      "path": "PHASE1_ANNOTATION_PROTOCOL.md",
+      "sha256": "9627d4e9e111f8a0221ba06d9853476ede7ad2c9aa83af03e8f2e0a8c3d7f1c7"
+    },
+    "manifest": {
+      "path": "PHASE1_ANNOTATION_MANIFEST.json",
+      "sha256": "fb56a935b1a37916c57aadcbfd7a090e84439d0df6266c902ef2e31a1550e42e"
+    },
+    "pass_a_blank": {
+      "path": "PASS_A_TEXT_ONLY_BLIND.csv",
+      "sha256": "feb52a1e0d14a1242132adaa0bd4e20d48080b9ab59a2820cfb651ef36a1f93b",
+      "header_sha256": "5fbbd4d76623de9031f3016c407292ca41399e304e0e6a557fae627127822e32"
+    },
+    "pass_b_locked": {
+      "path": "PASS_B_STRUCTURED_REVIEW_LOCKED.csv",
+      "sha256": "877a8858961c839540fe59fd94a4186ee653ab0ac33c10167dc186681e32836c",
+      "header_sha256": "112db40dc763733600872593189bc61239775c84f9db91008511bdc7e094e4bb"
+    },
+    "double_code_handles": {
+      "path": "DOUBLE_CODE_ROW_HANDLES.csv",
+      "sha256": "c0bef4f2333fe9bde2dce760b14fc10582f5d8766930e6b4f3888733b77be635"
+    },
+    "sample_row_map": {
+      "path": "internal/SAMPLE_ROW_MAP.json",
+      "sha256": "de90fad4cc490a75331c68decebcbda902b11a7b7e0fc6d6b12fd60302383c68"
+    },
+    "blinding_audit": {
+      "path": "BLINDING_AUDIT.json",
+      "sha256": "969f1c3f05c9b58202890659ba56b3ec253d689c827e559180cc729043a19bd3"
+    }
+  },
+  "roster_integrity": {
+    "cases": 100,
+    "rows": 300,
+    "cutoffs": {
+      "2022-06-01": 50,
+      "2022-07-01": 50
+    },
+    "excluded_cutoff": "2022-08-01",
+    "double_code_cases": 20,
+    "double_code_rows": 60,
+    "case_cluster_primary_unit": true
+  },
+  "schema_freeze": {
+    "pass_a_columns": [
+      "row_handle",
+      "hypothesis_text",
+      "proposition_boundary",
+      "proposition_span",
+      "proposition_status",
+      "scope_status",
+      "scope_span",
+      "time_horizon_status",
+      "time_horizon_span",
+      "consequence_activity_text",
+      "consequence_active_days_text",
+      "consequence_counterparty_breadth_text",
+      "consequence_new_counterparties_text",
+      "consequence_observability",
+      "falsifier_status",
+      "falsifier_span",
+      "falsifier_executability",
+      "qualification_status",
+      "qualification_span",
+      "qualification_substantive",
+      "pass_a_notes"
+    ],
+    "pass_b_columns": [
+      "row_handle",
+      "hypothesis_text",
+      "recorded_activity",
+      "recorded_active_days",
+      "recorded_counterparty_breadth",
+      "recorded_new_counterparties",
+      "recorded_horizon_days",
+      "evidence_labels",
+      "alignment_activity",
+      "alignment_active_days",
+      "alignment_counterparty_breadth",
+      "alignment_new_counterparties",
+      "alignment_span_activity",
+      "alignment_span_active_days",
+      "alignment_span_counterparty_breadth",
+      "alignment_span_new_counterparties",
+      "horizon_compatibility",
+      "evidence_pointer_E_SELF",
+      "evidence_span_E_SELF",
+      "evidence_pointer_E_MARKET",
+      "evidence_span_E_MARKET",
+      "evidence_pointer_E_COVERAGE",
+      "evidence_span_E_COVERAGE",
+      "evidence_pointer_E_PLACEBO",
+      "evidence_span_E_PLACEBO",
+      "placebo_handling",
+      "pass_b_notes"
+    ],
+    "schema_change_allowed": false
+  },
+  "pass_b_access": {
+    "state": "LOCKED_PRE_PASS_A",
+    "release_condition": "both assignment-specific Pass A submissions validate and are hash-locked",
+    "release_script_required": true,
+    "root_files_mode_after_lock": "000"
+  },
+  "submissions": {
+    "coder_a": "PENDING",
+    "coder_b": "PENDING",
+    "pass_a_lock": "NOT_CREATED"
+  },
+  "future_outcomes_read": false,
+  "prediction_scores_read": false,
+  "phase_2_or_phase_3_accessed": false,
+  "additional_research_agents_launched": false,
+  "permissions_applied": {
+    "immutable_artifacts_mode": "0444",
+    "pass_b_files_mode": "000",
+    "verified_at": "2026-09-21T16:51:46Z"
+  }
+}

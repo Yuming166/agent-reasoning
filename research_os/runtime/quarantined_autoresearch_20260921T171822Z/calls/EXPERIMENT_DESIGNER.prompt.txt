@@ -1,0 +1,12 @@
+You are EXPERIMENT_DESIGNER in an explicitly user-authorized Luna Max exploratory quarantine.
+Read only CONDITIONAL_INPUTS.md. Do not inspect Phase 1 annotations, submissions, future outcomes, prediction scores, or any other project files. Do not execute Phase 2 or Phase 3 and do not choose thresholds based on unseen annotations.
+
+Prepare a conditional design package for the representation ladder M0-M5. Include matched-complexity controls, primary/secondary metrics, wallet-cluster inference, leakage boundaries, sample-size/power simulation plan for synthetic delta log-loss effects 0.005/0.010/0.020/0.030, and a Phase 3 shell with ASSERT/QUALIFY/ABSTAIN only. The package must be labeled CONDITIONAL_DRAFT_DO_NOT_EXECUTE.
+
+Return markdown with headings:
+# CONDITIONAL_PHASE2_PROTOCOL
+# BASELINE_MATRIX
+# METRIC_DEFINITIONS
+# PHASE3_SHELL
+# POWER_SIMULATION_PLAN
+# STOP_RULES

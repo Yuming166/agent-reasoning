@@ -1,0 +1,36 @@
+{
+  "created_at": "2026-09-20T14:45:47Z",
+  "hash_algorithm": "sha256",
+  "entries": [
+    {
+      "path": "research/decision_state/src/run_hypothesis_panel.py",
+      "exists": true,
+      "bytes": 12283,
+      "sha256": "97b263768383d635d0f03e261d9914f879ec9c9e01bbceedf47d9a71279e44d9"
+    },
+    {
+      "path": "research/decision_state/src/evaluate_decision_state.py",
+      "exists": true,
+      "bytes": 14041,
+      "sha256": "2498df853381a30f9a940b15065ee8124f0834715ced9869d2d1542bd0590903"
+    },
+    {
+      "path": "research/decision_state/src/prepare_semantic_gate_v2.py",
+      "exists": true,
+      "bytes": 16624,
+      "sha256": "4b07d2cb88bb216d5e56bc1ce57e3dea71e58985fb3d4fe92bc5348bcde76c22"
+    },
+    {
+      "path": "research/decision_state/src/validate_semantic_gate_annotations.py",
+      "exists": true,
+      "bytes": 12948,
+      "sha256": "a7aceae0bf3ecc8211c0caf7c759bf4fad8ffa33ecc1928fc57b50e626a8f70d"
+    },
+    {
+      "path": "research/decision_state/src/score_semantic_gate_reliability.py",
+      "exists": true,
+      "bytes": 19201,
+      "sha256": "fecda111cdb880d5d99609f023ba27ad9ab5cbc9b76f8ec1fff4772cd826c209"
+    }
+  ]
+}

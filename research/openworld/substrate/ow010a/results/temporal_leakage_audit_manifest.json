@@ -1,0 +1,12 @@
+{
+  "query_name": "temporal_leakage_audit",
+  "sql_sha256": "22a48892af4c1692453c86cfe7f0cb19d7c3b6c9e053f992d39f6074b6d05eb7",
+  "job_id": "job_ZE-gGaywJxoDHyUjZIN34tVZTPmI",
+  "dry_bytes_processed": 1019391133,
+  "bytes_processed": 1019391133,
+  "bytes_billed": 1020264448,
+  "cache_hit": false,
+  "row_count": 13,
+  "raw_rows_not_exported": true,
+  "output": "/storage/gaoym/ex-graph-microtransaction-analysis/research/openworld/substrate/ow010a/results/temporal_leakage_audit.csv"
+}

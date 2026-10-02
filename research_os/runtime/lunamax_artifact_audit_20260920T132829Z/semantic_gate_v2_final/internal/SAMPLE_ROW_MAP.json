@@ -1,0 +1,2102 @@
+[
+  {
+    "row_handle": "SGV2-040d4f0373bd430f6e0b59773a741d61",
+    "case_id": "2022-07-01|0x83556923507d4c78ba3259a93002a2fa37181d1d",
+    "case_hash": "000c82b7413d7b7adb7104d88a8a46277af545a0c546c504af0cef277ee46ae2",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-866ad1f20780203963270d77bcf13f74",
+    "case_id": "2022-07-01|0x83556923507d4c78ba3259a93002a2fa37181d1d",
+    "case_hash": "000c82b7413d7b7adb7104d88a8a46277af545a0c546c504af0cef277ee46ae2",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-651021b4fa9d26b688e3475ddd3d7dba",
+    "case_id": "2022-07-01|0x83556923507d4c78ba3259a93002a2fa37181d1d",
+    "case_hash": "000c82b7413d7b7adb7104d88a8a46277af545a0c546c504af0cef277ee46ae2",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-7ed12c42e11aec3747c9fa9264787aaf",
+    "case_id": "2022-06-01|0xdc30581acbeda78dec4b1b36f7101020cdffabd1",
+    "case_hash": "00119b185d841152ae405ea2b3215de82dc257a9a2811b4056856abd7234a8ec",
+    "hypothesis_slot": "H1",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-5478df42f4f557c14d0767e775671a97",
+    "case_id": "2022-06-01|0xdc30581acbeda78dec4b1b36f7101020cdffabd1",
+    "case_hash": "00119b185d841152ae405ea2b3215de82dc257a9a2811b4056856abd7234a8ec",
+    "hypothesis_slot": "H2",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-3419cf7841f9ce23958502d3efa08f60",
+    "case_id": "2022-06-01|0xdc30581acbeda78dec4b1b36f7101020cdffabd1",
+    "case_hash": "00119b185d841152ae405ea2b3215de82dc257a9a2811b4056856abd7234a8ec",
+    "hypothesis_slot": "H3",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-7373d431a264aa851b64c08456320d0c",
+    "case_id": "2022-07-01|0xba8f4291bb7ed71672af397d7eee94ee0f6fc55c",
+    "case_hash": "001d08da472cfac1a477409d8203976008840bc2dbcf1cc965c2c0be9ee656e7",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-b17de6afdb04ac66468be5661d704328",
+    "case_id": "2022-07-01|0xba8f4291bb7ed71672af397d7eee94ee0f6fc55c",
+    "case_hash": "001d08da472cfac1a477409d8203976008840bc2dbcf1cc965c2c0be9ee656e7",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-e8362eb2210e6a2d22bdf7a6dbb40f4d",
+    "case_id": "2022-07-01|0xba8f4291bb7ed71672af397d7eee94ee0f6fc55c",
+    "case_hash": "001d08da472cfac1a477409d8203976008840bc2dbcf1cc965c2c0be9ee656e7",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-621903268c32a084e253b5d7aeab97a9",
+    "case_id": "2022-07-01|0x639d30588c6407ce6a1a92a94bb893d6214c71a5",
+    "case_hash": "00566365bc0b6e493c2d6a8c4c93afe5ab9ce5df4159b5a1d9f02b53248d9d00",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-b571bab22568cf050e599b8cb0fca853",
+    "case_id": "2022-07-01|0x639d30588c6407ce6a1a92a94bb893d6214c71a5",
+    "case_hash": "00566365bc0b6e493c2d6a8c4c93afe5ab9ce5df4159b5a1d9f02b53248d9d00",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-b426b4299eef2f0bf9db33453b43e080",
+    "case_id": "2022-07-01|0x639d30588c6407ce6a1a92a94bb893d6214c71a5",
+    "case_hash": "00566365bc0b6e493c2d6a8c4c93afe5ab9ce5df4159b5a1d9f02b53248d9d00",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-81bbc0a08374639c367d6745dd605324",
+    "case_id": "2022-08-01|0x9b353523f266b3e1740f4077f5ca6a5ad070cd8d",
+    "case_hash": "006cf512f11ba47f208da3f63344b8584d5a2127dc82b2eaff2576a09bb47d8e",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-5be022505caf7ce30197c2e6efcb6727",
+    "case_id": "2022-08-01|0x9b353523f266b3e1740f4077f5ca6a5ad070cd8d",
+    "case_hash": "006cf512f11ba47f208da3f63344b8584d5a2127dc82b2eaff2576a09bb47d8e",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-3d73b1da0d8f45e57d70c54ebf21aee0",
+    "case_id": "2022-08-01|0x9b353523f266b3e1740f4077f5ca6a5ad070cd8d",
+    "case_hash": "006cf512f11ba47f208da3f63344b8584d5a2127dc82b2eaff2576a09bb47d8e",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-0a2ca4d9eef10d295c54869ca16086e7",
+    "case_id": "2022-06-01|0x54ccbb5c380f2543bf210bebb0784878784868f7",
+    "case_hash": "007cd2d42cc75656c350e3aa35445e5ad461bd1d10fe63a25cdded36c0d1d121",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-c09262a4def4e3f68b775fdd684953a8",
+    "case_id": "2022-06-01|0x54ccbb5c380f2543bf210bebb0784878784868f7",
+    "case_hash": "007cd2d42cc75656c350e3aa35445e5ad461bd1d10fe63a25cdded36c0d1d121",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-a1a51d0a1ae1e4773852b152b1b8f22a",
+    "case_id": "2022-06-01|0x54ccbb5c380f2543bf210bebb0784878784868f7",
+    "case_hash": "007cd2d42cc75656c350e3aa35445e5ad461bd1d10fe63a25cdded36c0d1d121",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-79e2ff9d7cbc88d94689a55289e0d0ae",
+    "case_id": "2022-06-01|0xd8011c886425a87490d9006befa86540aae9cf4d",
+    "case_hash": "0080162d2b3bdf118a34f02067207dd69f345eda27054747b3d4a82bb85b1660",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-24dc46cc8138158b47380fceeb2aee3b",
+    "case_id": "2022-06-01|0xd8011c886425a87490d9006befa86540aae9cf4d",
+    "case_hash": "0080162d2b3bdf118a34f02067207dd69f345eda27054747b3d4a82bb85b1660",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-9931edeb89ada6113dc3a60de26dbb68",
+    "case_id": "2022-06-01|0xd8011c886425a87490d9006befa86540aae9cf4d",
+    "case_hash": "0080162d2b3bdf118a34f02067207dd69f345eda27054747b3d4a82bb85b1660",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-8207037cf3da038344b5e82da72fab22",
+    "case_id": "2022-07-01|0x8bde90e5f0cad9b1c3d1eba10924382ee316729f",
+    "case_hash": "008171bec096085ac1bd08030183ab55b47bcc466e177b7db12e60a5e17e4ff2",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-8b2d8d6ec1c8be9814ad343ae68fc770",
+    "case_id": "2022-07-01|0x8bde90e5f0cad9b1c3d1eba10924382ee316729f",
+    "case_hash": "008171bec096085ac1bd08030183ab55b47bcc466e177b7db12e60a5e17e4ff2",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-7aa2bd535e3b949095760a4481deaaa6",
+    "case_id": "2022-07-01|0x8bde90e5f0cad9b1c3d1eba10924382ee316729f",
+    "case_hash": "008171bec096085ac1bd08030183ab55b47bcc466e177b7db12e60a5e17e4ff2",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-b1495e5867d7e36a538005b187dd1d67",
+    "case_id": "2022-06-01|0xa2942ffb49c337f7d4575753eb6da43e5cf2c0af",
+    "case_hash": "0099dafa7d1c5f767d3c945eb05ef7b649b3f9f352d6a497fe85cb1a6b622d30",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-e1750c2002b2cfd5a3e1710b3a6fd25c",
+    "case_id": "2022-06-01|0xa2942ffb49c337f7d4575753eb6da43e5cf2c0af",
+    "case_hash": "0099dafa7d1c5f767d3c945eb05ef7b649b3f9f352d6a497fe85cb1a6b622d30",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-15d850efe31565fcd4ac47f4bef88cf1",
+    "case_id": "2022-06-01|0xa2942ffb49c337f7d4575753eb6da43e5cf2c0af",
+    "case_hash": "0099dafa7d1c5f767d3c945eb05ef7b649b3f9f352d6a497fe85cb1a6b622d30",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-3d38888ece6cd1ff7d6aace52a39767a",
+    "case_id": "2022-06-01|0x8e5e896a347c80e4a9d272af2e7dcdc90b325bc3",
+    "case_hash": "00a426b0006ac4e429712737220396d80ae206312eb07aa16ef0ec4cb7b91411",
+    "hypothesis_slot": "H1",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-42428ca45e508a7c0dfa2d59e6345036",
+    "case_id": "2022-06-01|0x8e5e896a347c80e4a9d272af2e7dcdc90b325bc3",
+    "case_hash": "00a426b0006ac4e429712737220396d80ae206312eb07aa16ef0ec4cb7b91411",
+    "hypothesis_slot": "H2",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-b174e9f63cf98417b9de11e5bf06bf7b",
+    "case_id": "2022-06-01|0x8e5e896a347c80e4a9d272af2e7dcdc90b325bc3",
+    "case_hash": "00a426b0006ac4e429712737220396d80ae206312eb07aa16ef0ec4cb7b91411",
+    "hypothesis_slot": "H3",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-e07713666d9edbe098364c811b3c33e3",
+    "case_id": "2022-06-01|0x3e3567eb03521aed1047951620cdef6353f763bf",
+    "case_hash": "00a7d84fe68eaefe03d605d31a50c6d9e518389bb824740d784f379f2c662cdc",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-eeb5f4ca0b1e2c769c696b3c54847828",
+    "case_id": "2022-06-01|0x3e3567eb03521aed1047951620cdef6353f763bf",
+    "case_hash": "00a7d84fe68eaefe03d605d31a50c6d9e518389bb824740d784f379f2c662cdc",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-18575c09ef0e1fb794efebcdce158ffb",
+    "case_id": "2022-06-01|0x3e3567eb03521aed1047951620cdef6353f763bf",
+    "case_hash": "00a7d84fe68eaefe03d605d31a50c6d9e518389bb824740d784f379f2c662cdc",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-9d635b711a153371bdc6d4ec724fc552",
+    "case_id": "2022-06-01|0x49f74346ba65ef565b647e931c7b9c7462fc8fcc",
+    "case_hash": "00ab8e5804b1490ca6dc4eef8c406b61dd45f2ef9f2bbd6fb19d0f0057c19da3",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-941157fc4fb390ec565626e8f4bec57c",
+    "case_id": "2022-06-01|0x49f74346ba65ef565b647e931c7b9c7462fc8fcc",
+    "case_hash": "00ab8e5804b1490ca6dc4eef8c406b61dd45f2ef9f2bbd6fb19d0f0057c19da3",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-192204e65ddc6e2e173cf3ebe79fd3d5",
+    "case_id": "2022-06-01|0x49f74346ba65ef565b647e931c7b9c7462fc8fcc",
+    "case_hash": "00ab8e5804b1490ca6dc4eef8c406b61dd45f2ef9f2bbd6fb19d0f0057c19da3",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-14bd3e1c99c0a8d37dbd952c0e302a21",
+    "case_id": "2022-08-01|0x35a567668498c1a70e4ad42c0cd12a922f1d8579",
+    "case_hash": "00fcda02760643606d19d0f83c231e5e98805bec01ce197d24202c6e25b32e66",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-991acd07cc7b07bfe974379aaa903643",
+    "case_id": "2022-08-01|0x35a567668498c1a70e4ad42c0cd12a922f1d8579",
+    "case_hash": "00fcda02760643606d19d0f83c231e5e98805bec01ce197d24202c6e25b32e66",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-40155c0a809e8fc9682c42423fbb3be6",
+    "case_id": "2022-08-01|0x35a567668498c1a70e4ad42c0cd12a922f1d8579",
+    "case_hash": "00fcda02760643606d19d0f83c231e5e98805bec01ce197d24202c6e25b32e66",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-1b8f34fab94ca9911d89806ef2ee1d5f",
+    "case_id": "2022-07-01|0xc48f5a1fa5eadf58e92e3522b421380164a932e4",
+    "case_hash": "0109dbe6dc3de9b3cc8b5d43f471a4b17d21f27db27e6f18f0ec8e98ed8adb72",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-34294c0638b9a69e8d7984a71e3ac698",
+    "case_id": "2022-07-01|0xc48f5a1fa5eadf58e92e3522b421380164a932e4",
+    "case_hash": "0109dbe6dc3de9b3cc8b5d43f471a4b17d21f27db27e6f18f0ec8e98ed8adb72",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-0750567bde4a9ff54b60d906aec77ac8",
+    "case_id": "2022-07-01|0xc48f5a1fa5eadf58e92e3522b421380164a932e4",
+    "case_hash": "0109dbe6dc3de9b3cc8b5d43f471a4b17d21f27db27e6f18f0ec8e98ed8adb72",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-d282df4edc7a3b65a8736425b5070fab",
+    "case_id": "2022-07-01|0x5ee382bd91d534c880cdd8197274d9662efa66ae",
+    "case_hash": "01442f4594b7cfd9e82e1534210230498273113fd559e858c0380be05a41afb5",
+    "hypothesis_slot": "H1",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-1a0b4ee5ae2d845e7a134fbbad5c1792",
+    "case_id": "2022-07-01|0x5ee382bd91d534c880cdd8197274d9662efa66ae",
+    "case_hash": "01442f4594b7cfd9e82e1534210230498273113fd559e858c0380be05a41afb5",
+    "hypothesis_slot": "H2",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-669c18a2fc633b3ef9618d3f7503fcb3",
+    "case_id": "2022-07-01|0x5ee382bd91d534c880cdd8197274d9662efa66ae",
+    "case_hash": "01442f4594b7cfd9e82e1534210230498273113fd559e858c0380be05a41afb5",
+    "hypothesis_slot": "H3",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-7adb020b782e1d31e41c3647eef0b8f3",
+    "case_id": "2022-07-01|0xf02f07dda7cee3e4f875164fa7c296d3ca6d6531",
+    "case_hash": "017780ef4bbe9e8066e3a68895adaccb9426bb4aa8d2f2abd11730be2be93b75",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-f009db34e3e323ebb748aca3eca1ada3",
+    "case_id": "2022-07-01|0xf02f07dda7cee3e4f875164fa7c296d3ca6d6531",
+    "case_hash": "017780ef4bbe9e8066e3a68895adaccb9426bb4aa8d2f2abd11730be2be93b75",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-6f1bde3f483560dbee4f0a661bb7d54c",
+    "case_id": "2022-07-01|0xf02f07dda7cee3e4f875164fa7c296d3ca6d6531",
+    "case_hash": "017780ef4bbe9e8066e3a68895adaccb9426bb4aa8d2f2abd11730be2be93b75",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-ec296f1b808374b1f363d79bb153e07e",
+    "case_id": "2022-06-01|0xfc0c27bb4595eaacff54b72f8ce7deeabd55666c",
+    "case_hash": "01840d9effb282544096bd01f140167a2096a45bf6502e02c94b66efffd3397b",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-ed857b509a61d263252377cebeff77e9",
+    "case_id": "2022-06-01|0xfc0c27bb4595eaacff54b72f8ce7deeabd55666c",
+    "case_hash": "01840d9effb282544096bd01f140167a2096a45bf6502e02c94b66efffd3397b",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-ab954b7c4c04873019add3595afa8431",
+    "case_id": "2022-06-01|0xfc0c27bb4595eaacff54b72f8ce7deeabd55666c",
+    "case_hash": "01840d9effb282544096bd01f140167a2096a45bf6502e02c94b66efffd3397b",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-011989722867b29a46c359560809ece6",
+    "case_id": "2022-08-01|0x44f5b575d385ebc481a8e2d89bc5b86fcb2812a6",
+    "case_hash": "0196e7059f90f59cde054845ab810bd17c2b0b1cb7d8ae8446dc8eb972e12e83",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-ea1648b71a72b671252f62919d560276",
+    "case_id": "2022-08-01|0x44f5b575d385ebc481a8e2d89bc5b86fcb2812a6",
+    "case_hash": "0196e7059f90f59cde054845ab810bd17c2b0b1cb7d8ae8446dc8eb972e12e83",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-1508cf8faa959014527e3d1e2c136dfd",
+    "case_id": "2022-08-01|0x44f5b575d385ebc481a8e2d89bc5b86fcb2812a6",
+    "case_hash": "0196e7059f90f59cde054845ab810bd17c2b0b1cb7d8ae8446dc8eb972e12e83",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-14fe64ae8ae75e4ffaebb7ce03c68db9",
+    "case_id": "2022-07-01|0x4098dea95e8b8b47191a7cda8a04a859889ce7d9",
+    "case_hash": "01a83c6344e1cc9a323b7921c8a3d9453bddb0f087d2d3a8fca4dc27da5022e6",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-b236465d067a556f1b55eafd9be5d73e",
+    "case_id": "2022-07-01|0x4098dea95e8b8b47191a7cda8a04a859889ce7d9",
+    "case_hash": "01a83c6344e1cc9a323b7921c8a3d9453bddb0f087d2d3a8fca4dc27da5022e6",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-e6fb9e5f790940048053003d6fecb979",
+    "case_id": "2022-07-01|0x4098dea95e8b8b47191a7cda8a04a859889ce7d9",
+    "case_hash": "01a83c6344e1cc9a323b7921c8a3d9453bddb0f087d2d3a8fca4dc27da5022e6",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-e620cf55f2ce9deea3787def64b92165",
+    "case_id": "2022-08-01|0xd2c24bcf8c20be73700ca05a9668c5606b07209b",
+    "case_hash": "01b2c29d3c4e1aaf013aa521f9267360ec1c72dc3026249efcaf34cf5be5be8a",
+    "hypothesis_slot": "H1",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-6c70144e55ec7d49b91537029ce50f16",
+    "case_id": "2022-08-01|0xd2c24bcf8c20be73700ca05a9668c5606b07209b",
+    "case_hash": "01b2c29d3c4e1aaf013aa521f9267360ec1c72dc3026249efcaf34cf5be5be8a",
+    "hypothesis_slot": "H2",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-1867e0a07dba78a51ee3011ce452c0e8",
+    "case_id": "2022-08-01|0xd2c24bcf8c20be73700ca05a9668c5606b07209b",
+    "case_hash": "01b2c29d3c4e1aaf013aa521f9267360ec1c72dc3026249efcaf34cf5be5be8a",
+    "hypothesis_slot": "H3",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-5e95649cab027a3e1cdc3f28680f8044",
+    "case_id": "2022-07-01|0x12aab452f7896f4f2d3d14cb7ddcabca78f4f092",
+    "case_hash": "01b6722e2e05c780fcb6c946667b582489ef8c0b43573c56c0f0e348d74508bb",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-b258bee97cb5e654fd442a964845c663",
+    "case_id": "2022-07-01|0x12aab452f7896f4f2d3d14cb7ddcabca78f4f092",
+    "case_hash": "01b6722e2e05c780fcb6c946667b582489ef8c0b43573c56c0f0e348d74508bb",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-8d780a3af2e8d4c8f91df85038037063",
+    "case_id": "2022-07-01|0x12aab452f7896f4f2d3d14cb7ddcabca78f4f092",
+    "case_hash": "01b6722e2e05c780fcb6c946667b582489ef8c0b43573c56c0f0e348d74508bb",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-0f6a07268e7b48e88b95a1d08e1d3ed1",
+    "case_id": "2022-07-01|0xfb10435953ae598a4f62e01ac34fe2a6ef6c2eb7",
+    "case_hash": "01d6bcff2eaf007357ecf114629365d7ddd04aced78215d1ba917ce691e5df05",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-e525aa617f10e46b8c5b32ceea2e570b",
+    "case_id": "2022-07-01|0xfb10435953ae598a4f62e01ac34fe2a6ef6c2eb7",
+    "case_hash": "01d6bcff2eaf007357ecf114629365d7ddd04aced78215d1ba917ce691e5df05",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-22122acfb4be7880114e2e1663080008",
+    "case_id": "2022-07-01|0xfb10435953ae598a4f62e01ac34fe2a6ef6c2eb7",
+    "case_hash": "01d6bcff2eaf007357ecf114629365d7ddd04aced78215d1ba917ce691e5df05",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-6f11f873c54010dcce2d627b02159832",
+    "case_id": "2022-08-01|0xc05936e6b40e47656f3a300a2650e931cbd116f2",
+    "case_hash": "01fadf637675fd425f9e0aa4da10d5689159abadd57a683ff74757249f9b169a",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-24e4988746dc4de1b21d24794fd2383e",
+    "case_id": "2022-08-01|0xc05936e6b40e47656f3a300a2650e931cbd116f2",
+    "case_hash": "01fadf637675fd425f9e0aa4da10d5689159abadd57a683ff74757249f9b169a",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-933ea0cab5afa7c29cd9660db92cd428",
+    "case_id": "2022-08-01|0xc05936e6b40e47656f3a300a2650e931cbd116f2",
+    "case_hash": "01fadf637675fd425f9e0aa4da10d5689159abadd57a683ff74757249f9b169a",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-0c21352a62d4e7c79d41d0cbb5fe8122",
+    "case_id": "2022-06-01|0x2cb30e16ec72a008b3627629cbaddf6c778858d0",
+    "case_hash": "020089669c4e319e843b0fa58fe240c9891a691b6044520e895b12d0931d5b84",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-afddbdf6fd3da92f8c3dc53362340ec1",
+    "case_id": "2022-06-01|0x2cb30e16ec72a008b3627629cbaddf6c778858d0",
+    "case_hash": "020089669c4e319e843b0fa58fe240c9891a691b6044520e895b12d0931d5b84",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-eddb4ac5cedc0ad63662cdb52c9ceb0c",
+    "case_id": "2022-06-01|0x2cb30e16ec72a008b3627629cbaddf6c778858d0",
+    "case_hash": "020089669c4e319e843b0fa58fe240c9891a691b6044520e895b12d0931d5b84",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-0c794365203fcfd042c34ddaecb450c1",
+    "case_id": "2022-07-01|0x8beb8467099f23036649b7a9fa7645db2ee600e8",
+    "case_hash": "02125636f5f4f2d818356261ca594ac770dc5bff573a731b9383b1c3d9bc58b5",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-3a3616c221fb1a16cc9440a34799572b",
+    "case_id": "2022-07-01|0x8beb8467099f23036649b7a9fa7645db2ee600e8",
+    "case_hash": "02125636f5f4f2d818356261ca594ac770dc5bff573a731b9383b1c3d9bc58b5",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-e99395d5f6161dd24ed6fce77156f9f1",
+    "case_id": "2022-07-01|0x8beb8467099f23036649b7a9fa7645db2ee600e8",
+    "case_hash": "02125636f5f4f2d818356261ca594ac770dc5bff573a731b9383b1c3d9bc58b5",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-6894862914ef5e652adef1b68b31f4aa",
+    "case_id": "2022-07-01|0x684a78562d215ec52e10b077909ea4aab0a4724c",
+    "case_hash": "021952c01e5d84a8dcace0a0ed2689d4b5e093293a414f05afed3298751e730b",
+    "hypothesis_slot": "H1",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-68669ed474123fe15fff7685fddeaced",
+    "case_id": "2022-07-01|0x684a78562d215ec52e10b077909ea4aab0a4724c",
+    "case_hash": "021952c01e5d84a8dcace0a0ed2689d4b5e093293a414f05afed3298751e730b",
+    "hypothesis_slot": "H2",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-03a158286879b96b533464f4ffb9540c",
+    "case_id": "2022-07-01|0x684a78562d215ec52e10b077909ea4aab0a4724c",
+    "case_hash": "021952c01e5d84a8dcace0a0ed2689d4b5e093293a414f05afed3298751e730b",
+    "hypothesis_slot": "H3",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-e36190259e74c42d585329eb94766ba8",
+    "case_id": "2022-06-01|0x5cc17dbbf3e48dcb85bd5386651839b4f5900462",
+    "case_hash": "021a72f2f085fe5692c061d7c4952f7c85c923361a97dba1b28b3101112b44c4",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-a1cafe144c6ff19add9904f92a5427a8",
+    "case_id": "2022-06-01|0x5cc17dbbf3e48dcb85bd5386651839b4f5900462",
+    "case_hash": "021a72f2f085fe5692c061d7c4952f7c85c923361a97dba1b28b3101112b44c4",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-37c8f9cccefdff7272981d50b79c65d6",
+    "case_id": "2022-06-01|0x5cc17dbbf3e48dcb85bd5386651839b4f5900462",
+    "case_hash": "021a72f2f085fe5692c061d7c4952f7c85c923361a97dba1b28b3101112b44c4",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-66893f19fb3ba075e413e2518fae50c8",
+    "case_id": "2022-06-01|0x425a2ca37c24b96a3935e78f54c31d8aac78208f",
+    "case_hash": "0271b82ab207498a91755692c6c6d05aabd6673b6fe0a7656eaf1045af188c9c",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-c005eb2bf3321fc5847983b97bfdf34c",
+    "case_id": "2022-06-01|0x425a2ca37c24b96a3935e78f54c31d8aac78208f",
+    "case_hash": "0271b82ab207498a91755692c6c6d05aabd6673b6fe0a7656eaf1045af188c9c",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-957ed685bd8f005a9e8068a37041624d",
+    "case_id": "2022-06-01|0x425a2ca37c24b96a3935e78f54c31d8aac78208f",
+    "case_hash": "0271b82ab207498a91755692c6c6d05aabd6673b6fe0a7656eaf1045af188c9c",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-926bf92f78dd8d4765c0e55c8b9720f1",
+    "case_id": "2022-06-01|0x783dfb5811b0540875f451c48c13af6dd8d42df5",
+    "case_hash": "028f4e7c4fb75b758c66c39875c9441113698519d71a0151dee134f3ab45d312",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-895f9ffdf8505ed7cdde268630383ee0",
+    "case_id": "2022-06-01|0x783dfb5811b0540875f451c48c13af6dd8d42df5",
+    "case_hash": "028f4e7c4fb75b758c66c39875c9441113698519d71a0151dee134f3ab45d312",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-ed5d1b2c664cad82add2e72ecb141536",
+    "case_id": "2022-06-01|0x783dfb5811b0540875f451c48c13af6dd8d42df5",
+    "case_hash": "028f4e7c4fb75b758c66c39875c9441113698519d71a0151dee134f3ab45d312",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-493811773e9a39ea14ca1581d8d5f48a",
+    "case_id": "2022-07-01|0xb7bbf49a39a22419401b72b6ed6e207e4b0ef924",
+    "case_hash": "02c24542e4cc0c3b35f3ccad62fa4e606621ab2adca4c6fc402b71344763e6c8",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-908f8d7488e3cfffe6abc5c98e2d0733",
+    "case_id": "2022-07-01|0xb7bbf49a39a22419401b72b6ed6e207e4b0ef924",
+    "case_hash": "02c24542e4cc0c3b35f3ccad62fa4e606621ab2adca4c6fc402b71344763e6c8",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-961a79da3e7f505398d787611407a2a9",
+    "case_id": "2022-07-01|0xb7bbf49a39a22419401b72b6ed6e207e4b0ef924",
+    "case_hash": "02c24542e4cc0c3b35f3ccad62fa4e606621ab2adca4c6fc402b71344763e6c8",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-fa978a081610e7d02f1d4a721d885e93",
+    "case_id": "2022-06-01|0xd140709b2db76c067a4db731c96ed09a739d473c",
+    "case_hash": "02ca0fb523a82f11e7c709f6b5fc31b0fa5958018f9cfbc3f310f65204a438be",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-107577eda7a16cdb2e1b7be4112f6ca4",
+    "case_id": "2022-06-01|0xd140709b2db76c067a4db731c96ed09a739d473c",
+    "case_hash": "02ca0fb523a82f11e7c709f6b5fc31b0fa5958018f9cfbc3f310f65204a438be",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-9cfaa1fc7380f8918c276739759f1750",
+    "case_id": "2022-06-01|0xd140709b2db76c067a4db731c96ed09a739d473c",
+    "case_hash": "02ca0fb523a82f11e7c709f6b5fc31b0fa5958018f9cfbc3f310f65204a438be",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-d782e36cf710347116ef1da3aefc6667",
+    "case_id": "2022-07-01|0xb4e33099ab15664f12bebf4e8db015e77865e748",
+    "case_hash": "02caf0c15e12443dd6665eeb8f7d600970254c6df9be08ec958b4d1943ce1f28",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-6a016a672a2c8f97e2f656a6c83187a2",
+    "case_id": "2022-07-01|0xb4e33099ab15664f12bebf4e8db015e77865e748",
+    "case_hash": "02caf0c15e12443dd6665eeb8f7d600970254c6df9be08ec958b4d1943ce1f28",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-faacac61852c6d90091dc74bf2be2bde",
+    "case_id": "2022-07-01|0xb4e33099ab15664f12bebf4e8db015e77865e748",
+    "case_hash": "02caf0c15e12443dd6665eeb8f7d600970254c6df9be08ec958b4d1943ce1f28",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-0217ee451c52d636f626ba8a43a49432",
+    "case_id": "2022-06-01|0x76840a63627c74d77004ba81e117b6710daebbf5",
+    "case_hash": "02d9ee2fad699304099a14e6130923cc01c8d5fcad3bad6b0ac0d3c7ff2cd7d2",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-1c2070663126ded8d0a87a9c10046c96",
+    "case_id": "2022-06-01|0x76840a63627c74d77004ba81e117b6710daebbf5",
+    "case_hash": "02d9ee2fad699304099a14e6130923cc01c8d5fcad3bad6b0ac0d3c7ff2cd7d2",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-4252c497436d3f2f9b2e6252d9e6c4b8",
+    "case_id": "2022-06-01|0x76840a63627c74d77004ba81e117b6710daebbf5",
+    "case_hash": "02d9ee2fad699304099a14e6130923cc01c8d5fcad3bad6b0ac0d3c7ff2cd7d2",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-bbc45a54ed9da463bf52b4159af6eda2",
+    "case_id": "2022-08-01|0x488889b0fb47c06a7c1e43e8cf0daef920a6ccf6",
+    "case_hash": "02e439b06973063dcf99b4b854cc2af00ec485e3541353d8139c6b7011b3f57c",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-b7ea1baa024e2697cb1480a28bc32112",
+    "case_id": "2022-08-01|0x488889b0fb47c06a7c1e43e8cf0daef920a6ccf6",
+    "case_hash": "02e439b06973063dcf99b4b854cc2af00ec485e3541353d8139c6b7011b3f57c",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-013f6aa6822b0c21fc8a9db4403e28b0",
+    "case_id": "2022-08-01|0x488889b0fb47c06a7c1e43e8cf0daef920a6ccf6",
+    "case_hash": "02e439b06973063dcf99b4b854cc2af00ec485e3541353d8139c6b7011b3f57c",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-c1da7a8ef3c6fe14a61158301f547b8a",
+    "case_id": "2022-07-01|0xcc673f98cd120f8fc28755249857578697b127fb",
+    "case_hash": "02fbfb9c4cfed0208e6a40a22c6cb65e112ada8cd8123b7b3f0062bee527d48b",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-8734f246ec7f6522826ce50005268654",
+    "case_id": "2022-07-01|0xcc673f98cd120f8fc28755249857578697b127fb",
+    "case_hash": "02fbfb9c4cfed0208e6a40a22c6cb65e112ada8cd8123b7b3f0062bee527d48b",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-8dfd13d47f5d29d3951c55fc6ec8fee1",
+    "case_id": "2022-07-01|0xcc673f98cd120f8fc28755249857578697b127fb",
+    "case_hash": "02fbfb9c4cfed0208e6a40a22c6cb65e112ada8cd8123b7b3f0062bee527d48b",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-7bc82954e16311d637fad15e115f84dc",
+    "case_id": "2022-06-01|0xb1509e40f9da838cf3290c7331eddc3bdb6acd79",
+    "case_hash": "02fdeee97a45b62da9f6cc49936ac36b32aafb957d4ee69d00cda605c4d452cf",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-0dbda4c658e1017cf55069961389b05c",
+    "case_id": "2022-06-01|0xb1509e40f9da838cf3290c7331eddc3bdb6acd79",
+    "case_hash": "02fdeee97a45b62da9f6cc49936ac36b32aafb957d4ee69d00cda605c4d452cf",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-0e3989e6119dafb09eb1ad5dd4ebd00f",
+    "case_id": "2022-06-01|0xb1509e40f9da838cf3290c7331eddc3bdb6acd79",
+    "case_hash": "02fdeee97a45b62da9f6cc49936ac36b32aafb957d4ee69d00cda605c4d452cf",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-86cb3f5ca7350c2d9d0b63cae7917b35",
+    "case_id": "2022-07-01|0xba50958e195f714d714ef9ad87606eed764ac3ed",
+    "case_hash": "030c08135b56386ba4d256a38b515c1daac9d41a520cd6bfd20944789dd26346",
+    "hypothesis_slot": "H1",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-e8b7b14e0b4847306e850ca2be93ebca",
+    "case_id": "2022-07-01|0xba50958e195f714d714ef9ad87606eed764ac3ed",
+    "case_hash": "030c08135b56386ba4d256a38b515c1daac9d41a520cd6bfd20944789dd26346",
+    "hypothesis_slot": "H2",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-e91ab33656c911cd183f8f9539cf537d",
+    "case_id": "2022-07-01|0xba50958e195f714d714ef9ad87606eed764ac3ed",
+    "case_hash": "030c08135b56386ba4d256a38b515c1daac9d41a520cd6bfd20944789dd26346",
+    "hypothesis_slot": "H3",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-9fb109be314364ff33d617f7b3a0fc72",
+    "case_id": "2022-07-01|0x069686cdaa52144cea8ad9c4021e314e45eeb7f1",
+    "case_hash": "031c8a5b47e8e1d95c98306b4ed9876a5ee23272e01906ed0ec8acc4f0035388",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-b737273e7cb44a0197e0f4151d84c782",
+    "case_id": "2022-07-01|0x069686cdaa52144cea8ad9c4021e314e45eeb7f1",
+    "case_hash": "031c8a5b47e8e1d95c98306b4ed9876a5ee23272e01906ed0ec8acc4f0035388",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-a4a822b90e7471fe9484e45fa89ea1b9",
+    "case_id": "2022-07-01|0x069686cdaa52144cea8ad9c4021e314e45eeb7f1",
+    "case_hash": "031c8a5b47e8e1d95c98306b4ed9876a5ee23272e01906ed0ec8acc4f0035388",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-8e512128edfb08679bd67698f48d1f65",
+    "case_id": "2022-06-01|0xeda1183be89e5b387a4ee68052f62cbffe66e814",
+    "case_hash": "03843d236c4ada7e41788b010092ae8f7f161ee342a8a4d2a37d65bdeee625f4",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-37351c0d3838651bdb8cb775ae2da583",
+    "case_id": "2022-06-01|0xeda1183be89e5b387a4ee68052f62cbffe66e814",
+    "case_hash": "03843d236c4ada7e41788b010092ae8f7f161ee342a8a4d2a37d65bdeee625f4",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-36adefd5cb6f57d98cfe59dd47d9505d",
+    "case_id": "2022-06-01|0xeda1183be89e5b387a4ee68052f62cbffe66e814",
+    "case_hash": "03843d236c4ada7e41788b010092ae8f7f161ee342a8a4d2a37d65bdeee625f4",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-0dd0780a8c6e60ad1f206c85e0497f1f",
+    "case_id": "2022-07-01|0x10fd8128345add8b257038c3bf5e23a8cb7acab1",
+    "case_hash": "03a16e832ca6ea03ff9b065fde655132ba6b308c7d3104712f4ff9bd6d4d7342",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-70dfd96c328e753c61eff04985c020ec",
+    "case_id": "2022-07-01|0x10fd8128345add8b257038c3bf5e23a8cb7acab1",
+    "case_hash": "03a16e832ca6ea03ff9b065fde655132ba6b308c7d3104712f4ff9bd6d4d7342",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-29bd062376373d751b4e61b6ca9d81f8",
+    "case_id": "2022-07-01|0x10fd8128345add8b257038c3bf5e23a8cb7acab1",
+    "case_hash": "03a16e832ca6ea03ff9b065fde655132ba6b308c7d3104712f4ff9bd6d4d7342",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-8978643aee758e28a70996cb35fe8d18",
+    "case_id": "2022-08-01|0xadfcad5586a84c2aaacbe2d80c255b6c265cff32",
+    "case_hash": "03a9bf08562572940bb37b1dcaebd961fb5dfb31136c487be1eb087f0f4c5099",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-16f0952f5211d0a6ade4d291e09047ba",
+    "case_id": "2022-08-01|0xadfcad5586a84c2aaacbe2d80c255b6c265cff32",
+    "case_hash": "03a9bf08562572940bb37b1dcaebd961fb5dfb31136c487be1eb087f0f4c5099",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-8759546691bc373454e3f569074a331b",
+    "case_id": "2022-08-01|0xadfcad5586a84c2aaacbe2d80c255b6c265cff32",
+    "case_hash": "03a9bf08562572940bb37b1dcaebd961fb5dfb31136c487be1eb087f0f4c5099",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-a15783ef6b9b97ab129ee6ff7d32eebc",
+    "case_id": "2022-06-01|0x3c197d76e5a0b6c659a960212a78717f5e12624b",
+    "case_hash": "03aca31a31e5dd5a2dacce73025860be4905f4403f92d1bda4cad801fe738f64",
+    "hypothesis_slot": "H1",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-4c6f184ec18259e9d267625617a5dba2",
+    "case_id": "2022-06-01|0x3c197d76e5a0b6c659a960212a78717f5e12624b",
+    "case_hash": "03aca31a31e5dd5a2dacce73025860be4905f4403f92d1bda4cad801fe738f64",
+    "hypothesis_slot": "H2",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-9a16794dab506be0a038c81cf9b1527f",
+    "case_id": "2022-06-01|0x3c197d76e5a0b6c659a960212a78717f5e12624b",
+    "case_hash": "03aca31a31e5dd5a2dacce73025860be4905f4403f92d1bda4cad801fe738f64",
+    "hypothesis_slot": "H3",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-513771c419aa6f92ed3bba432135347c",
+    "case_id": "2022-06-01|0x175178c3b9c6148f2ec14acbbff6a18e2375ea09",
+    "case_hash": "03ba39d782707974b6e569ad0fe81e1b13e851073eb7a1cf6dc7a01cd3164788",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-f4af37b97f2b3d769fc290f62ae54ca8",
+    "case_id": "2022-06-01|0x175178c3b9c6148f2ec14acbbff6a18e2375ea09",
+    "case_hash": "03ba39d782707974b6e569ad0fe81e1b13e851073eb7a1cf6dc7a01cd3164788",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-353d30fee5f367045b81a10beb6bc95c",
+    "case_id": "2022-06-01|0x175178c3b9c6148f2ec14acbbff6a18e2375ea09",
+    "case_hash": "03ba39d782707974b6e569ad0fe81e1b13e851073eb7a1cf6dc7a01cd3164788",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-c7e29ff5afa5b3437a937a7949413e1d",
+    "case_id": "2022-07-01|0x41ca1677ff644d8825c2f6fa5e60feffa6889e06",
+    "case_hash": "0414d8ddc4bbc3841329fa1bced25ccd7dedd0799502108e1d16d67945596ed2",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-b6810f6f27da9eb6e1a5f0761d9be613",
+    "case_id": "2022-07-01|0x41ca1677ff644d8825c2f6fa5e60feffa6889e06",
+    "case_hash": "0414d8ddc4bbc3841329fa1bced25ccd7dedd0799502108e1d16d67945596ed2",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-bf78df5eb9e94869837b7d1c26ed9693",
+    "case_id": "2022-07-01|0x41ca1677ff644d8825c2f6fa5e60feffa6889e06",
+    "case_hash": "0414d8ddc4bbc3841329fa1bced25ccd7dedd0799502108e1d16d67945596ed2",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-a63890d4563c824d0d35235dc65d23b3",
+    "case_id": "2022-07-01|0x3434b973813fb19fe9ecfb5741e7fb6ec729d573",
+    "case_hash": "041e5cd28ec69bee00cdc75b1faa0976c8be9c6f83fed82fca926fdaec4efcbf",
+    "hypothesis_slot": "H1",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-3571284657f6c7f4ef52c5ea6edc2f5f",
+    "case_id": "2022-07-01|0x3434b973813fb19fe9ecfb5741e7fb6ec729d573",
+    "case_hash": "041e5cd28ec69bee00cdc75b1faa0976c8be9c6f83fed82fca926fdaec4efcbf",
+    "hypothesis_slot": "H2",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-083ef26fc954b6d152f35cfe4977d4d5",
+    "case_id": "2022-07-01|0x3434b973813fb19fe9ecfb5741e7fb6ec729d573",
+    "case_hash": "041e5cd28ec69bee00cdc75b1faa0976c8be9c6f83fed82fca926fdaec4efcbf",
+    "hypothesis_slot": "H3",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-df924c99d02fae93d94954cc2e229acd",
+    "case_id": "2022-08-01|0x97a2c17a0e6a85654f3e48a7c4fd65c89809a1ca",
+    "case_hash": "0428692305dc4ad43b9a5139c0ee13accbfb436dffc6fcd8e76bdab7c8c03de2",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-092e5e8c2e2b5febb4da1b6fbc5589b5",
+    "case_id": "2022-08-01|0x97a2c17a0e6a85654f3e48a7c4fd65c89809a1ca",
+    "case_hash": "0428692305dc4ad43b9a5139c0ee13accbfb436dffc6fcd8e76bdab7c8c03de2",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-ce1984af1757b65e28d3c525effea81d",
+    "case_id": "2022-08-01|0x97a2c17a0e6a85654f3e48a7c4fd65c89809a1ca",
+    "case_hash": "0428692305dc4ad43b9a5139c0ee13accbfb436dffc6fcd8e76bdab7c8c03de2",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-0da684389074f04d88ef5580baaa9499",
+    "case_id": "2022-06-01|0x7d6db75e304accbb35d16a3e7961f54d0adb802c",
+    "case_hash": "042ab162ea83001f9ca755219b41c1416287948f71148942f8ed9b6b70ab1504",
+    "hypothesis_slot": "H1",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-caa73e7e87ac6ca4a4d306900ca9ced1",
+    "case_id": "2022-06-01|0x7d6db75e304accbb35d16a3e7961f54d0adb802c",
+    "case_hash": "042ab162ea83001f9ca755219b41c1416287948f71148942f8ed9b6b70ab1504",
+    "hypothesis_slot": "H2",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-eb02d4253808e62772b7c41dc1a5c79f",
+    "case_id": "2022-06-01|0x7d6db75e304accbb35d16a3e7961f54d0adb802c",
+    "case_hash": "042ab162ea83001f9ca755219b41c1416287948f71148942f8ed9b6b70ab1504",
+    "hypothesis_slot": "H3",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-d27431b318c163faabb849875c4f99ad",
+    "case_id": "2022-07-01|0xdc65f159bd29136251e7b807ff90ab86c3a2e27c",
+    "case_hash": "0431bf318ca06bc1108fb4224d1ef3286b18dabf5ad40a53cab47e2db99c95d9",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-2f8372152a98fdae880e5aefa7a50bb4",
+    "case_id": "2022-07-01|0xdc65f159bd29136251e7b807ff90ab86c3a2e27c",
+    "case_hash": "0431bf318ca06bc1108fb4224d1ef3286b18dabf5ad40a53cab47e2db99c95d9",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-ee846c790e9dd35f56a070c5e6a3c7ba",
+    "case_id": "2022-07-01|0xdc65f159bd29136251e7b807ff90ab86c3a2e27c",
+    "case_hash": "0431bf318ca06bc1108fb4224d1ef3286b18dabf5ad40a53cab47e2db99c95d9",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-b3ebd5a42eee3c3a74e8da6b12a06713",
+    "case_id": "2022-06-01|0xdc97fdc47a993ab3b34c6419313bbe243cc1c302",
+    "case_hash": "045743d9bb28bf4777d3e2aaca5f9ba6f5e7e92e0b3274a9933f69c8b68b5fe7",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-24f32c39e205db522977dffc980f0907",
+    "case_id": "2022-06-01|0xdc97fdc47a993ab3b34c6419313bbe243cc1c302",
+    "case_hash": "045743d9bb28bf4777d3e2aaca5f9ba6f5e7e92e0b3274a9933f69c8b68b5fe7",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-e12d617f4863b339645bc5d08928ef0d",
+    "case_id": "2022-06-01|0xdc97fdc47a993ab3b34c6419313bbe243cc1c302",
+    "case_hash": "045743d9bb28bf4777d3e2aaca5f9ba6f5e7e92e0b3274a9933f69c8b68b5fe7",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-79d711e4f10c36c7295fea731c9c8ba9",
+    "case_id": "2022-06-01|0x6c28dfd719a30bd84f52f55667c8777c1210aa76",
+    "case_hash": "045977d502f4e31d2f4916f2d3d0093666b54af5372535ae3a2bc1e3c334eced",
+    "hypothesis_slot": "H1",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-cb41a5d87f72ec0c70942e355dae6ff2",
+    "case_id": "2022-06-01|0x6c28dfd719a30bd84f52f55667c8777c1210aa76",
+    "case_hash": "045977d502f4e31d2f4916f2d3d0093666b54af5372535ae3a2bc1e3c334eced",
+    "hypothesis_slot": "H2",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-08f8d1fc654534675719fa09f46b8390",
+    "case_id": "2022-06-01|0x6c28dfd719a30bd84f52f55667c8777c1210aa76",
+    "case_hash": "045977d502f4e31d2f4916f2d3d0093666b54af5372535ae3a2bc1e3c334eced",
+    "hypothesis_slot": "H3",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-496f92619c2c69b7f4ec15debd969b0d",
+    "case_id": "2022-06-01|0x74d2ef7e09b976822f654b3e93d689def47eecc9",
+    "case_hash": "047b67982119be9ace4f46af8a6997755a72f5def1103137aeb793af8658ff02",
+    "hypothesis_slot": "H1",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-a97d557da36fa2d48efaa22c9cac2e5d",
+    "case_id": "2022-06-01|0x74d2ef7e09b976822f654b3e93d689def47eecc9",
+    "case_hash": "047b67982119be9ace4f46af8a6997755a72f5def1103137aeb793af8658ff02",
+    "hypothesis_slot": "H2",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-22e6a87cfc3442b954b67870186c3ce1",
+    "case_id": "2022-06-01|0x74d2ef7e09b976822f654b3e93d689def47eecc9",
+    "case_hash": "047b67982119be9ace4f46af8a6997755a72f5def1103137aeb793af8658ff02",
+    "hypothesis_slot": "H3",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-d8be5afb7d746156948d3f237090fed9",
+    "case_id": "2022-08-01|0xa34095e52c0cd3b89180dc7ec4a6215291f072b9",
+    "case_hash": "048b311a3a288a80d257be89b10226a699e38c2b8ccf0b35f97be5f03af193a6",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-11b4064c59ff81413bb09b9fe9529b42",
+    "case_id": "2022-08-01|0xa34095e52c0cd3b89180dc7ec4a6215291f072b9",
+    "case_hash": "048b311a3a288a80d257be89b10226a699e38c2b8ccf0b35f97be5f03af193a6",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-1ee0aa787a540416ca48de5ba0b90812",
+    "case_id": "2022-08-01|0xa34095e52c0cd3b89180dc7ec4a6215291f072b9",
+    "case_hash": "048b311a3a288a80d257be89b10226a699e38c2b8ccf0b35f97be5f03af193a6",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-e8a257e0ba889af85555ed70fd6459f1",
+    "case_id": "2022-07-01|0x17a67d4c4677cc1f781fcae897cf3068ae6d87d0",
+    "case_hash": "04923d6f3ce2cdee4c5f71c01dd3b78b57c582f6100536d79a151dff4180d6af",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-fdce49c53651b5a175bea7191ca7bc3b",
+    "case_id": "2022-07-01|0x17a67d4c4677cc1f781fcae897cf3068ae6d87d0",
+    "case_hash": "04923d6f3ce2cdee4c5f71c01dd3b78b57c582f6100536d79a151dff4180d6af",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-0802c62453c94deb5fca668646b4c6bc",
+    "case_id": "2022-07-01|0x17a67d4c4677cc1f781fcae897cf3068ae6d87d0",
+    "case_hash": "04923d6f3ce2cdee4c5f71c01dd3b78b57c582f6100536d79a151dff4180d6af",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-fe8b77c10e51ccbde5133585e283b454",
+    "case_id": "2022-07-01|0xbfe08e40408c615fd4d9339dae999bbd231416a2",
+    "case_hash": "04c63fb71f2b2e89cd6a55bd787f39e8604fbfe54eafa107c6ff5362a67b31a9",
+    "hypothesis_slot": "H1",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-dc108e054df1476e49d1856180cf0693",
+    "case_id": "2022-07-01|0xbfe08e40408c615fd4d9339dae999bbd231416a2",
+    "case_hash": "04c63fb71f2b2e89cd6a55bd787f39e8604fbfe54eafa107c6ff5362a67b31a9",
+    "hypothesis_slot": "H2",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-35104e4bfe9dc7c652cc3a234a70abf0",
+    "case_id": "2022-07-01|0xbfe08e40408c615fd4d9339dae999bbd231416a2",
+    "case_hash": "04c63fb71f2b2e89cd6a55bd787f39e8604fbfe54eafa107c6ff5362a67b31a9",
+    "hypothesis_slot": "H3",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-d83c7a5cdbd26e80b5444417d7c62869",
+    "case_id": "2022-07-01|0x2289c8fed5be4b1c4fcfd7a74ad2afcdd277312f",
+    "case_hash": "04c6b2e12c1e72347fa75f5664f8110242f5c9c7a04139e8d14fc3f4e0c3dab1",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-51c874d69163294c9a9db1d459667ea3",
+    "case_id": "2022-07-01|0x2289c8fed5be4b1c4fcfd7a74ad2afcdd277312f",
+    "case_hash": "04c6b2e12c1e72347fa75f5664f8110242f5c9c7a04139e8d14fc3f4e0c3dab1",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-6cc648e6b4bfb8afaeb419c1c3ddc123",
+    "case_id": "2022-07-01|0x2289c8fed5be4b1c4fcfd7a74ad2afcdd277312f",
+    "case_hash": "04c6b2e12c1e72347fa75f5664f8110242f5c9c7a04139e8d14fc3f4e0c3dab1",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-aba8226089a7e0ad3837ec12ee2577c5",
+    "case_id": "2022-07-01|0x188fa7765807b4e48d5e0aa6dfbf837fe8a38861",
+    "case_hash": "04cb479741146fad212574742f40c01b09e7bbf2954b74d2ce13d34ba9a415f3",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-17e41ccf15da3f3564d90f084b5fc552",
+    "case_id": "2022-07-01|0x188fa7765807b4e48d5e0aa6dfbf837fe8a38861",
+    "case_hash": "04cb479741146fad212574742f40c01b09e7bbf2954b74d2ce13d34ba9a415f3",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-3af6d440b956cd27752a6945d539a933",
+    "case_id": "2022-07-01|0x188fa7765807b4e48d5e0aa6dfbf837fe8a38861",
+    "case_hash": "04cb479741146fad212574742f40c01b09e7bbf2954b74d2ce13d34ba9a415f3",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-8fc238e6c670fb30a49f8886fde041ec",
+    "case_id": "2022-06-01|0x7a06186b4129d7bd136b545b6136fc91f06206d9",
+    "case_hash": "04da01c100fd5e43eb87c9609cd5e2265e8e584d2acfdfa970d6a9a9c3baf928",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-74a500fdb3f9d5032081216f95cf4a78",
+    "case_id": "2022-06-01|0x7a06186b4129d7bd136b545b6136fc91f06206d9",
+    "case_hash": "04da01c100fd5e43eb87c9609cd5e2265e8e584d2acfdfa970d6a9a9c3baf928",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-4fad38274d80aa635deb71792cef36ee",
+    "case_id": "2022-06-01|0x7a06186b4129d7bd136b545b6136fc91f06206d9",
+    "case_hash": "04da01c100fd5e43eb87c9609cd5e2265e8e584d2acfdfa970d6a9a9c3baf928",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-895ddede1ab56ee33866eaf239701c85",
+    "case_id": "2022-06-01|0xc6c8112b3d9941e4945f1c7382c6ab906112d4c8",
+    "case_hash": "04ffb5aa8ef6602e73d6a673f2a17edad1ef575699e8a0f012301e64c66aaf2f",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-ca2005820b76680d7e522006b2a6e0f9",
+    "case_id": "2022-06-01|0xc6c8112b3d9941e4945f1c7382c6ab906112d4c8",
+    "case_hash": "04ffb5aa8ef6602e73d6a673f2a17edad1ef575699e8a0f012301e64c66aaf2f",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-744650987f3d88d1341788e083e6ba90",
+    "case_id": "2022-06-01|0xc6c8112b3d9941e4945f1c7382c6ab906112d4c8",
+    "case_hash": "04ffb5aa8ef6602e73d6a673f2a17edad1ef575699e8a0f012301e64c66aaf2f",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-753d722c702d2d18b05a639b7b67acaf",
+    "case_id": "2022-06-01|0x934e6161e2cea8f06fcb5c966122db90b28b23c2",
+    "case_hash": "0504bd56ebb7ce198db5430c7e3f4c416e6f236af01eb4220a793b54d605fb17",
+    "hypothesis_slot": "H1",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-1eeba4c369f57a3cb67e55bfe605bbc0",
+    "case_id": "2022-06-01|0x934e6161e2cea8f06fcb5c966122db90b28b23c2",
+    "case_hash": "0504bd56ebb7ce198db5430c7e3f4c416e6f236af01eb4220a793b54d605fb17",
+    "hypothesis_slot": "H2",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-acc4f0bb78fa470e05d73dd6d7cd3a1a",
+    "case_id": "2022-06-01|0x934e6161e2cea8f06fcb5c966122db90b28b23c2",
+    "case_hash": "0504bd56ebb7ce198db5430c7e3f4c416e6f236af01eb4220a793b54d605fb17",
+    "hypothesis_slot": "H3",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-ff8fec6c4c43392fde3a6e0fc13515aa",
+    "case_id": "2022-07-01|0x6556b6a13917b063111dba4e5062ec25798915a5",
+    "case_hash": "050fa527cf81905dd2118eace1e43c521fbe7056289c6479e96480c28545f944",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-d999147f8306c3f315281d513babd6ee",
+    "case_id": "2022-07-01|0x6556b6a13917b063111dba4e5062ec25798915a5",
+    "case_hash": "050fa527cf81905dd2118eace1e43c521fbe7056289c6479e96480c28545f944",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-519cfe2cf55112c01e50a658783f967d",
+    "case_id": "2022-07-01|0x6556b6a13917b063111dba4e5062ec25798915a5",
+    "case_hash": "050fa527cf81905dd2118eace1e43c521fbe7056289c6479e96480c28545f944",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-000a54fb2959d8258da897d94cc03675",
+    "case_id": "2022-07-01|0x2a22507f16b4f432865ce6c8cfc8882abef45a6d",
+    "case_hash": "05163b2b968818421a24803152d9634e00b6e37b5076abac4c7bc59fd2da06cc",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-5b74166c783eb3a2f8f6e2b999b33f4e",
+    "case_id": "2022-07-01|0x2a22507f16b4f432865ce6c8cfc8882abef45a6d",
+    "case_hash": "05163b2b968818421a24803152d9634e00b6e37b5076abac4c7bc59fd2da06cc",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-5564693c71a16800fe6ce9895d481d8a",
+    "case_id": "2022-07-01|0x2a22507f16b4f432865ce6c8cfc8882abef45a6d",
+    "case_hash": "05163b2b968818421a24803152d9634e00b6e37b5076abac4c7bc59fd2da06cc",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-cae81ee13571b7dc9a943ca1787f0121",
+    "case_id": "2022-08-01|0x915008f8dfd6268584ecef203b5e80015c01094f",
+    "case_hash": "051df0a89d332a69517af740de3b7a9be3454735937772f6b181eefdc0e89161",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-e5cf9ee940a0cc5621a9427da3afb5e2",
+    "case_id": "2022-08-01|0x915008f8dfd6268584ecef203b5e80015c01094f",
+    "case_hash": "051df0a89d332a69517af740de3b7a9be3454735937772f6b181eefdc0e89161",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-42214426f2318849ee88aee88d3421a1",
+    "case_id": "2022-08-01|0x915008f8dfd6268584ecef203b5e80015c01094f",
+    "case_hash": "051df0a89d332a69517af740de3b7a9be3454735937772f6b181eefdc0e89161",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-b29708b43fd255674ee101ef75b14848",
+    "case_id": "2022-06-01|0x46ddbc30eba19d767868696e88637e93799a7421",
+    "case_hash": "052eb14d5f0204c3358cc51df8501d7ee6d44c1df7eadde4882e2ea99095ecf0",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-ac6d75433444ccb960e067715f3dfd32",
+    "case_id": "2022-06-01|0x46ddbc30eba19d767868696e88637e93799a7421",
+    "case_hash": "052eb14d5f0204c3358cc51df8501d7ee6d44c1df7eadde4882e2ea99095ecf0",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-2041b34b1716b17836a431b3c1707986",
+    "case_id": "2022-06-01|0x46ddbc30eba19d767868696e88637e93799a7421",
+    "case_hash": "052eb14d5f0204c3358cc51df8501d7ee6d44c1df7eadde4882e2ea99095ecf0",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-f9b9e7f2b56bdbefa965718ec9698374",
+    "case_id": "2022-07-01|0x22f34558aa3b16a0d4161f1bfb3003f42e153322",
+    "case_hash": "05438870187a6227108d69e09a33dada7a13a1f3d4ee86349fe69e5ee309d9ff",
+    "hypothesis_slot": "H1",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-9db18609f44d5b7fa9ce4e5adb46d832",
+    "case_id": "2022-07-01|0x22f34558aa3b16a0d4161f1bfb3003f42e153322",
+    "case_hash": "05438870187a6227108d69e09a33dada7a13a1f3d4ee86349fe69e5ee309d9ff",
+    "hypothesis_slot": "H2",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-dba92ef9860e9d6b692457bc67ff6f3e",
+    "case_id": "2022-07-01|0x22f34558aa3b16a0d4161f1bfb3003f42e153322",
+    "case_hash": "05438870187a6227108d69e09a33dada7a13a1f3d4ee86349fe69e5ee309d9ff",
+    "hypothesis_slot": "H3",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-fc654006fe405b7c5766841d6ad0a416",
+    "case_id": "2022-08-01|0xbc3ffa2e6a08c122a56737a14c942fc159ad4ffd",
+    "case_hash": "054dd2ffa41b8056e68bbd9d3297a88ae5327288125017a105d44d709bac913b",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-e3c2d1ea549db4e151b9937a94c7c224",
+    "case_id": "2022-08-01|0xbc3ffa2e6a08c122a56737a14c942fc159ad4ffd",
+    "case_hash": "054dd2ffa41b8056e68bbd9d3297a88ae5327288125017a105d44d709bac913b",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-609d3d59c435e79bd1b7b0ba6d140165",
+    "case_id": "2022-08-01|0xbc3ffa2e6a08c122a56737a14c942fc159ad4ffd",
+    "case_hash": "054dd2ffa41b8056e68bbd9d3297a88ae5327288125017a105d44d709bac913b",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-b310ee130a4e52c71f4feface72492b6",
+    "case_id": "2022-08-01|0xd72fb1d0d87c887390dbde5f275202e147f8b13b",
+    "case_hash": "0581035821dcd6e5e6c79bc63e0af1102858a7f0a130375e282e51ca0b399885",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-4af79dcf387c3b2d2abbe3b3e46c3834",
+    "case_id": "2022-08-01|0xd72fb1d0d87c887390dbde5f275202e147f8b13b",
+    "case_hash": "0581035821dcd6e5e6c79bc63e0af1102858a7f0a130375e282e51ca0b399885",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-4150bccc4dc213311946aef918082b83",
+    "case_id": "2022-08-01|0xd72fb1d0d87c887390dbde5f275202e147f8b13b",
+    "case_hash": "0581035821dcd6e5e6c79bc63e0af1102858a7f0a130375e282e51ca0b399885",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-e135ebb5e4dba4dcbad2118154655b89",
+    "case_id": "2022-07-01|0xa934f1210de462c7ee2b5b78fd97b7cb7c38e95d",
+    "case_hash": "05971d4a3380fca72efb439003f371496cb636de91a6fa469fdc1f3c1cc2359b",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-a981908dc98601bac1e2690433741d05",
+    "case_id": "2022-07-01|0xa934f1210de462c7ee2b5b78fd97b7cb7c38e95d",
+    "case_hash": "05971d4a3380fca72efb439003f371496cb636de91a6fa469fdc1f3c1cc2359b",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-755a659a5eae00460c3f1c9bccdd2e6d",
+    "case_id": "2022-07-01|0xa934f1210de462c7ee2b5b78fd97b7cb7c38e95d",
+    "case_hash": "05971d4a3380fca72efb439003f371496cb636de91a6fa469fdc1f3c1cc2359b",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-f1e7b95abfe91e81e3cc232864721254",
+    "case_id": "2022-08-01|0x19891d5c1a99d140a1749e92ea403a196e86b259",
+    "case_hash": "05a77d2f73cab67f09bbd69ec667454e4d6d0e37c74a7e14b659aefb9dee1e90",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-4c127e4df76d565303eb591f81be4e41",
+    "case_id": "2022-08-01|0x19891d5c1a99d140a1749e92ea403a196e86b259",
+    "case_hash": "05a77d2f73cab67f09bbd69ec667454e4d6d0e37c74a7e14b659aefb9dee1e90",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-234da4e945f57efba908b81cb8056186",
+    "case_id": "2022-08-01|0x19891d5c1a99d140a1749e92ea403a196e86b259",
+    "case_hash": "05a77d2f73cab67f09bbd69ec667454e4d6d0e37c74a7e14b659aefb9dee1e90",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-7d075d931e1501c1cf500fec14b6f6d0",
+    "case_id": "2022-06-01|0xecce08c2636820a81fc0c805dbdc7d846636bbc4",
+    "case_hash": "05a961600ce92105c670f849b1ee1f46a5724c39e776c6ad79c52749e1af0f99",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-612056c3ee25ebe428d61545ba716483",
+    "case_id": "2022-06-01|0xecce08c2636820a81fc0c805dbdc7d846636bbc4",
+    "case_hash": "05a961600ce92105c670f849b1ee1f46a5724c39e776c6ad79c52749e1af0f99",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-4ef05c3124a18a412c4f4c52f10f18cd",
+    "case_id": "2022-06-01|0xecce08c2636820a81fc0c805dbdc7d846636bbc4",
+    "case_hash": "05a961600ce92105c670f849b1ee1f46a5724c39e776c6ad79c52749e1af0f99",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-25fc5124b44a5ab8cb304866421109fa",
+    "case_id": "2022-08-01|0x9d3f36be8462ff2468b9fbb2b44e52d49f1ec792",
+    "case_hash": "05b801848c46c463770098f321ca536865c36f8e829407c79752d32b1e241cf0",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-a2943b8a40e081ad002a9039b2f35432",
+    "case_id": "2022-08-01|0x9d3f36be8462ff2468b9fbb2b44e52d49f1ec792",
+    "case_hash": "05b801848c46c463770098f321ca536865c36f8e829407c79752d32b1e241cf0",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-9763ae8600c333bebceac6cd094f879e",
+    "case_id": "2022-08-01|0x9d3f36be8462ff2468b9fbb2b44e52d49f1ec792",
+    "case_hash": "05b801848c46c463770098f321ca536865c36f8e829407c79752d32b1e241cf0",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-edcc9ba75cd0e2c1aef6a0a2f5c29120",
+    "case_id": "2022-06-01|0x6a6da37c03fa9ce87e264a58f5dcb8be115c0d18",
+    "case_hash": "05b88d7268b4861369e6f90255ab80d49a5905b080b2e9884d3b3883f86073b0",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-f4ffbf2721af0b4acff3995b248a4d9f",
+    "case_id": "2022-06-01|0x6a6da37c03fa9ce87e264a58f5dcb8be115c0d18",
+    "case_hash": "05b88d7268b4861369e6f90255ab80d49a5905b080b2e9884d3b3883f86073b0",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-3fcd49dbfdb843f1025a7cf11191d22b",
+    "case_id": "2022-06-01|0x6a6da37c03fa9ce87e264a58f5dcb8be115c0d18",
+    "case_hash": "05b88d7268b4861369e6f90255ab80d49a5905b080b2e9884d3b3883f86073b0",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-79a1e5654af9093fba7db6e4d1860d40",
+    "case_id": "2022-06-01|0x1774fd794d8a2f9681faeeb1fa1e50ee5ea7b3d4",
+    "case_hash": "05dad0ab006c8b2359023964c444b6ccdd351ac8c2049c38db983b9cc4b0fa68",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-fd642c9beed26a7d4fb6f279f30f420e",
+    "case_id": "2022-06-01|0x1774fd794d8a2f9681faeeb1fa1e50ee5ea7b3d4",
+    "case_hash": "05dad0ab006c8b2359023964c444b6ccdd351ac8c2049c38db983b9cc4b0fa68",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-c9ec34fb6e49b12cc548193dc448e47a",
+    "case_id": "2022-06-01|0x1774fd794d8a2f9681faeeb1fa1e50ee5ea7b3d4",
+    "case_hash": "05dad0ab006c8b2359023964c444b6ccdd351ac8c2049c38db983b9cc4b0fa68",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-431492b7f3d93d972cf10a23521005a8",
+    "case_id": "2022-06-01|0x1057a4c54d4d973cb7f2f3f39bc1787d3e92394e",
+    "case_hash": "0607512b92ea4ba5517b003a0b0b72a1570e5d407429b9be101a10bc6f3f88a1",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-c737f9054c4fd6be16cd6cd55d396f53",
+    "case_id": "2022-06-01|0x1057a4c54d4d973cb7f2f3f39bc1787d3e92394e",
+    "case_hash": "0607512b92ea4ba5517b003a0b0b72a1570e5d407429b9be101a10bc6f3f88a1",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-b36236bee1decbd6120791792022b3c8",
+    "case_id": "2022-06-01|0x1057a4c54d4d973cb7f2f3f39bc1787d3e92394e",
+    "case_hash": "0607512b92ea4ba5517b003a0b0b72a1570e5d407429b9be101a10bc6f3f88a1",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-718131a608cd0d16fe8fa0dc55c34753",
+    "case_id": "2022-08-01|0xd406508e842622cc1f9f57d5cbe6668414bb63ab",
+    "case_hash": "061232307ed598687b91e21cffe05227576dcf7b5bc89c3dff442f52fe536e0f",
+    "hypothesis_slot": "H1",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-0a85f5d4891722236d3272081d67e4d3",
+    "case_id": "2022-08-01|0xd406508e842622cc1f9f57d5cbe6668414bb63ab",
+    "case_hash": "061232307ed598687b91e21cffe05227576dcf7b5bc89c3dff442f52fe536e0f",
+    "hypothesis_slot": "H2",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-3ef90f4d59a7662f00f2e1c55cb9e654",
+    "case_id": "2022-08-01|0xd406508e842622cc1f9f57d5cbe6668414bb63ab",
+    "case_hash": "061232307ed598687b91e21cffe05227576dcf7b5bc89c3dff442f52fe536e0f",
+    "hypothesis_slot": "H3",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-086bd1a9b66ea2ae5abaf63bea761952",
+    "case_id": "2022-06-01|0xb659d5ba79ca9f6ec094be1fd60769a3403d7be4",
+    "case_hash": "0614aa6887b7765c39d3859c08e5a113c574cd879e158a73f9a1a9ebb7928db5",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-448e0fdbfe990f2b5abe4db782563668",
+    "case_id": "2022-06-01|0xb659d5ba79ca9f6ec094be1fd60769a3403d7be4",
+    "case_hash": "0614aa6887b7765c39d3859c08e5a113c574cd879e158a73f9a1a9ebb7928db5",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-a10a4ba7478ee65d678553a75508e3fe",
+    "case_id": "2022-06-01|0xb659d5ba79ca9f6ec094be1fd60769a3403d7be4",
+    "case_hash": "0614aa6887b7765c39d3859c08e5a113c574cd879e158a73f9a1a9ebb7928db5",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-3e1099661323a25d4fd1a881ec3233c6",
+    "case_id": "2022-08-01|0x8715dcbf7394a4e6ad98ac5d112e7fb6c3ea9f70",
+    "case_hash": "061cd28ac48a557795778ad4b1d4cd1668f313ba5ed3b965b65ebf94ca216c4c",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-05cd2bb5e7b1f36672d2f5c0a2c9d26a",
+    "case_id": "2022-08-01|0x8715dcbf7394a4e6ad98ac5d112e7fb6c3ea9f70",
+    "case_hash": "061cd28ac48a557795778ad4b1d4cd1668f313ba5ed3b965b65ebf94ca216c4c",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-5b047ffbd92fd4129c43429002ba67b4",
+    "case_id": "2022-08-01|0x8715dcbf7394a4e6ad98ac5d112e7fb6c3ea9f70",
+    "case_hash": "061cd28ac48a557795778ad4b1d4cd1668f313ba5ed3b965b65ebf94ca216c4c",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-3a9d6fc5e282ce0dcd8c27d4dbb77393",
+    "case_id": "2022-07-01|0x873efe479b85c9b49e9060d10ff60044223c5e27",
+    "case_hash": "0626ab78b667b434d8332385f3f990cec6554d9a11f77f30e4f40955e29d6170",
+    "hypothesis_slot": "H1",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-16f3e78279c651d0925056c8f3e0603e",
+    "case_id": "2022-07-01|0x873efe479b85c9b49e9060d10ff60044223c5e27",
+    "case_hash": "0626ab78b667b434d8332385f3f990cec6554d9a11f77f30e4f40955e29d6170",
+    "hypothesis_slot": "H2",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-18f52de16a21e1fd0fe3db09b578d9e4",
+    "case_id": "2022-07-01|0x873efe479b85c9b49e9060d10ff60044223c5e27",
+    "case_hash": "0626ab78b667b434d8332385f3f990cec6554d9a11f77f30e4f40955e29d6170",
+    "hypothesis_slot": "H3",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-81956517ab6e4f8051bd93d197232883",
+    "case_id": "2022-06-01|0x7a5b7b5ca89ad4beeba0a1bac63c923654d3e3cc",
+    "case_hash": "06286f013f93c0388eb4a698f61ea68f48fcc5d33ff98dde71954368c9c9647a",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-69b52c33ce34cb96a83cff92dc3f0408",
+    "case_id": "2022-06-01|0x7a5b7b5ca89ad4beeba0a1bac63c923654d3e3cc",
+    "case_hash": "06286f013f93c0388eb4a698f61ea68f48fcc5d33ff98dde71954368c9c9647a",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-8f27e4ec1a012d1614f567f990884118",
+    "case_id": "2022-06-01|0x7a5b7b5ca89ad4beeba0a1bac63c923654d3e3cc",
+    "case_hash": "06286f013f93c0388eb4a698f61ea68f48fcc5d33ff98dde71954368c9c9647a",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-12c402a6c0cccb5c34a23edb1d4cb2a2",
+    "case_id": "2022-08-01|0x3cfbe70cb7d7e6e522dd61fec878a92347918caf",
+    "case_hash": "063ea523da3e7220de052db404a2f5e32df2eb3e03c2a02270654b40eff3f972",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-1d03421c69d14bd8b12e42d3b4d72b4f",
+    "case_id": "2022-08-01|0x3cfbe70cb7d7e6e522dd61fec878a92347918caf",
+    "case_hash": "063ea523da3e7220de052db404a2f5e32df2eb3e03c2a02270654b40eff3f972",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-241920b3014730e0f8b1f5be2780d20c",
+    "case_id": "2022-08-01|0x3cfbe70cb7d7e6e522dd61fec878a92347918caf",
+    "case_hash": "063ea523da3e7220de052db404a2f5e32df2eb3e03c2a02270654b40eff3f972",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-5ec32a10b3e89dffbd1eb8e6a23c3fb3",
+    "case_id": "2022-07-01|0x3f5872783182989fbf732866c8bafe6b93e822b2",
+    "case_hash": "065e5df8cb03e7f9918d0ba8394041412bbd26de9417d7622ee7f4969f5ade3e",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-5464f971a05d68872ce41d2f417b4106",
+    "case_id": "2022-07-01|0x3f5872783182989fbf732866c8bafe6b93e822b2",
+    "case_hash": "065e5df8cb03e7f9918d0ba8394041412bbd26de9417d7622ee7f4969f5ade3e",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-06097517d03c22d548d0322dbd2ab6fc",
+    "case_id": "2022-07-01|0x3f5872783182989fbf732866c8bafe6b93e822b2",
+    "case_hash": "065e5df8cb03e7f9918d0ba8394041412bbd26de9417d7622ee7f4969f5ade3e",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-23aa1260f6b0539cbe608da7dbcdfa2b",
+    "case_id": "2022-07-01|0xfaed0bdd7390eb0878e55ca1c52bcb5d3e70bacb",
+    "case_hash": "0665535c76edff4afa71137f18cd2bb3c4db0f07e19c90fdad583effa3d151bb",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-a736830e9f282c55b8145b937cf146f6",
+    "case_id": "2022-07-01|0xfaed0bdd7390eb0878e55ca1c52bcb5d3e70bacb",
+    "case_hash": "0665535c76edff4afa71137f18cd2bb3c4db0f07e19c90fdad583effa3d151bb",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-8fb778b2648602abcc24255f56011f76",
+    "case_id": "2022-07-01|0xfaed0bdd7390eb0878e55ca1c52bcb5d3e70bacb",
+    "case_hash": "0665535c76edff4afa71137f18cd2bb3c4db0f07e19c90fdad583effa3d151bb",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-6bf8a4f6b4141a0f0f4ac0d25dc02f4c",
+    "case_id": "2022-07-01|0xf7d017e4e3c68dd49e0dabd38d850ceedd949146",
+    "case_hash": "066acccdd10b1f67b2c51dc7dbc123324e65972faa5b8407843111db02013240",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-3402e7a538ab08faf8730b600de1d5d2",
+    "case_id": "2022-07-01|0xf7d017e4e3c68dd49e0dabd38d850ceedd949146",
+    "case_hash": "066acccdd10b1f67b2c51dc7dbc123324e65972faa5b8407843111db02013240",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-2389d92a9c8087abc8f663f667667ddd",
+    "case_id": "2022-07-01|0xf7d017e4e3c68dd49e0dabd38d850ceedd949146",
+    "case_hash": "066acccdd10b1f67b2c51dc7dbc123324e65972faa5b8407843111db02013240",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-386c56cd869671b450ad0efe97e37c1f",
+    "case_id": "2022-07-01|0x8af2bd409ea0290029c14aac5d1be77d5c9a114f",
+    "case_hash": "069d98da6748dcf776fa85888a9f5c559cb88ba6472fd335b1f2f421fd36ea5e",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-c87e99e2891fac54e10d1b4894b4b195",
+    "case_id": "2022-07-01|0x8af2bd409ea0290029c14aac5d1be77d5c9a114f",
+    "case_hash": "069d98da6748dcf776fa85888a9f5c559cb88ba6472fd335b1f2f421fd36ea5e",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-3fa31c92014d49f4c0f4eac993c3ed90",
+    "case_id": "2022-07-01|0x8af2bd409ea0290029c14aac5d1be77d5c9a114f",
+    "case_hash": "069d98da6748dcf776fa85888a9f5c559cb88ba6472fd335b1f2f421fd36ea5e",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-93dff9043f84dc221274442fca882722",
+    "case_id": "2022-06-01|0x606282e19769509b6bc096c198e232ddb3969411",
+    "case_hash": "06beb8e6fcab58bbd4491ae4cc8551e31556af2df7d2cf279b166b76724ff3e2",
+    "hypothesis_slot": "H1",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-23d83fac8eeaf2c7bdba71eb9d611ba5",
+    "case_id": "2022-06-01|0x606282e19769509b6bc096c198e232ddb3969411",
+    "case_hash": "06beb8e6fcab58bbd4491ae4cc8551e31556af2df7d2cf279b166b76724ff3e2",
+    "hypothesis_slot": "H2",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-f79d43741207689515c7c37c89471b6d",
+    "case_id": "2022-06-01|0x606282e19769509b6bc096c198e232ddb3969411",
+    "case_hash": "06beb8e6fcab58bbd4491ae4cc8551e31556af2df7d2cf279b166b76724ff3e2",
+    "hypothesis_slot": "H3",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-e4454a80c57205d3f23d480b0d513cbe",
+    "case_id": "2022-08-01|0x1fc24b5b4f50ece3f8eaa87d702709dca83915d2",
+    "case_hash": "06c0256d7540c53197813cd1536872604cd2d9b275ff281ff031031178b67239",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-cc96c897d164868720c2e341c6ef3a14",
+    "case_id": "2022-08-01|0x1fc24b5b4f50ece3f8eaa87d702709dca83915d2",
+    "case_hash": "06c0256d7540c53197813cd1536872604cd2d9b275ff281ff031031178b67239",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-e1437a331e0452420ef239e0c64f989c",
+    "case_id": "2022-08-01|0x1fc24b5b4f50ece3f8eaa87d702709dca83915d2",
+    "case_hash": "06c0256d7540c53197813cd1536872604cd2d9b275ff281ff031031178b67239",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-d1852358521fcfe16fdd6cf37786a2a1",
+    "case_id": "2022-08-01|0xac5266f7d79524ec88107fab522a7ff74fe06a97",
+    "case_hash": "06eae8f3a3eae114be699c979a32912464a533c88d28c8a684dc76c0aaad0eca",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-28553af0701c8579668803fc4ddaf049",
+    "case_id": "2022-08-01|0xac5266f7d79524ec88107fab522a7ff74fe06a97",
+    "case_hash": "06eae8f3a3eae114be699c979a32912464a533c88d28c8a684dc76c0aaad0eca",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-cc23b5e921decb9ad6c2ee7c41966196",
+    "case_id": "2022-08-01|0xac5266f7d79524ec88107fab522a7ff74fe06a97",
+    "case_hash": "06eae8f3a3eae114be699c979a32912464a533c88d28c8a684dc76c0aaad0eca",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-06323ce50f56ff3f31f4425fc1b1044f",
+    "case_id": "2022-08-01|0x4a23d7feba35b0c4d16601a2ce7d434dac643bce",
+    "case_hash": "0703d4fb0c78eac99db834f6156f9b8783701cb22dbd72620a36597bf172c634",
+    "hypothesis_slot": "H1",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-55e07b5bbc95c839ce963a41b146197b",
+    "case_id": "2022-08-01|0x4a23d7feba35b0c4d16601a2ce7d434dac643bce",
+    "case_hash": "0703d4fb0c78eac99db834f6156f9b8783701cb22dbd72620a36597bf172c634",
+    "hypothesis_slot": "H2",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-c57f755b94df5767a3f4bd6160d0d576",
+    "case_id": "2022-08-01|0x4a23d7feba35b0c4d16601a2ce7d434dac643bce",
+    "case_hash": "0703d4fb0c78eac99db834f6156f9b8783701cb22dbd72620a36597bf172c634",
+    "hypothesis_slot": "H3",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-d06a0b94c4cc1a97530f48ee21ea99a5",
+    "case_id": "2022-07-01|0xf83c47a7cf62282f704ecef4fb7c4f842d94d275",
+    "case_hash": "07074509d54ac204a357876c9bcecda0dc54d32bf9c55cf18f3f6948b685b896",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-d3f81b0ee740061773b11e895a2741e7",
+    "case_id": "2022-07-01|0xf83c47a7cf62282f704ecef4fb7c4f842d94d275",
+    "case_hash": "07074509d54ac204a357876c9bcecda0dc54d32bf9c55cf18f3f6948b685b896",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-296704adb9e41c1e2a8aed1bafc1d29a",
+    "case_id": "2022-07-01|0xf83c47a7cf62282f704ecef4fb7c4f842d94d275",
+    "case_hash": "07074509d54ac204a357876c9bcecda0dc54d32bf9c55cf18f3f6948b685b896",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-caaf083db47610eba888e2bee36f86a3",
+    "case_id": "2022-06-01|0xf128525480f892371d446eafffcc612f6a4c85c7",
+    "case_hash": "0707a5fc6873ff2c2d535dcbb5fdb334ce44b5184d04c54d5b7666ee024760c7",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-4cb841b43e46ab57ff9fa62145780d22",
+    "case_id": "2022-06-01|0xf128525480f892371d446eafffcc612f6a4c85c7",
+    "case_hash": "0707a5fc6873ff2c2d535dcbb5fdb334ce44b5184d04c54d5b7666ee024760c7",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-fa56857aff470f5d5616942ba76417d3",
+    "case_id": "2022-06-01|0xf128525480f892371d446eafffcc612f6a4c85c7",
+    "case_hash": "0707a5fc6873ff2c2d535dcbb5fdb334ce44b5184d04c54d5b7666ee024760c7",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-070554f4ec83c31e71fbc056655f4836",
+    "case_id": "2022-06-01|0x01660dbf1dfa34787488a7b42d401a3ab442b148",
+    "case_hash": "07167b7e0453b89cdf09323a9855089f925124bbc40337f11fccd095e56f8710",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-05dd93d0c41416b503f3eb844e2e2f8d",
+    "case_id": "2022-06-01|0x01660dbf1dfa34787488a7b42d401a3ab442b148",
+    "case_hash": "07167b7e0453b89cdf09323a9855089f925124bbc40337f11fccd095e56f8710",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-68457bbab0fb345e6f41eda3eac67342",
+    "case_id": "2022-06-01|0x01660dbf1dfa34787488a7b42d401a3ab442b148",
+    "case_hash": "07167b7e0453b89cdf09323a9855089f925124bbc40337f11fccd095e56f8710",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-b47a3e8070846f3af0fb20ba2ab70786",
+    "case_id": "2022-07-01|0x36ff74fe896f6ac287b6d67f48f53c01dec7fbeb",
+    "case_hash": "073000aac17d2911d73a6d866e1f5f74467ac326e85564eb8048f206a7d92b3f",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-26bf28d51b9c918929f02101011fbeff",
+    "case_id": "2022-07-01|0x36ff74fe896f6ac287b6d67f48f53c01dec7fbeb",
+    "case_hash": "073000aac17d2911d73a6d866e1f5f74467ac326e85564eb8048f206a7d92b3f",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-e4aee7f781cf0564f019be2bb99b5c95",
+    "case_id": "2022-07-01|0x36ff74fe896f6ac287b6d67f48f53c01dec7fbeb",
+    "case_hash": "073000aac17d2911d73a6d866e1f5f74467ac326e85564eb8048f206a7d92b3f",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-3d09c7d35cd0b87bdbb68263321d4e72",
+    "case_id": "2022-08-01|0x87b585d251136c83e25f350934e9d28fd0004e37",
+    "case_hash": "073364d1c516db4c1ab25ef79409a40841c3a14e33d8581ab2bf716e861df023",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-abbae0e962705ef90d68c9a18314d997",
+    "case_id": "2022-08-01|0x87b585d251136c83e25f350934e9d28fd0004e37",
+    "case_hash": "073364d1c516db4c1ab25ef79409a40841c3a14e33d8581ab2bf716e861df023",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-f113944fb0619c2c0a82e00c95e71158",
+    "case_id": "2022-08-01|0x87b585d251136c83e25f350934e9d28fd0004e37",
+    "case_hash": "073364d1c516db4c1ab25ef79409a40841c3a14e33d8581ab2bf716e861df023",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-9db469df609ad0c215980951fa88b75b",
+    "case_id": "2022-06-01|0xf519bc3fbc0b1ec8feec3bbb47cc564a6532123a",
+    "case_hash": "07452b2f27f822f233388cb8eb00e67583c5cd0d0d4538ac093bd075e5283ffd",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-40f63ccd928a6ad12d367d9709649baf",
+    "case_id": "2022-06-01|0xf519bc3fbc0b1ec8feec3bbb47cc564a6532123a",
+    "case_hash": "07452b2f27f822f233388cb8eb00e67583c5cd0d0d4538ac093bd075e5283ffd",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-b6a0a3aab4b445dc6a7ec9bd84a09084",
+    "case_id": "2022-06-01|0xf519bc3fbc0b1ec8feec3bbb47cc564a6532123a",
+    "case_hash": "07452b2f27f822f233388cb8eb00e67583c5cd0d0d4538ac093bd075e5283ffd",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-5facf23c2ae8ef76577f3ca8b62cfb92",
+    "case_id": "2022-07-01|0x5986591391b5dd78c7170e6e16a17aed05b50b1d",
+    "case_hash": "074699d48aac80f0c0328a8e9a7174656be20d6dcda9b7c66b2a230036a30230",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-cf63a79e4c542d9c6a0405c2bf65c77b",
+    "case_id": "2022-07-01|0x5986591391b5dd78c7170e6e16a17aed05b50b1d",
+    "case_hash": "074699d48aac80f0c0328a8e9a7174656be20d6dcda9b7c66b2a230036a30230",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-b3081ba3fa04d46eaa2c3da900d2c5f9",
+    "case_id": "2022-07-01|0x5986591391b5dd78c7170e6e16a17aed05b50b1d",
+    "case_hash": "074699d48aac80f0c0328a8e9a7174656be20d6dcda9b7c66b2a230036a30230",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-432f162f29cf5314e6df9f8655555455",
+    "case_id": "2022-08-01|0xf209c2c090a5a065ae7fc175930b087d54fb1362",
+    "case_hash": "076767f65ff4326522487c054cf44bc14c5482b2f89f552cbd6366b3da711dd6",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-b94604a61736e762a0068d9a1a26ce5d",
+    "case_id": "2022-08-01|0xf209c2c090a5a065ae7fc175930b087d54fb1362",
+    "case_hash": "076767f65ff4326522487c054cf44bc14c5482b2f89f552cbd6366b3da711dd6",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-f72d82d6e801e58f68ac3b8695129089",
+    "case_id": "2022-08-01|0xf209c2c090a5a065ae7fc175930b087d54fb1362",
+    "case_hash": "076767f65ff4326522487c054cf44bc14c5482b2f89f552cbd6366b3da711dd6",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-610f47719a2d13a1f49efb74550df47f",
+    "case_id": "2022-06-01|0xbfcfbdc87780c11a78e995ac2f30b115c9015f31",
+    "case_hash": "0776756e4df36538aa04d8d2b91d338a24be4dbc776d285d8debb8b6d2ee293d",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-905042e2bd753466e9fe42871dc773bc",
+    "case_id": "2022-06-01|0xbfcfbdc87780c11a78e995ac2f30b115c9015f31",
+    "case_hash": "0776756e4df36538aa04d8d2b91d338a24be4dbc776d285d8debb8b6d2ee293d",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-09ba53eff2e9277ddcd4c7b24acdf4c7",
+    "case_id": "2022-06-01|0xbfcfbdc87780c11a78e995ac2f30b115c9015f31",
+    "case_hash": "0776756e4df36538aa04d8d2b91d338a24be4dbc776d285d8debb8b6d2ee293d",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-55994138e83a603b24cb60a918c9e617",
+    "case_id": "2022-06-01|0xa8a33539960ef4779cb0eceded8002c1ecd40582",
+    "case_hash": "07873231ced9493631f55039ddc28bf749c96d29d25c1b43f206168cedf20127",
+    "hypothesis_slot": "H1",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-3a3576d267fd2c5cc1b0d9cd68ef38ff",
+    "case_id": "2022-06-01|0xa8a33539960ef4779cb0eceded8002c1ecd40582",
+    "case_hash": "07873231ced9493631f55039ddc28bf749c96d29d25c1b43f206168cedf20127",
+    "hypothesis_slot": "H2",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-712d76f8548944eb04440782784b3ae7",
+    "case_id": "2022-06-01|0xa8a33539960ef4779cb0eceded8002c1ecd40582",
+    "case_hash": "07873231ced9493631f55039ddc28bf749c96d29d25c1b43f206168cedf20127",
+    "hypothesis_slot": "H3",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-c025d5737b45a47f3c6a1e3865b39a0f",
+    "case_id": "2022-06-01|0x55076764360a224e5d26d279c7738f01c7488aa5",
+    "case_hash": "07b2ceb1442f919ddaa0af48fe93e200dd8858c0e0e53909486123e060d883db",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-2eec2ea183a8f0931c935ca744ec97e0",
+    "case_id": "2022-06-01|0x55076764360a224e5d26d279c7738f01c7488aa5",
+    "case_hash": "07b2ceb1442f919ddaa0af48fe93e200dd8858c0e0e53909486123e060d883db",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-bf68d7cd8902b8f410f8ff28eea8e001",
+    "case_id": "2022-06-01|0x55076764360a224e5d26d279c7738f01c7488aa5",
+    "case_hash": "07b2ceb1442f919ddaa0af48fe93e200dd8858c0e0e53909486123e060d883db",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-a4d6d264b81b0626797086c9ddae100d",
+    "case_id": "2022-07-01|0xac7d7815d62ed080376c9d07d6de2cf38721a542",
+    "case_hash": "07c7529a7ef5e926085f8da7b5f2f569bae1ff08b9e8e44e79cda7594cfff983",
+    "hypothesis_slot": "H1",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-93f42dcd1ab9338d14d68cabe6ed1cd9",
+    "case_id": "2022-07-01|0xac7d7815d62ed080376c9d07d6de2cf38721a542",
+    "case_hash": "07c7529a7ef5e926085f8da7b5f2f569bae1ff08b9e8e44e79cda7594cfff983",
+    "hypothesis_slot": "H2",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-8d4ec691d966ad593badc9797455dd68",
+    "case_id": "2022-07-01|0xac7d7815d62ed080376c9d07d6de2cf38721a542",
+    "case_hash": "07c7529a7ef5e926085f8da7b5f2f569bae1ff08b9e8e44e79cda7594cfff983",
+    "hypothesis_slot": "H3",
+    "double_code_case": false
+  },
+  {
+    "row_handle": "SGV2-9aecb76f4ad7c9f0353d313f5668689e",
+    "case_id": "2022-06-01|0x731c7a05611c315edebfa29e1bb0ee9ea058a4a4",
+    "case_hash": "07d3619c738f73330f807276120acc6acd658637fa41732b23497bcb9f0d942f",
+    "hypothesis_slot": "H1",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-a203bac039c27e4cb45b579670926704",
+    "case_id": "2022-06-01|0x731c7a05611c315edebfa29e1bb0ee9ea058a4a4",
+    "case_hash": "07d3619c738f73330f807276120acc6acd658637fa41732b23497bcb9f0d942f",
+    "hypothesis_slot": "H2",
+    "double_code_case": true
+  },
+  {
+    "row_handle": "SGV2-6b60584cd8dd6f1e9589ab50a49811c8",
+    "case_id": "2022-06-01|0x731c7a05611c315edebfa29e1bb0ee9ea058a4a4",
+    "case_hash": "07d3619c738f73330f807276120acc6acd658637fa41732b23497bcb9f0d942f",
+    "hypothesis_slot": "H3",
+    "double_code_case": true
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "created_at": "2026-09-20T14:45:47Z",
+  "status": "PAUSED_ASTRA6_CALL_FAIL_CLOSED",
+  "model_route_required": "private Astra6 relay only",
+  "fallback_forbidden": true,
+  "calls_started": 1,
+  "raw_annotations_present": false,
+  "adjudicated_annotations_present": false,
+  "evidence": "research_os/runtime/relay_smoke_20260920T140127Z/SUMMARY.json",
+  "reason": "The minimal READY probe passed, but the actual Astra6 EXPERIMENT_DESIGNER call failed with HTTP 502 Upstream service temporarily unavailable after client retries. Cognitive queue remains paused; no fallback is permitted.",
+  "updated_at": "2026-09-20T15:54:24Z",
+  "latest_relay_smoke": "research/semantic_audit_v21/relay_smoke_20260920T155239Z/SUMMARY.json",
+  "latest_relay_smoke_status": "RELAY_READY",
+  "latest_scientific_call": "research/semantic_audit_v21/astra_experiment_designer_20260920T155239Z/STATUS.json",
+  "latest_scientific_call_status": "CALL_FAILED_HTTP_502"
+}

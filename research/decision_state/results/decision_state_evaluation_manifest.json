@@ -1,0 +1,27 @@
+{
+  "protocol": "decision_state_v1_with_meta_heads",
+  "panel_file": "/storage/gaoym/ex-graph-microtransaction-analysis/research/decision_state/results/hypothesis_panel_full.jsonl",
+  "panel_sha256": "047f999c1dde6b2f47d7601f3bb41fe6a457b6dbad028932e0469b95e7effe2b",
+  "panel_records": 12000,
+  "panel_valid": 12000,
+  "panel_valid_rate": 1.0,
+  "model_families": {
+    "B0_M1": 53,
+    "B1_M1_DETERMINISTIC": 69,
+    "B2_M1_SINGLE_LLM": 68,
+    "B3_M1_MULTI_LLM": 68,
+    "B4_M1_VERIFIED_LLM": 96
+  },
+  "metrics_file": "decision_state_metrics.csv",
+  "bootstrap_file": "decision_state_bootstrap.csv",
+  "primary_test_comparison": {
+    "estimate": -0.02956040400379505,
+    "ci_low": -0.05668982570302011,
+    "ci_high": -0.003165643714788466,
+    "n": 1000,
+    "comparison": "B0_M1_vs_B4_M1_VERIFIED_LLM",
+    "metric": "case_mean_log_loss",
+    "better_positive": "A lower loss than B"
+  },
+  "n_test_cases": 1000
+}

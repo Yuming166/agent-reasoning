@@ -1,0 +1,44 @@
+sprint_id: quarantined_autoresearch_20260921T170723Z
+created_at_utc: "2026-09-21T17:07:23Z"
+status: HALTED_BEFORE_TRACK_LAUNCH
+classification: EXPLORATORY_QUARANTINED
+primary_goal: NAACL_research_program_advancement_while_phase1_human_annotation_pending
+phase1_package: research_os/runtime/phase1_annotation_gate_v2_dev_20260921T162900Z
+phase1_protocol: FROZEN
+phase1_human_annotation: PENDING_AND_NOT_INSPECTED
+phase1_schema_modified: false
+phase1_submissions_inspected: false
+phase1_pass_b_released: false
+phase1_gate1a_run: false
+phase1_gate1b_run: false
+phase2_launched: false
+phase3_launched: false
+august_confirmatory_holdout_used: false
+b4_result_modified: false
+official_claim_ledger_modified: false
+official_experiment_registry_modified: false
+additional_research_agents_launched: false
+astra_only: true
+astra_allow_fallback: false
+max_astra_workers: 6
+tracks_requested: [L, H, R, P]
+tracks_launched: []
+post_review_agents_launched: []
+stop_condition:
+  name: ASTRA6_RELAY_FAILURE
+  action: STOP_EARLY
+  evidence:
+    smoke_attempts: 3
+    result: HTTP_502
+    message: "Upstream service temporarily unavailable"
+    observed_utc: "2026-09-21T17:07:23Z"
+  fallback_used: false
+protected_pass_b_permissions:
+  PASS_B_STRUCTURED_REVIEW_LOCKED.csv: "0"
+  PASS_B_CODER_A_BLANK.csv: "0"
+  PASS_B_CODER_B_BLANK.csv: "0"
+notes:
+  - No literature, holdout, retrospective, Phase-2, falsifier, or meta-review cognition was run.
+  - No non-Astra model was used.
+  - No human annotation or submission directory was inspected during this sprint initialization.
+  - All files in this workspace are quarantined and non-evidentiary.

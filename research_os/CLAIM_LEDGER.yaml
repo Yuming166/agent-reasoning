@@ -1,0 +1,36 @@
+claims:
+  - claim_id: C001
+    claim: Recent as-of behavioral dynamics predict future address activity beyond basic scale/activity baselines.
+    status: DISCOVERY_SUPPORTED
+    branch: E
+    evidence: research/final_handoff/PHASE1_SUMMARY.md; research/openworld/ow010b/results/incremental_gain.csv
+    allowed_language: [bounded predictive finding]
+    forbidden_language: [causal influence, true intent]
+  - claim_id: C002
+    claim: Selective reasoning allocation has a narrow positive result over random under matched event-count conditions.
+    status: MIXED
+    branch: F
+    evidence: research/phase2/PHASE2_HANDOFF.md
+    allowed_language: [narrow validation result]
+    forbidden_language: [general deployment superiority]
+  - claim_id: C003
+    claim: Conservative structural proxies add an independent robust signal beyond recent dynamics.
+    status: REJECTED
+    branch: B
+    evidence: research/openworld/ow010b/reports/OW010B_DECISION.md
+    allowed_language: [not supported under frozen gate]
+    forbidden_language: [validated structural signal]
+  - claim_id: C004
+    claim: Intervention-verified LLM behavioral hypotheses add future predictive value beyond M1.
+    status: REJECTED
+    branch: A
+    evidence: research/decision_state/DECISION_STATE_DECISION_20260919.md
+    allowed_language: [V1 effectiveness failed]
+    forbidden_language: [belief recovery, causal provenance]
+  - claim_id: C005
+    claim: Case-level evidence sensitivity may predict when natural-language behavioral interpretations fail prospective validity.
+    status: UNTESTED
+    branch: A
+    evidence: research_os/runtime/current_cycle/priority_summary.json
+    allowed_language: [we test whether]
+    forbidden_language: [we show]

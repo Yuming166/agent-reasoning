@@ -1,0 +1,15 @@
+{
+  "checked_at_utc": "2026-09-20T16:05:52Z",
+  "model": "gpt-6-astra",
+  "astra_only": true,
+  "fallback_allowed": false,
+  "models_http_status": 200,
+  "model_listed": true,
+  "listed_model_count": 7,
+  "chat_http_status": 502,
+  "chat_error": "Upstream service temporarily unavailable",
+  "status": "PARTIALLY_REACHABLE_BUT_GENERATION_UNAVAILABLE",
+  "billing_note": "The chat probe was a real POST and may be billable; no usage was returned with the 502, so billing cannot be determined from this response alone.",
+  "scientific_queue_action": "remain_paused",
+  "secrets_recorded": false
+}

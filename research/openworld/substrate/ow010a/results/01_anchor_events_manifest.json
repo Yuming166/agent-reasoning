@@ -1,0 +1,27 @@
+{
+  "query_name": "01_anchor_events",
+  "sql_path": "research/openworld/substrate/ow010a/sql/01_anchor_events.sql",
+  "sql_sha256": "ba89be65f08ae24f75fe1b31002d55674aa3054e46b7a9d581f14631de25f819",
+  "destination_table": "ictdata-507912.exgraph.openworld_anchor_events_v1",
+  "job_id": "job_jJTsEUoG6OEfg0KNOhTdB7GiCo9J",
+  "bytes_processed": 3124491755,
+  "bytes_billed": 3124756480,
+  "cache_hit": false,
+  "raw_rows_not_exported": true,
+  "qa": {
+    "n_rows": "11835499",
+    "n_anchors": "21469",
+    "n_source_events": "11630359",
+    "n_anchor_events": "11835487",
+    "mapped_cp_rows": "437755",
+    "unmapped_cp_rows": "11394460",
+    "null_cp_rows": "3284",
+    "incoming_rows": "5153224",
+    "outgoing_rows": "6654776",
+    "self_rows": "27499",
+    "collision_rows": "24"
+  },
+  "qa_job_id": "job_Kxp2pVaoezJEPNuv-4FcThhr9WhW",
+  "qa_bytes_processed": 3666367788,
+  "qa_bytes_billed": 3666870272
+}

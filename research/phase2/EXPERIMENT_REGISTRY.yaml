@@ -1,0 +1,235 @@
+# Phase II-A experiment registry (plan Sec.20)
+# No unregistered result enters final tables.
+# code_commit: this workspace is not a git repository -> recorded as builder file + sha256 prefix.
+
+- experiment_id: DATA_RG_001
+  hypothesis: >-
+    H1/H3: construct a leakage-aware event-level reasoning-gain dataset; RV is expected to be
+    heterogeneous across strata and cutoffs (descriptive, no selector yet).
+  agent: P2DATA (data construction group)
+  code_commit: dev project not git (builder=research/phase2/build_reasoning_gain_dataset.py, sha256=f1fa427d718ab94f)
+  data_version: v1
+  feature_version: v1
+  train_period: 2022-06-01
+  tune_period: 2022-07-01
+  test_period: 2022-08-01
+  holdout_period: 2022-09-01
+  model: Qwen3.5-4B (local vLLM; full-CF vs cheap vs no-CF arms); frozen cheap ranker as shared evaluation oracle
+  selector: N/A (dataset construction artifact)
+  reasoning_policy: go/nogo - Full-CF deliberation vs frozen cheap ranker
+  budget: N/A (no selective-reasoning allocation in this artifact)
+  seed: N/A (no stochastic sampling)
+  metrics: >-
+    rv_mrr (full_rr - cheap_rr), rv_nocf, z0/z1 pre-registered deltas (0 and +0.1),
+    rv_cost (lambda=1.0), cheap/full R1, token/latency.
+  tokens: total_tokens mean 8983 (full-CF), nocf_total_tokens mean 2787
+  latency: latency_s mean 12.1
+  result: >-
+    n=4000 events (1000/month). rv_mrr mean 0.1186, median 0.0, z0=0.473, z1=0.380.
+    By month (mean): jun 0.168, jul 0.114, aug 0.110, sept 0.083. By stratum (mean):
+    repeat_hard 0.328, repeat_easy 0.098, new_popular 0.043, new_tail 0.006.
+    Parse 100%; internal fallback 0. See reasoning_gain_manifest.json.
+  confidence_interval: N/A this step (descriptive dataset; bootstrap deferred to selector eval)
+  leakage_audit: >-
+    all features as-of at cutoff; fwd30 isolated in future_spillover_*; dyn_influence_*
+    flagged future-derived (supervision-only); structure09/ig09 masked to 09-01;
+    importance_proxy_p3 excluded. Join coverage recorded in manifest.
+  status: COMPLETE
+  outputs:
+    - research/phase2/reasoning_gain_dataset.parquet
+    - research/phase2/reasoning_gain_manifest.json
+
+- experiment_id: DATA_DI_001
+  hypothesis: >-
+    H2: dynamic predictive influence (future spillover) estimated with non-LLM models is
+    heterogeneous and not explained by volume; low-volume/high-influence wallets exist.
+  agent: P2DATA (data construction group)
+  code_commit: dev project not git (builder=research/phase2/build_dynamic_influence_dataset.py, sha256=e3dbdb222c3a41d5)
+  data_version: v1
+  feature_version: v1
+  train_period: 2022-05-01 .. 2022-08-01 (rolling origin; cutoff t trains on cutoffs < t)
+  tune_period: N/A (no hyperparameter tuning; fixed defaults)
+  test_period: 2022-06-01 .. 2022-09-01 (per-cutoff forward prediction)
+  holdout_period: 2022-09-01
+  model: non-LLM HistGradientBoosting (classifier/regressor) + LogisticRegression
+  selector: N/A (wallet-level influence label artifact)
+  reasoning_policy: N/A
+  budget: N/A
+  seed: 42
+  metrics: >-
+    baseline vs conditional utility (logloss for fwd30 new-cp; MSE for fwd30 evt count),
+    influence I_i^30d, volume-adjusted residual (OLS on log1p(evt_cnt_90d)), four quadrants.
+  tokens: N/A (non-LLM)
+  latency: N/A (non-LLM)
+  result: >-
+    n=97,305 wallet-cutoff rows. Influence available 06-09 (77,656 rows); 05 NaN (no prior
+    cutoff). Mean I_new_hist 0.189, I_new_log 0.171. Volume OLS R2 <= 0.025.
+    Four-quadrant (06-09, resid_I_new_hist): vol_low/infl_low 25324, vol_low/infl_high 13670
+    (17.6%), vol_high/infl_low 13504, vol_high/infl_high 25158. See dynamic_influence_manifest.json.
+  confidence_interval: N/A this step (label artifact; bootstrap deferred)
+  leakage_audit: >-
+    rolling origin only (train cutoffs < t); features strictly as-of at each row's cutoff;
+    fwd30 used as labels only; I_evt_hist is squared-error-scaled and high-volume-dominated -
+    use I_new_* for reasoning-worthiness. Not causal.
+  status: COMPLETE
+  outputs:
+    - research/phase2/dynamic_influence_dataset.parquet
+    - research/phase2/dynamic_influence_manifest.json
+
+- experiment_id: SEL_BENCH_001
+  hypothesis: >-
+    H1/H4/H5: pre-reasoning event selectors can rank higher reasoning-gain events than random,
+    volume, activity, uncertainty, novelty, and static-importance policies under the frozen
+    June-train/July-tune/August-test/September-holdout protocol.
+  agent: P2SELECT (local CPU selector tournament)
+  code_commit: run_selector_benchmark.py sha256=9a854002f01f68ac
+  data_version: reasoning_gain_dataset.v1 + dynamic_influence_dataset.v1
+  feature_version: selector_features.v1
+  train_period: 2022-06-01
+  tune_period: 2022-07-01 (hybrid weights only; K=100 pre-registered primary)
+  test_period: 2022-08-01
+  holdout_period: 2022-09-01 (frozen selector; no August refit)
+  model: non-LLM HistGradientBoostingRegressor; dynamic-influence predictor trained on prior cutoffs
+  selector: behavior, graph, novelty, uncertainty, dynamic_influence, reasoning_value, hybrid + strong baselines
+  reasoning_policy: measured Qwen Full-CF gain applied only to selected events; others remain Cheap
+  budget: K in [10, 25, 50, 100, 250, 500, 1000]; exact event-count matching; measured tokens/latency reported
+  seed: 42
+  metrics: >-
+    incremental MRR, utility MRR, selected reasoning gain, NDCG@K, recall of oracle high-RV events,
+    positive-gain rate, measured tokens and latency.
+  tokens: read-only reuse of frozen panel token logs; no new LLM calls
+  latency: read-only reuse of frozen panel latency logs; no new LLM calls
+  result: >-
+    Final corrected rerun (explicit 70-field as-of/pre-call contract): K=100 hybrid incremental MRR
+    0.0483 (Aug) and 0.0296 (Sep), both above random; Aug > volume with CI excluding 0, Sep > volume
+    point estimate but CI crosses 0. July-frozen weights rv=0.50, behavior=0.25, uncertainty=0.25,
+    dynamic influence=0, novelty=0. See selector_benchmark.csv and phase2_selector_summary.json.
+  confidence_interval: SEL_STATS_001 paired wallet-cluster bootstrap
+  leakage_audit: PASS; primary features exclude future-derived labels, LLM outputs, truth metadata, and legacy gains; audit artifact records the contract
+  status: COMPLETE
+  outputs:
+    - research/phase2/selector_benchmark.csv
+    - research/phase2/selector_results/
+
+- experiment_id: SEL_STATS_001
+  hypothesis: >-
+    Primary selector differences remain supported after paired wallet-cluster bootstrap at the
+    event/cutoff evaluation unit, with multiplicity adjustment for predeclared comparisons.
+  agent: P2STATS (local CPU statistical evaluation)
+  code_commit: run_selector_benchmark.py sha256=9a854002f01f68ac
+  data_version: selector_benchmark.v1
+  feature_version: selector_features.v1
+  train_period: 2022-06-01
+  tune_period: 2022-07-01
+  test_period: 2022-08-01
+  holdout_period: 2022-09-01
+  model: N/A (paired bootstrap over frozen selector assignments)
+  selector: hybrid, reasoning_value, dynamic_influence vs random, volume, activity, static prior, no_selection
+  reasoning_policy: frozen panel arm differences
+  budget: K in [10, 25, 50, 100, 250, 500, 1000]; B=2000 bootstrap replicates
+  seed: 42
+  metrics: point difference, 95% CI, two-sided bootstrap p-value, Holm-adjusted p-value, relative improvement
+  tokens: inherited frozen panel logs
+  latency: inherited frozen panel logs
+  result: >-
+    B=2000 wallet-cluster paired bootstrap. Hybrid-vs-random CI excludes 0 in August and September;
+    hybrid-vs-volume CI excludes 0 in August but crosses 0 in September. Primary K=100 family Holm
+    correction is recorded in bootstrap_comparisons.csv; mixed result is retained without upgrading the claim.
+  confidence_interval: wallet-cluster paired percentile bootstrap, 2000 replicates
+  leakage_audit: selector assignments frozen before bootstrap; bootstrap never tunes scores or thresholds
+  status: COMPLETE
+  outputs:
+    - research/phase2/selector_results/bootstrap_comparisons.csv
+
+- experiment_id: ROBUST_GLM_001
+  hypothesis: >-
+    H5/cross-model: reasoning gain and selector rankings have nonzero transfer between the
+    authoritative local Qwen panel and the already-existing GLM v2 panel on valid July/August/September rows.
+  agent: P2ROBUST (read-only existing GLM v2 panel)
+  code_commit: run_selector_benchmark.py sha256=9a854002f01f68ac
+  data_version: existing GLM v2 float-fix panels + reasoning_gain_dataset.v1
+  feature_version: selector_features.v1
+  train_period: 2022-07-01 (GLM valid rows only; June GLM anomaly excluded)
+  tune_period: N/A (fixed selector specification; no new model calls)
+  test_period: 2022-08-01
+  holdout_period: 2022-09-01
+  model: non-LLM HistGradientBoostingRegressor; existing GLM v2 panel is evaluation-only
+  selector: Qwen-trained hybrid applied to GLM; GLM-trained reasoning-value model applied to Qwen
+  reasoning_policy: existing GLM v2 full/no-CF ranks; no external or new LLM requests
+  budget: K in [10, 25, 50, 100, 250, 500, 1000]
+  seed: 42
+  metrics: RV Spearman/Pearson correlation, sign agreement, cross-model selected-gain and utility transfer
+  tokens: read-only GLM/Qwen panel logs
+  latency: read-only GLM/Qwen panel logs
+  result: >-
+    Qwen/GLM RV Spearman is 0.793-0.811 and Qwen-trained hybrid transfers positively to GLM at K=100;
+    reverse GLM-trained selector reaches 0.0491 on August Qwen but 0.00837 on September, near random
+    0.00828. Cross-model evidence is partial; June GLM anomaly is excluded.
+  confidence_interval: paired wallet-cluster bootstrap where valid rows support it
+  leakage_audit: June GLM parse-anomaly rows excluded per PHASE1_RESULT_AUDIT.md; no raw external calls
+  status: COMPLETE
+  outputs:
+    - research/phase2/selector_results/cross_model_robustness.csv
+
+- experiment_id: AUDIT_ADV_001
+  hypothesis: >-
+    Group K: any selector advantage should not be attributable solely to volume, static full-window
+    graph leakage, future fields, duplicate wallet identity, or label permutation artifacts.
+  agent: P2AUDIT (local CPU adversarial audit)
+  code_commit: run_selector_benchmark.py sha256=9a854002f01f68ac
+  data_version: selector_benchmark.v1 + dynamic_influence_dataset.v1
+  feature_version: selector_features.v1
+  train_period: 2022-06-01
+  tune_period: 2022-07-01
+  test_period: 2022-08-01
+  holdout_period: 2022-09-01
+  model: feature manifest checks, volume residualization, placebo permutation, wallet-cluster checks
+  selector: hybrid, reasoning_value, dynamic_influence, volume, static prior
+  reasoning_policy: audit of frozen selector assignments only
+  budget: K=100 primary plus all registered K values for volume/utility summaries
+  seed: 42
+  metrics: forbidden-feature scan, score-volume Spearman, volume-residual gain, placebo NDCG, quadrant coverage
+  tokens: no new LLM calls
+  latency: no new LLM calls
+  result: >-
+    Explicit primary feature scan PASS; static full-window prior remains context-only/leaky; hybrid
+    score-volume Spearman is 0.333 (Aug) and 0.341 (Sep); volume residual audit is descriptive;
+    low-volume/high-influence coverage is not stable; permutation placebo is near-random.
+  confidence_interval: bootstrap inherited from SEL_STATS_001; descriptive audit intervals where stated
+  leakage_audit: explicit adversarial audit; static full-window prior marked context-only/leaky by Group C protocol
+  status: COMPLETE
+  outputs:
+    - research/phase2/selector_results/adversarial_audit.csv
+    - research/phase2/selector_results/adversarial_audit.json
+
+- experiment_id: FIG_PHASE2_001
+  hypothesis: >-
+    Paper-quality figures faithfully expose heterogeneity, selector quality, matched-budget utility,
+    influence-volume structure, temporal generalization, and efficiency trade-offs without adding claims.
+  agent: P2FIG (local deterministic plotting)
+  code_commit: run_selector_benchmark.py sha256=9a854002f01f68ac
+  data_version: selector_benchmark.v1 + dynamic_influence_dataset.v1
+  feature_version: selector_features.v1
+  train_period: 2022-06-01
+  tune_period: 2022-07-01
+  test_period: 2022-08-01
+  holdout_period: 2022-09-01
+  model: deterministic matplotlib rendering from registered outputs
+  selector: registered selector outputs only
+  reasoning_policy: N/A
+  budget: N/A
+  seed: 42
+  metrics: figure existence, source-table hashes, no raw data export
+  tokens: N/A
+  latency: N/A
+  result: generated six PDF figures from the final corrected registered tables; no new claim is added by rendering
+  confidence_interval: inherited from registered result tables
+  leakage_audit: figures consume only registered outputs and supervision-labeled audit fields
+  status: COMPLETE
+  outputs:
+    - research/phase2/figures/reasoning_gain_distribution.pdf
+    - research/phase2/figures/selector_ndcg.pdf
+    - research/phase2/figures/budget_utility_curve.pdf
+    - research/phase2/figures/influence_vs_volume.pdf
+    - research/phase2/figures/temporal_generalization.pdf
+    - research/phase2/figures/efficiency_frontier.pdf

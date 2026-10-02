@@ -1,0 +1,43 @@
+{
+  "created_at": "2026-09-21T16:52:40Z",
+  "status": "ASSIGNMENTS_PREPARED_AWAITING_SUBMISSIONS",
+  "template_rows": 300,
+  "template_cases": 100,
+  "shared_cases": 20,
+  "shared_rows": 60,
+  "union_rows": 300,
+  "intersection_rows": 60,
+  "coder_a": {
+    "cases": 60,
+    "rows": 180,
+    "shared_cases": 20,
+    "unique_cases": 40,
+    "cases_by_cutoff": {
+      "2022-06-01": 30,
+      "2022-07-01": 30
+    },
+    "unique_cases_by_cutoff": {
+      "2022-06-01": 20,
+      "2022-07-01": 20
+    },
+    "assignment_path": "annotator_release/CODER_A/PASS_A_ASSIGNMENT.csv",
+    "assignment_sha256": "ee8bcc59d6d890eb390fd89cceb5b5248131eee2a940888a91b0fcf2a6b4cc6d"
+  },
+  "coder_b": {
+    "cases": 60,
+    "rows": 180,
+    "shared_cases": 20,
+    "unique_cases": 40,
+    "cases_by_cutoff": {
+      "2022-06-01": 30,
+      "2022-07-01": 30
+    },
+    "unique_cases_by_cutoff": {
+      "2022-06-01": 20,
+      "2022-07-01": 20
+    },
+    "assignment_path": "annotator_release/CODER_B/PASS_A_ASSIGNMENT.csv",
+    "assignment_sha256": "7272a0b437133025fc925c9bc389a428e15213cafaefab56a4f70665c12e9de4"
+  },
+  "integrity_ok": true
+}

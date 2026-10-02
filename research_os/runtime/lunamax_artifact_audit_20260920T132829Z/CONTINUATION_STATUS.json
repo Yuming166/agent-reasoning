@@ -1,0 +1,47 @@
+{
+  "updated_at": "2026-09-20T14:29:26Z",
+  "mode": "OFF_CHARTER_EXPLORATORY_FALLBACK",
+  "deterministic_audit": "COMPLETE",
+  "lunamax_artifact_review": "COMPLETE",
+  "lunamax_protocol_review": "COMPLETE",
+  "semantic_gate_v2_1": "PREPARED_NO_ANNOTATIONS",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "max",
+  "official_astra_cycle_untouched": true,
+  "official_astra_state": "PAUSED_FAIL_CLOSED",
+  "claim_ledger_touched": false,
+  "experiment_registry_touched": false,
+  "new_llm_experiment_started": false,
+  "august_frozen_test_retuned": false,
+  "semantic_gate_v2_1_dir": "/storage/gaoym/ex-graph-microtransaction-analysis/research_os/runtime/lunamax_artifact_audit_20260920T132829Z/semantic_gate_v2_1",
+  "semantic_gate_v2_1_manifest_sha256": "cafc85bc79a64871a5758b72b04382398b1fc665998424f967382136eac9bc2e",
+  "blank_schema_validation": "PASS",
+  "blank_reliability_smoke": "RELIABILITY_NOT_YET_ASSESSABLE",
+  "next_blocker": "two independent human Pass A annotations before Pass B disclosure",
+  "pre_annotation_patch": "COMPLETE",
+  "validator_fail_closed": "PASS",
+  "reliability_scorer_patch": "COMPLETE",
+  "reliability_blank_smoke": "RELIABILITY_NOT_YET_ASSESSABLE",
+  "reliability_blank_smoke_fixed": {
+    "status": "RELIABILITY_NOT_YET_ASSESSABLE",
+    "json_path": "research_os/runtime/lunamax_artifact_audit_20260920T132829Z/semantic_gate_v2_1/RELIABILITY_BLANK_SMOKE_V21_FIXED.json",
+    "csv_path": "research_os/runtime/lunamax_artifact_audit_20260920T132829Z/semantic_gate_v2_1/RELIABILITY_BLANK_SMOKE_V21_FIXED.csv",
+    "bootstrap_cases": 20,
+    "bootstrap_reps": 100,
+    "scored_rows_per_field": 60,
+    "json_sha256": "84295aa7870250e97292ca13434c64ed1cfafdc9a6455638a0b00232372312b6",
+    "csv_sha256": "2548c321f60e6ada7aacf3b9605cedaeae480524412ac34a1066071c8009bfe2"
+  },
+  "fixed_validation_outputs": {
+    "coder_a": "research_os/runtime/lunamax_artifact_audit_20260920T132829Z/semantic_gate_v2_1/VALIDATION_CODER_A_BLANK_V21_FIXED.json",
+    "coder_b": "research_os/runtime/lunamax_artifact_audit_20260920T132829Z/semantic_gate_v2_1/VALIDATION_CODER_B_BLANK_V21_FIXED.json",
+    "coder_a_status": "PASS",
+    "coder_b_status": "PASS",
+    "coder_a_sha256": "10b40af452af319dbe94074ab173cbf0b7deaa2efde879d69cec84d158254b9a",
+    "coder_b_sha256": "74066dd9a388b027ee42b232fcb8adabb04636a736d25f7a48e21b65503c08df"
+  },
+  "source_sha256": {
+    "validator": "a7aceae0bf3ecc8211c0caf7c759bf4fad8ffa33ecc1928fc57b50e626a8f70d",
+    "reliability_scorer": "fecda111cdb880d5d99609f023ba27ad9ab5cbc9b76f8ec1fff4772cd826c209"
+  }
+}

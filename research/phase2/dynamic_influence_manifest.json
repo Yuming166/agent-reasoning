@@ -1,0 +1,137 @@
+{
+  "artifact": "dynamic_influence_dataset.parquet",
+  "version": "v1",
+  "builder": "research/phase2/build_dynamic_influence_dataset.py",
+  "build_date": "2026-09-12",
+  "n_rows": 97305,
+  "unit": "wallet x cutoff",
+  "cutoffs": [
+    "2022-05-01",
+    "2022-06-01",
+    "2022-07-01",
+    "2022-08-01",
+    "2022-09-01"
+  ],
+  "outcomes": {
+    "y_new_cp": "fwd30_new_cp > 0 (new counterparty in next 30d; binary)",
+    "y_evt": "fwd30_evt_cnt (future event count in next 30d; regression)"
+  },
+  "horizon_days": 30,
+  "utility_definitions": {
+    "binary": "U = -logloss(y,p); I_i = baseline_logloss(t) - conditional_logloss_i",
+    "regression": "U = -squared error; I_i = baseline_MSE(t) - (y_i - yhat_i)^2"
+  },
+  "models": {
+    "I_new_hist": "HistGradientBoostingClassifier(max_iter=300, lr=0.1, min_samples_leaf=20, l2=1.0, seed=42)",
+    "I_new_log": "Pipeline(median imputer + StandardScaler + LogisticRegression(C=1.0, max_iter=2000, seed=42))",
+    "I_evt_hist": "HistGradientBoostingRegressor(max_iter=300, lr=0.1, min_samples_leaf=20, l2=1.0, seed=42)"
+  },
+  "protocol": "rolling origin: for cutoff t, models trained ONLY on cutoffs < t; features are as-of at each row's own cutoff",
+  "per_cutoff": {
+    "n": {
+      "2022-05-01": 19649,
+      "2022-06-01": 20341,
+      "2022-07-01": 19734,
+      "2022-08-01": 19062,
+      "2022-09-01": 18519
+    },
+    "new_cp_rate": {
+      "2022-05-01": 0.7195,
+      "2022-06-01": 0.6403,
+      "2022-07-01": 0.6091,
+      "2022-08-01": 0.5888,
+      "2022-09-01": 0.5716
+    },
+    "I_mean": {
+      "2022-05-01": null,
+      "2022-06-01": 0.1326,
+      "2022-07-01": 0.2138,
+      "2022-08-01": 0.2057,
+      "2022-09-01": 0.2084
+    }
+  },
+  "base_rates_note": "baseline utility U(Y|C_t) = empirical marginal at cutoff t (logloss of predicting the cutoff rate; MSE of predicting the cutoff mean)",
+  "volume_adjustment": {
+    "method": "resid = I - E[I | log1p(evt_cnt_90d)] via pooled OLS over cutoffs 06-09",
+    "r2": {
+      "I_new_hist": 0.0246,
+      "I_new_log": 0.0178,
+      "I_evt_hist": 0.0082,
+      "I_mean": 0.0082
+    },
+    "note": "volume explains <3% of influence variance"
+  },
+  "four_quadrants_06_09": {
+    "I_new_hist": {
+      "vol_low_infl_low": 28261,
+      "vol_low_infl_high": 10733,
+      "vol_high_infl_low": 10567,
+      "vol_high_infl_high": 28095,
+      "low_vol_high_infl_share": 0.1382,
+      "median": 0.407653
+    },
+    "resid_I_new_hist": {
+      "vol_low_infl_low": 25324,
+      "vol_low_infl_high": 13670,
+      "vol_high_infl_low": 13504,
+      "vol_high_infl_high": 25158,
+      "low_vol_high_infl_share": 0.176,
+      "median": 0.242237
+    },
+    "I_new_log": {
+      "vol_low_infl_low": 28558,
+      "vol_low_infl_high": 10436,
+      "vol_high_infl_low": 10270,
+      "vol_high_infl_high": 28392,
+      "low_vol_high_infl_share": 0.1344,
+      "median": 0.392019
+    },
+    "resid_I_new_log": {
+      "vol_low_infl_low": 26180,
+      "vol_low_infl_high": 12814,
+      "vol_high_infl_low": 12648,
+      "vol_high_infl_high": 26014,
+      "low_vol_high_infl_share": 0.165,
+      "median": 0.242643
+    },
+    "I_evt_hist": {
+      "vol_low_infl_low": 12896,
+      "vol_low_infl_high": 26098,
+      "vol_high_infl_low": 25938,
+      "vol_high_infl_high": 12724,
+      "low_vol_high_infl_share": 0.3361,
+      "median": 11975.903387
+    },
+    "I_mean": {
+      "vol_low_infl_low": 12890,
+      "vol_low_infl_high": 26104,
+      "vol_high_infl_low": 25938,
+      "vol_high_infl_high": 12724,
+      "low_vol_high_infl_share": 0.3361,
+      "median": 3992.004674
+    },
+    "resid_I_mean": {
+      "vol_low_infl_low": 35800,
+      "vol_low_infl_high": 3194,
+      "vol_high_infl_low": 3028,
+      "vol_high_infl_high": 35634,
+      "low_vol_high_infl_share": 0.0411,
+      "median": 1109.164061
+    }
+  },
+  "coverage": {
+    "05-01": "influence NaN (no prior cutoff for rolling-origin training)",
+    "06-09": "77656 rows with influence"
+  },
+  "leakage_declaration": {
+    "features": "strictly as-of at each row's cutoff",
+    "labels": "fwd30 outcomes (future by construction); used to measure predictive utility, not as model input",
+    "models": "trained only on cutoffs < t (no same-cutoff or future training)"
+  },
+  "caveats": [
+    "I_evt_hist is in squared-error units and is scale-dominated by high-activity wallets (mean ~8.7k, std ~92k); prefer I_new_* (logloss, bounded) for reasoning-worthiness work",
+    "asof_mm_* network features exist only for 09 (feature_matrix) and are NaN for 05-08; HistGBM trains on available columns per fold",
+    "dynamic influence is NOT causal; it is future predictive spillover (plan Sec.8)",
+    "I_new_hist max ~0.68 equals the max binary entropy at these base rates, so influence is upper-bounded by base-rate uncertainty"
+  ]
+}

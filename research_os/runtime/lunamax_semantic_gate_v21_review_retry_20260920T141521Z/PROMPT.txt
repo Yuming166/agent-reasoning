@@ -1,0 +1,1196 @@
+You are the local Codex CLI model gpt-5.6-luna at maximum configured reasoning effort. This is an OFF_CHARTER_EXPLORATORY_FALLBACK review, not Astra6. Do not present output as an Astra6 result, official claim, preregistration, or final scientific conclusion. Do not reveal private chain-of-thought; return only a concise audit report. Do not modify files.
+
+A previous read-only tool invocation failed because its sandbox could not create loopback networking. The relevant artifacts and source excerpts are supplied inline below, so do not try to read the filesystem and do not reject the task for lack of filesystem access.
+
+Review Semantic Gate V2.1 before human annotation. Give exactly these sections:
+1. FINAL_GATE_DECISION: GO_FOR_HUMAN_ANNOTATION, MODIFY_BEFORE_ANNOTATION, or REJECT.
+2. BLINDING_AND_LEAKAGE: inspect Pass A/Pass B separation, opaque row ordering, evidence labels, probabilities/ranks, model metadata, and hiding of F/Delta/future outcomes.
+3. SCHEMA_AND_STATISTICS: inspect allowed labels, exact-span requirements, not_applicable handling, missingness, Cohen kappa, Gwet AC1, and whole-case bootstrap. Identify concrete implementation bugs only.
+4. CLAIM_BOUNDARY.
+5. NEXT_ACTION: only the smallest deterministic correction, if any. Do not propose a new LLM experiment. Set large_llm_experiment_allowed=false and promotion_to_official_ledger=false.
+
+Boundaries: address-level behavior is only an actor proxy; no true owner belief, psychology, causal intent, or social exposure; recorded consequence labels are model-produced structured outputs, not future ground truth; August frozen test is immutable; official Astra6 cycle/claim ledger/experiment registry are untouched.
+
+===== SEMANTIC_GATE_V2_PROTOCOL.md =====
+# Semantic Gate V2 — two-pass blind human audit
+
+**Status:** deterministic exploratory preparation only. This is not an Astra6
+result, preregistration, official claim, or experiment-registry entry.
+
+## Fixed sample
+
+- Source: frozen `full` variant of `hypothesis_panel_full.jsonl`.
+- Source cases: 3000.
+- Selected cases: 100.
+- Case selection: `SHA256(UTF-8(case_id + "|semantic-gate-v1|"))`, sorted by
+  `(hash, case_id)`, first 100; no replacement after annotation starts.
+- Double-code cases: 20, selected independently
+  from the fixed sample using `SHA256(UTF-8(case_id + "|semantic-gate-v2-double|"))`.
+- Worksheet rows: 300 valid hypotheses. The actual row
+  count is recorded from the source and is not assumed to be 3 per case.
+- Row order: opaque deterministic permutation; rows are not grouped by case,
+  wallet, date, split, evidence label, or outcome.
+
+## Pass A — text-only commitment
+
+Show only `row_handle` and `hypothesis_text`. Do not show consequence labels,
+horizon, evidence labels, probabilities, ranks, confidence, model metadata,
+wallets, dates, splits, outcomes, F, Delta, losses, or August membership.
+Pass A must be submitted and hashed before Pass B is shown.
+
+Allowed Pass A labels:
+
+- `explicit`: the proposition commits to an operational behavioral claim.
+- `hedged`: the proposition makes a qualified but still operational claim.
+- `generic`: the text is a broad story without a checkable operational commitment.
+- `none`: no behavioral commitment is present.
+- `unclear`: insufficient text to decide.
+
+`pass_a_operationality` uses `operational`, `non_operational`, or `unclear`.
+The text span must be exact for non-`unclear` labels.
+
+## Pass B — structured alignment and evidence compatibility
+
+Only after Pass A is locked, reveal the recorded consequence categories, the
+separate horizon field, and evidence labels. These are model-produced structured
+outputs, not future ground truth.
+
+For each dimension use exactly one of:
+
+- `entailed`: the proposition operationally supports the recorded direction;
+- `unsupported`: the text does not support the direction, but does not clearly
+  state the opposite;
+- `contradicted`: the text explicitly or operationally predicts the opposite;
+- `unclear`: cannot decide from the text and supplied metadata.
+
+Use `compatible`, `incompatible`, or `unclear` for the separate horizon field.
+For each of `E_SELF`, `E_MARKET`, `E_COVERAGE`, and `E_PLACEBO`, use
+`relevant`, `irrelevant`, `unclear`, or `not_applicable`; use
+`not_applicable` when that label is not present in the recorded evidence list.
+Record an exact text span for every non-`unclear` alignment judgment. Do not infer
+owner identity, true belief, emotion, psychology, causal intent, or social
+exposure.
+
+## Reliability gate
+
+Independently double-code all rows belonging to the fixed 20-case
+roster. Compute pooled and per-dimension exact agreement and nominal Cohen's
+kappa, treating `unclear` as a real category. Also report Gwet AC1 as a
+prevalence-sensitive diagnostic. Resample whole cases—not individual rows—for
+confidence intervals. Technical missingness above 5%, pooled agreement below
+0.80, pooled kappa below 0.60, or any dimension below 0.70 agreement / 0.40
+kappa fails the reliability gate. A failed pre-adjudication reliability result
+cannot be repaired by adjudication.
+
+For the descriptive semantic gate, predeclare: `entailed` alignment >= 80% of
+applicable dimension cells, case-clustered 95% lower bound >= 70%, and
+`contradicted` <= 5%. Passing would not establish forecasting effectiveness or
+causal validity.
+
+## Unblinding rule
+
+Keep F, Delta, model losses, split/date, wallet identity, and August membership
+hidden until raw Pass A/Pass B annotations, reliability results, adjudication
+status, and file hashes are locked. Any later join is exploratory and cannot
+select cases, tune thresholds, reopen the August test, or update the official
+claim/experiment ledgers.
+
+`large_llm_experiment_allowed=false`
+`promotion_to_official_ledger=false`
+`official_astra_cycle_untouched=true`
+
+Generated at `2026-09-20T13:56:49Z`.
+===== SEMANTIC_GATE_V2_MANIFEST.json (summary) =====
+{
+  "created_at": "2026-09-20T13:56:49Z",
+  "status": "PREPARED_NO_ANNOTATIONS",
+  "mode": "OFF_CHARTER_EXPLORATORY_PREPARATION",
+  "protocol_version": "semantic_gate_v2_1",
+  "source_panel": "/storage/gaoym/ex-graph-microtransaction-analysis/research/decision_state/results/hypothesis_panel_full.jsonl",
+  "source_panel_sha256": "047f999c1dde6b2f47d7601f3bb41fe6a457b6dbad028932e0469b95e7effe2b",
+  "source_panel_manifest_sha256": "2ccda847b7409003b535c3cd8025c8fd481d412227a77c612336ed0be9fd9970",
+  "source_full_cases": 3000,
+  "sample_n_cases": 100,
+  "double_code_cases": 20,
+  "worksheet_rows": 300,
+  "sample_salt": "|semantic-gate-v1|",
+  "double_code_salt": "|semantic-gate-v2-double|",
+  "row_handle_salt": "|semantic-gate-v2-row|",
+  "permutation_salt": "|semantic-gate-v2-permutation|",
+  "selection_rule": "sort SHA256(UTF-8(case_id + sample_salt)) by (hash, case_id), first 100",
+  "double_code_rule": "sort SHA256(UTF-8(case_id + double_code_salt)) within fixed sample, first 20 cases",
+  "future_outcomes_read": false,
+  "f_delta_used_for_selection": false,
+  "model_losses_used_for_selection": false,
+  "annotations_present": false,
+  "official_astra_cycle_untouched": true,
+  "claim_ledger_touched": false,
+  "experiment_registry_touched": false,
+  "new_llm_outputs": false,
+  "large_llm_experiment_allowed": false,
+  "promotion_to_official_ledger": false,
+  "pass_a_sha256": "ba50d7bc667ca23d8cb81bc18c18dc9617b414f5cf6f214935c0302957e9f57c",
+  "pass_b_sha256": "fe381a6005025787c5d4080d5acb6f5ba4ba1d2ce1ca62aacb75b81f5f99b3aa",
+  "double_code_handles_sha256": "c3103ac36b5a03c1c3cf2eb05b8aa504063fd0f47f4e6f8e573779e36c1435d2",
+  "blinding_audit_sha256": "34372f50112bf44e30dd1c27480e53d134657c2ff5d76b39a40db73379514952",
+  "selected_case_hashes": [
+    "000c82b7413d7b7adb7104d88a8a46277af545a0c546c504af0cef277ee46ae2",
+    "00119b185d841152ae405ea2b3215de82dc257a9a2811b4056856abd7234a8ec",
+    "001d08da472cfac1a477409d8203976008840bc2dbcf1cc965c2c0be9ee656e7",
+    "00566365bc0b6e493c2d6a8c4c93afe5ab9ce5df4159b5a1d9f02b53248d9d00",
+    "006cf512f11ba47f208da3f63344b8584d5a2127dc82b2eaff2576a09bb47d8e",
+    "007cd2d42cc75656c350e3aa35445e5ad461bd1d10fe63a25cdded36c0d1d121",
+    "0080162d2b3bdf118a34f02067207dd69f345eda27054747b3d4a82bb85b1660",
+    "008171bec096085ac1bd08030183ab55b47bcc466e177b7db12e60a5e17e4ff2",
+    "0099dafa7d1c5f767d3c945eb05ef7b649b3f9f352d6a497fe85cb1a6b622d30",
+    "00a426b0006ac4e429712737220396d80ae206312eb07aa16ef0ec4cb7b91411",
+    "00a7d84fe68eaefe03d605d31a50c6d9e518389bb824740d784f379f2c662cdc",
+    "00ab8e5804b1490ca6dc4eef8c406b61dd45f2ef9f2bbd6fb19d0f0057c19da3",
+    "00fcda02760643606d19d0f83c231e5e98805bec01ce197d24202c6e25b32e66",
+    "0109dbe6dc3de9b3cc8b5d43f471a4b17d21f27db27e6f18f0ec8e98ed8adb72",
+    "01442f4594b7cfd9e82e1534210230498273113fd559e858c0380be05a41afb5",
+    "017780ef4bbe9e8066e3a68895adaccb9426bb4aa8d2f2abd11730be2be93b75",
+    "01840d9effb282544096bd01f140167a2096a45bf6502e02c94b66efffd3397b",
+    "0196e7059f90f59cde054845ab810bd17c2b0b1cb7d8ae8446dc8eb972e12e83",
+    "01a83c6344e1cc9a323b7921c8a3d9453bddb0f087d2d3a8fca4dc27da5022e6",
+    "01b2c29d3c4e1aaf013aa521f9267360ec1c72dc3026249efcaf34cf5be5be8a",
+    "01b6722e2e05c780fcb6c946667b582489ef8c0b43573c56c0f0e348d74508bb",
+    "01d6bcff2eaf007357ecf114629365d7ddd04aced78215d1ba917ce691e5df05",
+    "01fadf637675fd425f9e0aa4da10d5689159abadd57a683ff74757249f9b169a",
+    "020089669c4e319e843b0fa58fe240c9891a691b6044520e895b12d0931d5b84",
+    "02125636f5f4f2d818356261ca594ac770dc5bff573a731b9383b1c3d9bc58b5",
+    "021952c01e5d84a8dcace0a0ed2689d4b5e093293a414f05afed3298751e730b",
+    "021a72f2f085fe5692c061d7c4952f7c85c923361a97dba1b28b3101112b44c4",
+    "0271b82ab207498a91755692c6c6d05aabd6673b6fe0a7656eaf1045af188c9c",
+    "028f4e7c4fb75b758c66c39875c9441113698519d71a0151dee134f3ab45d312",
+    "02c24542e4cc0c3b35f3ccad62fa4e606621ab2adca4c6fc402b71344763e6c8",
+    "02ca0fb523a82f11e7c709f6b5fc31b0fa5958018f9cfbc3f310f65204a438be",
+    "02caf0c15e12443dd6665eeb8f7d600970254c6df9be08ec958b4d1943ce1f28",
+    "02d9ee2fad699304099a14e6130923cc01c8d5fcad3bad6b0ac0d3c7ff2cd7d2",
+    "02e439b06973063dcf99b4b854cc2af00ec485e3541353d8139c6b7011b3f57c",
+    "02fbfb9c4cfed0208e6a40a22c6cb65e112ada8cd8123b7b3f0062bee527d48b",
+    "02fdeee97a45b62da9f6cc49936ac36b32aafb957d4ee69d00cda605c4d452cf",
+    "030c08135b56386ba4d256a38b515c1daac9d41a520cd6bfd20944789dd26346",
+    "031c8a5b47e8e1d95c98306b4ed9876a5ee23272e01906ed0ec8acc4f0035388",
+    "03843d236c4ada7e41788b010092ae8f7f161ee342a8a4d2a37d65bdeee625f4",
+    "03a16e832ca6ea03ff9b065fde655132ba6b308c7d3104712f4ff9bd6d4d7342",
+    "03a9bf08562572940bb37b1dcaebd961fb5dfb31136c487be1eb087f0f4c5099",
+    "03aca31a31e5dd5a2dacce73025860be4905f4403f92d1bda4cad801fe738f64",
+    "03ba39d782707974b6e569ad0fe81e1b13e851073eb7a1cf6dc7a01cd3164788",
+    "0414d8ddc4bbc3841329fa1bced25ccd7dedd0799502108e1d16d67945596ed2",
+    "041e5cd28ec69bee00cdc75b1faa0976c8be9c6f83fed82fca926fdaec4efcbf",
+    "0428692305dc4ad43b9a5139c0ee13accbfb436dffc6fcd8e76bdab7c8c03de2",
+    "042ab162ea83001f9ca755219b41c1416287948f71148942f8ed9b6b70ab1504",
+    "0431bf318ca06bc1108fb4224d1ef3286b18dabf5ad40a53cab47e2db99c95d9",
+    "045743d9bb28bf4777d3e2aaca5f9ba6f5e7e92e0b3274a9933f69c8b68b5fe7",
+    "045977d502f4e31d2f4916f2d3d0093666b54af5372535ae3a2bc1e3c334eced",
+    "047b67982119be9ace4f46af8a6997755a72f5def1103137aeb793af8658ff02",
+    "048b311a3a288a80d257be89b10226a699e38c2b8ccf0b35f97be5f03af193a6",
+    "04923d6f3ce2cdee4c5f71c01dd3b78b57c582f6100536d79a151dff4180d6af",
+    "04c63fb71f2b2e89cd6a55bd787f39e8604fbfe54eafa107c6ff5362a67b31a9",
+    "04c6b2e12c1e72347fa75f5664f8110242f5c9c7a04139e8d14fc3f4e0c3dab1",
+    "04cb479741146fad212574742f40c01b09e7bbf2954b74d2ce13d34ba9a415f3",
+    "04da01c100fd5e43eb87c9609cd5e2265e8e584d2acfdfa970d6a9a9c3baf928",
+    "04ffb5aa8ef6602e73d6a673f2a17edad1ef575699e8a0f012301e64c66aaf2f",
+    "0504bd56ebb7ce198db5430c7e3f4c416e6f236af01eb4220a793b54d605fb17",
+    "050fa527cf81905dd2118eace1e43c521fbe7056289c6479e96480c28545f944",
+    "05163b2b968818421a24803152d9634e00b6e37b5076abac4c7bc59fd2da06cc",
+    "051df0a89d332a69517af740de3b7a9be3454735937772f6b181eefdc0e89161",
+    "052eb14d5f0204c3358cc51df8501d7ee6d44c1df7eadde4882e2ea99095ecf0",
+    "05438870187a6227108d69e09a33dada7a13a1f3d4ee86349fe69e5ee309d9ff",
+    "054dd2ffa41b8056e68bbd9d3297a88ae5327288125017a105d44d709bac913b",
+    "0581035821dcd6e5e6c79bc63e0af1102858a7f0a130375e282e51ca0b399885",
+    "05971d4a3380fca72efb439003f371496cb636de91a6fa469fdc1f3c1cc2359b",
+    "05a77d2f73cab67f09bbd69ec667454e4d6d0e37c74a7e14b659aefb9dee1e90",
+    "05a961600ce92105c670f849b1ee1f46a5724c39e776c6ad79c52749e1af0f99",
+    "05b801848c46c463770098f321ca536865c36f8e829407c79752d32b1e241cf0",
+    "05b88d7268b4861369e6f90255ab80d49a5905b080b2e9884d3b3883f86073b0",
+    "05dad0ab006c8b2359023964c444b6ccdd351ac8c2049c38db983b9cc4b0fa68",
+    "0607512b92ea4ba5517b003a0b0b72a1570e5d407429b9be101a10bc6f3f88a1",
+    "061232307ed598687b91e21cffe05227576dcf7b5bc89c3dff442f52fe536e0f",
+    "0614aa6887b7765c39d3859c08e5a113c574cd879e158a73f9a1a9ebb7928db5",
+    "061cd28ac48a557795778ad4b1d4cd1668f313ba5ed3b965b65ebf94ca216c4c",
+    "0626ab78b667b434d8332385f3f990cec6554d9a11f77f30e4f40955e29d6170",
+    "06286f013f93c0388eb4a698f61ea68f48fcc5d33ff98dde71954368c9c9647a",
+    "063ea523da3e7220de052db404a2f5e32df2eb3e03c2a02270654b40eff3f972",
+    "065e5df8cb03e7f9918d0ba8394041412bbd26de9417d7622ee7f4969f5ade3e",
+    "0665535c76edff4afa71137f18cd2bb3c4db0f07e19c90fdad583effa3d151bb",
+    "066acccdd10b1f67b2c51dc7dbc123324e65972faa5b8407843111db02013240",
+    "069d98da6748dcf776fa85888a9f5c559cb88ba6472fd335b1f2f421fd36ea5e",
+    "06beb8e6fcab58bbd4491ae4cc8551e31556af2df7d2cf279b166b76724ff3e2",
+    "06c0256d7540c53197813cd1536872604cd2d9b275ff281ff031031178b67239",
+    "06eae8f3a3eae114be699c979a32912464a533c88d28c8a684dc76c0aaad0eca",
+    "0703d4fb0c78eac99db834f6156f9b8783701cb22dbd72620a36597bf172c634",
+    "07074509d54ac204a357876c9bcecda0dc54d32bf9c55cf18f3f6948b685b896",
+    "0707a5fc6873ff2c2d535dcbb5fdb334ce44b5184d04c54d5b7666ee024760c7",
+    "07167b7e0453b89cdf09323a9855089f925124bbc40337f11fccd095e56f8710",
+    "073000aac17d2911d73a6d866e1f5f74467ac326e85564eb8048f206a7d92b3f",
+    "073364d1c516db4c1ab25ef79409a40841c3a14e33d8581ab2bf716e861df023",
+    "07452b2f27f822f233388cb8eb00e67583c5cd0d0d4538ac093bd075e5283ffd",
+    "074699d48aac80f0c0328a8e9a7174656be20d6dcda9b7c66b2a230036a30230",
+    "076767f65ff4326522487c054cf44bc14c5482b2f89f552cbd6366b3da711dd6",
+    "0776756e4df36538aa04d8d2b91d338a24be4dbc776d285d8debb8b6d2ee293d",
+    "07873231ced9493631f55039ddc28bf749c96d29d25c1b43f206168cedf20127",
+    "07b2ceb1442f919ddaa0af48fe93e200dd8858c0e0e53909486123e060d883db",
+    "07c7529a7ef5e926085f8da7b5f2f569bae1ff08b9e8e44e79cda7594cfff983",
+    "07d3619c738f73330f807276120acc6acd658637fa41732b23497bcb9f0d942f"
+  ],
+  "outputs": [
+    "PASS_A_TEXT_ONLY_BLIND.csv",
+    "PASS_B_STRUCTURED_REVIEW_LOCKED.csv",
+    "DOUBLE_CODE_ROW_HANDLES.csv",
+    "BLINDING_AUDIT.json",
+    "SEMANTIC_GATE_V2_PROTOCOL.md"
+  ]
+}
+===== BLINDING_AUDIT.json =====
+[
+  {
+    "pass": "pass_a",
+    "rows": 300,
+    "columns": [
+      "row_handle",
+      "hypothesis_text",
+      "pass_a_commitment",
+      "pass_a_operationality",
+      "pass_a_text_span",
+      "pass_a_notes"
+    ],
+    "duplicate_row_handles": 0,
+    "bad_column_names": [],
+    "raw_wallet_like_values": [],
+    "pass_a_hidden_until_locked": false,
+    "blinding_ok": true
+  },
+  {
+    "pass": "pass_b",
+    "rows": 300,
+    "columns": [
+      "row_handle",
+      "hypothesis_text",
+      "recorded_activity",
+      "recorded_active_days",
+      "recorded_counterparty_breadth",
+      "recorded_new_counterparties",
+      "horizon_days",
+      "evidence_labels",
+      "alignment_activity",
+      "alignment_active_days",
+      "alignment_counterparty_breadth",
+      "alignment_new_counterparties",
+      "alignment_span_activity",
+      "alignment_span_active_days",
+      "alignment_span_counterparty_breadth",
+      "alignment_span_new_counterparties",
+      "horizon_compatibility",
+      "evidence_relevance_E_SELF",
+      "evidence_relevance_E_MARKET",
+      "evidence_relevance_E_COVERAGE",
+      "evidence_relevance_E_PLACEBO",
+      "pass_b_notes"
+    ],
+    "duplicate_row_handles": 0,
+    "bad_column_names": [],
+    "raw_wallet_like_values": [],
+    "pass_a_hidden_until_locked": true,
+    "blinding_ok": true
+  }
+]
+===== SCHEMA_VALIDATION_BLANK.json =====
+{
+  "created_at": "2026-09-20T13:57:39Z",
+  "status": "PASS",
+  "allow_blank": true,
+  "package_dir": "/storage/gaoym/ex-graph-microtransaction-analysis/research_os/runtime/lunamax_artifact_audit_20260920T132829Z/semantic_gate_v2_1",
+  "pass_a": {
+    "path": "/storage/gaoym/ex-graph-microtransaction-analysis/research_os/runtime/lunamax_artifact_audit_20260920T132829Z/semantic_gate_v2_1/PASS_A_TEXT_ONLY_BLIND.csv",
+    "sha256": "ba50d7bc667ca23d8cb81bc18c18dc9617b414f5cf6f214935c0302957e9f57c",
+    "rows": 300,
+    "missing_cells": 600
+  },
+  "pass_b": {
+    "path": "/storage/gaoym/ex-graph-microtransaction-analysis/research_os/runtime/lunamax_artifact_audit_20260920T132829Z/semantic_gate_v2_1/PASS_B_STRUCTURED_REVIEW_LOCKED.csv",
+    "sha256": "fe381a6005025787c5d4080d5acb6f5ba4ba1d2ce1ca62aacb75b81f5f99b3aa",
+    "rows": 300,
+    "missing_cells": 2700
+  },
+  "error_count": 0,
+  "errors": [],
+  "errors_truncated": false,
+  "future_outcomes_joined": false,
+  "f_delta_joined": false
+}
+===== RELIABILITY_BLANK_SMOKE.json (summary) =====
+{
+  "created_at": "2026-09-20T13:58:58Z",
+  "status": "RELIABILITY_NOT_YET_ASSESSABLE",
+  "package_dir": "/storage/gaoym/ex-graph-microtransaction-analysis/research_os/runtime/lunamax_artifact_audit_20260920T132829Z/semantic_gate_v2_1",
+  "bootstrap_reps": 100,
+  "seed": 20260920,
+  "future_outcomes_joined": false,
+  "f_delta_joined": false,
+  "thresholds": {
+    "pooled_exact_min": 0.8,
+    "pooled_kappa_min": 0.6,
+    "dimension_exact_min": 0.7,
+    "dimension_kappa_min": 0.4,
+    "missing_rate_max": 0.05
+  },
+  "pooled_summaries": [
+    {
+      "section": "pass_a_pooled",
+      "field": "__pooled__",
+      "n_total": 600,
+      "n_valid_both": 0,
+      "both_missing": 600,
+      "one_sided_missing": 0,
+      "missing_rate_any": 1.0,
+      "exact_agreement_all_rows": 1.0,
+      "exact_agreement_valid_pairs": null,
+      "cohen_kappa": null,
+      "gwet_ac1": null,
+      "categories": {},
+      "bootstrap_cases": 100,
+      "reps": 100,
+      "seed": 20260920,
+      "exact_ci_low": null,
+      "exact_ci_high": null,
+      "kappa_ci_low": null,
+      "kappa_ci_high": null
+    },
+    {
+      "section": "pass_b_alignment_pooled",
+      "field": "__pooled__",
+      "n_total": 1200,
+      "n_valid_both": 0,
+      "both_missing": 1200,
+      "one_sided_missing": 0,
+      "missing_rate_any": 1.0,
+      "exact_agreement_all_rows": 1.0,
+      "exact_agreement_valid_pairs": null,
+      "cohen_kappa": null,
+      "gwet_ac1": null,
+      "categories": {},
+      "bootstrap_cases": 100,
+      "reps": 100,
+      "seed": 20260920,
+      "exact_ci_low": null,
+      "exact_ci_high": null,
+      "kappa_ci_low": null,
+      "kappa_ci_high": null
+    }
+  ],
+  "csv_path": "/storage/gaoym/ex-graph-microtransaction-analysis/research_os/runtime/lunamax_artifact_audit_20260920T132829Z/semantic_gate_v2_1/RELIABILITY_BLANK_SMOKE.csv"
+}
+===== prepare_semantic_gate_v2.py relevant source =====
+#!/usr/bin/env python3
+"""Prepare a two-pass, blinded semantic-gate worksheet from frozen hypotheses.
+
+The script is deterministic and outcome-blind. It reads only the frozen full
+hypothesis panel, selects cases by a fixed hash rule, and writes Pass A
+(text-only) and Pass B (structured-consequence/evidence review) worksheets.
+Pass B must not be shown to annotators until Pass A is locked.
+"""
+from __future__ import annotations
+
+import argparse
+import datetime as dt
+import hashlib
+import json
+import re
+from pathlib import Path
+
+import pandas as pd
+
+ROOT = Path("/storage/gaoym/ex-graph-microtransaction-analysis")
+RES = ROOT / "research/decision_state/results"
+PANEL = RES / "hypothesis_panel_full.jsonl"
+PANEL_MANIFEST = RES / "hypothesis_panel_full.manifest.json"
+TARGETS = ["activity", "active_days", "counterparty_breadth", "new_counterparties"]
+CLASSES = {"up", "same", "down"}
+EVIDENCE_GROUPS = ["E_SELF", "E_MARKET", "E_COVERAGE", "E_PLACEBO"]
+SAMPLE_N = 100
+DOUBLE_N = 20
+SAMPLE_SALT = "|semantic-gate-v1|"  # retain the already-selected exploratory sample
+DOUBLE_SALT = "|semantic-gate-v2-double|"
+ROW_SALT = "|semantic-gate-v2-row|"
+PERM_SALT = "|semantic-gate-v2-permutation|"
+WALLET_RE = re.compile(r"0x[0-9a-fA-F]{20,}")
+
+
+def utc_now() -> str:
+    return dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
+
+def sha256_text(value: str) -> str:
+    return hashlib.sha256(value.encode("utf-8")).hexdigest()
+
+
+def sha256_file(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as f:
+        for block in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def parse_full_panel() -> dict[str, dict]:
+    records: dict[str, dict] = {}
+    with PANEL.open(encoding="utf-8") as f:
+        for line in f:
+            if not line.strip():
+                continue
+            record = json.loads(line)
+            if record.get("variant") != "full":
+                continue
+            case_id = str(record["case_id"])
+            if case_id in records:
+                raise ValueError(f"duplicate full case: {case_id}")
+            parsed = record.get("parsed") if isinstance(record.get("parsed"), dict) else {}
+            hypotheses = parsed.get("hypotheses", []) if isinstance(parsed.get("hypotheses"), list) else []
+            valid = []
+            for slot, hypothesis in enumerate(hypotheses[:3], start=1):
+                if not isinstance(hypothesis, dict):
+                    continue
+                text = str(hypothesis.get("text", "")).strip()
+                consequences = hypothesis.get("consequences")
+                if not text or not isinstance(consequences, dict):
+                    continue
+                if any(consequences.get(target) not in CLASSES for target in TARGETS):
+                    continue
+                evidence = hypothesis.get("evidence_ids", [])
+                if not isinstance(evidence, list):
+                    evidence = []
+                valid.append({
+                    "slot": f"H{slot}",
+                    "text": text,
+                    "horizon_days": hypothesis.get("horizon_days"),
+                    "evidence_labels": sorted(str(x) for x in evidence),
+                    "consequences": {target: consequences[target] for target in TARGETS},
+                })
+            records[case_id] = {"hypotheses": valid}
+    expected = int(json.loads(PANEL_MANIFEST.read_text(encoding="utf-8"))["n_cases"])
+    if len(records) != expected:
+        raise ValueError(f"expected {expected} full cases, found {len(records)}")
+    return records
+
+
+def make_rows(records: dict[str, dict]) -> tuple[list[dict], list[tuple[str, str]], list[str]]:
+    ranked = sorted((sha256_text(case_id + SAMPLE_SALT), case_id) for case_id in records)
+    selected = ranked[:SAMPLE_N]
+    selected_hashes = [hsh for hsh, _ in selected]
+    double_ranked = sorted(
+        (sha256_text(case_id + DOUBLE_SALT), case_id)
+        for _, case_id in selected
+    )
+    double_cases = {case_id for _, case_id in double_ranked[:DOUBLE_N]}
+
+    rows = []
+    internal_map = []
+    for case_hash, case_id in selected:
+        for hypothesis in records[case_id]["hypotheses"]:
+            row_handle = "SGV2-" + sha256_text(case_hash + "|" + hypothesis["slot"] + ROW_SALT)[:32]
+            row = {
+                "row_handle": row_handle,
+                "hypothesis_text": hypothesis["text"],
+                "horizon_days": hypothesis["horizon_days"],
+                "evidence_labels": ";".join(hypothesis["evidence_labels"]),
+                **{f"recorded_{target}": hypothesis["consequences"][target] for target in TARGETS},
+            }
+            rows.append(row)
+            internal_map.append({
+                "row_handle": row_handle,
+                "case_id": case_id,
+                "case_hash": case_hash,
+                "hypothesis_slot": hypothesis["slot"],
+                "double_code_case": case_id in double_cases,
+            })
+    if len({row["row_handle"] for row in rows}) != len(rows):
+        raise ValueError("row handle collision")
+    order = sorted(rows, key=lambda row: sha256_text(row["row_handle"] + PERM_SALT))
+    double_handles = [row["row_handle"] for row in order if next(m for m in internal_map if m["row_handle"] == row["row_handle"])["double_code_case"]]
+    return order, internal_map, selected_hashes
+
+
+def make_pass_a(rows: list[dict]) -> pd.DataFrame:
+    return pd.DataFrame([
+        {
+            "row_handle": row["row_handle"],
+            "hypothesis_text": row["hypothesis_text"],
+            "pass_a_commitment": "",
+            "pass_a_operationality": "",
+            "pass_a_text_span": "",
+            "pass_a_notes": "",
+        }
+        for row in rows
+    ])
+
+
+def make_pass_b(rows: list[dict]) -> pd.DataFrame:
+    return pd.DataFrame([
+        {
+            "row_handle": row["row_handle"],
+            "hypothesis_text": row["hypothesis_text"],
+            "recorded_activity": row["recorded_activity"],
+            "recorded_active_days": row["recorded_active_days"],
+            "recorded_counterparty_breadth": row["recorded_counterparty_breadth"],
+            "recorded_new_counterparties": row["recorded_new_counterparties"],
+            "horizon_days": row["horizon_days"],
+            "evidence_labels": row["evidence_labels"],
+            "alignment_activity": "",
+            "alignment_active_days": "",
+            "alignment_counterparty_breadth": "",
+            "alignment_new_counterparties": "",
+            "alignment_span_activity": "",
+            "alignment_span_active_days": "",
+            "alignment_span_counterparty_breadth": "",
+            "alignment_span_new_counterparties": "",
+            "horizon_compatibility": "",
+            **{f"evidence_relevance_{label}": "" for label in EVIDENCE_GROUPS},
+            "pass_b_notes": "",
+        }
+        for row in rows
+    ])
+
+
+def audit_blinding(frame: pd.DataFrame, pass_name: str) -> dict:
+    forbidden_column_tokens = [
+        "case_id", "anchor_wallet", "wallet", "cutoff", "split", "activity_bin", "sample_rank",
+        "probability", "confidence", "model", "loss", "log_loss", "delta", "success", "failure",
+        "outcome", "future", "august", "july", "y_", "f_",
+    ]
+    def forbidden_column(column: str) -> bool:
+        name = column.lower()
+        for token in forbidden_column_tokens:
+            if token in {"y_", "f_"}:
+                if name.startswith(token):
+                    return True
+            elif token in name:
+                return True
+        return False
+
+    bad_columns = [column for column in frame.columns if forbidden_column(column)]
+    raw_id_hits = []
+    for column in frame.columns:
+        for value in frame[column].fillna("").astype(str):
+            if WALLET_RE.search(value):
+                raw_id_hits.append(column)
+                break
+    return {
+        "pass": pass_name,
+        "rows": int(len(frame)),
+        "columns": list(frame.columns),
+        "duplicate_row_handles": int(frame["row_handle"].duplicated().sum()),
+        "bad_column_names": bad_columns,
+        "raw_wallet_like_values": sorted(set(raw_id_hits)),
+        "pass_a_hidden_until_locked": pass_name == "pass_b",
+        "blinding_ok": bool(not bad_columns and not raw_id_hits and frame["row_handle"].notna().all()),
+    }
+
+
+def write_protocol(out: Path, manifest: dict) -> None:
+    text = f"""# Semantic Gate V2 — two-pass blind human audit
+
+**Status:** deterministic exploratory preparation only. This is not an Astra6
+result, preregistration, official claim, or experiment-registry entry.
+
+## Fixed sample
+
+- Source: frozen `full` variant of `hypothesis_panel_full.jsonl`.
+- Source cases: {manifest['source_full_cases']}.
+- Selected cases: {manifest['sample_n_cases']}.
+- Case selection: `SHA256(UTF-8(case_id + \"|semantic-gate-v1|\"))`, sorted by
+  `(hash, case_id)`, first {SAMPLE_N}; no replacement after annotation starts.
+- Double-code cases: {manifest['double_code_cases']}, selected independently
+  from the fixed sample using `SHA256(UTF-8(case_id + \"|semantic-gate-v2-double|\"))`.
+- Worksheet rows: {manifest['worksheet_rows']} valid hypotheses. The actual row
+  count is recorded from the source and is not assumed to be 3 per case.
+- Row order: opaque deterministic permutation; rows are not grouped by case,
+  wallet, date, split, evidence label, or outcome.
+
+## Pass A — text-only commitment
+
+Show only `row_handle` and `hypothesis_text`. Do not show consequence labels,
+horizon, evidence labels, probabilities, ranks, confidence, model metadata,
+wallets, dates, splits, outcomes, F, Delta, losses, or August membership.
+Pass A must be submitted and hashed before Pass B is shown.
+
+Allowed Pass A labels:
+
+- `explicit`: the proposition commits to an operational behavioral claim.
+- `hedged`: the proposition makes a qualified but still operational claim.
+- `generic`: the text is a broad story without a checkable operational commitment.
+- `none`: no behavioral commitment is present.
+- `unclear`: insufficient text to decide.
+
+`pass_a_operationality` uses `operational`, `non_operational`, or `unclear`.
+The text span must be exact for non-`unclear` labels.
+
+## Pass B — structured alignment and evidence compatibility
+
+Only after Pass A is locked, reveal the recorded consequence categories, the
+separate horizon field, and evidence labels. These are model-produced structured
+outputs, not future ground truth.
+
+For each dimension use exactly one of:
+
+- `entailed`: the proposition operationally supports the recorded direction;
+- `unsupported`: the text does not support the direction, but does not clearly
+  state the opposite;
+- `contradicted`: the text explicitly or operationally predicts the opposite;
+- `unclear`: cannot decide from the text and supplied metadata.
+
+Use `compatible`, `incompatible`, or `unclear` for the separate horizon field.
+For each of `E_SELF`, `E_MARKET`, `E_COVERAGE`, and `E_PLACEBO`, use
+`relevant`, `irrelevant`, `unclear`, or `not_applicable`; use
+`not_applicable` when that label is not present in the recorded evidence list.
+Record an exact text span for every non-`unclear` alignment judgment. Do not infer
+owner identity, true belief, emotion, psychology, causal intent, or social
+exposure.
+
+## Reliability gate
+
+Independently double-code all rows belonging to the fixed {manifest['double_code_cases']}-case
+roster. Compute pooled and per-dimension exact agreement and nominal Cohen's
+kappa, treating `unclear` as a real category. Also report Gwet AC1 as a
+prevalence-sensitive diagnostic. Resample whole cases—not individual rows—for
+confidence intervals. Technical missingness above 5%, pooled agreement below
+0.80, pooled kappa below 0.60, or any dimension below 0.70 agreement / 0.40
+kappa fails the reliability gate. A failed pre-adjudication reliability result
+cannot be repaired by adjudication.
+
+For the descriptive semantic gate, predeclare: `entailed` alignment >= 80% of
+applicable dimension cells, case-clustered 95% lower bound >= 70%, and
+`contradicted` <= 5%. Passing would not establish forecasting effectiveness or
+causal validity.
+
+## Unblinding rule
+
+Keep F, Delta, model losses, split/date, wallet identity, and August membership
+hidden until raw Pass A/Pass B annotations, reliability results, adjudication
+status, and file hashes are locked. Any later join is exploratory and cannot
+select cases, tune thresholds, reopen the August test, or update the official
+claim/experiment ledgers.
+
+`large_llm_experiment_allowed=false`
+`promotion_to_official_ledger=false`
+`official_astra_cycle_untouched=true`
+
+Generated at `{manifest['created_at']}`.
+"""
+    (out / "SEMANTIC_GATE_V2_PROTOCOL.md").write_text(text, encoding="utf-8")
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--out-dir", required=True)
+    args = parser.parse_args()
+    out = Path(args.out_dir)
+    out.mkdir(parents=True, exist_ok=False)
+    if not PANEL.exists() or not PANEL_MANIFEST.exists():
+        raise FileNotFoundError("frozen panel or manifest missing")
+
+    records = parse_full_panel()
+    rows, internal_map, selected_hashes = make_rows(records)
+    pass_a = make_pass_a(rows)
+    pass_b = make_pass_b(rows)
+    pass_a.to_csv(out / "PASS_A_TEXT_ONLY_BLIND.csv", index=False)
+    pass_b.to_csv(out / "PASS_B_STRUCTURED_REVIEW_LOCKED.csv", index=False)
+
+    # This file is not for annotators; it is needed to reconnect annotations only
+    # after the blind passes are locked.
+    internal = out / "internal"
+    internal.mkdir()
+    (internal / "SAMPLE_ROW_MAP.json").write_text(json.dumps(internal_map, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    double_handles = [m["row_handle"] for m in internal_map if m["double_code_case"]]
+    (out / "DOUBLE_CODE_ROW_HANDLES.csv").write_text("row_handle\n" + "\n".join(sorted(double_handles)) + "\n", encoding="utf-8")
+
+    audits = [audit_blinding(pass_a, "pass_a"), audit_blinding(pass_b, "pass_b")]
+    (out / "BLINDING_AUDIT.json").write_text(json.dumps(audits, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    if not all(item["blinding_ok"] for item in audits):
+        raise RuntimeError("blinding audit failed")
+
+    manifest = {
+        "created_at": utc_now(),
+        "status": "PREPARED_NO_ANNOTATIONS",
+        "mode": "OFF_CHARTER_EXPLORATORY_PREPARATION",
+        "protocol_version": "semantic_gate_v2_1",
+        "source_panel": str(PANEL),
+        "source_panel_sha256": sha256_file(PANEL),
+        "source_panel_manifest_sha256": sha256_file(PANEL_MANIFEST),
+        "source_full_cases": len(records),
+        "sample_n_cases": SAMPLE_N,
+        "double_code_cases": DOUBLE_N,
+        "worksheet_rows": len(rows),
+        "sample_salt": SAMPLE_SALT,
+        "double_code_salt": DOUBLE_SALT,
+        "row_handle_salt": ROW_SALT,
+        "permutation_salt": PERM_SALT,
+        "selection_rule": "sort SHA256(UTF-8(case_id + sample_salt)) by (hash, case_id), first 100",
+        "double_code_rule": "sort SHA256(UTF-8(case_id + double_code_salt)) within fixed sample, first 20 cases",
+        "future_outcomes_read": False,
+        "f_delta_used_for_selection": False,
+        "model_losses_used_for_selection": False,
+        "annotations_present": False,
+        "official_astra_cycle_untouched": True,
+        "claim_ledger_touched": False,
+        "experiment_registry_touched": False,
+        "new_llm_outputs": False,
+        "large_llm_experiment_allowed": False,
+        "promotion_to_official_ledger": False,
+        "pass_a_sha256": sha256_file(out / "PASS_A_TEXT_ONLY_BLIND.csv"),
+        "pass_b_sha256": sha256_file(out / "PASS_B_STRUCTURED_REVIEW_LOCKED.csv"),
+        "double_code_handles_sha256": sha256_file(out / "DOUBLE_CODE_ROW_HANDLES.csv"),
+        "blinding_audit_sha256": sha256_file(out / "BLINDING_AUDIT.json"),
+        "selected_case_hashes": selected_hashes,
+        "outputs": [
+            "PASS_A_TEXT_ONLY_BLIND.csv",
+            "PASS_B_STRUCTURED_REVIEW_LOCKED.csv",
+            "DOUBLE_CODE_ROW_HANDLES.csv",
+            "BLINDING_AUDIT.json",
+            "SEMANTIC_GATE_V2_PROTOCOL.md",
+        ],
+    }
+    (out / "SEMANTIC_GATE_V2_MANIFEST.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    write_protocol(out, manifest)
+    print(json.dumps({"out_dir": str(out), "source_full_cases": len(records), "sample_n_cases": SAMPLE_N, "double_code_cases": DOUBLE_N, "worksheet_rows": len(rows), "status": manifest["status"]}, ensure_ascii=False))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+===== validate_semantic_gate_annotations.py =====
+#!/usr/bin/env python3
+"""Validate Semantic Gate V2.1 annotation files without unblinding outcomes.
+
+The validator checks worksheet identity, immutable displayed fields, closed
+annotation labels, exact-span requirements, and technical missingness. It never
+joins F, Delta, split, wallet, or future outcomes.
+"""
+from __future__ import annotations
+
+import argparse
+import datetime as dt
+import hashlib
+import json
+import re
+from pathlib import Path
+
+import pandas as pd
+
+TARGETS = ["activity", "active_days", "counterparty_breadth", "new_counterparties"]
+EVIDENCE_GROUPS = ["E_SELF", "E_MARKET", "E_COVERAGE", "E_PLACEBO"]
+COMMITMENT = {"explicit", "hedged", "generic", "none", "unclear"}
+OPERATIONALITY = {"operational", "non_operational", "unclear"}
+ALIGNMENT = {"entailed", "unsupported", "contradicted", "unclear"}
+HORIZON = {"compatible", "incompatible", "unclear"}
+RELEVANCE = {"relevant", "irrelevant", "unclear", "not_applicable"}
+WALLET_RE = re.compile(r"0x[0-9a-fA-F]{20,}")
+FORBIDDEN = ("case_id", "anchor_wallet", "wallet", "cutoff", "split", "sample_rank", "probability", "confidence", "model", "loss", "delta", "success", "failure", "outcome", "future", "august", "july")
+
+
+def utc_now() -> str:
+    return dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
+
+def sha256_file(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as f:
+        for block in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def text(value) -> str:
+    if pd.isna(value):
+        return ""
+    return str(value).strip()
+
+
+def missing(value) -> bool:
+    return text(value) == ""
+
+
+def add_error(errors: list[dict], kind: str, row: int | None, column: str | None, detail: str) -> None:
+    errors.append({"kind": kind, "row": row, "column": column, "detail": detail})
+
+
+def validate_common(frame: pd.DataFrame, expected: pd.DataFrame, errors: list[dict], label: str) -> None:
+    if frame["row_handle"].duplicated().any():
+        add_error(errors, "duplicate_row_handle", None, "row_handle", f"{label} has duplicate row handles")
+    expected_handles = set(expected["row_handle"])
+    actual_handles = set(frame["row_handle"])
+    for handle in sorted(expected_handles - actual_handles):
+        add_error(errors, "missing_row_handle", None, "row_handle", f"{label} missing {handle}")
+    for handle in sorted(actual_handles - expected_handles):
+        add_error(errors, "unexpected_row_handle", None, "row_handle", f"{label} unexpected {handle}")
+    if len(frame) != len(expected):
+        add_error(errors, "row_count", None, None, f"{label} rows={len(frame)} expected={len(expected)}")
+    for column in frame.columns:
+        name = column.lower()
+        if name != "row_handle" and any(token in name for token in FORBIDDEN):
+            add_error(errors, "forbidden_column", None, column, f"{label} contains forbidden column")
+    for row_index, row in frame.iterrows():
+        handle = text(row.get("row_handle"))
+        if WALLET_RE.search(handle) or WALLET_RE.search(text(row.get("hypothesis_text"))):
+            add_error(errors, "raw_wallet_like_value", int(row_index), None, f"{label} contains wallet-like text")
+
+
+def validate_pass_a(frame: pd.DataFrame, reference: pd.DataFrame, allow_blank: bool) -> tuple[list[dict], dict]:
+    errors: list[dict] = []
+    required = ["row_handle", "hypothesis_text", "pass_a_commitment", "pass_a_operationality", "pass_a_text_span", "pass_a_notes"]
+    for column in required:
+        if column not in frame.columns:
+            add_error(errors, "missing_column", None, column, "Pass A required column missing")
+    if errors:
+        return errors, {"rows": int(len(frame)), "missing_cells": None}
+    validate_common(frame, reference, errors, "Pass A")
+    ref = reference.set_index("row_handle", drop=False)
+    missing_cells = 0
+    for idx, row in frame.iterrows():
+        handle = text(row["row_handle"])
+        if handle not in ref.index:
+            continue
+        for column in ["hypothesis_text"]:
+            if text(row[column]) != text(ref.loc[handle, column]):
+                add_error(errors, "immutable_field_changed", int(idx), column, f"Pass A {column} differs from source")
+        commitment = text(row["pass_a_commitment"])
+        operationality = text(row["pass_a_operationality"])
+        span = text(row["pass_a_text_span"])
+        if commitment == "":
+            missing_cells += 1
+            if not allow_blank:
+                add_error(errors, "missing_annotation", int(idx), "pass_a_commitment", "missing commitment")
+        elif commitment not in COMMITMENT:
+            add_error(errors, "invalid_label", int(idx), "pass_a_commitment", commitment)
+        if operationality == "":
+            missing_cells += 1
+            if not allow_blank:
+                add_error(errors, "missing_annotation", int(idx), "pass_a_operationality", "missing operationality")
+        elif operationality not in OPERATIONALITY:
+            add_error(errors, "invalid_label", int(idx), "pass_a_operationality", operationality)
+        if commitment not in {"", "unclear"} and span == "":
+            add_error(errors, "missing_exact_span", int(idx), "pass_a_text_span", "non-unclear commitment requires an exact text span")
+    return errors, {"rows": int(len(frame)), "missing_cells": missing_cells}
+
+
+def validate_pass_b(frame: pd.DataFrame, reference: pd.DataFrame, allow_blank: bool) -> tuple[list[dict], dict]:
+    errors: list[dict] = []
+    required = [
+        "row_handle", "hypothesis_text", "recorded_activity", "recorded_active_days",
+        "recorded_counterparty_breadth", "recorded_new_counterparties", "horizon_days",
+        "evidence_labels", "alignment_activity", "alignment_active_days",
+        "alignment_counterparty_breadth", "alignment_new_counterparties",
+        "alignment_span_activity", "alignment_span_active_days",
+        "alignment_span_counterparty_breadth", "alignment_span_new_counterparties",
+        "horizon_compatibility", "pass_b_notes",
+    ] + [f"evidence_relevance_{group}" for group in EVIDENCE_GROUPS]
+    for column in required:
+        if column not in frame.columns:
+            add_error(errors, "missing_column", None, column, "Pass B required column missing")
+    if errors:
+        return errors, {"rows": int(len(frame)), "missing_cells": None}
+    validate_common(frame, reference, errors, "Pass B")
+    ref = reference.set_index("row_handle", drop=False)
+    missing_cells = 0
+    for idx, row in frame.iterrows():
+        handle = text(row["row_handle"])
+        if handle not in ref.index:
+            continue
+        for column in [
+            "hypothesis_text", "recorded_activity", "recorded_active_days",
+            "recorded_counterparty_breadth", "recorded_new_counterparties",
+            "horizon_days", "evidence_labels",
+        ]:
+            if text(row[column]) != text(ref.loc[handle, column]):
+                add_error(errors, "immutable_field_changed", int(idx), column, f"Pass B {column} differs from source")
+        for target in TARGETS:
+            label_column = f"alignment_{target}"
+            span_column = f"alignment_span_{target}"
+            value = text(row[label_column])
+            span = text(row[span_column])
+            if value == "":
+                missing_cells += 1
+                if not allow_blank:
+                    add_error(errors, "missing_annotation", int(idx), label_column, "missing alignment")
+            elif value not in ALIGNMENT:
+                add_error(errors, "invalid_label", int(idx), label_column, value)
+            if value not in {"", "unclear"} and span == "":
+                add_error(errors, "missing_exact_span", int(idx), span_column, "non-unclear alignment requires an exact text span")
+        horizon = text(row["horizon_compatibility"])
+        if horizon == "":
+            missing_cells += 1
+            if not allow_blank:
+                add_error(errors, "missing_annotation", int(idx), "horizon_compatibility", "missing horizon compatibility")
+        elif horizon not in HORIZON:
+            add_error(errors, "invalid_label", int(idx), "horizon_compatibility", horizon)
+        present = {item.strip() for item in text(row["evidence_labels"]).split(";") if item.strip()}
+        for group in EVIDENCE_GROUPS:
+            column = f"evidence_relevance_{group}"
+            value = text(row[column])
+            if value == "":
+                missing_cells += 1
+                if not allow_blank:
+                    add_error(errors, "missing_annotation", int(idx), column, "missing evidence relevance")
+            elif value not in RELEVANCE:
+                add_error(errors, "invalid_label", int(idx), column, value)
+            elif group in present and value == "not_applicable":
+                add_error(errors, "not_applicable_present_label", int(idx), column, "present evidence label cannot be not_applicable")
+            elif group not in present and value not in {"", "not_applicable"}:
+                add_error(errors, "missing_not_applicable", int(idx), column, "absent evidence label must be not_applicable")
+    return errors, {"rows": int(len(frame)), "missing_cells": missing_cells}
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--package-dir", required=True)
+    parser.add_argument("--pass-a", required=True)
+    parser.add_argument("--pass-b", required=True)
+    parser.add_argument("--allow-blank", action="store_true")
+    parser.add_argument("--out", required=True)
+    args = parser.parse_args()
+    package = Path(args.package_dir)
+    pass_a = Path(args.pass_a)
+    pass_b = Path(args.pass_b)
+    ref_a = pd.read_csv(package / "PASS_A_TEXT_ONLY_BLIND.csv", dtype=str, keep_default_na=False)
+    ref_b = pd.read_csv(package / "PASS_B_STRUCTURED_REVIEW_LOCKED.csv", dtype=str, keep_default_na=False)
+    frame_a = pd.read_csv(pass_a, dtype=str, keep_default_na=False)
+    frame_b = pd.read_csv(pass_b, dtype=str, keep_default_na=False)
+    errors_a, summary_a = validate_pass_a(frame_a, ref_a, args.allow_blank)
+    errors_b, summary_b = validate_pass_b(frame_b, ref_b, args.allow_blank)
+    errors = [{"pass": "A", **item} for item in errors_a] + [{"pass": "B", **item} for item in errors_b]
+    report = {
+        "created_at": utc_now(),
+        "status": "PASS" if not errors else "FAIL",
+        "allow_blank": bool(args.allow_blank),
+        "package_dir": str(package),
+        "pass_a": {"path": str(pass_a), "sha256": sha256_file(pass_a), **summary_a},
+        "pass_b": {"path": str(pass_b), "sha256": sha256_file(pass_b), **summary_b},
+        "error_count": len(errors),
+        "errors": errors[:500],
+        "errors_truncated": len(errors) > 500,
+        "future_outcomes_joined": False,
+        "f_delta_joined": False,
+    }
+    out = Path(args.out)
+    out.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps({"status": report["status"], "error_count": report["error_count"], "out": str(out)}, ensure_ascii=False))
+    return 0 if not errors else 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+===== score_semantic_gate_reliability.py =====
+#!/usr/bin/env python3
+"""Score pre-adjudication reliability for Semantic Gate V2.1.
+
+This script is intentionally outcome-blind. It accepts two independently
+coded copies of Pass A and Pass B, computes exact agreement, Cohen kappa, and
+Gwet AC1, and uses whole-case bootstrap intervals for the double-coded roster.
+It does not join future outcomes, F, Delta, split, wallet, or August labels.
+"""
+from __future__ import annotations
+
+import argparse
+import datetime as dt
+import json
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+
+TARGETS = ["activity", "active_days", "counterparty_breadth", "new_counterparties"]
+EVIDENCE_GROUPS = ["E_SELF", "E_MARKET", "E_COVERAGE", "E_PLACEBO"]
+SEED = 20260920
+
+
+def utc_now() -> str:
+    return dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
+
+def clean(value) -> str:
+    if pd.isna(value):
+        return ""
+    return str(value).strip()
+
+
+def pair_stats(left: pd.Series, right: pd.Series) -> dict:
+    a = left.map(clean).to_numpy(dtype=object)
+    b = right.map(clean).to_numpy(dtype=object)
+    both_missing = (a == "") & (b == "")
+    one_missing = ((a == "") ^ (b == ""))
+    valid = ~((a == "") | (b == ""))
+    n_valid = int(valid.sum())
+    n_total = int(len(a))
+    exact_total = float((a == b).mean()) if n_total else None
+    exact_valid = float((a[valid] == b[valid]).mean()) if n_valid else None
+    if n_valid:
+        cats = sorted(set(a[valid]) | set(b[valid]))
+        po = float((a[valid] == b[valid]).mean())
+        pe = 0.0
+        ac1_pe = 0.0
+        for cat in cats:
+            pa = float((a[valid] == cat).mean())
+            pb = float((b[valid] == cat).mean())
+            pooled = (pa + pb) / 2.0
+            pe += pa * pb
+            # Gwet AC1 nominal chance agreement for the pooled marginal.
+            ac1_pe += pooled * (1.0 - pooled)
+        kappa = None if abs(1.0 - pe) < 1e-12 else float((po - pe) / (1.0 - pe))
+        ac1 = None if abs(1.0 - ac1_pe) < 1e-12 else float((po - ac1_pe) / (1.0 - ac1_pe))
+        distribution = {cat: int(((a[valid] == cat) | (b[valid] == cat)).sum()) for cat in cats}
+    else:
+        kappa = None
+        ac1 = None
+        distribution = {}
+    return {
+        "n_total": n_total,
+        "n_valid_both": n_valid,
+        "both_missing": int(both_missing.sum()),
+        "one_sided_missing": int(one_missing.sum()),
+        "missing_rate_any": float((both_missing | one_missing).mean()) if n_total else None,
+        "exact_agreement_all_rows": exact_total,
+        "exact_agreement_valid_pairs": exact_valid,
+        "cohen_kappa": kappa,
+        "gwet_ac1": ac1,
+        "categories": distribution,
+    }
+
+
+def bootstrap_pair_stats(left: pd.DataFrame, right: pd.DataFrame, field: str, row_to_case: dict[str, str], reps: int) -> dict:
+    merged = left[["row_handle", field]].rename(columns={field: "left"}).merge(
+        right[["row_handle", field]].rename(columns={field: "right"}), on="row_handle", how="inner"
+    )
+    merged["case_id"] = merged["row_handle"].map(row_to_case)
+    merged = merged[merged["case_id"].notna()].copy()
+    cases = sorted(merged["case_id"].unique())
+    if len(cases) < 2:
+        return {"bootstrap_cases": len(cases), "reps": reps, "exact_ci_low": None, "exact_ci_high": None, "kappa_ci_low": None, "kappa_ci_high": None}
+    by_case = {case: frame for case, frame in merged.groupby("case_id", sort=True)}
+    rng = np.random.default_rng(SEED)
+    exacts: list[float] = []
+    kappas: list[float] = []
+    for _ in range(reps):
+        sampled = rng.choice(cases, size=len(cases), replace=True)
+        draw = pd.concat([by_case[case] for case in sampled], ignore_index=True)
+        stats = pair_stats(draw["left"], draw["right"])
+        if stats["exact_agreement_valid_pairs"] is not None:
+            exacts.append(float(stats["exact_agreement_valid_pairs"]))
+        if stats["cohen_kappa"] is not None:
+            kappas.append(float(stats["cohen_kappa"]))
+    return {
+        "bootstrap_cases": len(cases),
+        "reps": reps,
+        "seed": SEED,
+        "exact_ci_low": float(np.quantile(exacts, 0.025)) if exacts else None,
+        "exact_ci_high": float(np.quantile(exacts, 0.975)) if exacts else None,
+        "kappa_ci_low": float(np.quantile(kappas, 0.025)) if kappas else None,
+        "kappa_ci_high": float(np.quantile(kappas, 0.975)) if kappas else None,
+    }
+
+
+def score_fields(left: pd.DataFrame, right: pd.DataFrame, fields: list[str], row_to_case: dict[str, str], reps: int, section: str) -> list[dict]:
+    merged = left[["row_handle"] + fields].merge(right[["row_handle"] + fields], on="row_handle", suffixes=("_a", "_b"), how="outer")
+    rows = []
+    for field in fields:
+        stats = pair_stats(merged[f"{field}_a"], merged[f"{field}_b"])
+        boot = bootstrap_pair_stats(left, right, field, row_to_case, reps)
+        rows.append({"section": section, "field": field, **stats, **boot})
+    return rows
+
+
+def pooled_stats(left: pd.DataFrame, right: pd.DataFrame, fields: list[str], row_to_case: dict[str, str], reps: int, name: str) -> dict:
+    rows = []
+    for field in fields:
+        merged = left[["row_handle", field]].rename(columns={field: "left"}).merge(
+            right[["row_handle", field]].rename(columns={field: "right"}), on="row_handle", how="outer"
+        )
+        merged["field"] = field
+        rows.append(merged[["row_handle", "field", "left", "right"]])
+    stacked = pd.concat(rows, ignore_index=True)
+    stats = pair_stats(stacked["left"], stacked["right"])
+    # Pooled bootstrap samples whole cases and preserves all selected fields.
+    stacked["case_id"] = stacked["row_handle"].map(row_to_case)
+    stacked = stacked[stacked["case_id"].notna()]
+    cases = sorted(stacked["case_id"].unique())
+    exacts: list[float] = []
+    kappas: list[float] = []
+    rng = np.random.default_rng(SEED)
+    by_case = {case: frame for case, frame in stacked.groupby("case_id", sort=True)}
+    for _ in range(reps):
+        sampled = rng.choice(cases, size=len(cases), replace=True) if cases else []
+        if len(sampled) == 0:
+            break
+        draw = pd.concat([by_case[case] for case in sampled], ignore_index=True)
+        s = pair_stats(draw["left"], draw["right"])
+        if s["exact_agreement_valid_pairs"] is not None:
+            exacts.append(float(s["exact_agreement_valid_pairs"]))
+        if s["cohen_kappa"] is not None:
+            kappas.append(float(s["cohen_kappa"]))
+    return {
+        "section": name,
+        "field": "__pooled__",
+        **stats,
+        "bootstrap_cases": len(cases),
+        "reps": reps,
+        "seed": SEED,
+        "exact_ci_low": float(np.quantile(exacts, 0.025)) if exacts else None,
+        "exact_ci_high": float(np.quantile(exacts, 0.975)) if exacts else None,
+        "kappa_ci_low": float(np.quantile(kappas, 0.025)) if kappas else None,
+        "kappa_ci_high": float(np.quantile(kappas, 0.975)) if kappas else None,
+    }
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--package-dir", required=True)
+    parser.add_argument("--pass-a-coder-a", required=True)
+    parser.add_argument("--pass-a-coder-b", required=True)
+    parser.add_argument("--pass-b-coder-a", required=True)
+    parser.add_argument("--pass-b-coder-b", required=True)
+    parser.add_argument("--out", required=True)
+    parser.add_argument("--bootstrap-reps", type=int, default=2000)
+    args = parser.parse_args()
+    package = Path(args.package_dir)
+    internal_map = json.loads((package / "internal/SAMPLE_ROW_MAP.json").read_text(encoding="utf-8"))
+    row_to_case = {item["row_handle"]: item["case_id"] for item in internal_map}
+    pa_a = pd.read_csv(args.pass_a_coder_a, dtype=str, keep_default_na=False)
+    pa_b = pd.read_csv(args.pass_a_coder_b, dtype=str, keep_default_na=False)
+    pb_a = pd.read_csv(args.pass_b_coder_a, dtype=str, keep_default_na=False)
+    pb_b = pd.read_csv(args.pass_b_coder_b, dtype=str, keep_default_na=False)
+    pass_a_fields = ["pass_a_commitment", "pass_a_operationality"]
+    pass_b_fields = [f"alignment_{target}" for target in TARGETS] + ["horizon_compatibility"] + [f"evidence_relevance_{group}" for group in EVIDENCE_GROUPS]
+    per_field = score_fields(pa_a, pa_b, pass_a_fields, row_to_case, args.bootstrap_reps, "pass_a")
+    per_field += score_fields(pb_a, pb_b, pass_b_fields, row_to_case, args.bootstrap_reps, "pass_b")
+    per_field += [pooled_stats(pa_a, pa_b, pass_a_fields, row_to_case, args.bootstrap_reps, "pass_a_pooled")]
+    alignment_fields = [f"alignment_{target}" for target in TARGETS]
+    per_field += [pooled_stats(pb_a, pb_b, alignment_fields, row_to_case, args.bootstrap_reps, "pass_b_alignment_pooled")]
+    table = pd.DataFrame(per_field)
+    table.to_csv(Path(args.out).with_suffix(".csv"), index=False)
+    pooled = table[table["field"] == "__pooled__"].to_dict(orient="records")
+    thresholds = {
+        "pooled_exact_min": 0.80,
+        "pooled_kappa_min": 0.60,
+        "dimension_exact_min": 0.70,
+        "dimension_kappa_min": 0.40,
+        "missing_rate_max": 0.05,
+    }
+    report = {
+        "created_at": utc_now(),
+        "status": "RELIABILITY_NOT_YET_ASSESSABLE" if table["n_valid_both"].sum() == 0 else "COMPUTED",
+        "package_dir": str(package),
+        "bootstrap_reps": args.bootstrap_reps,
+        "seed": SEED,
+        "future_outcomes_joined": False,
+        "f_delta_joined": False,
+        "thresholds": thresholds,
+        "pooled_summaries": pooled,
+        "csv_path": str(Path(args.out).with_suffix(".csv")),
+    }
+    Path(args.out).write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps({"status": report["status"], "out": str(args.out), "csv": str(Path(args.out).with_suffix('.csv'))}, ensure_ascii=False))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

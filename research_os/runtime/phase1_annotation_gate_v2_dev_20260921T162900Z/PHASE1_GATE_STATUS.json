@@ -1,0 +1,30 @@
+{
+  "phase": "PHASE_1_NLP_OBJECT_VALIDITY",
+  "status": "PREPARED_NO_ANNOTATIONS",
+  "decision_target": "Gate_1A_reliability_then_Gate_1B_substantive_validity",
+  "prediction_score_in_scope": false,
+  "phase_2_text_value_gate": "LOCKED_PENDING_PHASE_1A_AND_PHASE_1B",
+  "phase_3_selective_acceptance": "LOCKED_PENDING_PHASE_1A_PHASE_1B_AND_PHASE_2",
+  "sample_n_cases": 100,
+  "worksheet_rows": 300,
+  "double_code_cases": 20,
+  "double_code_rows": 60,
+  "source_full_cases": 3000,
+  "development_cutoffs": [
+    "2022-06-01",
+    "2022-07-01"
+  ],
+  "excluded_test_cutoff": "2022-08-01",
+  "future_outcomes_read": false,
+  "official_astra_cycle_touched": false,
+  "official_claim_ledger_touched": false,
+  "official_experiment_registry_touched": false,
+  "large_llm_experiment_allowed": false,
+  "next_required_action": "Release V2 Pass A only to two independent human annotators; hash and lock both before releasing Pass B.",
+  "gate_1a_pass_condition": "Predeclared field-level reliability, case-clustered uncertainty, missingness, span, and kappa rules pass.",
+  "gate_1b_pass_condition": "Predeclared substantive-validity proportions meet frozen exploratory thresholds; report separately from Gate 1A.",
+  "fail_condition": "KILL_OR_REDESIGN_IF_GATE_1A_FAILS_OR_GATE_1B_OBJECT_IS_SUBSTANTIVELY_WEAK.",
+  "created_at": "2026-09-21T16:33:47Z",
+  "pre_annotation_audit": "READY_TO_ANNOTATE",
+  "pre_annotation_audit_path": "research_os/runtime/phase1_annotation_gate_v2_dev_20260921T162900Z/PHASE1_PRE_ANNOTATION_AUDIT.md"
+}

@@ -1,0 +1,4 @@
+# Pinned Keccak implementation used for ENS namehash and address reverse nodes.
+eth-utils==6.0.0
+eth-hash[pycryptodome]==0.8.0
+pycryptodome==3.23.0

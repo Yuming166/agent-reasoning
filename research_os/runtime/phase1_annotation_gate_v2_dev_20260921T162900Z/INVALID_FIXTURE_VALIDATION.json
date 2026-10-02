@@ -1,0 +1,34 @@
+{
+  "created_at": "2026-09-21T16:34:55Z",
+  "status": "FAIL",
+  "allow_blank": true,
+  "protocol_version": "phase1_annotation_gate_v2_dev",
+  "package_dir": "research_os/runtime/phase1_annotation_gate_v2_dev_20260921T162900Z",
+  "pass_a": {
+    "path": "research_os/runtime/phase1_annotation_gate_v2_dev_20260921T162900Z/internal/INVALID_FIXTURE_PASS_A.csv",
+    "sha256": "8d9ab0deaab10e182c0698987b71962322942d611850a9fe291fe2a66d28fc76",
+    "rows": 300
+  },
+  "pass_b": {
+    "path": "research_os/runtime/phase1_annotation_gate_v2_dev_20260921T162900Z/PASS_B_CODER_A_BLANK.csv",
+    "sha256": "877a8858961c839540fe59fd94a4186ee653ab0ac33c10167dc186681e32836c",
+    "rows": 300,
+    "required_annotation_cells": 5700
+  },
+  "error_count": 1,
+  "errors": [
+    {
+      "pass": "A",
+      "type": "schema",
+      "row": null,
+      "field": null,
+      "detail": "expected exact columns ['row_handle', 'hypothesis_text', 'proposition_boundary', 'proposition_span', 'proposition_status', 'scope_status', 'scope_span', 'time_horizon_status', 'time_horizon_span', 'consequence_activity_text', 'consequence_active_days_text', 'consequence_counterparty_breadth_text', 'consequence_new_counterparties_text', 'consequence_observability', 'falsifier_status', 'falsifier_span', 'falsifier_executability', 'qualification_status', 'qualification_span', 'qualification_substantive', 'pass_a_notes']"
+    }
+  ],
+  "errors_truncated": false,
+  "future_outcomes_joined": false,
+  "f_delta_joined": false,
+  "August_test_joined": false,
+  "expected_nonzero_exit": true,
+  "observed_exit_code": 2
+}

@@ -1,0 +1,8 @@
+{
+  "created_at": "2026-09-20T14:45:47Z",
+  "status": "PENDING_ASTRA6_AUDIT",
+  "metrics_available": false,
+  "reason": "Astra6 semantic annotators cannot run while the private relay is unavailable.",
+  "human_annotations_available": false,
+  "automated_fallback_used": false
+}

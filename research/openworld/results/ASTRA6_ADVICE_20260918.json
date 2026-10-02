@@ -1,0 +1,96 @@
+{
+  "date": "2026-09-18",
+  "provider": "private Astra6 relay",
+  "model": "gpt-6-astra",
+  "request_type": "bounded_structured_experiment_design",
+  "chain_of_thought": "not requested or stored",
+  "advice": {
+    "experiment": "进行一个预注册的前瞻性条件残差实验：检验在控制历史 volume/activity 后，时间局部的关系结构变化是否能发现具有可重复未来行为后果的地址。唯一待评估 detector 为结构残差分数：在每个 cutoff 的历史 30 天内，以地址自身历史分布和同日活跃度为条件，组合 7 天窗口中的新 counterparties 增长、入/出边方向变化、24 小时内的 rapid-forward 边以及 reciprocal/短路径闭合变化；不使用外部 illicit/wash 标签，不把地址解释为具有犯罪意图。",
+    "data": {
+      "source_window": "2022-03-01 00:00:00 UTC 至 2022-09-01 00:00:00 UTC，仅使用事件流，不使用 ethereum_graph.gpickle。",
+      "event_types": [
+        "external transactions：from -> to",
+        "token transfers：from -> to，按 tx_hash + log_index 标识事件，并保留 token 合约",
+        "internal traces：trace_from -> trace_to，按 tx_hash + trace_index 标识事件"
+      ],
+      "edge_representation": "每行保留 timestamp、block_number、tx_hash、event_type、asset/token_contract、source、destination、native_value；不把不同事件类型或不同资产强行合并为静态边。完全重复的同一事件 ID 去重；同一交易中的不同 token transfer 和 trace 保留为不同事件。",
+      "cutoffs": [
+        "2022-04-01",
+        "2022-05-01",
+        "2022-06-01",
+        "2022-07-01"
+      ],
+      "windows": {
+        "history": "每个 cutoff 前 30 天 [t-30d,t)",
+        "score": "每个 cutoff 前 7 天 [t-7d,t)",
+        "short_holdout": "cutoff 后 7 天 [t,t+7d)",
+        "future_holdout": "cutoff 后 30 天 [t,t+30d)"
+      },
+      "eligibility": "历史窗口内至少 3 个 active days 且至少 10 个事件的地址；每个 cutoff 单独生成候选集，避免跨 cutoff 信息泄漏。",
+      "volume_activity_fields": [
+        "总事件数及其 log1p",
+        "native_value 的 log1p 总量和非零事件数",
+        "token transfer 事件数",
+        "active days",
+        "入/出事件数",
+        "unique counterparties"
+      ],
+      "fine_grained_matching_fields": [
+        "历史 30 天总事件数分位桶",
+        "active days",
+        "native_value 非零事件数分位桶",
+        "token transfer 事件数分位桶",
+        "入/出事件比例分位桶",
+        "unique counterparties 分位桶",
+        "地址在 cutoff 前 7 天与前 8-30 天的事件数变化桶"
+      ],
+      "open_world_outcome": "未来 30 天同时满足：至少 3 个 future active days，且出现至少 2 个在历史 30 天未出现的 directed counterparty edges；该 outcome 不使用外部标签。"
+    },
+    "split_leakage": [
+      "detector 的所有标准化、分位数、历史基线和阈值只能由每个 cutoff 的 [t-30d,t) 计算。",
+      "不得使用 [t,t+30d) 的事件进行特征选择、阈值选择、模型选择、匹配或异常分数校准。",
+      "匹配在 cutoff 时点完成；控制地址必须来自同一 cutoff 的 eligible candidate pool，并在历史细粒度 volume/activity 条件下完成 1:5 最近邻匹配。",
+      "四个 cutoff 均为时间外推评估；不得随机拆分事件或地址后再合并时间窗。",
+      "外部 wash/illicit 标签完全排除在训练、调参、选择、匹配和早停之外；仅允许在最终报告中作为附录描述覆盖量，不进行显著性结论。",
+      "不得使用静态聚合图、未来累计 degree、未来标签覆盖或全期图统计量。"
+    ],
+    "baselines": [
+      "Volume/activity baseline：按历史 30 天事件数、native_value 非零事件数、token transfer 数、active days 和 unique counterparties 的固定加权 rank。",
+      "Fine-grained matched volume/activity baseline：仅在上述细粒度匹配后的控制组中，以历史 7 天 activity change 和历史 30 天 activity breadth 的简单 rank 选出 top 5%。",
+      "Simple temporal baseline：地址自身的 activity change-point 分数，即 log1p(前 7 天事件数 + 1) 减去 log1p(前 8-30 天平均每日事件数 + 1)，再加 active-days change。",
+      "所有 baseline 使用预先固定的线性或 rank 规则，不训练分类器，不使用 Isolation Forest、SVD 或神经模型。"
+    ],
+    "metrics": [
+      "Matched-control lift：每个 cutoff 取各方法 top 5% 地址，与其 1:5 细粒度 matched controls 比较未来 7 天新 directed counterparties 数/未来 active day；报告比值 lift、bootstrap 95% CI 和四个 cutoff 的中位数。",
+      "Future-consequence/open-world lift：每个 cutoff 取 top 5% 地址，计算上述 open-world outcome 的发生率，并除以 matched controls 的发生率；同时报告 top 5% 的绝对发生率和四 cutoff 的中位数。",
+      "Temporal stability：对四个 cutoff 的 top 5% 集合，报告相邻 cutoff 的平均 Jaccard overlap，并报告结构 detector 相对最佳 baseline 的同向胜出 cutoff 数。"
+    ],
+    "thresholds": {
+      "coverage": "每个 cutoff 的 eligible candidate 至少 2000 个，top 5% 至少 100 个地址；否则该 cutoff 标记为不可判定而不是补样本。",
+      "matched_control_lift_go": "结构 detector 的四 cutoff 中位数 lift >= 1.10，且至少 3/4 cutoff 的 bootstrap 95% CI 下界 > 1.00；同时不得比最佳 baseline 低超过 0.05。",
+      "future_consequence_go": "结构 detector 的四 cutoff 中位数 open-world lift >= 1.15，top 5% 的绝对 outcome rate >= 0.10，且至少 3/4 cutoff 相对最佳 baseline 的 lift 增量 >= 0.05。",
+      "stability_go": "相邻 cutoff 平均 top-5% Jaccard >= 0.30，且结构 detector 至少在 3/4 cutoff 上同时达到前两项门槛。",
+      "no_go": "任一以下条件成立即 NO-GO：结构 detector 未同时通过 matched-control lift 和 future-consequence/open-world lift；仅在单一 cutoff 有效；优势只在未做细粒度 matching 的 baseline 上出现；或平均 top-5% Jaccard < 0.20。",
+      "multiple_comparisons": "只评估一个预注册结构 detector；四个 cutoff 是重复时序评估，不进行候选 detector 赛选。"
+    },
+    "steps": [
+      "从 BigQuery 导出并标准化三类事件，生成事件级 directed edges，完成事件 ID 去重、时间排序和地址 eligibility 过滤。",
+      "按四个 cutoff 构造历史 30 天、评分 7 天、未来 7 天和未来 30 天窗口，并锁定每个 cutoff 的候选地址集合。",
+      "仅用历史数据计算 volume/activity baseline、fine-grained matched controls、simple temporal baseline 和结构残差分数；结构分数固定为新 counterparties 增长、方向变化、24 小时 rapid-forward、reciprocal/短路径闭合四项的历史标准化均值。",
+      "在每个 cutoff 内按历史细粒度 volume/activity 做 1:5 匹配，固定 top 5% 选择规则，不查看未来事件。",
+      "在短期和 30 天 holdout 上计算三个主指标及 bootstrap 95% CI，并逐 cutoff 与三个 baseline 对比。",
+      "按 thresholds 机械判定 GO/NO-GO，输出覆盖量、事件类型分解、匹配失败率和失败诊断；不进入 latent-strategy 建模。"
+    ],
+    "astra_role": "Astra6 仅可在实验开始前提出最多 3 个可计算的结构假设，并将其压缩为上述一个固定结构残差分数；可审计 SQL、窗口边界、事件去重、匹配平衡和指标实现。Astra6 不得生成训练标签、批量阅读地址行为、替代 detector、挑选 cutoff、根据结果改阈值或参与最终 GO/NO-GO 决策。",
+    "failure_diagnostics": {
+      "matching": "报告每个 cutoff 的匹配成功率、各匹配字段的标准化均值差；任一核心字段绝对差异 > 0.10 时，判定 matching 不平衡并单独标记。",
+      "event_type_sensitivity": "分别报告 external transaction、token transfer、internal trace 以及三者合并结果；若优势仅来自单一事件类型，不能宣称一般性行为异常发现。",
+      "activity_confounding": "报告结构分数与历史事件数、active days、unique counterparties 的 Spearman 相关；任一绝对相关 > 0.80 时，优先视为 activity proxy，而非结构信号。",
+      "threshold_sensitivity": "只做预先固定的 top 1%、5%、10% 三档审计；若 GO 仅存在于单一档位，降级为不稳定证据。",
+      "temporal_concentration": "报告异常地址是否集中在单日或单个 block range；若超过 50% 的 top 5% 分数来自一个 24 小时段，检查 ETL、空投或批量合约事件冲击。",
+      "baseline_dominance": "若 simple temporal 或 volume/activity baseline 达到同等或更高的两个主 lift，结构 detector 判定无增量价值。",
+      "sparse_outcome": "若任一 cutoff 的 matched-control 未来 outcome 事件数少于 30，使用该 cutoff 的点估计仅作描述，不用于 GO；若四个 cutoff 中超过一个满足此条件，整体 NO-GO。",
+      "label_isolation": "外部 77 hash、255 rows 和 August 为 0 的标签不进入本实验任何计算；不得用其解释某个结构分数或调整阈值。"
+    }
+  }
+}

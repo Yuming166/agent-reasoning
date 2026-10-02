@@ -1,0 +1,29 @@
+{
+  "dev_tuning": [
+    {
+      "alpha": 0.01,
+      "dev_loss": 0.6435190618982238
+    },
+    {
+      "alpha": 0.1,
+      "dev_loss": 0.6434909560798346
+    },
+    {
+      "alpha": 1.0,
+      "dev_loss": 0.6432795528317583
+    },
+    {
+      "alpha": 10.0,
+      "dev_loss": 0.6427032533455449
+    },
+    {
+      "alpha": 100.0,
+      "dev_loss": 0.6431756618308003
+    }
+  ],
+  "fit_row_count": 32892,
+  "ladder": "M1",
+  "model_family": "ridge",
+  "n_test": 14683,
+  "selected_alpha": 100.0
+}

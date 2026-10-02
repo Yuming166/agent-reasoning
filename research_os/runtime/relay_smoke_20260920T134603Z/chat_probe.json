@@ -1,0 +1,8 @@
+{
+  "requested_model": "gpt-6-astra",
+  "prompt_hash": "07f234f4a894f38bddd5e84892c66af5547a40c7ddca6a37c3036572e32a07be",
+  "timestamp": "2026-09-20T13:46:04Z",
+  "http_status": 502,
+  "latency_seconds": 4.188,
+  "error": "http_502:{\"error\":{\"message\":\"Upstream service temporarily unavailable\",\"type\":\"upstream_error\"}}"
+}

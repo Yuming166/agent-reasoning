@@ -1,0 +1,9 @@
+donor全集=1389, donor可观测行=1628581
+0x256d4aba T=0x5f4a54e2 rank=296 vis=global_seen | 钱包↔T:0笔 | T的donor=44, 其中与W交互1个 → ✓1个严格片段: 0xc3503192: W↔D≤2022-04-17 → D↔T≥2022-04-17(12782笔,D→T)
+0x262ccc6f T=0xc4a748e6 rank=66 vis=global_seen | 钱包↔T:0笔 | T的donor=229, 其中与W交互0个 → ✗无严格片段
+0x36592e9b T=0x49cf6f5d rank=359 vis=global_seen | 钱包↔T:0笔 | T的donor=459, 其中与W交互1个 → ✗无严格片段
+0x5db71204 T=0x134460d3 rank=130 vis=own_seen | 钱包↔T:2笔, 末笔2022-03-03 | T的donor=120, 其中与W交互0个 → ✗无严格片段
+0xa589954b T=0x34b4df75 rank=102 vis=own_seen | 钱包↔T:2笔, 末笔2022-03-11 | T的donor=111, 其中与W交互1个 → ✗无严格片段
+0xaa1ad478 T=0xc1836021 rank=740 vis=global_seen | 钱包↔T:0笔 | T的donor=488, 其中与W交互0个 → ✗无严格片段
+0xba8f4291 T=0x9affa8ce rank=362 vis=own_seen | 钱包↔T:1笔, 末笔2022-03-19 | T的donor=0, 其中与W交互0个 → ✗无严格片段
+0xf2826269 T=0x22a43071 rank=3240 vis=global_seen | 钱包↔T:0笔 | T的donor=23, 其中与W交互0个 → ✗无严格片段

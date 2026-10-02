@@ -1,0 +1,19 @@
+experiments:
+  - experiment_id: PRIOR-DSV1-CASE-20260920
+    branch_id: A
+    status: RUNNING
+    type: discovery_only
+    hypothesis: Case-level intervention/evidence sensitivity may be related to B4-vs-B0 prospective validity.
+    primary_outcome: association and stratified discovery diagnostics between intervention sensitivity and B4-minus-B0 macro log-loss delta.
+    sample_definition: Existing frozen Decision-State V1 July development plus August test OOS predictions; no new LLM calls.
+    cutoff_dates: [2022-06-01, 2022-07-01, 2022-08-01]
+    controls: [history_length, wallet_activity, event_family, repeat_panel_status, confidence, abstention, hypothesis_entropy]
+    protocol_status: discovery_only_not_confirmatory
+  - experiment_id: OW-010B
+    branch_id: B
+    status: COMPLETED_NO_GO
+    evidence: research/openworld/ow010b/reports/OW010B_DECISION.md
+  - experiment_id: DECISION-STATE-V1
+    branch_id: A
+    status: COMPLETED_NO_GO
+    evidence: research/decision_state/DECISION_STATE_DECISION_20260919.md

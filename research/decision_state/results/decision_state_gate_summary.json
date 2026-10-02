@@ -1,0 +1,28 @@
+{
+  "primary_gate": {
+    "estimate_b0_minus_b4": -0.02956040400379504,
+    "ci_low": -0.056689825703020114,
+    "ci_high": -0.0031656437147884577,
+    "pass": false
+  },
+  "secondary_b4_vs_b2": {
+    "estimate_b2_minus_b4": -0.0284970728908279,
+    "ci_low": -0.054696391717704074,
+    "ci_high": -0.0031178038782188537,
+    "pass_by_predictive_log_loss": false
+  },
+  "development_intervention_gate": {
+    "groups_passing": 2,
+    "required_groups": 2,
+    "pass": true
+  },
+  "input_leakage_audit": {
+    "prompt_rows": 3000,
+    "eval_rows": 3000,
+    "forbidden_prompt_columns": [],
+    "case_id_unique": true,
+    "status": "PASS"
+  },
+  "overall_effectiveness_pass": false,
+  "decision": "NO-GO"
+}

@@ -1,0 +1,13 @@
+{
+  "dev_tuning": [
+    {
+      "dev_loss": 0.64234990350549,
+      "fixed": true
+    }
+  ],
+  "fit_row_count": 32892,
+  "ladder": "M2_CORE",
+  "model_family": "hist_gradient_boosting",
+  "n_test": 14683,
+  "selected_alpha": null
+}

@@ -1,0 +1,42 @@
+# Semantic Audit V2.1 claim ledger
+# This ledger is exploratory and does not promote claims to the official ledger.
+
+C1:
+  claim: "LLM hypotheses explicitly encode structured behavioral consequences."
+  status: UNTESTED
+  evidence: []
+C2:
+  claim: "Textual hypotheses are consistent with their structured fields."
+  status: UNTESTED
+  evidence: []
+C3:
+  claim: "LLM hypotheses contain information not already recoverable from M1."
+  status: UNTESTED
+  evidence: []
+C4:
+  claim: "Intervention-responsive hypotheses have greater prospective validity."
+  status: DISCOVERY_ONLY
+  evidence:
+    - path: research/decision_state/DECISION_STATE_RESULT_REPORT_20260919.md
+      note: "Intervention responsiveness passed on July development; prospective validity was not established."
+C5:
+  claim: "Natural-language decision state improves future prediction beyond M1."
+  status: REJECTED
+  evidence:
+    - path: research/decision_state/DECISION_STATE_DECISION_20260919.md
+      note: "Decision-State V1 frozen test NO-GO."
+C6:
+  claim: "Behavioral equifinality explains the B4 failure."
+  status: UNTESTED
+  evidence: []
+C7:
+  claim: "Identifiability predicts prospective hypothesis validity."
+  status: UNTESTED
+  evidence: []
+
+boundaries:
+  official_astra_cycle_untouched: true
+  frozen_b4_unchanged: true
+  future_outcomes_used_for_semantic_annotation: false
+  owner_belief_or_intent_claim: false
+  c6_c7_promotion_allowed_before_c1_c3: false

@@ -1,0 +1,29 @@
+{
+  "astra_only": true,
+  "charter_sha256": "87150bad66f72a995d5f928ef87ec0b53c10ba1c4cc6bae0e51b40fa822972dd",
+  "completed_roles": [
+    "LIT_SCOUT",
+    "GAP_AUDITOR",
+    "PHENOMENON_SCOUT",
+    "NLP_ARCHITECT",
+    "EXPERIMENT_DESIGNER"
+  ],
+  "current_role": "FALSIFIER",
+  "cycle_dir": "/storage/gaoym/ex-graph-microtransaction-analysis/research_os/runtime/cycle_20260920T101512Z",
+  "cycle_id": "20260920T101512Z",
+  "error": "http_502:{\"error\":{\"message\":\"Upstream service temporarily unavailable\",\"type\":\"upstream_error\"}}",
+  "hard_deadline_seconds": 420,
+  "incomplete_roles": [
+    "FALSIFIER"
+  ],
+  "last_attempt_error": "http_502:{\"error\":{\"message\":\"Upstream service temporarily unavailable\",\"type\":\"upstream_error\"}}",
+  "next_action": "WAIT_FOR_ASTRA6_UPSTREAM_RECOVERY",
+  "pid": null,
+  "requested_model": "gpt-6-astra",
+  "retry_attempt": 44,
+  "retry_next_seconds": 300,
+  "retry_supervisor": true,
+  "state": "PAUSED_RETRY_PENDING",
+  "task_id": "20260920T101512Z_FALSIFIER_resume35",
+  "updated_at": "2026-09-21T11:15:41Z"
+}

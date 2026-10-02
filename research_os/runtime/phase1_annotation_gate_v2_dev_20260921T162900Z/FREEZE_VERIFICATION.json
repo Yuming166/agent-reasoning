@@ -1,0 +1,46 @@
+{
+  "created_at": "2026-09-21T16:57:35Z",
+  "status": "PASS",
+  "checks": {
+    "protocol_state_frozen": true,
+    "schema_frozen": true,
+    "template_hash": true,
+    "assignment_a_hash": true,
+    "assignment_b_hash": true,
+    "100_cases": true,
+    "300_rows": true,
+    "no_august": true,
+    "balanced_sample": true,
+    "20_shared_cases": true,
+    "60_shared_rows": true,
+    "shared_assignment_intersection": true,
+    "assignment_union": true,
+    "balanced_unique_a": true,
+    "balanced_unique_b": true,
+    "pass_b_mode_zero": true,
+    "pass_b_release_absent": true,
+    "no_pass_a_lock": true,
+    "no_future_outcomes": true,
+    "no_prediction_scores": true,
+    "no_phase2_3": true
+  },
+  "hashes": {
+    "blank_template": "feb52a1e0d14a1242132adaa0bd4e20d48080b9ab59a2820cfb651ef36a1f93b",
+    "coder_a_assignment": "ee8bcc59d6d890eb390fd89cceb5b5248131eee2a940888a91b0fcf2a6b4cc6d",
+    "coder_b_assignment": "7272a0b437133025fc925c9bc389a428e15213cafaefab56a4f70665c12e9de4",
+    "double_code_handles": "c0bef4f2333fe9bde2dce760b14fc10582f5d8766930e6b4f3888733b77be635",
+    "protocol_lock": "f4d47ccacee187eaf2b27e85a98141bac7ce18fa3ecceba057555568211a0d6e"
+  },
+  "roster": {
+    "cases": 100,
+    "rows": 300,
+    "shared_cases": 20,
+    "shared_rows": 60,
+    "coder_a_rows": 180,
+    "coder_b_rows": 180
+  },
+  "pass_b_access": "LOCKED_PRE_PASS_A",
+  "future_outcomes_read": false,
+  "prediction_scores_read": false,
+  "phase_2_or_phase_3_accessed": false
+}

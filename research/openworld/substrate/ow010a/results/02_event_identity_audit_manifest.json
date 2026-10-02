@@ -1,0 +1,10 @@
+{
+  "query_name": "02_event_identity_audit",
+  "sql_path": "research/openworld/substrate/ow010a/sql/02_event_identity_audit.sql",
+  "sql_sha256": "035fe126d32b931944286268087610a4a0042fabd2479361294e273c9639a3b3",
+  "job_id": "job_Z9trYqX7EQ5Zk-FDqKBtNEq-KFW_",
+  "bytes_processed": 2864416975,
+  "bytes_billed": 2864709632,
+  "cache_hit": false,
+  "row_count": 36
+}

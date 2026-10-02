@@ -1,0 +1,22 @@
+{
+  "query_name": "04_future_outcomes",
+  "sql_path": "research/openworld/substrate/ow010a/sql/04_future_outcomes.sql",
+  "sql_sha256": "bc35b41317640b624fcdd88dbf52486577e782cac04b5f1ecf195c86cbb013f2",
+  "destination_table": "ictdata-507912.exgraph.openworld_wallet_cutoff_future_outcomes_v1",
+  "job_id": "job_HEl6AsFFPtrtk9wSVVVeRP0ZQr3I",
+  "bytes_processed": 2001228347,
+  "bytes_billed": 2001731584,
+  "cache_hit": false,
+  "raw_rows_not_exported": true,
+  "qa": {
+    "n_rows": "82839",
+    "n_anchors": "27613",
+    "n_cutoffs": "3",
+    "non_eval_rows": "0",
+    "zero_future30": "37263",
+    "zero_future7": "50895",
+    "min_cutoff": "1.6540416E9",
+    "max_cutoff": "1.659312E9"
+  },
+  "qa_job_id": "job_1wU2WtOj3QdgJeoNwl8KLCUGLOOR"
+}

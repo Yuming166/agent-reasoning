@@ -1,0 +1,18 @@
+schema_version: semantic_gate_v21_preregistration
+created_at: 2026-09-20T14:45:47Z
+status: PENDING_ASTRA6_EXPERIMENT_DESIGNER
+frozen: false
+purpose: semantic_faithfulness_audit_only
+truth_or_owner_state_tested: false
+future_outcomes_used_for_annotation: false
+required_astra6_role: EXPERIMENT_DESIGNER
+required_decisions:
+  minimum_consistency_threshold: PENDING
+  maximum_unclear_rate: PENDING
+  minimum_inter_annotator_agreement: PENDING
+  minimum_falsifiable_implication_coverage: PENDING
+multiple_comparison_or_breakdown_policy: PENDING
+stop_rule: PAUSE_IF_ASTRA6_UNAVAILABLE
+notes:
+  - Do not run the full semantic audit until this file is completed by Astra6 and hashed.
+  - Do not tune thresholds after seeing audit results.

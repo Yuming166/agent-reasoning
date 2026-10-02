@@ -1,0 +1,285 @@
+You are the exploratory fallback role NLP_ARCHITECT in a temporary Luna Max run.
+
+Assignment:
+Design the smallest language-centered representation/evaluation that would make a surviving branch genuinely NLP-central: semantic non-redundancy, evidence alignment, future implications, falsifiers, or revision. Reject cosmetic text.
+
+Return a concise report with exactly these headings:
+1. Verdict by branch (A-F; SUPPORT / HOLD / MODIFY / KILL / UNTESTED)
+2. Strongest evidence
+3. Strongest counterargument
+4. Cheapest decisive experiment
+5. Stop condition
+6. Literature/novelty verification still required
+
+Do not invent exact citations. Do not relabel prior NO-GO findings as positive.
+Keep the distinction between deterministic evidence and model-generated advice.
+Do not propose a large LLM experiment before a falsification gate.
+
+EX-GRAPH NAACL AUTORESEARCH — OFF-CHARTER LUNAMAX EXPLORATORY MODE
+
+This is a temporary fallback because the Astra6 relay is unavailable. You are
+not Astra6. Your output is exploratory only and must not be represented as an
+Astra6 result, official claim, preregistered result, or final scientific
+conclusion. Do not modify files. Do not reveal private chain-of-thought; return
+only the requested concise report.
+
+The official Astra6 cycle remains paused and immutable. Existing boundaries:
+- no true owner psychology, causal intent, or verified social exposure;
+- address-level behavior is only an actor proxy;
+- no retuning of the August frozen test;
+- no large new LLM experiment before falsification/literature gates;
+- natural language must be scientifically central, not cosmetic;
+- discovery evidence is not confirmatory.
+
+PRIORITY AUDIT:
+{
+  "B4_failure_rate": 0.4635,
+  "B4_gain_rate": 0.5365,
+  "Delta_definition": "existing frozen B4_M1_VERIFIED_LLM macro log-loss minus B0_M1 macro log-loss",
+  "F_definition": "existing frozen intervention_sensitivity = average of self/market JS distances over four consequence dimensions",
+  "F_vs_Delta_pearson": -0.033421075141118355,
+  "F_vs_Delta_spearman": -0.019366415512223897,
+  "F_vs_validity_proxy_spearman": 0.019366415512223897,
+  "controls_categorical": [
+    "split",
+    "activity_bin",
+    "dominant_event_family_30d"
+  ],
+  "controls_numeric": [
+    "history_length_log1p_events_30d",
+    "history_event_count_30d",
+    "event_count_7d",
+    "llm_top_probability",
+    "llm_abstain",
+    "hypothesis_entropy_nats",
+    "panel_repeat_wallet"
+  ],
+  "discovery_only": true,
+  "future_outcomes_used_only_from_frozen_evaluation_artifact": true,
+  "high_F_failure_n": 50,
+  "low_F_success_n": 50,
+  "mean_Delta_B4_minus_B0": 0.023495422489501656,
+  "median_Delta_B4_minus_B0": -0.01128167920794115,
+  "n_all_source_rows": 3000,
+  "n_oos_rows": 2000,
+  "no_new_llm_calls": true,
+  "partial_pearson_F_vs_Delta_controls": -0.03831504464680598,
+  "source": "/storage/gaoym/ex-graph-microtransaction-analysis/research/decision_state/results/decision_state_case_degradation_analysis.csv",
+  "source_sha256": "b0ffa7075fc86586e617e2e99234418c25f11d714ca849baad6c04dc90a1e486",
+  "splits": {
+    "dev": 1000,
+    "test": 1000
+  },
+  "status": "DISCOVERY_AUDIT_COMPLETE"
+}
+
+
+DECISION-STATE V1:
+# Decision-State V1 Scientific Decision
+
+**Decision date: 2026-09-19**  
+**Decision: NO-GO for Level-1 effectiveness claim**
+
+## 1. Decision question
+
+是否可以根据冻结的 June/July/August 实验声称：
+
+> intervention-verified, address-level behavioral hypotheses add predictive value beyond the M1 recent-dynamics baseline?
+
+## 2. Gate ledger
+
+| Gate | Predeclared requirement | Observed result | Status |
+|---|---|---|---|
+| G1 primary effectiveness | B4 test macro log loss < B0；paired CI for B0-B4 entirely > 0 | B0=0.810633；B4=0.840193；estimate=-0.029560；95% CI=[-0.056690,-0.003166] | **FAIL** |
+| G2 intervention value | B4 < B2，或无 predictive deterioration 的预注册 reliability-only 条件 | B2=0.811696；B4=0.840193；B2-B4 CI=[-0.054696,-0.003118] | **FAIL** |
+| G3 evidence responsiveness | July 至少 E_SELF/E_MARKET 两组 relevant > placebo 且 paired CI > 0 | E_SELF 与 E_MARKET 均通过 | PASS |
+| G4 data boundary | 无 future leakage、outcome-conditioned sampling、test-time response selection | input audit PASS；固定样本/variant manifest 完整 | PASS（边界审计） |
+| G5 robustness reporting | active 与 low-activity 分层报告 | 两层均报告；B4 均高于 B0 | 已报告，未形成通过 |
+
+## 3. Final scientific decision
+
+```text
+LEVEL_1_EFFECTIVENESS = NO-GO
+LEVEL_2_RELATIONAL_EXPECTATION = DEFERRED
+```
+
+### 允许写入论文/记录的表述
+
+> In the frozen June–August 2022 evaluation, structured LLM hypothesis features and intervention-derived features were operationally valid and showed evidence responsiveness on development data, but they did not improve—and in the verified B4 condition worsened—out-of-sample 7-day address-behavior prediction over the M1 recent-dynamics baseline.
+
+中文：
+
+> 在冻结的 2022 年 6–8 月时间切分中，结构化 LLM hypothesis 与 intervention 特征在操作层面有效，并在 development 上表现出 evidence responsiveness；但在 frozen test 上，它们没有超过 M1 recent-dynamics baseline，经过 intervention verification 的 B4 反而使 7-day address-behavior prediction 变差。
+
+### 不允许写入论文/记录的表述
+
+- “我们识别了 wallet owner 的真实情感/信念”；
+- “我们识别了真实 transaction intent”；
+- “intervention response 证明了 causal provenance”；
+- “persistent latent decision state 已被验证”；
+- “Level-2 Theory-of-Mind/relational expectation 已被支持”；
+- “LLM behavioral reasoning 在金融链上任务上普遍无效”。
+
+## 4. Freeze consequences
+
+1. 不修改 August prompt、threshold、consequence schema、feature family 或 meta-head hyperparameters 以追求过门。
+2. 不把 August 结果用于选择新的 prompt 或报告最优变体。
+3. 不启动 Level 2 relational expectation。
+4. 保留本轮所有 raw panel、features、predictions、bootstrap 和审计报告，作为一个完整的 negative effectiveness result。
+5. 如果继续，必须新建 V2 protocol，并使用新的 untouched temporal holdout；本轮 August 只能作为历史测试结果，不能变成新的 development split。
+
+## 5. Reusable research lesson
+
+本实验把“模型能生成听起来合理的行为解释”与“这些解释能在未来行为上得到验证”分开了：
+
+- parser/endpoint：通过；
+- intervention responsiveness：通过；
+- future predictive effectiveness：失败；
+- generalization：未测试，不能声称。
+
+这正是本项目的实验效果门应当捕获的失败模式。
+
+
+OW-010B:
+# OW-010B Decision
+
+**Date:** 2026-09-18 UTC  
+**Experiment:** OW-010B — Blind Incremental Temporal-Structural Signal Test  
+**Decision:** `NO_GO_OPENWORLD_STRUCTURAL_SIGNAL`
+
+## Decision basis
+
+The frozen August test supports an M1-over-M0 predictive gain but not the preregistered structural-support criterion:
+
+- Ridge M1-over-M0: `11.660%`, absolute paired 95% CI `[0.085655, 0.095335]`.
+- Ridge M2_CORE-over-M1: `0.1338%`, absolute paired 95% CI `[0.000316, 0.001559]`, below the frozen `2%` gate.
+- HGB M2_CORE-over-M1: `-0.0301%`, CI `[-0.001043, 0.000621]`.
+- Negative controls did not reproduce the intended gains.
+- Activity/degree audits do not eliminate the possibility that M1/M2 variables are scale and autoregression proxies.
+- The test contains one frozen held-out cutoff and is dominated by repeated wallets.
+
+## Operational disposition
+
+- **Do not open OW-010C.** No external-label evaluation is authorized by this result.
+- **Do not build a Temporal GNN.** The simple structural block did not pass the frozen gate.
+- **Do not start latent-strategy/LLM inference.**
+- **Do not retune the target, thresholds, feature block, model grid, cutoffs, or decision rule using the August result.**
+- Preserve the M1 result as a bounded/provisional recent-dynamics forecasting finding.
+- Classify M2 structural evidence as insufficient and exploratory.
+- If the research continues, create a new preregistered amendment before any new result is inspected; it should separate recent activity/autoregression from temporal organization and address structural/activity collinearity.
+
+## Status labels
+
+```text
+M1 recent-dynamics signal: PROVISIONAL_PREDICTIVE_FINDING
+M2 structural signal: NO_GO_UNDER_FROZEN_GATE
+OW-010C: CLOSED
+Temporal GNN: NOT_JUSTIFIED
+Wash-label access: FALSE
+```
+
+Astra6 used the compatible operational phrase `NO_GO_TO_OW010C under the frozen rule; MODIFY_BEFORE_EXTERNAL_VALIDATION` for a possible future redesign. The formal OW-010B decision field remains exactly:
+
+```text
+NO_GO_OPENWORLD_STRUCTURAL_SIGNAL
+```
+
+
+NEGATIVE MEMORY:
+# Negative Results (append-only)
+
+## 2026-09-19 — Decision-State V1
+
+- B4 intervention-verified LLM features worsened August frozen test macro log loss versus M1: 0.840193 vs 0.810633.
+- Evidence intervention responsiveness passed on July development, but did not imply prospective validity.
+- Do not claim true belief recovery, causal provenance, persistent latent state, or Level-2 relational expectation.
+
+## 2026-09-18 — OW-010B
+
+- M1 recent-dynamics gain was provisional and structurally confounded/possibly autoregressive.
+- M2_CORE-over-M1 failed the preregistered cross-model 2% structural gate; do not build Temporal GNN or open OW-010C.
+
+## 2026-09-12 — Phase II-A
+
+- Selective reasoning value was heterogeneous and beat random in a narrow setting, but September versus volume and bidirectional transfer were incomplete; formal Phase II-B/K-step was NO-GO.
+
+New entries must be appended; prior entries must never be rewritten or deleted.
+
+
+COMPLETED ASTRA6 REPORT EXCERPTS:
+===== LIT_SCOUT =====
+## 1. Verdict by branch (A-F; SUPPORT / HOLD / MODIFY / KILL / UNTESTED)
+
+C and D are the clearest NLP task formulations. A, B, and F need explicit language-level targets; E is not NLP-central as currently named. No branch has an established novelty claim.
+
+| Branch | Verdict | NLP centrality and required distinction |
+|---|---|---|
+| **A: Evidence-Validity Gap** | **MODIFY** | Potentially central if it evaluates the relationship between **textual claims, supporting evidence, and specified observable consequences**. Numeric intervention sensitivity versus downstream loss alone is a model-diagnostics study. |
+| **B: Behavioral Equifinality** | **HOLD** | Central only if the task represents and distinguishes competing natural-language hypotheses compatible with the same observations. Neither predictive failure nor feature similarity establishes equifinality. |
+| **C: Falsifiable Behavioral Hypothesis Induction** | **HOLD** | Directly NLP-central when language expresses hypotheses with explicit scope, horizon, and observable falsifiers. V1 supplies negative effectiveness evidence; a new induction label cannot reopen that claim. |
+| **D: Behavioral Hypothesis Revision** | **UNTESTED** | Directly NLP-central when evaluation concerns which propositions are retained, qualified, or retracted after new evidence. Responses to separate input perturbations do not establish sequential hypothesis revision. |
+| **E: Predictability x Interpretability** | **KILL** | Kill as a standalone NAACL contribution. The two axes are undefined, and generic prediction/explanation comparisons do not require language. Existing outputs may remain descriptive controls. |
+| **F: Identifiability-Aware Selective Inference** | **MODIFY** | Potentially central as selective assertion, qualification, or abstention over linguistic claims. Generic confidence gating or reasoning-budget allocation is established ML territory. Define identifiability relative to observations and a hypothesis class. |
+
+## 2. Strongest evidence
+
+The strongest motivation is the documented separation between **development evidence responsiveness and frozen predictive effectiveness**. V1 passed its July responsiveness criterion, but August B4 log loss was **0.840193**, versus **0.810633** for M1. The reported paired interval supports deterioration under that frozen setup.
+
+The discovery audit reinforces the need to examine this separation: intervention sensitivity had Spearman correlation **0.0194** with the incremental-validity proxy. However, this pools development and test rows, includes repeated wallets, and supplies no uncertainty interval. It motivates A; it does not confirm independence or a general “gap.”
+
+The prior decisions remain unchanged: Phase II-B/K-step is NO-GO, OW-010B structural support failed its gate, and Decision-State V1 effectiveness is NO-GO. None supplies positive evidence for B, D, or identifiability in F.
+
+## 3. Strongest counterargument
+
+The proposed branches may mostly rename establi
+[truncated at 3000 chars]
+===== GAP_AUDITOR =====
+## 1. Verdict by branch (A-F; SUPPORT / HOLD / MODIFY / KILL / UNTESTED)
+
+**No branch currently establishes a novel NLP contribution.** The frozen negative decisions remain binding; the discovery audit supplies candidate questions, not a replacement success criterion.
+
+| Branch | Verdict | Collapse test and surviving claim |
+|---|---|---|
+| **A: Evidence-Validity Gap** | **MODIFY** | Closest to explanation faithfulness versus predictive usefulness. V1 establishes a bounded failure of responsiveness to guarantee effectiveness. A distinctive gap involving **natural-language semantic commitments** remains a hypothesis because neither audit variable directly measures those commitments. |
+| **B: Behavioral Equifinality** | **HOLD** | Could reduce to ambiguous intent classification, predictive uncertainty, or incomplete observations. Several plausible descriptions do not establish non-identifiability. Observational equivalence must be defined relative to an explicit behavioral hypothesis class and observation process; its existence and usefulness remain hypotheses. |
+| **C: Falsifiable Behavioral Hypothesis Induction** | **HOLD** | Could be intent classification or ordinary forecasting expressed as sentences. V1’s predictive-effectiveness claim is NO-GO. Inducing meaningful, executable consequences beyond the existing consequence schema remains untested. Falsifiability alone is not novelty. |
+| **D: Behavioral Hypothesis Revision** | **UNTESTED** | Could reduce to sequential classification, belief revision, or anomaly-triggered updates. Evidence perturbation responsiveness does not demonstrate longitudinal revision. Selective retraction and retention of linguistic commitments under genuinely new evidence remain hypotheses. |
+| **E: Predictability × Interpretability** | **KILL** | Kill the current standalone novelty claim: two familiar axes do not define a new NLP problem. Neither interpretability nor its linguistic endpoint is operationalized in the dossier. A descriptive quadrant analysis would not rescue this claim. |
+| **F: Identifiability-Aware Selective Inference** | **MODIFY** | Closest to calibrated uncertainty, abstention, and selective prediction. Require an operational identifiability criterion; intervention sensitivity is not one. Whether linguistic ambiguity improves selection beyond calibrated uncertainty at matched coverage remains a hypothesis. |
+
+## 2. Strongest evidence
+
+- **V1 provides the strongest negative evidence.** Verified hypothesis features increased frozen August macro log loss from **0.810633 to 0.840193**. The paired improvement interval was entirely negative. July evidence responsiveness passed, so responsiveness was insufficient for effectiveness in this pipeline. This does not establish a new NLP mechanism.
+- **The discovery audit weakens intervention sensitivity as a simple ranking signal.** Across 2,000 pooled development/test rows, Pearson correlation with incremental loss was **−0.0334**, Spearman correlation with th
+[truncated at 3000 chars]
+===== PHENOMENON_SCOUT =====
+## 1. Verdict by branch (A-F; SUPPORT / HOLD / MODIFY / KILL / UNTESTED)
+
+| Branch | Verdict | Basis |
+|---|---|---|
+| **A: Evidence-Validity Gap** | **SUPPORT** | A narrow, discovery-level gap between intervention sensitivity and relative predictive gain is supported. Semantic validity and generalization remain unverified. |
+| **B: Behavioral Equifinality** | **UNTESTED** | No comparison establishes that distinct behavioral hypotheses remain equally compatible with the same observations. |
+| **C: Falsifiable Behavioral Hypothesis Induction** | **MODIFY** | V1 effectiveness remains **NO-GO**. Further investigation needs direct scoring of explicit language claims and their observable consequences. |
+| **D: Behavioral Hypothesis Revision** | **UNTESTED** | Responses to evidence interventions do not establish successful longitudinal hypothesis revision. |
+| **E: Predictability × Interpretability** | **UNTESTED** | Prediction was evaluated; interpretability was not independently measured. Intervention sensitivity cannot substitute for that measurement. |
+| **F: Identifiability-Aware Selective Inference** | **HOLD** | Case gains vary, but neither identifiability nor useful selection before observing outcomes has been demonstrated. |
+
+These research-direction verdicts leave every frozen NO-GO unchanged.
+
+## 2. Strongest evidence
+
+Define \(\Delta=\text{loss}(B4)-\text{loss}(B0)\), so positive values mean degradation.
+
+- **Little observed linear or monotonic association:** Pearson \(r(F,\Delta)=-0.0334\); Spearman \(r(F,-\Delta)=0.0194\); adjusted Pearson \(=-0.0383\). The supplied summaries show little simple ordering of relative predictive validity by sensitivity.
+- **Aggregate degradation despite frequent gains:** pooled mean \(\Delta=+0.023495\), median \(=-0.011282\), and 53.65% of cases improve. Losses outweigh gains in aggregate; their concentration in extreme cases is not reported.
+- **Reported discordant cases:** the audit supplies sets of 50 high-sensitivity degradation cases and 50 low-sensitivity improvement cases. These selected examples provide no prevalence estimate without selection rules and denominators.
+- **The frozen effectiveness failure remains decisive:** August B4 loss was 0.840193 versus B0’s 0.810633. The corresponding degradation was \(+0.029560\), with paired 95% CI \([+0.003166,+0.056690]\).
+
+Thus, responsiveness does not provide a demonstrated case-level certificate of predictive benefit.
+
+## 3. Strongest counterargument
+
+The two proxies do not directly measure evidential faithfulness and semantic validity. **F measures response magnitude**, averaged across interventions and consequences; **Δ measures the performance difference between prediction systems**. B4 miscalibration or feature-fitting problems could produce degradation even when a textual hypothesis is defensible.
+
+Pooling development and test, averaging consequence dimensions, repeated wallets, and nonlinear or opposing subgroup relationships could also conceal ass
+[truncated at 3000 chars]

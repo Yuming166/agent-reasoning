@@ -1,0 +1,58 @@
+{
+  "created_at": "2026-09-21T16:52:40Z",
+  "status": "ASSIGNMENTS_PREPARED_AWAITING_SUBMISSIONS",
+  "protocol_lock": "V2_PROTOCOL_LOCK.json",
+  "protocol_lock_sha256": "f4d47ccacee187eaf2b27e85a98141bac7ce18fa3ecceba057555568211a0d6e",
+  "schema_frozen": true,
+  "source_template_sha256": "feb52a1e0d14a1242132adaa0bd4e20d48080b9ab59a2820cfb651ef36a1f93b",
+  "source_double_code_handles_sha256": "c0bef4f2333fe9bde2dce760b14fc10582f5d8766930e6b4f3888733b77be635",
+  "shared_double_code_cases": 20,
+  "shared_double_code_rows": 60,
+  "unique_cases": 80,
+  "assignments": {
+    "CODER_A": {
+      "cases": 60,
+      "rows": 180,
+      "shared_cases": 20,
+      "unique_cases": 40,
+      "cases_by_cutoff": {
+        "2022-06-01": 30,
+        "2022-07-01": 30
+      },
+      "unique_cases_by_cutoff": {
+        "2022-06-01": 20,
+        "2022-07-01": 20
+      },
+      "assignment_path": "annotator_release/CODER_A/PASS_A_ASSIGNMENT.csv",
+      "assignment_sha256": "ee8bcc59d6d890eb390fd89cceb5b5248131eee2a940888a91b0fcf2a6b4cc6d"
+    },
+    "CODER_B": {
+      "cases": 60,
+      "rows": 180,
+      "shared_cases": 20,
+      "unique_cases": 40,
+      "cases_by_cutoff": {
+        "2022-06-01": 30,
+        "2022-07-01": 30
+      },
+      "unique_cases_by_cutoff": {
+        "2022-06-01": 20,
+        "2022-07-01": 20
+      },
+      "assignment_path": "annotator_release/CODER_B/PASS_A_ASSIGNMENT.csv",
+      "assignment_sha256": "7272a0b437133025fc925c9bc389a428e15213cafaefab56a4f70665c12e9de4"
+    }
+  },
+  "shared_case_rule": "All 20 fixed double-code cases are assigned to both coders.",
+  "unique_case_rule": "Within each cutoff, hash-rank the 40 non-shared cases; first 20 to CODER_A and remaining 20 to CODER_B.",
+  "order_rule": {
+    "CODER_A": "|phase1-v2-coder-a-order|",
+    "CODER_B": "|phase1-v2-coder-b-order|"
+  },
+  "outcome_blind": true,
+  "future_outcomes_read": false,
+  "prediction_scores_read": false,
+  "phase_2_or_phase_3_accessed": false,
+  "pass_b_access": "LOCKED_PRE_PASS_A",
+  "submission_status": "PENDING_CODER_A_AND_CODER_B"
+}

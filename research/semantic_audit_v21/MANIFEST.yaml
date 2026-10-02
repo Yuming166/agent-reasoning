@@ -1,0 +1,50 @@
+schema_version: semantic_audit_v21_checkpoint
+created_at: 2026-09-20T14:45:47Z
+project_root: /storage/gaoym/ex-graph-microtransaction-analysis
+mission_order: semantic_validity_then_non_redundancy_then_failure_decomposition_then_mechanism
+mode: ASTRA_ONLY_PAUSED
+scientific_reasoning_status: PAUSED_ASTRA6_UNAVAILABLE
+fallback_llm_used: false
+luna_max_used_for_this_checkpoint: false
+original_decision_state_files_overwritten: false
+frozen_b4_predictions_changed: false
+future_outcomes_used_for_new_annotation: false
+git_checkpoint:
+  requested_ref: semantic-audit-v21-freeze
+  status: BLOCKED_NO_GIT_REPOSITORY
+  repository_path: /storage/gaoym/ex-graph-microtransaction-analysis
+  reason: "Project directory has no .git metadata; no repository was initialized and no tag/commit was fabricated."
+  original_state_preserved: true
+source_protocol:
+  decision_state_protocol: research/decision_state/protocol/DECISION_STATE_PROTOCOL_V1.md
+  freeze_date: 2026-09-19
+  train_split: June 2022
+  development_split: July 2022
+  frozen_test_split: August 2022
+  primary_baseline: B0_M1
+  failed_model: B4_VERIFIED_LLM
+  prior_effectiveness_status: NO-GO
+checkpoint_files:
+  frozen_inputs: FROZEN_INPUTS.md
+  code_hashes: CODE_HASHES.json
+  prompt_hashes: PROMPT_HASHES.json
+  data_hashes: DATA_HASHES.json
+  claim_ledger: CLAIM_LEDGER.yaml
+  human_annotation: semantic_gate_human_annotation.csv
+  annotation_guidelines: ANNOTATION_GUIDELINES.md
+  semantic_gate_prereg: SEMANTIC_GATE_PREREG.yaml
+  astra_status: ASTRA6_AUDIT_STATUS.json
+  continuation_memo: DECISION_MEMO.md
+pipeline_status:
+  human_ready_annotation_pipeline: PREPARED_NO_ANNOTATIONS
+  astra6_exploratory_audit: PAUSED_ASTRA6_UNAVAILABLE
+  semantic_gate_metrics: NOT_RUN
+  non_redundancy_audit: NOT_RUN
+  failure_decomposition: NOT_RUN
+  mechanism_branches: CLOSED_PENDING_GATES
+boundaries:
+  c1_c3_before_c6_c7: required
+  owner_belief_or_intent_claim: forbidden
+  frozen_test_retuning: forbidden
+  b4_redefinition: forbidden
+  automated_astra_annotation_is_human_truth: forbidden

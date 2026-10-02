@@ -1,0 +1,122 @@
+[
+  {
+    "dev_tuning": [
+      {
+        "alpha": 0.01,
+        "dev_loss": 0.7329800750397284
+      },
+      {
+        "alpha": 0.1,
+        "dev_loss": 0.7329701350620071
+      },
+      {
+        "alpha": 1.0,
+        "dev_loss": 0.7328786758244052
+      },
+      {
+        "alpha": 10.0,
+        "dev_loss": 0.7322980520522641
+      },
+      {
+        "alpha": 100.0,
+        "dev_loss": 0.7326216122221456
+      }
+    ],
+    "fit_row_count": 32892,
+    "ladder": "M0",
+    "model_family": "ridge",
+    "selected_alpha": 100.0
+  },
+  {
+    "dev_tuning": [
+      {
+        "alpha": 0.01,
+        "dev_loss": 0.6435190618982238
+      },
+      {
+        "alpha": 0.1,
+        "dev_loss": 0.6434909560798346
+      },
+      {
+        "alpha": 1.0,
+        "dev_loss": 0.6432795528317583
+      },
+      {
+        "alpha": 10.0,
+        "dev_loss": 0.6427032533455449
+      },
+      {
+        "alpha": 100.0,
+        "dev_loss": 0.6431756618308003
+      }
+    ],
+    "fit_row_count": 32892,
+    "ladder": "M1",
+    "model_family": "ridge",
+    "selected_alpha": 100.0
+  },
+  {
+    "dev_tuning": [
+      {
+        "alpha": 0.01,
+        "dev_loss": 0.6438276870603128
+      },
+      {
+        "alpha": 0.1,
+        "dev_loss": 0.6437978417333182
+      },
+      {
+        "alpha": 1.0,
+        "dev_loss": 0.6435562363386073
+      },
+      {
+        "alpha": 10.0,
+        "dev_loss": 0.6427690170058185
+      },
+      {
+        "alpha": 100.0,
+        "dev_loss": 0.6429662068218082
+      }
+    ],
+    "fit_row_count": 32892,
+    "ladder": "M2_CORE",
+    "model_family": "ridge",
+    "selected_alpha": 100.0
+  },
+  {
+    "dev_tuning": [
+      {
+        "dev_loss": 0.6887798095869023,
+        "fixed": true
+      }
+    ],
+    "fit_row_count": 32892,
+    "ladder": "M0",
+    "model_family": "hist_gradient_boosting",
+    "selected_alpha": null
+  },
+  {
+    "dev_tuning": [
+      {
+        "dev_loss": 0.6424538236913939,
+        "fixed": true
+      }
+    ],
+    "fit_row_count": 32892,
+    "ladder": "M1",
+    "model_family": "hist_gradient_boosting",
+    "selected_alpha": null
+  },
+  {
+    "dev_tuning": [
+      {
+        "dev_loss": 0.64234990350549,
+        "fixed": true
+      }
+    ],
+    "fit_row_count": 32892,
+    "ladder": "M2_CORE",
+    "model_family": "hist_gradient_boosting",
+    "selected_alpha": null
+  }
+]

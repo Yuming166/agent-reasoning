@@ -1,0 +1,8 @@
+{
+  "status": "NOT_RUN_ASTRA6_RELAY_FAILURE",
+  "classification": "EXPLORATORY_QUARANTINED",
+  "future_outcomes_read": false,
+  "prediction_scores_read": false,
+  "reason": "Sprint halted before Track H launch after three Astra6 HTTP 502 smoke failures.",
+  "no_claim_about_source_availability": true
+}

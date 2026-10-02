@@ -1,0 +1,1422 @@
+[
+  {
+    "case_id": "2022-06-01|0x00f5503b18f5086fd163d9b1b543b4380c6c4831",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-190b75624836f5e52fbcfefd38abf146",
+      "SGP2-5ed9ac60a7e2f060e222424ecefa71aa",
+      "SGP2-ae8bab146ee65d20d473fec89e5ddaa8"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x00feb034eb9472943c21138fa2c4e5cac6cfa34a",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-75c0812c3fcdb8ec258a391619096d02",
+      "SGP2-92a3e882fa73f3200b0d806d7e1242c5",
+      "SGP2-fc3e0bcc9f924b8e2ecef43cc9177764"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x089d3d1a1d25f565bc556d7f10b0fb35ddfd2ce4",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-3704451e6e0a1213a0f8cb97bd47adf2",
+      "SGP2-51bd2dcb4de479d205e53b1c5c1643fd",
+      "SGP2-94443a8cdce8592c18ea89a6f1e43ed6"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x126c541e811941f79c238d679d073de559e3e258",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-04be8fa3d787df82e9c371ff011773b7",
+      "SGP2-14984d2dca3f73cf1fd1b6655e09be07",
+      "SGP2-9abb2012fec5db72985669b3980f4ac3"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x168493efb6f3b76bfb4f9f1794270b42cc1f8ad8",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": true,
+    "assigned_to": [
+      "CODER_A",
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-300ae113b426a7555d798bd8ad9b4a04",
+      "SGP2-7ab55263b931fab1972e31ed623f8e09",
+      "SGP2-c72d6aef7b915f52e3611a8f1c44e687"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x1ad958123e501ebc867e8a8b65b98705eacbcd1f",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-771fb6f249dfc5e0323ed3668a1c2fa4",
+      "SGP2-9e728de82ebbfc69240c4116b5ea3226",
+      "SGP2-ade61aada74cd4e6ae9575751a4c8843"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x220383944a573d2acb21a07fc45a980519ebbb84",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-67a26bea965557b02048caf7b1c9515c",
+      "SGP2-b3499eb565b79d8f91dd27261cb9e713",
+      "SGP2-c2cbc2c4efcf41d24344b75d1d44d06b"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x24edfa57e6d2260cc62bdada2c86c7cfb85ca84a",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-01772bb5703a71b86e7b59d61349d21c",
+      "SGP2-554c870698e589e1952d221ca8d3df51",
+      "SGP2-6336090901c6528b3fd77d94ad298264"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x25d29ec2e2403351ddc1244088e41fcc7e3285cf",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": true,
+    "assigned_to": [
+      "CODER_A",
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-10d4984095e148dfd78f3e1554978b00",
+      "SGP2-5e625a34724cc32733c4f0acccd58615",
+      "SGP2-c93805f17b0b53b7cb8b723cdf4533b6"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x28bbd75296bf6356b3fef95a0de815668911fb36",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-6ff31840939a78459bfc0caeb58698d7",
+      "SGP2-9ecc5b1a141d5189589471a996d46903",
+      "SGP2-ee5673ba242f2bde3258b08aa3a500b9"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x2c02bd2b9b0edc499e782177aab47108515740d0",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-2db2d8fe32556eaa5f589d4a99e8745e",
+      "SGP2-4250494b05a983e4caf9fec2b2316d93",
+      "SGP2-810138ae8e534abeaf4154b28cf70bae"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x2c7ccf2905c6a7d8f6221f0c8fd203551d8b1a89",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-1b6708e3142a9a140e611a31479c8cb1",
+      "SGP2-cf00bc754a9669fa103ce22cc4254088",
+      "SGP2-f46593225a8f3818ed0dc588fc432484"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x30c981f086640e36a7d89414d70914e2cc4eafdd",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-67f9b05d8261b0c0aa59a41860589001",
+      "SGP2-c864e6600f428b9e189a96efa741ce7c",
+      "SGP2-d70730b240abdf5c8dc8bf13bffa6ca7"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x34df5e2952ded2c258b1e7861f972b4ab4f9056e",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-25763bc3110c16778b043cc1da6ddde2",
+      "SGP2-528124dc05ff95d63ffef1a50777e6c0",
+      "SGP2-c7e45a4384709600702133fa229c1349"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x36cc92e2ece822cd2a1c7509cdd3f009d9f94db2",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": true,
+    "assigned_to": [
+      "CODER_A",
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-de0da2dcb7de7d55c9910acd5e923c11",
+      "SGP2-ee350715c409ebf15b714c14a98e146f",
+      "SGP2-fbc94110f21ae9ef8dd28da5516e69ae"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x3c67ed0cea8b1d10046d0d03e2668e63ae49d69f",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": true,
+    "assigned_to": [
+      "CODER_A",
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-468eb853bacfcc2f090734733df8201c",
+      "SGP2-7c8d14044b5e4c42bbb42c60b3fe5711",
+      "SGP2-d57fbfdf46fb532ac55fe31c154aa205"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x3edebccf7462dd6bbdb999ca200bf4d074b15ae1",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-15d4c95def9028787b206982929f79fa",
+      "SGP2-26bb6a47eab3b5b0889478eddfee6562",
+      "SGP2-5a4884d2dca376551326e84fdf95e042"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x44516032e9d220073db4095dd851fad06611c5ef",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-6403f0b64893b49fd99b48f817f00882",
+      "SGP2-d7d5f243785f5c5c2d50a00718aa7447",
+      "SGP2-e2972e8b821b744e68ef6f44d964e614"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x46ddbc30eba19d767868696e88637e93799a7421",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-44a5329bf2e26ae5b3708392a3858684",
+      "SGP2-572b8b69a37c1eb40ab236c3de782c1d",
+      "SGP2-a843e495bce73df9f30d2b8ef73218e2"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x4ea498bb897309dc32af54f67f3416a511789745",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": true,
+    "assigned_to": [
+      "CODER_A",
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-372546e8e495bf1cad1e2d3e7a0775ac",
+      "SGP2-3fccc6da2962355c4fc7df592bc0a2ee",
+      "SGP2-fc62e1b7eb686b78d4b767e06af1b94b"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x4ff280c97d75a5a4a56ab00206d88624b99e764f",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-59559ef3c200fc36ed01d2da803fb063",
+      "SGP2-eb091142eea8ed91775d20f76263db33",
+      "SGP2-f2d2c16ea18c847a6df0bac0cd075326"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x50892b2d0297962d6f8632d053364f47ed78bc39",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-241961f60af7170e883c54085b3546b4",
+      "SGP2-5f462bcbf91f35a1a1328603c344390a",
+      "SGP2-fd06b9257d66e5106cf59340eb189140"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x560ae60a10ede78f1b5f13c854c9e2cc5b4cd2fb",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-a28ced942e087eb80ae82fdd50318047",
+      "SGP2-bf6dac700be37e5119bd22b52f8569ac",
+      "SGP2-e7c7b2d0d109a7f47d0c34af516c14a9"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x5c5184bd1c758c0aec54faf012e2491811801429",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-6368587f7d4cfdbf9f00f04dbc11fe69",
+      "SGP2-8933bd3bb1c362fcace9e577a22b1f58",
+      "SGP2-8ba44760ca156a112965373ee2ac0d35"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x5d1429a3cd234c3f1c4ca4cdc5037925affb76f8",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": true,
+    "assigned_to": [
+      "CODER_A",
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-5638bc3b4fbc3c22121034125f91fe4a",
+      "SGP2-81c03e8d08507ac9f97be51b87789927",
+      "SGP2-c8505505ad6c3dbb3edb61ab276dd202"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x647e5c284d2d180bc4e59713e54698d03cbb6eaf",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-1b18a9bc02704d67d0f3be5ebf58d4fa",
+      "SGP2-39e757af82a52cad8e33959ac92eaa18",
+      "SGP2-59907a4f7f357710f376373eb3e39742"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x6c7dac238637e6d2a1fb28625dca390ba201cbfc",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-0f90cd6404dda4c5694f2714b1f262c8",
+      "SGP2-b7f35777bc858aa5ff40a9ccaed524c1",
+      "SGP2-c9e7afc4203f03a98b9174df4920d5b6"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x78bc9f322b342984aeb916ffb7872b9dc6224b55",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-3cf21ba23d1c4cd9cf66c5a0fac4b935",
+      "SGP2-8eb1f278d5fa1695f2428c772390b78c",
+      "SGP2-fb7222b87d041c6c0b98512c671b5861"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x7bcc2c2965f6a36a398b3c8cf654fef7e300cc60",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": true,
+    "assigned_to": [
+      "CODER_A",
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-1d410bb254cf76e0023e473f683233cd",
+      "SGP2-875bc47bdec1eac3ce75bec37725fddf",
+      "SGP2-92ba502742737e9f175a87657e1f04a0"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x7d5642f0fb71faed3a9293b0278f98991d68d740",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": true,
+    "assigned_to": [
+      "CODER_A",
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-15ff0701f36565af2cf24d4b2414c0e6",
+      "SGP2-af3185755c56eb7ff1947d81f0e7fd6a",
+      "SGP2-db7fce4ecba8dbf8427c6355d6034127"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x8193935013a94db0b1fe5858783a3d2eb39124e4",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-3428ceee051704da7daabbd16cbb3f06",
+      "SGP2-8b7588f03c15ff15cec2ad2db6a63379",
+      "SGP2-ca0c4d207219021425dfd569a31d05c2"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x869c9009a0d8279b63d83040a1acc96a6ad8bf89",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-21773cff0680afb8eb8dab4afab3e931",
+      "SGP2-89ffedeca12c4f393bd574bf854081a6",
+      "SGP2-ec8555c74796606003739ed882f70c90"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x87d37490db97e04b1db78ce9185ce277820b7f38",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-791b9b5c0cc3b837118fed40cd48861f",
+      "SGP2-9bc5f1dccb1868476fbe5a0a690e3c43",
+      "SGP2-ccce4b416155f1fdf6d520d0452da5c9"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x8af30b3ff1c29119ed336d45f77a6d59c3273b92",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-0ca7b8633cc4d5ea6c156c13e0e8c43f",
+      "SGP2-45192516fbff61962a1d18decd8b6d66",
+      "SGP2-e43aeaada4cb480f61eda9fe44fab55e"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x8cac4e7a06865426fc0c6be433fa1eb68cb3c6ec",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-1d5fbf7e56bd615bd660d5c4becac82f",
+      "SGP2-22725ffedba4683c65268e1be2f9321e",
+      "SGP2-e8bdfdc9e3bcbd51ba9f722d6d804125"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x8e5e896a347c80e4a9d272af2e7dcdc90b325bc3",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-e9e416f2d9e2d51b010dc5096e916c70",
+      "SGP2-eff628c61f8eadadba0a1b4967b5f477",
+      "SGP2-f729b3431c6fb374cb46266a872ac5ba"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x9b1f5542c1a2557b12ca6bac1f369143edd08951",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-5a5d0bdab01889c224ec2545f2b3da7a",
+      "SGP2-aaab6011398b69059ad0636ca02c65ce",
+      "SGP2-dc856ff341a91028a334990dcb15d7ae"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x9b8e8cb0484992e2598f225cf7658405fffea613",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-141c441e9bc5eb251c0d516a57ce7fcc",
+      "SGP2-38f311ac46d36a76a500a050ad2dd701",
+      "SGP2-a69bb5471a003e655eb932e9f3b15770"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0x9bdcdbf5c3460d947b64490802b93e49d917d130",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-4adc2a018f85226cd19aca96b5b5d611",
+      "SGP2-5f6c34e558b405ee6f215ca8e0842274",
+      "SGP2-b8f71b3ac27b1a13f232f8406b18b25c"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0xa7889b868fd9b11d910992b85fa0a642759512cc",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-0317d91086524974f6b14a4551a687d4",
+      "SGP2-5cbf38674feb5f9140087310fa47fc01",
+      "SGP2-8c4fcf9f79fb8fbb25e1abc4ac90d87f"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0xb5f5ae1f3c45427e8672ea77e2de8eb5f59d2801",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-414e9bf76b0cfa2ca347ae754ca1fe49",
+      "SGP2-a85cdbaa9e3476554ec27ec546adcfb9",
+      "SGP2-d73131f26f19657b433b6b119b4274bd"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0xbd98fa50265ff40568cf7728e02adfb7a30ff608",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-d008c179663dd064e1efd7b85b6f7cdc",
+      "SGP2-e80e1d98f21b18e01e99b46e0077ac2a",
+      "SGP2-fc009f37bccaa12806bc6b45001034dd"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0xcc3b5c275fcc0918651ee02fb5f82d2fc032c0db",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-0c18aeedfbfe014cd94a27dc73918f40",
+      "SGP2-9d1ea553e3e6e557d3659d0bb5807a21",
+      "SGP2-eb21edab530d7d2abce259b47fa3eff7"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0xd65abc83eb9e8afb42c37cbc4d5230404b07a6bc",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": true,
+    "assigned_to": [
+      "CODER_A",
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-6ec0c21d280d29ef6ee16921972c86fb",
+      "SGP2-7084fc3126f5677f0d9bf12b5e154ff1",
+      "SGP2-88ced727c27fa12a1be9d2a623b3baff"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0xdcc1d13144172df3dbb1f90e37104e8e28dad8b4",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-16a68394a08b0d7f6f4d465a205ca755",
+      "SGP2-279d6b714e30dd45e620b334476d2567",
+      "SGP2-9144d059f9236112ee1bd865276845e0"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0xe60a55d1b518a6f15f5b0bb5172d48ad7c2e468f",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-96a61cf6c3ecc5521f04eaee42d7e6b4",
+      "SGP2-d03cd31d2dda6c7b1a100defa1279525",
+      "SGP2-e7e39589b9bff1939d01bfb908e321d3"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0xe75a4f8f46a2f5dd0a416c46e13c96aaafc2fad4",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-0e9509095102047014e6be0f311bbe3d",
+      "SGP2-81e9e9764927d29c8e7d269b9d4d05d1",
+      "SGP2-d14b27116a9a69cf934b1d4d818d06f5"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0xf8928bbd7c7a46a9738f7da213e30bbfe8764388",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-105ae4a05238f9a059f44c2d8172ea3b",
+      "SGP2-3a0720341e8f7f58af72f54aba01343a",
+      "SGP2-812c4e5e3930acaa5f72cb08786465bd"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0xfd3fc767844ab9929091291609d453d3fa1e30fe",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-2d00141f6c93b4b8a6c374d00b899142",
+      "SGP2-d15d6706c28fdb58edb4373b0afc3215",
+      "SGP2-d713524feb333b14d1f67460d5f3faa4"
+    ]
+  },
+  {
+    "case_id": "2022-06-01|0xfd8421b555e26b0894ee0fee627c289caa2f2766",
+    "cutoff_date": "2022-06-01",
+    "split": "train",
+    "shared_double_code": true,
+    "assigned_to": [
+      "CODER_A",
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-be78388e0dc7dffc8489ff0b74ff19b5",
+      "SGP2-be7fb40e7718873ed571d4ddb8cae6fb",
+      "SGP2-c2879e4a6780fffce01974f093f5ec70"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x001588cab7a0b727c388174b1ef20b2e3d20d39b",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-23e3776511227231e595502f8405ebdf",
+      "SGP2-2997ccd8f8674a083b12ad33c3b60e98",
+      "SGP2-b5246227cc1530d69fc231b453db7f49"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x063b120977b594bded5c858c2cd9cd3b5a7b45a2",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-3de4e6f943ecaf09d6b4a7c9aecc8466",
+      "SGP2-61bf96bd5284c0ed35820ce61cff53f1",
+      "SGP2-99cf387d5e0b389a55214c336a7ff17f"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x096234723ed2ba030a26814b46397e684278aff3",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-055052c6332dc24bf48591cd441e6a06",
+      "SGP2-45bae6d9cdc187c6d3860188a4b2353b",
+      "SGP2-cc74a321975cc1d2e92e90c9fca15955"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x0b4b7d1c953dd5aea3421bf168d437632b754683",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-26f777cd43db3420dc399d7d1497b35e",
+      "SGP2-3ec2f881630cb05e8dced1d2aaa50287",
+      "SGP2-90aded3b1eb595d9e4b5d090f095ee36"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x1461b5dd200cb419216c4da2230d7ace1a22590c",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-15563d44c473ede4c3bca1c92cbb1b9b",
+      "SGP2-3d0e7fa09ece3d537a69b111ae3f33b5",
+      "SGP2-b9c59fda96e129a5b2262840c3e3f45a"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x188fa7765807b4e48d5e0aa6dfbf837fe8a38861",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": true,
+    "assigned_to": [
+      "CODER_A",
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-28f4faa056e9c096b1d0bb47d7f73239",
+      "SGP2-64151838cb35e052a14fec7d89736aa0",
+      "SGP2-fb413dd577161f0e8c4946669922327c"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x1a68639061b6e234fff0a6ca554aaa5f92825a8c",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-7c4186fcfa2c71a18cc8c116f8fda291",
+      "SGP2-a292a20976dc7974a2847b5694a89db6",
+      "SGP2-b2b0a773926a42123431f8b1817e6703"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x1c604b51bd334e40c3898fbdc7b32cbcd902cdcd",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-4f5e9e23ab74b44ef21c1edd91c9f674",
+      "SGP2-9586f38befe42427f72fe0119d778839",
+      "SGP2-f47706d0fcb29c5d822872a4bd7d1087"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x1ea60e7fb434a529e10ae0001a9ba175116bfefa",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-6054bb47f9fa38dd0d179df8e278e2bd",
+      "SGP2-acea0582c16de47834335e0355de8c0d",
+      "SGP2-e8814193ce07c55cb954d5bfd0eebc02"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x261c0003f3b51bc56da9957ecc83a714b5d9623e",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-2b908b30ae54dc23629687c9e8d2a2c0",
+      "SGP2-c74f5ed7b54e284b3e6d09d4a8f6db58",
+      "SGP2-e43a3cde9a36861252bcc06fd2947b8e"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x262ccc6f92668b831d50c14a4723234956f71732",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-4e28b15274020c97aaf0e1a4c9184936",
+      "SGP2-6aae655fc09a385b38a83ff7d5bad3d1",
+      "SGP2-dd10f90b65f458b838a596a1301448f4"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x288731e4d30bfdadbedb5a106c39dc2b7caba1c8",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-3867d0cb4fd50460e84c58a58217924c",
+      "SGP2-3efdb2492c3d9edb99b714270e85be13",
+      "SGP2-4e7525fddebafba5014e78c34e6f6d42"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x330364a849aee6751a58b0a5d3bf8608fcd09f8c",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-0f4c340f0b4f4d37feab5b139c7ddd92",
+      "SGP2-92df9668ce54002f75c28e3eb75754d1",
+      "SGP2-eb0f34b683a2db1d7d1d16b071905543"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x3f5872783182989fbf732866c8bafe6b93e822b2",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": true,
+    "assigned_to": [
+      "CODER_A",
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-522715f8a6fe54276c71b58caefeb3fb",
+      "SGP2-65e4874018c071a6bbaf46cfe29aa9bf",
+      "SGP2-7898f3500ed486726efe69c9fc40aa58"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x4231d7d01deb9c63dd8413e2937c8e92f04b3e05",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-0182ec4ba9536da7d9b1477a48b5fbba",
+      "SGP2-5e22e048f65180aab73ec92f624e01ed",
+      "SGP2-9f337ee02724bf5393e871cc1bf1ee8c"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x450377562837997583c033b6ec4017c7c33e8ce3",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-0895267a5f9dedc3abde8e2b4b771f86",
+      "SGP2-42346a9ac18e126d7d38f433354f12f9",
+      "SGP2-5fce46c7df8ab8785bbbeb0dbea22904"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x473a053f9d93d9a8a1dfd87fcf3a566e304cee65",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-11f729d3f9912685b5c1ae1c2ead6a5c",
+      "SGP2-54cd201af67bb45996b7e1c27f336d60",
+      "SGP2-d1b4e98249009c49a8c497e1683e1bf9"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x493e045a42e795c9b692481a84fe881c37d32a67",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-022a5c20a410fe04c3d745b582c7783f",
+      "SGP2-3a5242d4c74a88cc119b0eb4f1c69ba7",
+      "SGP2-5493320b0f4a793af844c96d035667e5"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x5416eb96d8114aca35c2aa0a1aeeda77574a8dd3",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-031ef913eb3bb79a2f5bff9e394cda84",
+      "SGP2-61cc09e779a28f4ea14fd04194ea0db2",
+      "SGP2-fef12034c196cd095d21c90e61b20309"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x5426a389278400e358e8b7c25a15d7fc55912adf",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-50a42816be66f9759b114ad44bf33e97",
+      "SGP2-825385370f7164a4d102dea72298e617",
+      "SGP2-c6e126931ee25a07147876d4cbc8d227"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x56d8216b0fd2cdf9741b25f38606c19105679c12",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-84a0d24067e51cbaaea87792f2d02693",
+      "SGP2-df03176ba3fcf64453efce6e6352bc3d",
+      "SGP2-ec22647082e0d66ffec6bef9f22b2ff3"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x61b35e80ff02b3aac96ecdc4a33ba60f181b5607",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-6fa1e3dd8db8f1048c79f23135199f43",
+      "SGP2-af8f0b3ab2291744d6d674533ca6526f",
+      "SGP2-f8ed37e8fe8aca55fe9ce30ea54a69b1"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x62e4d6c2a8b7f36e7d365fcc0c2384c822eb5fba",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": true,
+    "assigned_to": [
+      "CODER_A",
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-1f9a910720cd8044831877693e323076",
+      "SGP2-4c5f0b6fd1ea7920606bed866a3d01ba",
+      "SGP2-feb8b40ba7d4dfa6b6c614195fbdbf79"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x6c6881b309ee7bb6563920c64b76f2d6e9fd7ddc",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-7cabaf186c8722b61163674a4800e8f9",
+      "SGP2-841d8aeb29c20c6147eac177a0e4c847",
+      "SGP2-c408c40a6cc162c9a65d88f2a63fa273"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x83c8dae5d739aedea90caa170c213e234456ea9d",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-18b3707cddfc300ec94b71997e7e5242",
+      "SGP2-560d03464de7919447e2d0e2c27b5fca",
+      "SGP2-60d1d80187d980f8c1bde02f1d5e4994"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x89f04f5c012eda374e38a7012aeb3cb43c90a52f",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": true,
+    "assigned_to": [
+      "CODER_A",
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-28b720242509f4617825d31752cdc457",
+      "SGP2-afca37b967df45bf5126cb689866d0c2",
+      "SGP2-c044abdf661b8a81ae3533e691b331d5"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x8b6fa45db4ef0445e39d960812893818e1a23870",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-1da187e7a797306a8bc5507bdf89aabd",
+      "SGP2-643c0ad3bc53e35192d9a55608f33fd1",
+      "SGP2-dee657d338602917109fc3981fa0a12a"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x8c91deb76359f5bf27342d606311e9738f444780",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-b3e43397be9ca2fd1facf7e5aff1b0a0",
+      "SGP2-c6bdf3558dbe0390acc8c0392723fb52",
+      "SGP2-fe0a23bae76fbb7c9311e207b7c17199"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0x9ff7d7f65ed4ba88ae51457faf0c8559f581d3c2",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-22c42bf5211315fdf3f5bbf7eaf148a5",
+      "SGP2-4a8f4af211e4062dafb233766b8a39b2",
+      "SGP2-fa03353fae7baac8aa82168ad0199ee9"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0xa23a0d67e734cfd85a544bdb1c7698726a9329ae",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-af1de41d43ffa5ca9d9510c827ab7c8c",
+      "SGP2-d606d73909ea984f229fbbf99190a793",
+      "SGP2-f3e924c701bca360d8ad2ab8079f8788"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0xa77be93ea4c6fd083d0e967951bee7de725ada8a",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-0f959682a1609adcc45ac2592077cb35",
+      "SGP2-144bf4cb501f2e993de63c2d25912e7c",
+      "SGP2-5fe148c9ed2d71388dce82ae06bed103"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0xa8b0dcc62e77343be2a9c7a8f52c7c601e9182ff",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": true,
+    "assigned_to": [
+      "CODER_A",
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-205f74c29b4b44244f21c567cffe794a",
+      "SGP2-ac2e4ed17701f02a259c33e723652451",
+      "SGP2-beb905846b6e584cd1e80bbb0ee0f78c"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0xab6328c4c0ea40ba447f5d7d0e23c33a542e49a2",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": true,
+    "assigned_to": [
+      "CODER_A",
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-99f68251a413ab424f63e08297bac55c",
+      "SGP2-9f731018096fb1c62fdb64218b11a94f",
+      "SGP2-ddcbc4b1e05c1bbf232da7ef77efa5c5"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0xace95cc99611c1a3e0f7d4afd01fe7abd89b2adc",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": true,
+    "assigned_to": [
+      "CODER_A",
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-0c326346788fbecf5fb96e552a171c98",
+      "SGP2-2e515c58f5420c83498a2ee708a7f390",
+      "SGP2-611d36e6b09362de26b010a79e627838"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0xaf35df0019595baec1f062a76ad5b33a29171aac",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-06bb4a0d03eac94337ed283a32d6a8e9",
+      "SGP2-90f20af85e38636ce9c9c2d867a3eb83",
+      "SGP2-ed332823b05a5789ef91bf45d91f1e11"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0xb47b29cda606cf7e7ed3672c8131eb8124ba3934",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-5c649f3637040d757df5a2e03cedc1b4",
+      "SGP2-7d0c46ec5176f066d908cb951c3b2f91",
+      "SGP2-da3081493f83f1ca8264c459335ee51a"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0xb97a251df2672b0e252b28a96857a8ace9929ccc",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-b68c55bbfabbaeff5d8c8d2aa815e4bc",
+      "SGP2-ba7d7cc0629d434678b34e65bb009384",
+      "SGP2-ba8fcc5b4364c677262ee289ab4e1e5b"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0xbe8ae140b2bf0a1d11e2b920e6bfa0fc9fe19c0f",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-2be8608e63e43a5dced089e8011c0baf",
+      "SGP2-887fb1e9a271d982ffd36cdabe093cf4",
+      "SGP2-dc4f869046967bfe0488980818e76300"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0xc24b1783dcde0d4f37e15b05842a6f135f6a4910",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-6a12c90f3b2cfea6b0c9da60e1b66ccd",
+      "SGP2-85a27502836811211feff104ae86bcc0",
+      "SGP2-c12aaef98f5ea270870f1e01bfefa6dc"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0xc7dca27f9d4c2192f564683ae5ce1fb72d6dd1ff",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-2344af103e8672e0bc0746c93542381f",
+      "SGP2-2f72cd2603c351a0644841023eeb876c",
+      "SGP2-dbfd4836ed8774517ab5e55d74cb2867"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0xd027379794dac07352a70013f9b0164359e89985",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-19f7b5094abfdd4855d72af18bb135ae",
+      "SGP2-b1da6ebd4450db882a20005f03074dda",
+      "SGP2-dd106175b6c11be7ae2ac60d2f0e8a2e"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0xd5019f75889fc91118fd23e0e2f3c8d8481e8725",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": true,
+    "assigned_to": [
+      "CODER_A",
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-0fd15340e0e1087f4f23974085699362",
+      "SGP2-3459f85d0f2b2517711cf1f673b36bac",
+      "SGP2-cbbcb9111f1a3a608533ed997ecce68d"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0xd599885feb6b2a3eebd205424fe0a9e308c2a510",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": true,
+    "assigned_to": [
+      "CODER_A",
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-84836ae9f6ada5cb52b7204e149f59e1",
+      "SGP2-ae987e3d2dd917acc1efe281665df36b",
+      "SGP2-fc44982c123c03597e782a7585190b98"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0xdc4910dad3399e9173193b61b6e234462ca187c7",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-0171c6d91e1a896ef98fabac5b329244",
+      "SGP2-0d5c94264a976aaff133b2569ddb3582",
+      "SGP2-417f9f0543dea472bb5c4b64f07ecd02"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0xe306ca9b38b7c71101c681609b13141eff8015d8",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": true,
+    "assigned_to": [
+      "CODER_A",
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-2d36e6fb555f9b7096638e8b191a383b",
+      "SGP2-460bd9f7da46f7c5be6295abde38d055",
+      "SGP2-849bfc65ba82061373234bd6b131b2db"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0xeea82370e6ea24a0377b96adff00d677b26a9d32",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-28e7b58981eb0d3d9547ad3f5be649a6",
+      "SGP2-54253af3cdc38d0ee9b3a68199a1e380",
+      "SGP2-d8d653172e4ed8e75b2f49df1c43dbea"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0xf65479790c38a5a551f5d90f4e4dbd8d7cbe6828",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_A"
+    ],
+    "row_handles": [
+      "SGP2-455e5eea5f0c55eca1ec8bc36a415c3c",
+      "SGP2-72d3ab4f94adfb17db169f75e9e191d1",
+      "SGP2-f6c96c0cf702dedd38c601c88076b579"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0xf740a4d6b0d35e3289af8f3a6767836744c3377a",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-1d4ca1f2b9b8d7c272056eb29a9f2120",
+      "SGP2-473982eb8f81eae8ec00d8ebf036d17a",
+      "SGP2-8c58d66b1fe78f8765621a1fe492ee52"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0xfb5c9b8259426156c245f94f22491682b8f406dd",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-6773b03a7d262116b46ab646e0af1fa6",
+      "SGP2-6eacbec4a0b6c8112b9885aa22fefd52",
+      "SGP2-a7dc42aaa6b9479af3f2d6b516efd85c"
+    ]
+  },
+  {
+    "case_id": "2022-07-01|0xfe01d37bdbf51bdbbeb53920a1c7488bc5c6a4ad",
+    "cutoff_date": "2022-07-01",
+    "split": "dev",
+    "shared_double_code": false,
+    "assigned_to": [
+      "CODER_B"
+    ],
+    "row_handles": [
+      "SGP2-92cd58d9be29ec1846ce8ff66dacfb71",
+      "SGP2-e9d689b020cffd7b1a6ca3650f7684ec",
+      "SGP2-ee71589e3e6a1cbf1ec57acc8e8c28b5"
+    ]
+  }
+]

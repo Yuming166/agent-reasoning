@@ -1,0 +1,6 @@
+{
+  "state": "LOCKED_PRE_PASS_A",
+  "pass_b_release_exists": false,
+  "release_condition": "PASS_A_CODER_A and PASS_A_CODER_B validate and are hash-locked",
+  "checked_at": "2026-09-21T16:52:40Z"
+}

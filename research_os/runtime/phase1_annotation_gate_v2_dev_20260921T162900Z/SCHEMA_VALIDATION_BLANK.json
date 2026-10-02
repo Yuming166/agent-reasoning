@@ -1,0 +1,25 @@
+{
+  "created_at": "2026-09-21T16:33:59Z",
+  "status": "PASS",
+  "allow_blank": true,
+  "protocol_version": "phase1_annotation_gate_v2_dev",
+  "package_dir": "research_os/runtime/phase1_annotation_gate_v2_dev_20260921T162900Z",
+  "pass_a": {
+    "path": "research_os/runtime/phase1_annotation_gate_v2_dev_20260921T162900Z/PASS_A_CODER_A_BLANK.csv",
+    "sha256": "feb52a1e0d14a1242132adaa0bd4e20d48080b9ab59a2820cfb651ef36a1f93b",
+    "rows": 300,
+    "required_annotation_cells": 5700
+  },
+  "pass_b": {
+    "path": "research_os/runtime/phase1_annotation_gate_v2_dev_20260921T162900Z/PASS_B_CODER_A_BLANK.csv",
+    "sha256": "877a8858961c839540fe59fd94a4186ee653ab0ac33c10167dc186681e32836c",
+    "rows": 300,
+    "required_annotation_cells": 5700
+  },
+  "error_count": 0,
+  "errors": [],
+  "errors_truncated": false,
+  "future_outcomes_joined": false,
+  "f_delta_joined": false,
+  "August_test_joined": false
+}

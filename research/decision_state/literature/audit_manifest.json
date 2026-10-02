@@ -1,0 +1,37 @@
+{
+  "audit_date": "2026-09-19",
+  "status": "PRELIMINARY_DATED_TITLE_ABSTRACT_SOURCE_AUDIT",
+  "project": "EX-Graph Ethereum temporal behavior research",
+  "research_question": "Can an LLM generate provenance-linked, competing behavioral hypotheses for an external Ethereum address that survive evidence interventions and predict future address behavior?",
+  "buckets": [
+    "blockchain transaction intent inference / DeFi intent mining",
+    "wallet behavioral state / behavioral regime / address profiling",
+    "LLM latent state / intention inference from behavior",
+    "financial Theory of Mind / recursive belief / expectation inference",
+    "future-validated hypothesis generation / behavioral hypothesis testing",
+    "intervention / counterfactual verification of inferred intent"
+  ],
+  "candidate_count": 15,
+  "matrix": "claim_matrix.csv",
+  "report": "LITERATURE_GAP_AUDIT_20260919.md",
+  "provisional_decision": "PRELIMINARY_PASS_WITH_NARROW_NOVELTY",
+  "novelty_boundary": [
+    "address-level persistent hypothesis rather than single-transaction intent",
+    "open natural-language hypotheses with closed observable consequence schema",
+    "competing explanations and evidence provenance",
+    "relevant-vs-placebo intervention checks",
+    "frozen out-of-sample future behavior verification"
+  ],
+  "deferred": [
+    "Level-2 relational expectation / Theory-of-Mind-like inference",
+    "large Astra6 experiment",
+    "broad no-prior-work claim",
+    "structural anomaly / Temporal GNN rescue"
+  ],
+  "limitations": [
+    "No complete backward/forward citation chaining yet",
+    "No full-text/code/data execution for every candidate",
+    "Unknown code/data fields are not negative evidence",
+    "Preliminary source audit, not a systematic review"
+  ]
+}

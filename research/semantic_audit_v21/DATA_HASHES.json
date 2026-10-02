@@ -1,0 +1,108 @@
+{
+  "created_at": "2026-09-20T14:45:47Z",
+  "hash_algorithm": "sha256",
+  "entries": [
+    {
+      "path": "research/decision_state/results/deterministic_baseline_predictions.csv",
+      "exists": true,
+      "bytes": 1050639,
+      "sha256": "50050ee4452b93215f433fe2ef4b5e17f82610bfc8e12e2d2bff702c36c8ed4c"
+    },
+    {
+      "path": "research/decision_state/results/decision_state_meta_predictions.csv",
+      "exists": true,
+      "bytes": 3614274,
+      "sha256": "bdba1b317ad1bcc2a09297f138ff3153668ff756f188cf50d2a215b60b396765"
+    },
+    {
+      "path": "research/decision_state/results/decision_state_eval_cases.csv",
+      "exists": true,
+      "bytes": 561124,
+      "sha256": "6fc4d84748df69ecdd6ad5ca0f790c0d54b078d39030a4d80ab4af85bcfec03f"
+    },
+    {
+      "path": "research/decision_state/results/decision_state_llm_features.csv",
+      "exists": true,
+      "bytes": 1588199,
+      "sha256": "df2cc26ae26ca5b3f704d79da64fbc3a8becbf594fea643bdf3ca3048c7e8e45"
+    },
+    {
+      "path": "research/decision_state/results/decision_state_intervention_case_metrics.csv",
+      "exists": true,
+      "bytes": 1239966,
+      "sha256": "2aae34c7b62945af29aaaa006a0db55df33f11323efb534075ea77e88f9eae68"
+    },
+    {
+      "path": "research/decision_state/results/decision_state_intervention_summary.csv",
+      "exists": true,
+      "bytes": 2745,
+      "sha256": "8a747bd816f35c25ef8bced793318003ae6dc28d8ecdb72773da6bb08ad5ffe6"
+    },
+    {
+      "path": "research/decision_state/results/decision_state_loss_delta_long.csv",
+      "exists": true,
+      "bytes": 5146073,
+      "sha256": "bacd06b82e36c554be35d7eee083eb54cdb0f2056167dd014ff56da7e9e451b7"
+    },
+    {
+      "path": "research/decision_state/results/decision_state_metrics.csv",
+      "exists": true,
+      "bytes": 6496,
+      "sha256": "c65c97c5dbb829bb2ff7902d3e2601c41ea12a0645dbbb1c27d36b2e57861a03"
+    },
+    {
+      "path": "research/decision_state/results/decision_state_bootstrap.csv",
+      "exists": true,
+      "bytes": 479,
+      "sha256": "7af2319622d8caa257e5d7f9676a9c989ebe691f05d16f7a1b7b611763925113"
+    },
+    {
+      "path": "research/decision_state/results/decision_state_stratum_metrics.csv",
+      "exists": true,
+      "bytes": 34665,
+      "sha256": "cb4221174e7b6ea448d8d04c042e16b28125755a06c07dddc2bc974c5321c85e"
+    },
+    {
+      "path": "research/decision_state/results/decision_state_case_manifest.json",
+      "exists": true,
+      "bytes": 5766,
+      "sha256": "d0735534d26f53ff1c738856a8dbe98356ffcd05ecd0a02f079b688ba78a3f16"
+    },
+    {
+      "path": "research/decision_state/results/decision_state_evaluation_manifest.json",
+      "exists": true,
+      "bytes": 922,
+      "sha256": "b35a4a8422ee020a290f6d2bd98e81a041a221e95cf9bc6bc590edf3dd949a77"
+    },
+    {
+      "path": "research/decision_state/results/decision_state_input_audit.json",
+      "exists": true,
+      "bytes": 127,
+      "sha256": "cd1eea0cbe3621a8a2296545594202bc1897c9c87eb47c336af8deb47ddbacf8"
+    },
+    {
+      "path": "research/decision_state/results/deterministic_baseline_manifest.json",
+      "exists": true,
+      "bytes": 2520,
+      "sha256": "04b1404d8d31d6975b79a9553543ac3cb51c0d9d5922a589f3472961beead0e0"
+    },
+    {
+      "path": "research/decision_state/results/hypothesis_panel_full.jsonl",
+      "exists": true,
+      "bytes": 43503350,
+      "sha256": "047f999c1dde6b2f47d7601f3bb41fe6a457b6dbad028932e0469b95e7effe2b"
+    },
+    {
+      "path": "research/decision_state/results/hypothesis_panel_full.manifest.json",
+      "exists": true,
+      "bytes": 453,
+      "sha256": "2ccda847b7409003b535c3cd8025c8fd481d412227a77c612336ed0be9fd9970"
+    },
+    {
+      "path": "research/openworld/ow010b/data/ow010b_future_outcomes_evaluation_only.csv",
+      "exists": true,
+      "bytes": 16610993,
+      "sha256": "13ccd6a307346b24d41a52fec980e7b8858c3f455b06506ca0250247a557fc9a"
+    }
+  ]
+}

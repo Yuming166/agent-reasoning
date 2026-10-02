@@ -1,0 +1,11 @@
+{
+  "charter_sha256": "87150bad66f72a995d5f928ef87ec0b53c10ba1c4cc6bae0e51b40fa822972dd",
+  "cycle_id": "20260920T101512Z",
+  "mode": "initial_deployment_cycle_discovery_first",
+  "model": "gpt-6-astra",
+  "no_fallback": true,
+  "pid": 555402,
+  "python": "/storage/gaoym/ex-graph-microtransaction-analysis/.venv-cuda/bin/python",
+  "root": "/storage/gaoym/ex-graph-microtransaction-analysis",
+  "started_at": "2026-09-20T10:15:12Z"
+}

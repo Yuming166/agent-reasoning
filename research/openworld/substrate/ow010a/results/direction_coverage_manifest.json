@@ -1,0 +1,12 @@
+{
+  "query_name": "direction_coverage",
+  "sql_sha256": "eefaae74ce2813cba52c88bc7488585f3c283a23344e9c1414881fab51ad4604",
+  "job_id": "job_sg4V_iLPSjxSlfzFMtthGDUJE8nS",
+  "dry_bytes_processed": 3313560,
+  "bytes_processed": 3313560,
+  "bytes_billed": 10485760,
+  "cache_hit": false,
+  "row_count": 12,
+  "raw_rows_not_exported": true,
+  "output": "/storage/gaoym/ex-graph-microtransaction-analysis/research/openworld/substrate/ow010a/results/direction_coverage.csv"
+}

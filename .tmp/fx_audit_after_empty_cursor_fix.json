@@ -1,0 +1,68 @@
+{
+  "summary": {
+    "parent_run_id": "fx_authorized_batch_20260924T172410Z",
+    "target_start_inclusive_utc": "2026-01-01T00:00:00Z",
+    "target_end_exclusive_utc": "2026-09-24T17:24:10.261624Z",
+    "accounts_in_original_allowlist": 12,
+    "new_account_ids_added": 0,
+    "accounts_with_pagination_to_target_boundary": 2,
+    "accounts_truncated_or_uncertain": 10,
+    "unique_owner_verified_tweets_in_window": 1341,
+    "post_kind_counts": {
+      "original": 166,
+      "quote": 58,
+      "reply": 43,
+      "repost": 1074
+    },
+    "identity_issue_count": 0,
+    "continuation_http_attempts_logged": 79,
+    "max_http_attempts_cumulative": 3600,
+    "attempt_budget_audit": {
+      "known_attempt_count": 94,
+      "global_limit": 3600,
+      "global_overage": false,
+      "per_page_overages": [
+        {
+          "x_user_id": "778524746824593411",
+          "page": 1,
+          "cursor_in": "",
+          "attempts": 9,
+          "limit": 3
+        }
+      ],
+      "history_issues": [],
+      "within_budget": false
+    },
+    "legacy_request_ids_resolved_from_frozen_sample": 15,
+    "raw_parent_untouched": true
+  },
+  "manifest": {
+    "run_id": "continuation_20260924_fixed_window",
+    "parent_run_id": "fx_authorized_batch_20260924T172410Z",
+    "created_at_utc": "2026-09-24T17:31:45.235900Z",
+    "authorization_basis": "User confirmed in this conversation that FxEmbed collection is authorized; no authorization document copied into this artifact.",
+    "source": "FxEmbed public v2 timeline endpoint; stable X user ID path; no X API, login, or follower/following endpoint used.",
+    "target_start_inclusive_utc": "2026-01-01T00:00:00Z",
+    "target_end_exclusive_utc": "2026-09-24T17:24:10.261624Z",
+    "parent_run_is_immutable": true,
+    "allowlist_inherited_unchanged": true,
+    "account_count": 12,
+    "new_account_ids_added": 0,
+    "prior_timeline_logical_pages": 86,
+    "global_page_limit_total_including_parent": 1200,
+    "max_new_timeline_pages": 1114,
+    "max_total_pages_per_account": 250,
+    "request_delay_seconds": 1.0,
+    "retry_limit": 3,
+    "identity_semantics": "For reposts, timeline owner is reposted_by.id and source author is author.id; for non-reposts, timeline owner is author.id.",
+    "content_semantics": "Retweet source text is not treated as authored_text; raw responses are retained locally.",
+    "source_conditions_note": "User authorization to use FxEmbed recorded. FxEmbed API docs describe endpoints/pagination but do not themselves establish X downstream republication rights; X terms must be checked separately before public release.",
+    "parent_run_manifest_sha256": "7c4aec97e79612e0ba565700497df972a2f792b25667fdb0d9d53ae9999d6306",
+    "sample_manifest_sha256": "439a610fb50521f86542f78070e9c0a3672f22ff849fcb2d7d056ae046e391bf",
+    "account_ids_sha256": "20efe2a1ecb881b21b8ad89211e563e519c75fd4207dd7453eaea461b2c40d54",
+    "max_attempts_per_logical_page_cumulative": 3,
+    "max_http_attempts_cumulative": 3600,
+    "attempt_budget_ledger": "attempt_budget.jsonl"
+  }
+}
+PLAN [{"handle": "Enschile", "status": "terminal_coverage_requires_review", "terminal_integrity_issue": "pagination_order_violation", "next_page": null, "prior_logical_pages": 10, "prior_successful_pages": 10, "cumulative_http_attempts_for_page": null}, {"handle": "Costly_eth", "status": "terminal_coverage_requires_review", "terminal_integrity_issue": "pagination_order_violation", "next_page": null, "prior_logical_pages": 10, "prior_successful_pages": 10, "cumulative_http_attempts_for_page": null}, {"handle": "saykoth122", "status": "terminal_coverage_requires_review", "terminal_integrity_issue": "pagination_order_violation", "next_page": null, "prior_logical_pages": 6, "prior_successful_pages": 6, "cumulative_http_attempts_for_page": null}, {"handle": "Aart_Web3", "status": "terminal_coverage_requires_review", "terminal_integrity_issue": "pagination_order_violation", "next_page": null, "prior_logical_pages": 2, "prior_successful_pages": 2, "cumulative_http_attempts_for_page": null}, {"handle": "caligetsbaked", "status": "resume_from_cursor", "terminal_integrity_issue": null, "next_page": 3, "prior_logical_pages": 2, "prior_successful_pages": 2, "cumulative_http_attempts_for_page": null}, {"handle": "CryptoBaggerETH", "status": "already_reached_start_boundary", "terminal_integrity_issue": null, "next_page": null, "prior_logical_pages": 1, "prior_successful_pages": 1, "cumulative_http_attempts_for_page": null}, {"handle": "elmalandr0", "status": "resume_from_cursor", "terminal_integrity_issue": null, "next_page": 45, "prior_logical_pages": 44, "prior_successful_pages": 44, "cumulative_http_attempts_for_page": null}, {"handle": "ethany_eth", "status": "resume_from_cursor", "terminal_integrity_issue": null, "next_page": 3, "prior_logical_pages": 2, "prior_successful_pages": 2, "cumulative_http_attempts_for_page": null}, {"handle": "0xwonj", "status": "terminal_coverage_requires_review", "terminal_integrity_issue": "pagination_order_violation", "next_page": null, "prior_logical_pages": 2, "prior_successful_pages": 2, "cumulative_http_attempts_for_page": null}, {"handle": "hoteths", "status": "already_reached_start_boundary", "terminal_integrity_issue": null, "next_page": null, "prior_logical_pages": 1, "prior_successful_pages": 1, "cumulative_http_attempts_for_page": null}, {"handle": "TheDonTuan", "status": "terminal_coverage_requires_review", "terminal_integrity_issue": "pagination_order_violation", "next_page": null, "prior_logical_pages": 5, "prior_successful_pages": 5, "cumulative_http_attempts_for_page": null}, {"handle": "WeWake_eth", "status": "terminal_retry_budget_exhausted", "terminal_integrity_issue": null, "next_page": null, "prior_logical_pages": 1, "prior_successful_pages": 0, "cumulative_http_attempts_for_page": 9}]

@@ -1,0 +1,40 @@
+{
+  "B4_failure_rate": 0.4635,
+  "B4_gain_rate": 0.5365,
+  "Delta_definition": "existing frozen B4_M1_VERIFIED_LLM macro log-loss minus B0_M1 macro log-loss",
+  "F_definition": "existing frozen intervention_sensitivity = average of self/market JS distances over four consequence dimensions",
+  "F_vs_Delta_pearson": -0.033421075141118355,
+  "F_vs_Delta_spearman": -0.019366415512223897,
+  "F_vs_validity_proxy_spearman": 0.019366415512223897,
+  "controls_categorical": [
+    "split",
+    "activity_bin",
+    "dominant_event_family_30d"
+  ],
+  "controls_numeric": [
+    "history_length_log1p_events_30d",
+    "history_event_count_30d",
+    "event_count_7d",
+    "llm_top_probability",
+    "llm_abstain",
+    "hypothesis_entropy_nats",
+    "panel_repeat_wallet"
+  ],
+  "discovery_only": true,
+  "future_outcomes_used_only_from_frozen_evaluation_artifact": true,
+  "high_F_failure_n": 50,
+  "low_F_success_n": 50,
+  "mean_Delta_B4_minus_B0": 0.023495422489501656,
+  "median_Delta_B4_minus_B0": -0.01128167920794115,
+  "n_all_source_rows": 3000,
+  "n_oos_rows": 2000,
+  "no_new_llm_calls": true,
+  "partial_pearson_F_vs_Delta_controls": -0.03831504464680598,
+  "source": "/storage/gaoym/ex-graph-microtransaction-analysis/research/decision_state/results/decision_state_case_degradation_analysis.csv",
+  "source_sha256": "b0ffa7075fc86586e617e2e99234418c25f11d714ca849baad6c04dc90a1e486",
+  "splits": {
+    "dev": 1000,
+    "test": 1000
+  },
+  "status": "DISCOVERY_AUDIT_COMPLETE"
+}

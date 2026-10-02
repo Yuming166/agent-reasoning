@@ -1,0 +1,35 @@
+{
+  "created_at": "2026-09-20T14:45:47Z",
+  "hash_algorithm": "sha256",
+  "entries": [
+    {
+      "path": "research/decision_state/src/run_hypothesis_panel.py",
+      "exists": true,
+      "bytes": 12283,
+      "sha256": "97b263768383d635d0f03e261d9914f879ec9c9e01bbceedf47d9a71279e44d9"
+    },
+    {
+      "path": "research/decision_state/results/decision_state_prompt_cases.csv",
+      "exists": true,
+      "bytes": 1312669,
+      "sha256": "664c0118dfba37d52f6c39127b98607565fad14cc8861d72554a16f9500f322a"
+    },
+    {
+      "path": "research/decision_state/results/hypothesis_panel_full.manifest.json",
+      "exists": true,
+      "bytes": 453,
+      "sha256": "2ccda847b7409003b535c3cd8025c8fd481d412227a77c612336ed0be9fd9970"
+    },
+    {
+      "path": "research/decision_state/protocol/DECISION_STATE_PROTOCOL_V1.md",
+      "exists": true,
+      "bytes": 6745,
+      "sha256": "2a03aaf9d726c756e6b62b6683ac2b7862f1d1a8d89c6576cf063432b8b13b94"
+    }
+  ],
+  "frozen_panel_prompt_hash_summary": {
+    "panel_path": "research/decision_state/results/hypothesis_panel_full.jsonl",
+    "records": 12000,
+    "unique_prompt_sha256": 6798
+  }
+}

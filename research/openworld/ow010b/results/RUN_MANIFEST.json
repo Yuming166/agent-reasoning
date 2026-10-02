@@ -1,0 +1,115 @@
+{
+  "auxiliary_metrics": {
+    "corrected_after_initial_reporting_only_alignment_bug": true,
+    "per_dimension_incremental": "computed against training-standardized 7d targets",
+    "primary_models_unchanged": true,
+    "scalar_surprise_incremental": "computed against training-standardized 7d targets"
+  },
+  "bootstrap_replicates": 2000,
+  "counts": {
+    "dev": 15736,
+    "test": 14683,
+    "train": 17156
+  },
+  "cutoffs": [
+    "2022-06-01",
+    "2022-07-01",
+    "2022-08-01"
+  ],
+  "experiment_id": "OW-010B",
+  "external_label_source_accessed": false,
+  "feature_registry_sha256": "96582b5b4fbf367656544853d0ef4e66316cd98adfcbff8314fb27d489562801",
+  "final_reports": {
+    "codex_response_sha256": "bc047eb6a068353c128be0a6260c84d39bc33efce58f552b2a0fc4cce189354f",
+    "decision_sha256": "63ba98b7d71358959fcbea27cc5186d174de2322b2542b3d40b414a571ae2b36",
+    "red_team_report_sha256": "f0355281aa58f51f9894d5397bfc4ecba6373d10426695fd848fe3238d45dd69",
+    "result_report_sha256": "21e8ff564dae689e33668ab6aba4d45147966b7d82dc7f59e59d9e5f8d69d452"
+  },
+  "input_manifest_sha256": "48a10e93c74dd8aa8c8435977f4b44df4142bc705ebc80dcdba7efb021099998",
+  "model_families": [
+    "ridge",
+    "hist_gradient_boosting"
+  ],
+  "notes": [
+    "August is one held-out temporal cutoff; July is development, not an independent test.",
+    "No matching, GNN, or latent-strategy track was run."
+  ],
+  "old_ow009_local_artifact_used": false,
+  "posthoc_review": {
+    "astra6_critique": "reports/ASTRA6_POSTHOC_CRITIQUE.json",
+    "codex_response": "reports/CODEX_RESPONSE_TO_CRITIQUE.md",
+    "decision": "NO_GO_OPENWORLD_STRUCTURAL_SIGNAL",
+    "red_team": "reports/OW010B_RED_TEAM_REPORT.md"
+  },
+  "preregistration_sha256": "be137e844be4013080f158c31c2d42419f806f11dca25809168958020592255d",
+  "primary_protocol_changed_after_test": false,
+  "qa": {
+    "dev_rows": 15736,
+    "discovery_rows_by_cutoff": {
+      "2022-06-01": 17156,
+      "2022-07-01": 15736,
+      "2022-08-01": 14683
+    },
+    "feature_cutoffs": [
+      "2022-06-01",
+      "2022-07-01",
+      "2022-08-01"
+    ],
+    "feature_data_roles": {
+      "DISCOVERY_ONLY": 82839
+    },
+    "feature_duplicate_keys": 0,
+    "feature_outcome_key_diff": 0,
+    "feature_rows": 82839,
+    "future30_complete_by_cutoff": {
+      "2022-06-01": 27613,
+      "2022-07-01": 27613,
+      "2022-08-01": 27613
+    },
+    "future7_complete_by_cutoff": {
+      "2022-06-01": 27613,
+      "2022-07-01": 27613,
+      "2022-08-01": 27613
+    },
+    "history_eligible_score_key_diff": 0,
+    "history_ge1_2022-06-01": 17156,
+    "history_ge1_2022-07-01": 15736,
+    "history_ge1_2022-08-01": 14683,
+    "outcome_cutoffs": [
+      "2022-06-01",
+      "2022-07-01",
+      "2022-08-01"
+    ],
+    "outcome_data_roles": {
+      "EVALUATION_ONLY": 82839
+    },
+    "outcome_duplicate_keys": 0,
+    "outcome_evaluation_only_false": 0,
+    "outcome_rows": 82839,
+    "primary_rows_by_cutoff": {
+      "2022-06-01": 17156,
+      "2022-07-01": 15736,
+      "2022-08-01": 14683
+    },
+    "score_cutoffs": [
+      "2022-06-01",
+      "2022-07-01",
+      "2022-08-01"
+    ],
+    "score_direction_sum_mismatch": 0,
+    "score_duplicate_keys": 0,
+    "score_event_count_feature_mismatch": 0,
+    "score_family_sum_mismatch": 0,
+    "score_rows": 47575,
+    "target_y7_finite_rows": 47575,
+    "test_rows": 14683,
+    "train_rows": 17156
+  },
+  "run_timestamp_utc": "2026-09-18T15:14:00.044100+00:00",
+  "runner_sha256": "0921589ef9517ad20ad1307fd8c1457834e6e6aff2f7e3dbd20d35e1ef7c716e",
+  "score_sql_sha256": "0e1e9784aab0c30ba1d739a9788f9aca61d4756d5285378c1405815ce49fa51c",
+  "split_manifest_sha256": "84888f58b3caf7f3c7ed6ae22a95480717b7c2ea7bf8c6e1ff2f8f44a6542345",
+  "status": "PRIMARY_AND_SECONDARY_EXECUTED",
+  "target_spec_sha256": "4c81e75351eb3e7c7b0c44f73e2a4370fc2e8c38749607064b144a29a3840c68",
+  "wash_label_accessed": false
+}

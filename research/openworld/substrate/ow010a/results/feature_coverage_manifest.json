@@ -1,0 +1,12 @@
+{
+  "query_name": "feature_coverage",
+  "sql_sha256": "04eb0820c0c8f1e238ff9881f29a1fe09e56b5fa4e3c7a691b8d6452e0d51875",
+  "job_id": "job_zPVts1u3rBq1hqbN7Lhx_cY_SUH1",
+  "dry_bytes_processed": 12603120,
+  "bytes_processed": 12603120,
+  "bytes_billed": 20971520,
+  "cache_hit": false,
+  "row_count": 67,
+  "raw_rows_not_exported": true,
+  "output": "/storage/gaoym/ex-graph-microtransaction-analysis/research/openworld/substrate/ow010a/results/feature_coverage.csv"
+}

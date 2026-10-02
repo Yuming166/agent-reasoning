@@ -1,0 +1,23 @@
+{
+  "created_at": "2026-09-20T13:58:54Z",
+  "status": "PASS",
+  "allow_blank": true,
+  "package_dir": "/storage/gaoym/ex-graph-microtransaction-analysis/research_os/runtime/lunamax_artifact_audit_20260920T132829Z/semantic_gate_v2_1",
+  "pass_a": {
+    "path": "/storage/gaoym/ex-graph-microtransaction-analysis/research_os/runtime/lunamax_artifact_audit_20260920T132829Z/semantic_gate_v2_1/annotator_templates/coder_a/PASS_A.csv",
+    "sha256": "ba50d7bc667ca23d8cb81bc18c18dc9617b414f5cf6f214935c0302957e9f57c",
+    "rows": 300,
+    "missing_cells": 600
+  },
+  "pass_b": {
+    "path": "/storage/gaoym/ex-graph-microtransaction-analysis/research_os/runtime/lunamax_artifact_audit_20260920T132829Z/semantic_gate_v2_1/annotator_templates/coder_a/PASS_B.csv",
+    "sha256": "fe381a6005025787c5d4080d5acb6f5ba4ba1d2ce1ca62aacb75b81f5f99b3aa",
+    "rows": 300,
+    "missing_cells": 2700
+  },
+  "error_count": 0,
+  "errors": [],
+  "errors_truncated": false,
+  "future_outcomes_joined": false,
+  "f_delta_joined": false
+}

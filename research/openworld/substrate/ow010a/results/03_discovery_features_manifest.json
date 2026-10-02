@@ -1,0 +1,11 @@
+{
+  "query_name": "03_discovery_features",
+  "sql_path": "research/openworld/substrate/ow010a/sql/03_discovery_features.sql",
+  "sql_sha256": "739d6fd9477b51f454a82edc38f242ebfd188d67e89f13ad310b00e5e7312623",
+  "destination_table": "ictdata-507912.exgraph.openworld_wallet_cutoff_features_v1",
+  "job_id": "job_f19tdkLAoUUQkRCUHkSIRdFyylzk",
+  "bytes_processed": 4739749254,
+  "bytes_billed": 4740612096,
+  "cache_hit": false,
+  "raw_rows_not_exported": true
+}

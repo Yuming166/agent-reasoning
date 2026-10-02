@@ -1,0 +1,12 @@
+{
+  "query_name": "candidate_counts_by_cutoff",
+  "sql_sha256": "4a4a455966dd16aaff41dc61c8dda17b2b3df1d428a99ad88081ee0560c226d1",
+  "job_id": "job_7C_ynC_nhSiSMAZ9VeXp-a7V4c9J",
+  "dry_bytes_processed": 2070975,
+  "bytes_processed": 0,
+  "bytes_billed": 0,
+  "cache_hit": true,
+  "row_count": 42,
+  "raw_rows_not_exported": true,
+  "output": "/storage/gaoym/ex-graph-microtransaction-analysis/research/openworld/substrate/ow010a/results/candidate_counts_by_cutoff.csv"
+}

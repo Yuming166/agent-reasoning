@@ -1,0 +1,10 @@
+{
+  "query_name": "05_population_summary",
+  "sql_path": "research/openworld/substrate/ow010a/sql/05_population_summary.sql",
+  "sql_sha256": "04a17feb7dc9fa31574138ac604364a10c34a5890fc92d157539ec0e9b53f7e7",
+  "job_id": "job_WSzWqFdrnzMxcUdaDbZeIAkrCe9r",
+  "bytes_processed": 5863599,
+  "bytes_billed": 10485760,
+  "cache_hit": false,
+  "row_count": 78
+}

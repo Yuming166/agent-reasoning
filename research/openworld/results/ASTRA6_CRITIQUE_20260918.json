@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-18",
+  "provider": "private Astra6 relay",
+  "model": "gpt-6-astra",
+  "request_type": "bounded_pilot_critique",
+  "chain_of_thought": "not requested or stored",
+  "advice": {
+    "decision": "stop_as_underpowered",
+    "why": "样本量未达预注册coverage，信号不稳定且不胜过基线；SMD>0.8使效应估计不可作有效性判断。",
+    "one_day_plan": [
+      "冻结并版本化当前结果及预注册偏离记录",
+      "逐cutoff记录coverage、bootstrap和基线比较失败项",
+      "停止调参、重筛、外部标签训练及大规模LLM批处理",
+      "记录event-level数据缺口与未来复启所需条件",
+      "将项目结论标记为underpowered，不作有效性结论"
+    ],
+    "new_go_gate": [
+      "每个cutoff候选数≥2000且top5%事件数≥100",
+      "所有匹配协变量绝对SMD≤0.10",
+      "3/3 cutoff bootstrap CI下限>1.00且稳定高于volume/activity baseline"
+    ],
+    "do_not_claim": [
+      "不得声称检测器有效或具有优势",
+      "不得声称rapid-forward或in/out change",
+      "不得将open-world lift或低Jaccard解释为泛化能力"
+    ]
+  }
+}

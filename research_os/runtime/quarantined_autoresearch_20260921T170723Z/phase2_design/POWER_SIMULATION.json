@@ -1,0 +1,6 @@
+{
+  "status": "NOT_RUN_ASTRA6_RELAY_FAILURE",
+  "classification": "CONDITIONAL_DRAFT_DO_NOT_EXECUTE",
+  "simulated_effect_sizes": [0.005, 0.01, 0.02, 0.03],
+  "simulation_executed": false
+}

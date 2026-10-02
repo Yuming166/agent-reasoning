@@ -1,0 +1,25 @@
+{
+  "created_at": "2026-09-21T16:17:57Z",
+  "status": "PASS",
+  "allow_blank": true,
+  "package_dir": "/storage/gaoym/ex-graph-microtransaction-analysis/research_os/runtime/phase1_annotation_gate_20260921T161510Z",
+  "pass_a": {
+    "path": "/storage/gaoym/ex-graph-microtransaction-analysis/research_os/runtime/phase1_annotation_gate_20260921T161510Z/PASS_A_TEXT_ONLY_BLIND.csv",
+    "sha256": "5cf9d120719518348471a52e254859f20a1ef1d106a2424e29595229dbcc9404",
+    "rows": 300,
+    "required_cells": 2700,
+    "missing_required_cells": 2700
+  },
+  "pass_b": {
+    "path": "/storage/gaoym/ex-graph-microtransaction-analysis/research_os/runtime/phase1_annotation_gate_20260921T161510Z/PASS_B_STRUCTURED_REVIEW_LOCKED.csv",
+    "sha256": "805248a24904d6a8db6fbb6d7081e781e96875d33c0c34f5380687ef959c097a",
+    "rows": 300,
+    "required_cells": 2700,
+    "missing_required_cells": 2700
+  },
+  "error_count": 0,
+  "errors": [],
+  "errors_truncated": false,
+  "future_outcomes_joined": false,
+  "f_delta_joined": false
+}

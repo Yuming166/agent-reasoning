@@ -1,0 +1,11 @@
+{
+  "run_dir": "/storage/gaoym/ex-graph-microtransaction-analysis/research_os/runtime/lunamax_smoke_20260921T171319Z",
+  "model": "gpt-5.6-luna",
+  "mode": "read_only_service_smoke",
+  "return_code": 0,
+  "elapsed_seconds": 13,
+  "output_exists": true,
+  "exact_match": true,
+  "result_sha256": "a2dddb2a9cd5378ab3ab9baed9d75c72f667b89d61acdc886bc650991cec3775",
+  "stderr_tail": "OpenAI Codex v0.154.0\n--------\nworkdir: /storage/gaoym/ex-graph-microtransaction-analysis\nmodel: gpt-5.6-luna\nprovider: custom\napproval: never\nsandbox: read-only\nreasoning effort: max\nreasoning summaries: none\nsession id: 01a0c4f5-359e-75a3-b53f-1424d5e92871\n--------\nuser\nReply with exactly: LUNAMAX_CONNECTION_OK\nThis is only a service smoke test. Do not inspect project files or perform scientific reasoning.\n\nwarning: Codex's Linux sandbox uses bubblewrap and needs access to create user namespaces.\ncodex\nLUNAMAX_CONNECTION_OK\ntokens used\n9,027\n"
+}

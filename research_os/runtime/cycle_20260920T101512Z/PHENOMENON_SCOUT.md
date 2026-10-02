@@ -1,0 +1,56 @@
+## 1. Verdict by branch (A-F; SUPPORT / HOLD / MODIFY / KILL / UNTESTED)
+
+| Branch | Verdict | Basis |
+|---|---|---|
+| **A: Evidence-Validity Gap** | **SUPPORT** | A narrow, discovery-level gap between intervention sensitivity and relative predictive gain is supported. Semantic validity and generalization remain unverified. |
+| **B: Behavioral Equifinality** | **UNTESTED** | No comparison establishes that distinct behavioral hypotheses remain equally compatible with the same observations. |
+| **C: Falsifiable Behavioral Hypothesis Induction** | **MODIFY** | V1 effectiveness remains **NO-GO**. Further investigation needs direct scoring of explicit language claims and their observable consequences. |
+| **D: Behavioral Hypothesis Revision** | **UNTESTED** | Responses to evidence interventions do not establish successful longitudinal hypothesis revision. |
+| **E: Predictability × Interpretability** | **UNTESTED** | Prediction was evaluated; interpretability was not independently measured. Intervention sensitivity cannot substitute for that measurement. |
+| **F: Identifiability-Aware Selective Inference** | **HOLD** | Case gains vary, but neither identifiability nor useful selection before observing outcomes has been demonstrated. |
+
+These research-direction verdicts leave every frozen NO-GO unchanged.
+
+## 2. Strongest evidence
+
+Define \(\Delta=\text{loss}(B4)-\text{loss}(B0)\), so positive values mean degradation.
+
+- **Little observed linear or monotonic association:** Pearson \(r(F,\Delta)=-0.0334\); Spearman \(r(F,-\Delta)=0.0194\); adjusted Pearson \(=-0.0383\). The supplied summaries show little simple ordering of relative predictive validity by sensitivity.
+- **Aggregate degradation despite frequent gains:** pooled mean \(\Delta=+0.023495\), median \(=-0.011282\), and 53.65% of cases improve. Losses outweigh gains in aggregate; their concentration in extreme cases is not reported.
+- **Reported discordant cases:** the audit supplies sets of 50 high-sensitivity degradation cases and 50 low-sensitivity improvement cases. These selected examples provide no prevalence estimate without selection rules and denominators.
+- **The frozen effectiveness failure remains decisive:** August B4 loss was 0.840193 versus B0’s 0.810633. The corresponding degradation was \(+0.029560\), with paired 95% CI \([+0.003166,+0.056690]\).
+
+Thus, responsiveness does not provide a demonstrated case-level certificate of predictive benefit.
+
+## 3. Strongest counterargument
+
+The two proxies do not directly measure evidential faithfulness and semantic validity. **F measures response magnitude**, averaged across interventions and consequences; **Δ measures the performance difference between prediction systems**. B4 miscalibration or feature-fitting problems could produce degradation even when a textual hypothesis is defensible.
+
+Pooling development and test, averaging consequence dimensions, repeated wallets, and nonlinear or opposing subgroup relationships could also conceal associations. Near-zero correlations without uncertainty bounds do not establish independence. July’s group-level relevant-versus-placebo result does not verify responsiveness for each audited case.
+
+The dossier supplies summary statistics, but not the underlying rows or quintile results; independent numerical reproduction is therefore unavailable here.
+
+## 4. Cheapest decisive experiment
+
+Run a **registered, diagnostic falsification audit of existing frozen artifacts**, with no new LLM generation:
+
+1. Reproduce the metrics separately for development and test. Report existing F-quintile loss summaries and wallet-cluster confidence intervals; predeclare practical association bounds so that “not significant” is not mistaken for equivalence.
+2. Check whether the apparent dissociation survives fixed activity, history, uncertainty, and abstention strata. Examine consequence-specific results where stored. Preserve all prompts, predictions, thresholds, and August decisions.
+3. Select a small sample using F and as-of descriptors only, with outcomes concealed. Audit the stored natural-language hypotheses for explicit, falsifiable behavioral commitments; map them to the unchanged consequence schema before revealing frozen outcomes. Mark underspecified claims unscorable. Examine stored relevant/placebo variants where available.
+
+This distinguishes a gap involving linguistic claims from a prediction-head or aggregation problem. It remains post-hoc discovery; confirmation requires a new preregistered, untouched temporal holdout after the first falsification and literature gates.
+
+## 5. Stop condition
+
+- **Hold A** if clustered intervals are too wide to distinguish negligible from practically useful association.
+- **Drop the broad gap interpretation** if split-specific or consequence-specific analysis explains the pooled dissociation, or if degradation is attributable to the prediction head without corresponding failures of textual commitments.
+- **Stop the language-based claim** if hypotheses cannot be scored without outcome-informed reinterpretation.
+- **Keep F on hold** without independent evidence of useful selection against cheap uncertainty/activity baselines.
+
+No large LLM run, August retuning, or reopening of prior blocked branches follows from this discovery audit.
+
+## 6. Literature/novelty verification still required
+
+Novelty is **unverified**. Check prior work on explanation faithfulness versus predictive validity, intervention-sensitive rationales, behavioral equifinality, falsifiable natural-language hypotheses, hypothesis revision, and selective prediction.
+
+The key question is whether directly evaluating linguistic commitments prospectively adds a distinct scientific contribution. A near-zero sensitivity–gain correlation in Ethereum alone does not establish novelty.

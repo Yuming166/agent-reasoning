@@ -1,0 +1,9 @@
+{
+  "started_at": "2026-09-20T15:53:28Z",
+  "task_id": "semantic_audit_v21_experiment_designer",
+  "role": "EXPERIMENT_DESIGNER",
+  "model": "gpt-6-astra",
+  "prompt_sha256": "25f18cdce0353fac17352426def9b36bf63de7563884b0e09d48e4cd2d3a11ac",
+  "status": "CALL_FAILED",
+  "error": "AstraUnavailable:http_502:{\"error\":{\"message\":\"Upstream service temporarily unavailable\",\"type\":\"upstream_error\"}}"
+}

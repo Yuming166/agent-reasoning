@@ -1,0 +1,356 @@
+{
+  "pair_metrics_hungarian": {
+    "2022-06-01|2022-07-01": {
+      "n_prev": 11370,
+      "n_cur": 10172,
+      "n_common": 9447,
+      "node_set_jaccard": 0.7811,
+      "n_new_nodes": 725,
+      "n_gone_nodes": 1923,
+      "new_node_share": 0.0713,
+      "matching": "hungarian_max_sum_jaccard",
+      "n_cur_communities": 375,
+      "n_prev_communities": 373,
+      "n_unmapped_cur_communities": 162,
+      "membership_switch_rate_common": 0.3568,
+      "switch_rate_mapped_only": 0.3047,
+      "new_community_enter_share": 0.0749,
+      "mean_mapped_community_jaccard": 0.8217,
+      "ari_common": 0.5254,
+      "nmi_common": 0.5149
+    },
+    "2022-07-01|2022-08-01": {
+      "n_prev": 10172,
+      "n_cur": 8927,
+      "n_common": 8166,
+      "node_set_jaccard": 0.7469,
+      "n_new_nodes": 761,
+      "n_gone_nodes": 2006,
+      "new_node_share": 0.0852,
+      "matching": "hungarian_max_sum_jaccard",
+      "n_cur_communities": 409,
+      "n_prev_communities": 375,
+      "n_unmapped_cur_communities": 202,
+      "membership_switch_rate_common": 0.3998,
+      "switch_rate_mapped_only": 0.3389,
+      "new_community_enter_share": 0.0922,
+      "mean_mapped_community_jaccard": 0.7999,
+      "ari_common": 0.4848,
+      "nmi_common": 0.4944
+    },
+    "2022-08-01|2022-09-01": {
+      "n_prev": 8927,
+      "n_cur": 7929,
+      "n_common": 7109,
+      "node_set_jaccard": 0.7294,
+      "n_new_nodes": 820,
+      "n_gone_nodes": 1818,
+      "new_node_share": 0.1034,
+      "matching": "hungarian_max_sum_jaccard",
+      "n_cur_communities": 387,
+      "n_prev_communities": 409,
+      "n_unmapped_cur_communities": 184,
+      "membership_switch_rate_common": 0.4652,
+      "switch_rate_mapped_only": 0.4031,
+      "new_community_enter_share": 0.104,
+      "mean_mapped_community_jaccard": 0.8354,
+      "ari_common": 0.4309,
+      "nmi_common": 0.486
+    },
+    "2022-06|2022-07": {
+      "n_prev": 4869,
+      "n_cur": 4578,
+      "n_common": 2567,
+      "node_set_jaccard": 0.3731,
+      "n_new_nodes": 2011,
+      "n_gone_nodes": 2302,
+      "new_node_share": 0.4393,
+      "matching": "hungarian_max_sum_jaccard",
+      "n_cur_communities": 461,
+      "n_prev_communities": 473,
+      "n_unmapped_cur_communities": 339,
+      "membership_switch_rate_common": 0.6919,
+      "switch_rate_mapped_only": 0.4645,
+      "new_community_enter_share": 0.4246,
+      "mean_mapped_community_jaccard": 0.611,
+      "ari_common": 0.3149,
+      "nmi_common": 0.4273
+    },
+    "2022-07|2022-08": {
+      "n_prev": 4578,
+      "n_cur": 4239,
+      "n_common": 2456,
+      "node_set_jaccard": 0.3861,
+      "n_new_nodes": 1783,
+      "n_gone_nodes": 2122,
+      "new_node_share": 0.4206,
+      "matching": "hungarian_max_sum_jaccard",
+      "n_cur_communities": 393,
+      "n_prev_communities": 461,
+      "n_unmapped_cur_communities": 284,
+      "membership_switch_rate_common": 0.68,
+      "switch_rate_mapped_only": 0.4682,
+      "new_community_enter_share": 0.3982,
+      "mean_mapped_community_jaccard": 0.6037,
+      "ari_common": 0.3497,
+      "nmi_common": 0.4176
+    }
+  },
+  "pair_metrics_greedy": {
+    "2022-06-01|2022-07-01": {
+      "n_prev": 11370,
+      "n_cur": 10172,
+      "n_common": 9447,
+      "node_set_jaccard": 0.7811,
+      "n_new_nodes": 725,
+      "n_gone_nodes": 1923,
+      "new_node_share": 0.0713,
+      "matching": "greedy_best_jaccard",
+      "n_cur_communities": 375,
+      "n_prev_communities": 373,
+      "n_unmapped_cur_communities": 150,
+      "membership_switch_rate_common": 0.3501,
+      "switch_rate_mapped_only": 0.3227,
+      "new_community_enter_share": 0.0403,
+      "mean_mapped_community_jaccard": 0.785,
+      "ari_common": 0.5254,
+      "nmi_common": 0.5149
+    },
+    "2022-07-01|2022-08-01": {
+      "n_prev": 10172,
+      "n_cur": 8927,
+      "n_common": 8166,
+      "node_set_jaccard": 0.7469,
+      "n_new_nodes": 761,
+      "n_gone_nodes": 2006,
+      "new_node_share": 0.0852,
+      "matching": "greedy_best_jaccard",
+      "n_cur_communities": 409,
+      "n_prev_communities": 375,
+      "n_unmapped_cur_communities": 195,
+      "membership_switch_rate_common": 0.3964,
+      "switch_rate_mapped_only": 0.3377,
+      "new_community_enter_share": 0.0887,
+      "mean_mapped_community_jaccard": 0.7802,
+      "ari_common": 0.4848,
+      "nmi_common": 0.4944
+    },
+    "2022-08-01|2022-09-01": {
+      "n_prev": 8927,
+      "n_cur": 7929,
+      "n_common": 7109,
+      "node_set_jaccard": 0.7294,
+      "n_new_nodes": 820,
+      "n_gone_nodes": 1818,
+      "new_node_share": 0.1034,
+      "matching": "greedy_best_jaccard",
+      "n_cur_communities": 387,
+      "n_prev_communities": 409,
+      "n_unmapped_cur_communities": 173,
+      "membership_switch_rate_common": 0.447,
+      "switch_rate_mapped_only": 0.4093,
+      "new_community_enter_share": 0.0639,
+      "mean_mapped_community_jaccard": 0.7986,
+      "ari_common": 0.4309,
+      "nmi_common": 0.486
+    },
+    "2022-06|2022-07": {
+      "n_prev": 4869,
+      "n_cur": 4578,
+      "n_common": 2567,
+      "node_set_jaccard": 0.3731,
+      "n_new_nodes": 2011,
+      "n_gone_nodes": 2302,
+      "new_node_share": 0.4393,
+      "matching": "greedy_best_jaccard",
+      "n_cur_communities": 461,
+      "n_prev_communities": 473,
+      "n_unmapped_cur_communities": 323,
+      "membership_switch_rate_common": 0.6848,
+      "switch_rate_mapped_only": 0.4733,
+      "new_community_enter_share": 0.4016,
+      "mean_mapped_community_jaccard": 0.5645,
+      "ari_common": 0.3149,
+      "nmi_common": 0.4273
+    },
+    "2022-07|2022-08": {
+      "n_prev": 4578,
+      "n_cur": 4239,
+      "n_common": 2456,
+      "node_set_jaccard": 0.3861,
+      "n_new_nodes": 1783,
+      "n_gone_nodes": 2122,
+      "new_node_share": 0.4206,
+      "matching": "greedy_best_jaccard",
+      "n_cur_communities": 393,
+      "n_prev_communities": 461,
+      "n_unmapped_cur_communities": 280,
+      "membership_switch_rate_common": 0.6779,
+      "switch_rate_mapped_only": 0.4663,
+      "new_community_enter_share": 0.3966,
+      "mean_mapped_community_jaccard": 0.5921,
+      "ari_common": 0.3497,
+      "nmi_common": 0.4176
+    }
+  },
+  "role_analysis": {
+    "2022-06-01": {
+      "role_class_counts": {
+        "hub": 1024,
+        "bridge": 1022,
+        "both": 115,
+        "neither": 9209
+      },
+      "n_boundary": 1283,
+      "boundary_share": 0.1128,
+      "hub_threshold_p90": 0.2308,
+      "bridge_threshold_p90": 0.0019
+    },
+    "2022-07-01": {
+      "role_class_counts": {
+        "hub": 937,
+        "bridge": 937,
+        "both": 81,
+        "neither": 8217
+      },
+      "n_boundary": 1133,
+      "boundary_share": 0.1114,
+      "hub_threshold_p90": 0.4416,
+      "bridge_threshold_p90": 0.0022
+    },
+    "2022-08-01": {
+      "role_class_counts": {
+        "hub": 853,
+        "bridge": 840,
+        "both": 53,
+        "neither": 7181
+      },
+      "n_boundary": 969,
+      "boundary_share": 0.1085,
+      "hub_threshold_p90": 1.0,
+      "bridge_threshold_p90": 0.0026
+    },
+    "2022-09-01": {
+      "role_class_counts": {
+        "hub": 809,
+        "bridge": 758,
+        "both": 35,
+        "neither": 6327
+      },
+      "n_boundary": 799,
+      "boundary_share": 0.1008,
+      "hub_threshold_p90": 1.0,
+      "bridge_threshold_p90": 0.0026
+    }
+  },
+  "role_transitions_cutoff": {
+    "2022-06-01|2022-07-01": {
+      "n_common": 9447,
+      "transition_rate_matrix": {
+        "both->both": 0.0037,
+        "both->bridge": 0.0031,
+        "both->hub": 0.0019,
+        "both->neither": 0.0032,
+        "bridge->both": 0.001,
+        "bridge->bridge": 0.0617,
+        "bridge->hub": 0.002,
+        "bridge->neither": 0.0423,
+        "hub->both": 0.0019,
+        "hub->bridge": 0.0015,
+        "hub->hub": 0.0493,
+        "hub->neither": 0.0331,
+        "neither->both": 0.002,
+        "neither->bridge": 0.0327,
+        "neither->hub": 0.0376,
+        "neither->neither": 0.723
+      },
+      "role_changed_share": 0.1623
+    },
+    "2022-07-01|2022-08-01": {
+      "n_common": 8166,
+      "transition_rate_matrix": {
+        "both->both": 0.0023,
+        "both->bridge": 0.0027,
+        "both->hub": 0.0018,
+        "both->neither": 0.0031,
+        "bridge->both": 0.0016,
+        "bridge->bridge": 0.0658,
+        "bridge->hub": 0.0026,
+        "bridge->neither": 0.0435,
+        "hub->both": 0.0015,
+        "hub->bridge": 0.001,
+        "hub->hub": 0.0489,
+        "hub->neither": 0.0318,
+        "neither->both": 0.0011,
+        "neither->bridge": 0.0332,
+        "neither->hub": 0.0408,
+        "neither->neither": 0.7185
+      },
+      "role_changed_share": 0.1646
+    },
+    "2022-08-01|2022-09-01": {
+      "n_common": 7109,
+      "transition_rate_matrix": {
+        "both->both": 0.002,
+        "both->bridge": 0.0017,
+        "both->hub": 0.0015,
+        "both->neither": 0.0023,
+        "bridge->both": 0.0014,
+        "bridge->bridge": 0.0674,
+        "bridge->hub": 0.0024,
+        "bridge->neither": 0.045,
+        "hub->both": 0.0007,
+        "hub->bridge": 0.0007,
+        "hub->hub": 0.0526,
+        "hub->neither": 0.0325,
+        "neither->both": 0.0008,
+        "neither->bridge": 0.0366,
+        "neither->hub": 0.0423,
+        "neither->neither": 0.7101
+      },
+      "role_changed_share": 0.168
+    }
+  },
+  "community_importance_20220901": {
+    "snapshot": "2022-09-01",
+    "n_subgraph_members": 7929,
+    "k_top10pct_subgraph": 793,
+    "pred_metric": "pred_act_level_LightGBM (Group B holdout09)",
+    "ig_metric": "ig_occ (Group D wallet masking, y_cp_ge10, histgbm, mean over folds)",
+    "top2_community_share_of_pred_top10pct": 0.6809,
+    "top5_community_share_of_pred_top10pct": 0.8335,
+    "top10_community_share_of_pred_top10pct": 0.913,
+    "hhi_pred_top10pct_across_communities": 0.3914,
+    "spearman_comm_size_vs_mean_ig": 0.2241,
+    "n_communities": 387,
+    "mean_ig_overall": 0.53473,
+    "n_ig_covered_subgraph": 1283,
+    "note": "concentration restricted to matched-matched subgraph (7,929); Group B's 93% used Group A personas over all 18,519 wallets"
+  },
+  "regime": {
+    "2022-06-01": {
+      "n_with_fwd30_label": 11370,
+      "k_top10pct": 1137,
+      "top2_community_share_of_future_top10pct": 0.6209,
+      "hhi_future_top10pct_across_communities": 0.3332
+    },
+    "2022-07-01": {
+      "n_with_fwd30_label": 10172,
+      "k_top10pct": 1017,
+      "top2_community_share_of_future_top10pct": 0.6431,
+      "hhi_future_top10pct_across_communities": 0.3404
+    },
+    "2022-08-01": {
+      "n_with_fwd30_label": 8927,
+      "k_top10pct": 893,
+      "top2_community_share_of_future_top10pct": 0.6125,
+      "hhi_future_top10pct_across_communities": 0.3128
+    },
+    "2022-09-01": {
+      "n_with_fwd30_label": 7929,
+      "k_top10pct": 793,
+      "top2_community_share_of_future_top10pct": 0.6066,
+      "hhi_future_top10pct_across_communities": 0.3039
+    }
+  }
+}

@@ -1,0 +1,27 @@
+sprint_id: quarantined_autoresearch_20260921T171822Z
+created_at_utc: "2026-09-21T17:18:22Z"
+status: RUNNING_LUNA_AUTHORIZED_EXPLORATORY
+classification: EXPLORATORY_QUARANTINED
+model_override: gpt-5.6-luna
+model_override_authorization: explicit_user_message_2026-09-21
+astra6_relay_status: prior_three_http_502_smoke_failures
+phase1_package: research_os/runtime/phase1_annotation_gate_v2_dev_20260921T162900Z
+phase1_protocol_modified: false
+phase1_human_annotations_inspected: false
+phase1_submission_directory_inspected: false
+phase1_future_outcomes_accessed: false
+phase1_pass_b_released: false
+phase1_gate1a_run: false
+phase1_gate1b_run: false
+phase2_launched: false
+phase3_launched: false
+august_used_as_new_confirmatory_holdout: false
+b4_result_modified: false
+official_claim_ledger_modified: false
+official_experiment_registry_modified: false
+worker_context_isolation: selected_context_files_only
+tracks: [L_literature, H_holdout, R_retrospective_limited, P_conditional_phase2]
+notes:
+  - This fresh workspace does not overwrite the prior Astra6-halted workspace.
+  - Luna outputs are exploratory and cannot be promoted to official evidence without human review.
+  - Track R is limited to pre-existing aggregate context to preserve Phase 1 quarantine.

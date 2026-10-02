@@ -1,0 +1,163 @@
+{
+  "attempts": 1,
+  "cache_hit": false,
+  "cache_key": "378e6146e70b235ed7944cb82aa387f78e392e33ba3f80a612e089f90e61b192",
+  "endpoint_alias": "https://openapi.center/v1/chat/completions",
+  "experiment": "OW-010B",
+  "http_status": 200,
+  "identity_smoke": {
+    "endpoint_alias": "https://openapi.center/v1/chat/completions",
+    "model_list_contains_requested": true,
+    "models_count": 7,
+    "models_http_status": 200,
+    "probe_http_status": 200,
+    "probe_latency_seconds": 5.092770561110228,
+    "probe_prompt_hash": "381f27195afa0fa6467bc1fd8407c72f1e5b943165ae462917de2fbab8685b67",
+    "probe_request_id": "chatcmpl-1c9a4c55-fc99-4c49-a97e-bfc43fe8daf9",
+    "probe_response_hash": "e78f4a5f9516f67c6a8dbb4cc4d75d89768ebada26632f32d959314be50b87d8",
+    "requested_model": "gpt-6-astra",
+    "returned_model": "gpt-6-astra",
+    "timestamp": "2026-09-18T15:16:12Z"
+  },
+  "latency_seconds": 91.33649556199089,
+  "parsed_response": {
+    "activity_confound_critique": [
+      "M1 improves ridge test loss by 11.66%, and the gain persists across activity, volume, degree, and high-activity-tail strata. That argues against the result being confined to one activity subgroup, but it does not show that the gain is independent of activity.",
+      "M1 adds recent-versus-prior changes, burst/concentration measures, novelty, turnover, and gap statistics. These are stronger autoregressive and recency features than M0, so the most direct explanation is improved recent-activity dynamics rather than temporal organization in a stronger theoretical sense.",
+      "The target itself is change relative to a recent score window, making recent-activity features especially well matched to the prediction task.",
+      "The audit does not report a model that adds only a stronger autoregressive activity block while excluding the remaining M1 features. Therefore it cannot isolate temporal organization from recent-level and recent-change information.",
+      "The near-universal positive M1 gains across dimensions and strata are compatible with genuine temporal predictability, but also with a broad activity-persistence advantage."
+    ],
+    "claims_that_do_not_survive": [
+      "A claim that M2_CORE demonstrates meaningful structural support under the preregistered decision rule.",
+      "A claim that the structural increment is robust across model families.",
+      "A claim that M2 gains are independent of activity, degree, recency, or other scale-related proxies.",
+      "A claim of stable temporal generalization beyond the August 2022 cutoff.",
+      "A claim of identity-level generalization based on the repeated/unseen split.",
+      "A claim that negative controls establish absence of all leakage or all activity confounding.",
+      "A claim that the scalar surprise score is a distinct anomaly or behavioral construct.",
+      "A claim that the M1 result specifically identifies temporal organization rather than a mixture of recency, burstiness, turnover, gaps, and autoregressive activity dynamics."
+    ],
+    "claims_that_survive": [
+      "The study is a predictive future-behavior-change test rather than a causal or external-category detection study.",
+      "The supplied QA is consistent with no duplicate keys, no join multiplication, complete future windows, and clean separation of discovery features from evaluation outcomes.",
+      "Under the frozen ridge protocol, M1 provides a substantial August predictive improvement over M0.",
+      "The M1 improvement is not confined to a single activity, volume, or degree stratum and is also descriptively present in both repeated and no-prior-eligible-row strata.",
+      "The scalar surprise result may be reported only as secondary descriptive evidence, not as a replacement for the signed-vector estimand.",
+      "M2_CORE may contain a very small residual predictive increment under ridge, but only as exploratory and provisional."
+    ],
+    "concise_reviewer_report": "The leakage audit is reassuring but not independently verifiable from aggregate material alone. The target is valid for forecasting signed seven-day change, though substantially activity-related and explicitly autoregressive. M1 shows a large, precise August gain over M0 that likely reflects a mixture of recent-activity dynamics, burstiness, turnover, and gaps; the design cannot isolate temporal organization from those components. M2_CORE adds only 0.134% under ridge, fails the frozen 2% structural threshold, loses its sign under HGB, and uses features strongly correlated with activity and degree. Negative controls rule out a simple permutation artifact but not activity confounding or temporal nonreplication. Repeated wallets dominate the test, the no-prior-eligible-row stratum is descriptive, and one August cutoff cannot support a general temporal claim. The pre-result amendment and reporting-only repair are acceptable as documented. The correct decision is to stop the structural branch and decline GO_TO_OW010C; any continuation should be a preregistered modification before external validation.",
+    "negative_control_critique": [
+      "The permuted M1 control shows essentially no gain, and the permuted M2 control worsens performance. This is reassuring against a generic permutation artifact, accidental target access, or an unrestricted fitting bug.",
+      "The controls permute added features within cutoff-by-history-activity strata, so they test whether the intended added values carry information beyond those strata under the specified pipeline.",
+      "They do not prove that the observed gains are independent of activity, recency, wallet persistence, or other correlated nuisance structure.",
+      "They do not validate the as-of SQL construction; a systematic as-of error could survive a feature permutation control if it affected the unpermuted feature-target relationship.",
+      "They do not establish temporal replication or distinguish structural semantics from residual activity proxies."
+    ],
+    "overall_verdict": "The primary pipeline appears internally coherent and the temporal M1 increment is supported under the frozen ridge protocol, but the evidence does not establish a distinct structural signal or stable temporal generalization. The structural GO criterion fails decisively on effect size, is not robust to the secondary model, and is highly vulnerable to activity and complexity proxies. No fatal leakage is demonstrated by the supplied QA, although the aggregate-only material cannot independently verify SQL-level as-of construction.",
+    "preregistration_deviation_assessment": [
+      {
+        "assessment": "Not a substantive violation if the repair occurred before the final artifact run and did not alter data, targets, features, model calls, split, metrics, or decision rules. The supplied manifest and deviation log support that interpretation.",
+        "deviation": "Reporting-only implementation repair for an index-alignment bug"
+      },
+      {
+        "assessment": "Acceptable as a dated pre-result amendment if it was frozen before any affected result inspection, as stated. It changes the feature implementation but not the population, target, cutoff, model budget, metric, or decision rule.",
+        "deviation": "Pre-result amendment adding compact score-window family/direction aggregates"
+      },
+      {
+        "assessment": "No deviation from the stated stop conditions; these analyses were explicitly prohibited or nonrequired.",
+        "deviation": "No external-label access, matching, GNN, or latent-strategy analysis"
+      },
+      {
+        "assessment": "A limitation of the preregistered tuning grid, not a post-result violation. It should be recorded as a protocol limitation and not repaired after inspecting test results.",
+        "deviation": "Boundary alpha selection"
+      }
+    ],
+    "recommendation_for_ow010c": "NO_GO_TO_OW010C under the frozen rule. The scientifically defensible disposition is MODIFY_BEFORE_EXTERNAL_VALIDATION: retain the M1 result as a provisional predictive finding, classify M2 structural evidence as insufficient and exploratory, and do not open any external-label or broader validation branch.",
+    "required_stop_or_amendment": [
+      "Stop the structural branch under the frozen GO rule: the M2_CORE increment is below 2% and is not HGB-robust.",
+      "Do not treat the positive ridge structural confidence interval as sufficient for GO_TO_OW010C.",
+      "Do not alter the target, windows, cutoffs, feature definitions, tuning grid, or decision rule after seeing these test results.",
+      "Before any future confirmatory extension, preregister a design that separates recent-activity autoregression from temporal organization and separates residual structure from activity proxies, without using the current August result to tune the protocol.",
+      "Preserve the current result as a bounded pilot and report the alpha-boundary limitation, single-cutoff limitation, and repeated-wallet dominance."
+    ],
+    "statistical_critique": [
+      "The paired wallet bootstrap is appropriate for the stated one-row-per-wallet August evaluation and avoids treating repeated cutoff rows as IID.",
+      "The ridge temporal contrast is large and precise: 11.66% relative reduction with a wholly positive reported interval. All seven reported ridge per-dimension test MSEs improve from M0 to M1, satisfying the directional dimension condition.",
+      "The structural ridge interval is positive but the effect is tiny and fails the frozen 2% threshold. A nominally positive interval should not override the prespecified practical-support rule.",
+      "Three nested contrasts and multiple model families are displayed. The preregistered Holm adjustment is not shown in the supplied results, so formal significance language should be avoided unless the adjustment is reported.",
+      "Alpha equals 100 for every ridge ladder, indicating the tuning grid boundary is a protocol limitation. The result is not invalidated, but the selected primary models may be suboptimal and the stability of the tiny structural difference is especially doubtful.",
+      "The secondary HGB results support the broad M1-versus-M0 direction but contradict the ridge structural increment, reinforcing a conservative interpretation."
+    ],
+    "structural_signal_critique": [
+      "The ridge M2_CORE increment over M1 is 0.000917 MSE, or 0.134%, with a reported bootstrap interval of 0.000316 to 0.001559. This is far below the preregistered 2% structural threshold.",
+      "The HGB structural increment is negative, -0.030%, with an interval crossing zero. Thus the structural result is not model-family robust.",
+      "The ridge structural gain is small in every reported activity, volume, and degree stratum, with no evidence of a large or concentrated subgroup effect.",
+      "Several structural variables are strongly correlated with activity or degree proxies: entropy is correlated 0.893 with historical event count and 0.963 with unique counterparties; rapid-forwarding count is correlated 0.907 with historical event count; fan-in and fan-out measures are correlated about 0.67 to 0.89 with activity measures.",
+      "The small positive ridge increment may reflect residual nonlinear or ratio information, regularization behavior, or measurement noise rather than a distinct structural organization signal.",
+      "The available evidence supports at most a weak, unstable residual predictive increment from the M2 bundle. It does not support a substantive structural mechanism claim."
+    ],
+    "target_critique": [
+      "The seven-dimensional signed target is explicit, finite, training-standardized, and not defined from M1 or M2 structural columns.",
+      "The target is nevertheless strongly activity-related: three coordinates directly measure event count, unique-counterparty change, and active-day change, while composition changes are also mechanically affected by event counts and recent-window sampling noise.",
+      "The scalar surprise norm discards direction and can be dominated by whichever standardized dimensions have the largest predictable magnitude. It is appropriately secondary and should not be used as evidence of a distinct behavioral construct.",
+      "The supplied results do not provide scalar-surprise incremental contrasts or per-dimension improvement values, so claims about the scalar target's incremental validity cannot be fully assessed.",
+      "The target is best described as future seven-day change/persistence prediction, not prediction of an underlying latent behavioral state."
+    ],
+    "temporal_and_identity_critique": [
+      "The split is temporally ordered and avoids random wallet-cutoff leakage. The reported zero key differences, zero duplicate keys, complete future coverage, and discovery/evaluation role separation are reassuring.",
+      "The June-July-August design supplies one training period, one development period, and one held-out August period; it does not supply three independent temporal evaluations.",
+      "The M1 gain is present in both repeated and no-prior-eligible-row strata, but no uncertainty intervals or prespecified inferential comparison are supplied for those strata.",
+      "The unseen stratum is not proof of identity-level generalization. It means no eligible June or July row under the stated inclusion rule; it does not establish that the wallet is historically novel in every relevant sense.",
+      "Because the unseen stratum is only 694 wallets and has lower baseline loss, its descriptive gain should not be treated as independent confirmation."
+    ],
+    "validity_threats": [
+      {
+        "assessment": "The reported intervals [t-30d,t), [t-7d,t), and [t,t+7d) do not overlap in a leakage-producing way, and all event timestamps are claimed to precede cutoff. The evidence supports rather than proves this claim.",
+        "issue": "As-of and future separation are asserted through QA, hashes, key checks, and score-sum checks, but raw wallet-level rows and executable query inspection are unavailable.",
+        "severity": "nonfatal_but_material"
+      },
+      {
+        "assessment": "This is autoregressive target construction, not target leakage, because the reference ends at t and the target starts at t. It nevertheless makes the estimand partly a persistence/change forecast.",
+        "issue": "The target intentionally references the immediately preceding seven-day activity/composition window, while M0 contains that same recent window.",
+        "severity": "nonfatal_limitation"
+      },
+      {
+        "assessment": "The August result is an out-of-sample pilot at one date, not evidence of temporal stability or replication across regimes.",
+        "issue": "Only one held-out temporal cutoff is available.",
+        "severity": "material_limitation"
+      },
+      {
+        "assessment": "There are 13,989 repeated versus 694 no-prior-eligible-row wallets. The pooled result is therefore primarily a repeated-wallet forecasting result.",
+        "issue": "The primary test rows are overwhelmingly repeated-wallet rows.",
+        "severity": "material_limitation"
+      },
+      {
+        "assessment": "This indicates the penalty grid was truncated and may not identify the best regularization level. It does not invalidate the held-out comparison because selection was frozen and symmetric, but it limits optimization and robustness claims.",
+        "issue": "Ridge alpha selected at the upper grid boundary for every ladder and both reported horizons.",
+        "severity": "nonfatal_limitation"
+      }
+    ]
+  },
+  "prompt_hash": "98a9a6c363f8ab58abb6aebe7c5eb5b8548fd835edddf5fe554426b24b9cbfa8",
+  "raw_response_text": "{\n  \"overall_verdict\": \"The primary pipeline appears internally coherent and the temporal M1 increment is supported under the frozen ridge protocol, but the evidence does not establish a distinct structural signal or stable temporal generalization. The structural GO criterion fails decisively on effect size, is not robust to the secondary model, and is highly vulnerable to activity and complexity proxies. No fatal leakage is demonstrated by the supplied QA, although the aggregate-only material cannot independently verify SQL-level as-of construction.\",\n  \"validity_threats\": [\n    {\n      \"severity\": \"nonfatal_but_material\",\n      \"issue\": \"As-of and future separation are asserted through QA, hashes, key checks, and score-sum checks, but raw wallet-level rows and executable query inspection are unavailable.\",\n      \"assessment\": \"The reported intervals [t-30d,t), [t-7d,t), and [t,t+7d) do not overlap in a leakage-producing way, and all event timestamps are claimed to precede cutoff. The evidence supports rather than proves this claim.\"\n    },\n    {\n      \"severity\": \"nonfatal_limitation\",\n      \"issue\": \"The target intentionally references the immediately preceding seven-day activity/composition window, while M0 contains that same recent window.\",\n      \"assessment\": \"This is autoregressive target construction, not target leakage, because the reference ends at t and the target starts at t. It nevertheless makes the estimand partly a persistence/change forecast.\"\n    },\n    {\n      \"severity\": \"material_limitation\",\n      \"issue\": \"Only one held-out temporal cutoff is available.\",\n      \"assessment\": \"The August result is an out-of-sample pilot at one date, not evidence of temporal stability or replication across regimes.\"\n    },\n    {\n      \"severity\": \"material_limitation\",\n      \"issue\": \"The primary test rows are overwhelmingly repeated-wallet rows.\",\n      \"assessment\": \"There are 13,989 repeated versus 694 no-prior-eligible-row wallets. The pooled result is therefore primarily a repeated-wallet forecasting result.\"\n    },\n    {\n      \"severity\": \"nonfatal_limitation\",\n      \"issue\": \"Ridge alpha selected at the upper grid boundary for every ladder and both reported horizons.\",\n      \"assessment\": \"This indicates the penalty grid was truncated and may not identify the best regularization level. It does not invalidate the held-out comparison because selection was frozen and symmetric, but it limits optimization and robustness claims.\"\n    }\n  ],\n  \"target_critique\": [\n    \"The seven-dimensional signed target is explicit, finite, training-standardized, and not defined from M1 or M2 structural columns.\",\n    \"The target is nevertheless strongly activity-related: three coordinates directly measure event count, unique-counterparty change, and active-day change, while composition changes are also mechanically affected by event counts and recent-window sampling noise.\",\n    \"The scalar surprise norm discards direction and can be dominated by whichever standardized dimensions have the largest predictable magnitude. It is appropriately secondary and should not be used as evidence of a distinct behavioral construct.\",\n    \"The supplied results do not provide scalar-surprise incremental contrasts or per-dimension improvement values, so claims about the scalar target's incremental validity cannot be fully assessed.\",\n    \"The target is best described as future seven-day change/persistence prediction, not prediction of an underlying latent behavioral state.\"\n  ],\n  \"temporal_and_identity_critique\": [\n    \"The split is temporally ordered and avoids random wallet-cutoff leakage. The reported zero key differences, zero duplicate keys, complete future coverage, and discovery/evaluation role separation are reassuring.\",\n    \"The June-July-August design supplies one training period, one development period, and one held-out August period; it does not supply three independent temporal evaluations.\",\n    \"The M1 gain is present in both repeated and no-prior-eligible-row strata, but no uncertainty intervals or prespecified inferential comparison are supplied for those strata.\",\n    \"The unseen stratum is not proof of identity-level generalization. It means no eligible June or July row under the stated inclusion rule; it does not establish that the wallet is historically novel in every relevant sense.\",\n    \"Because the unseen stratum is only 694 wallets and has lower baseline loss, its descriptive gain should not be treated as independent confirmation.\"\n  ],\n  \"activity_confound_critique\": [\n    \"M1 improves ridge test loss by 11.66%, and the gain persists across activity, volume, degree, and high-activity-tail strata. That argues against the result being confined to one activity subgroup, but it does not show that the gain is independent of activity.\",\n    \"M1 adds recent-versus-prior changes, burst/concentration measures, novelty, turnover, and gap statistics. These are stronger autoregressive and recency features than M0, so the most direct explanation is improved recent-activity dynamics rather than temporal organization in a stronger theoretical sense.\",\n    \"The target itself is change relative to a recent score window, making recent-activity features especially well matched to the prediction task.\",\n    \"The audit does not report a model that adds only a stronger autoregressive activity block while excluding the remaining M1 features. Therefore it cannot isolate temporal organization from recent-level and recent-change information.\",\n    \"The near-universal positive M1 gains across dimensions and strata are compatible with genuine temporal predictability, but also with a broad activity-persistence advantage.\"\n  ],\n  \"structural_signal_critique\": [\n    \"The ridge M2_CORE increment over M1 is 0.000917 MSE, or 0.134%, with a reported bootstrap interval of 0.000316 to 0.001559. This is far below the preregistered 2% structural threshold.\",\n    \"The HGB structural increment is negative, -0.030%, with an interval crossing zero. Thus the structural result is not model-family robust.\",\n    \"The ridge structural gain is small in every reported activity, volume, and degree stratum, with no evidence of a large or concentrated subgroup effect.\",\n    \"Several structural variables are strongly correlated with activity or degree proxies: entropy is correlated 0.893 with historical event count and 0.963 with unique counterparties; rapid-forwarding count is correlated 0.907 with historical event count; fan-in and fan-out measures are correlated about 0.67 to 0.89 with activity measures.\",\n    \"The small positive ridge increment may reflect residual nonlinear or ratio information, regularization behavior, or measurement noise rather than a distinct structural organization signal.\",\n    \"The available evidence supports at most a weak, unstable residual predictive increment from the M2 bundle. It does not support a substantive structural mechanism claim.\"\n  ],\n  \"negative_control_critique\": [\n    \"The permuted M1 control shows essentially no gain, and the permuted M2 control worsens performance. This is reassuring against a generic permutation artifact, accidental target access, or an unrestricted fitting bug.\",\n    \"The controls permute added features within cutoff-by-history-activity strata, so they test whether the intended added values carry information beyond those strata under the specified pipeline.\",\n    \"They do not prove that the observed gains are independent of activity, recency, wallet persistence, or other correlated nuisance structure.\",\n    \"They do not validate the as-of SQL construction; a systematic as-of error could survive a feature permutation control if it affected the unpermuted feature-target relationship.\",\n    \"They do not establish temporal replication or distinguish structural semantics from residual activity proxies.\"\n  ],\n  \"statistical_critique\": [\n    \"The paired wallet bootstrap is appropriate for the stated one-row-per-wallet August evaluation and avoids treating repeated cutoff rows as IID.\",\n    \"The ridge temporal contrast is large and precise: 11.66% relative reduction with a wholly positive reported interval. All seven reported ridge per-dimension test MSEs improve from M0 to M1, satisfying the directional dimension condition.\",\n    \"The structural ridge interval is positive but the effect is tiny and fails the frozen 2% threshold. A nominally positive interval should not override the prespecified practical-support rule.\",\n    \"Three nested contrasts and multiple model families are displayed. The preregistered Holm adjustment is not shown in the supplied results, so formal significance language should be avoided unless the adjustment is reported.\",\n    \"Alpha equals 100 for every ridge ladder, indicating the tuning grid boundary is a protocol limitation. The result is not invalidated, but the selected primary models may be suboptimal and the stability of the tiny structural difference is especially doubtful.\",\n    \"The secondary HGB results support the broad M1-versus-M0 direction but contradict the ridge structural increment, reinforcing a conservative interpretation.\"\n  ],\n  \"preregistration_deviation_assessment\": [\n    {\n      \"deviation\": \"Reporting-only implementation repair for an index-alignment bug\",\n      \"assessment\": \"Not a substantive violation if the repair occurred before the final artifact run and did not alter data, targets, features, model calls, split, metrics, or decision rules. The supplied manifest and deviation log support that interpretation.\"\n    },\n    {\n      \"deviation\": \"Pre-result amendment adding compact score-window family/direction aggregates\",\n      \"assessment\": \"Acceptable as a dated pre-result amendment if it was frozen before any affected result inspection, as stated. It changes the feature implementation but not the population, target, cutoff, model budget, metric, or decision rule.\"\n    },\n    {\n      \"deviation\": \"No external-label access, matching, GNN, or latent-strategy analysis\",\n      \"assessment\": \"No deviation from the stated stop conditions; these analyses were explicitly prohibited or nonrequired.\"\n    },\n    {\n      \"deviation\": \"Boundary alpha selection\",\n      \"assessment\": \"A limitation of the preregistered tuning grid, not a post-result violation. It should be recorded as a protocol limitation and not repaired after inspecting test results.\"\n    }\n  ],\n  \"claims_that_survive\": [\n    \"The study is a predictive future-behavior-change test rather than a causal or external-category detection study.\",\n    \"The supplied QA is consistent with no duplicate keys, no join multiplication, complete future windows, and clean separation of discovery features from evaluation outcomes.\",\n    \"Under the frozen ridge protocol, M1 provides a substantial August predictive improvement over M0.\",\n    \"The M1 improvement is not confined to a single activity, volume, or degree stratum and is also descriptively present in both repeated and no-prior-eligible-row strata.\",\n    \"The scalar surprise result may be reported only as secondary descriptive evidence, not as a replacement for the signed-vector estimand.\",\n    \"M2_CORE may contain a very small residual predictive increment under ridge, but only as exploratory and provisional.\"\n  ],\n  \"claims_that_do_not_survive\": [\n    \"A claim that M2_CORE demonstrates meaningful structural support under the preregistered decision rule.\",\n    \"A claim that the structural increment is robust across model families.\",\n    \"A claim that M2 gains are independent of activity, degree, recency, or other scale-related proxies.\",\n    \"A claim of stable temporal generalization beyond the August 2022 cutoff.\",\n    \"A claim of identity-level generalization based on the repeated/unseen split.\",\n    \"A claim that negative controls establish absence of all leakage or all activity confounding.\",\n    \"A claim that the scalar surprise score is a distinct anomaly or behavioral construct.\",\n    \"A claim that the M1 result specifically identifies temporal organization rather than a mixture of recency, burstiness, turnover, gaps, and autoregressive activity dynamics.\"\n  ],\n  \"required_stop_or_amendment\": [\n    \"Stop the structural branch under the frozen GO rule: the M2_CORE increment is below 2% and is not HGB-robust.\",\n    \"Do not treat the positive ridge structural confidence interval as sufficient for GO_TO_OW010C.\",\n    \"Do not alter the target, windows, cutoffs, feature definitions, tuning grid, or decision rule after seeing these test results.\",\n    \"Before any future confirmatory extension, preregister a design that separates recent-activity autoregression from temporal organization and separates residual structure from activity proxies, without using the current August result to tune the protocol.\",\n    \"Preserve the current result as a bounded pilot and report the alpha-boundary limitation, single-cutoff limitation, and repeated-wallet dominance.\"\n  ],\n  \"recommendation_for_ow010c\": \"NO_GO_TO_OW010C under the frozen rule. The scientifically defensible disposition is MODIFY_BEFORE_EXTERNAL_VALIDATION: retain the M1 result as a provisional predictive finding, classify M2 structural evidence as insufficient and exploratory, and do not open any external-label or broader validation branch.\",\n  \"concise_reviewer_report\": \"The leakage audit is reassuring but not independently verifiable from aggregate material alone. The target is valid for forecasting signed seven-day change, though substantially activity-related and explicitly autoregressive. M1 shows a large, precise August gain over M0 that likely reflects a mixture of recent-activity dynamics, burstiness, turnover, and gaps; the design cannot isolate temporal organization from those components. M2_CORE adds only 0.134% under ridge, fails the frozen 2% structural threshold, loses its sign under HGB, and uses features strongly correlated with activity and degree. Negative controls rule out a simple permutation artifact but not activity confounding or temporal nonreplication. Repeated wallets dominate the test, the no-prior-eligible-row stratum is descriptive, and one August cutoff cannot support a general temporal claim. The pre-result amendment and reporting-only repair are acceptable as documented. The correct decision is to stop the structural branch and decline GO_TO_OW010C; any continuation should be a preregistered modification before external validation.\"\n}",
+  "request_id": "resp_0cc0e76c91398f12016aad55db06f087d295434a8d223fc03e",
+  "request_scope": {
+    "raw_wallet_prediction_rows_in_prompt": false,
+    "wash_labels_accessed": false,
+    "wash_labels_in_prompt": false
+  },
+  "requested_model": "gpt-6-astra",
+  "response_hash": "1baac913471e88149850d682c7aecedb9f37856571e98d0d81353c4570b25b6d",
+  "returned_model": "gpt-6-astra",
+  "stage": "posthoc_hostile_review_after_frozen_primary",
+  "timestamp": "2026-09-18T15:16:12Z",
+  "usage": {
+    "completion_tokens": 3322,
+    "completion_tokens_details": {
+      "reasoning_tokens": 486
+    },
+    "prompt_tokens": 19598,
+    "total_tokens": 22920
+  }
+}

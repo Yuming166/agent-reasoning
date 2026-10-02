@@ -1,0 +1,15 @@
+{
+  "checked_at_utc": "2026-09-20T16:08:42Z",
+  "model": "gpt-5.6-sol",
+  "astra_only": true,
+  "fallback_allowed": false,
+  "models_http_status": 200,
+  "model_listed": true,
+  "listed_model_count": 7,
+  "chat_http_status": 502,
+  "chat_request_id": "fada1634-b1bd-43af-8373-4cf536e4c616",
+  "chat_error": "Upstream service temporarily unavailable",
+  "status": "LISTED_BUT_GENERATION_UNAVAILABLE",
+  "billing_note": "One real minimal POST was sent; the relay returned 502 and no usage payload. Billing cannot be inferred from this response alone.",
+  "secrets_recorded": false
+}
