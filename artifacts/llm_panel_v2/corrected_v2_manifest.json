@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0",
+  "experiment": "corrected v2 full counterfactual FSM vs NoCF vs frozen cheap ranker",
+  "generated_local": "2026-09-09",
+  "model": "glm-5.3",
+  "events_per_snapshot": 1000,
+  "snapshots": [
+    "2022-06-01",
+    "2022-07-01",
+    "2022-08-01",
+    "2022-09-01"
+  ],
+  "workers": 16,
+  "tie_policy": "average competition rank for exact score ties",
+  "failure_policy": "invalid Full/NoCF parse is retained and falls back to cheap RR for operational evaluation",
+  "router_dataset_status": "not included; the pre-existing router_dataset_v2.csv was built before the float-RR correction and must be rebuilt",
+  "panel_artifacts_status": "full scored panels and candidate shards remain outside Git; see DATA_ACCESS.md",
+  "run_files": [
+    {
+      "path": "artifacts/llm_panel_v2/runs/aug_gonogo_glm53_v2_floatfix.csv",
+      "sha256": "2cd8f4d913fe6fb20d2ec401813034a441c064b397b12623692be58966040888",
+      "bytes": 198175,
+      "rows": 1000,
+      "snapshot_dates": [
+        "2022-08-01"
+      ],
+      "full_parse_rate": 1.0,
+      "nocf_parse_rate": 0.999,
+      "model": [
+        "glm-5.3"
+      ]
+    },
+    {
+      "path": "artifacts/llm_panel_v2/runs/jul_gonogo_glm53_v2_floatfix.csv",
+      "sha256": "8453a5fdcacc33f8f4faebe8acb628809c76fbda6fbe522aa1bf58bc2e4949c5",
+      "bytes": 196585,
+      "rows": 1000,
+      "snapshot_dates": [
+        "2022-07-01"
+      ],
+      "full_parse_rate": 0.959,
+      "nocf_parse_rate": 0.974,
+      "model": [
+        "glm-5.3"
+      ]
+    },
+    {
+      "path": "artifacts/llm_panel_v2/runs/jun_gonogo_glm53_v2_floatfix.csv",
+      "sha256": "3c6e7af5c7e49669f0f30673fb26cdd0d4c0ea3964fcb23920252b71cb0d0f0e",
+      "bytes": 160972,
+      "rows": 1000,
+      "snapshot_dates": [
+        "2022-06-01"
+      ],
+      "full_parse_rate": 0.322,
+      "nocf_parse_rate": 0.339,
+      "model": [
+        "glm-5.3"
+      ]
+    },
+    {
+      "path": "artifacts/llm_panel_20220901/runs/sept_gonogo_glm53_v2_floatfix.csv",
+      "sha256": "06c749b7df9e461a5bd8c8da88a5d6894bd38257a9a45eae59fb3c2359627850",
+      "bytes": 197115,
+      "rows": 1000,
+      "snapshot_dates": [
+        "2022-09-01"
+      ],
+      "full_parse_rate": 1.0,
+      "nocf_parse_rate": 1.0,
+      "model": [
+        "glm-5.3"
+      ]
+    }
+  ],
+  "evaluation_files": [
+    {
+      "path": "artifacts/llm_panel_v2/runs/aug_gonogo_eval_floatfix.jsonl",
+      "sha256": "05d9b31d323bc6718e0ad926371352f46d619fcca7e844086e7ad63e8b58aa23",
+      "bytes": 5135
+    },
+    {
+      "path": "artifacts/llm_panel_v2/runs/jul_gonogo_eval_floatfix.jsonl",
+      "sha256": "46bdd37c12eff5e147a52342170265d76bc0598b96b21ce5f32783b17e9c2541",
+      "bytes": 5156
+    },
+    {
+      "path": "artifacts/llm_panel_v2/runs/jun_gonogo_eval_floatfix.jsonl",
+      "sha256": "519e007920232bf56375c2fd73f66b86e9a7024f7e611469667ec392c8d71e28",
+      "bytes": 5122
+    },
+    {
+      "path": "artifacts/llm_panel_20220901/runs/sept_gonogo_eval_floatfix.jsonl",
+      "sha256": "9e7efbf9d76df1d13bc5d137e4d20d1cc743396b335ea909fb7f4476b0d78c42",
+      "bytes": 5148
+    }
+  ],
+  "auxiliary_files": [
+    {
+      "path": "artifacts/llm_panel_v2/cheap_ranker_v2_metrics.json",
+      "sha256": "e1989ebde261d948fd1073327d04fcdc132c6e4a910e0e79d29dccdce935e79f",
+      "bytes": 2125
+    },
+    {
+      "path": "artifacts/llm_panel_v2/v2_build_manifest.json",
+      "sha256": "5a8d8a475870d2d68588786559550884c3005e996186c80fe2991f5a495483be",
+      "bytes": 724
+    },
+    {
+      "path": "artifacts/llm_panel_20220901/cheap_ranker_sept_v2_metrics.json",
+      "sha256": "2a4b7001e490165c9bf158ce23e74841fe77be1c53105ccb2929afed2a6f7845",
+      "bytes": 1305
+    }
+  ],
+  "operational_evaluation": {
+    "path": "artifacts/llm_panel_v2/operational_eval_floatfix.jsonl",
+    "sha256": "6781ab5ea5a7668205746ed87f33559801107d3394a16041e8d84e28d4cf4d47",
+    "bytes": 15844,
+    "bootstrap_draws": 10000,
+    "bootstrap_seed": 1,
+    "weight": "pop_weight",
+    "fallback": "failed Full/NoCF parse -> cheap reciprocal rank"
+  }
+}

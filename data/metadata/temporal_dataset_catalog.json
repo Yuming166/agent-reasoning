@@ -1,0 +1,339 @@
+{
+  "retrieved_at": "2026-09-07",
+  "target_address_file": "data/metadata/target_addresses.csv",
+  "target_unique_addresses": 27613,
+  "candidates": {
+    "erc20_2021": {
+      "persistent_id": "doi:10.7910/DVN/C1AR9V",
+      "title": "ERC-20 Trading 2021",
+      "version": 2,
+      "license": {
+        "name": "CC0 1.0",
+        "uri": "http://creativecommons.org/publicdomain/zero/1.0",
+        "iconUri": "https://licensebuttons.net/p/zero/1.0/88x31.png",
+        "rightsIdentifier": "CC0-1.0",
+        "rightsIdentifierScheme": "SPDX",
+        "schemeUri": "https://spdx.org/licenses/",
+        "languageCode": "en"
+      },
+      "files": [
+        {
+          "filename": "202101.tsv.gz",
+          "bytes": 1791483372,
+          "file_id": 11691928
+        },
+        {
+          "filename": "202102.tsv.gz",
+          "bytes": 1617895607,
+          "file_id": 11691940
+        },
+        {
+          "filename": "202103.tsv.gz",
+          "bytes": 1803405352,
+          "file_id": 11691941
+        },
+        {
+          "filename": "202104.tsv.gz",
+          "bytes": 1941117082,
+          "file_id": 11691942
+        },
+        {
+          "filename": "202105.tsv.gz",
+          "bytes": 2163273400,
+          "file_id": 11691945
+        },
+        {
+          "filename": "202106.tsv.gz",
+          "bytes": 1860563136,
+          "file_id": 11691947
+        },
+        {
+          "filename": "202107.tsv.gz",
+          "bytes": 1862237340,
+          "file_id": 11691949
+        },
+        {
+          "filename": "202108.tsv.gz",
+          "bytes": 1558617451,
+          "file_id": 11691950
+        },
+        {
+          "filename": "202109.tsv.gz",
+          "bytes": 1326559839,
+          "file_id": 11691951
+        },
+        {
+          "filename": "202110.tsv.gz",
+          "bytes": 1592237200,
+          "file_id": 11692052
+        },
+        {
+          "filename": "202111.tsv.gz",
+          "bytes": 1734009745,
+          "file_id": 11692054
+        },
+        {
+          "filename": "202112.tsv.gz",
+          "bytes": 1518463370,
+          "file_id": 11692053
+        }
+      ]
+    },
+    "erc20_2022": {
+      "persistent_id": "doi:10.7910/DVN/5P82QC",
+      "title": "ERC-20 Trading 2022",
+      "version": 2,
+      "license": {
+        "name": "CC0 1.0",
+        "uri": "http://creativecommons.org/publicdomain/zero/1.0",
+        "iconUri": "https://licensebuttons.net/p/zero/1.0/88x31.png",
+        "rightsIdentifier": "CC0-1.0",
+        "rightsIdentifierScheme": "SPDX",
+        "schemeUri": "https://spdx.org/licenses/",
+        "languageCode": "en"
+      },
+      "files": [
+        {
+          "filename": "202201.tsv.gz",
+          "bytes": 1201289825,
+          "file_id": 11692055
+        },
+        {
+          "filename": "202202.tsv.gz",
+          "bytes": 1024342295,
+          "file_id": 11692056
+        },
+        {
+          "filename": "202203.tsv.gz",
+          "bytes": 1305199771,
+          "file_id": 11692057
+        },
+        {
+          "filename": "202204.tsv.gz",
+          "bytes": 1146176487,
+          "file_id": 11692058
+        },
+        {
+          "filename": "202205.tsv.gz",
+          "bytes": 1146709410,
+          "file_id": 11692059
+        },
+        {
+          "filename": "202206.tsv.gz",
+          "bytes": 939293683,
+          "file_id": 11692060
+        },
+        {
+          "filename": "202207.tsv.gz",
+          "bytes": 1150182654,
+          "file_id": 11692061
+        },
+        {
+          "filename": "202208.tsv.gz",
+          "bytes": 1220494795,
+          "file_id": 11692065
+        },
+        {
+          "filename": "202209.tsv.gz",
+          "bytes": 1280821079,
+          "file_id": 11692068
+        },
+        {
+          "filename": "202210.tsv.gz",
+          "bytes": 1360120035,
+          "file_id": 11692073
+        },
+        {
+          "filename": "202211.tsv.gz",
+          "bytes": 1494624419,
+          "file_id": 11692074
+        },
+        {
+          "filename": "202212.tsv.gz",
+          "bytes": 1362648526,
+          "file_id": 11692069
+        }
+      ]
+    },
+    "erc20_2024": {
+      "persistent_id": "doi:10.7910/DVN/H6R61C",
+      "title": "ERC-20 Trading 2024",
+      "version": 1,
+      "license": {
+        "name": "CC0 1.0",
+        "uri": "http://creativecommons.org/publicdomain/zero/1.0",
+        "iconUri": "https://licensebuttons.net/p/zero/1.0/88x31.png",
+        "rightsIdentifier": "CC0-1.0",
+        "rightsIdentifierScheme": "SPDX",
+        "schemeUri": "https://spdx.org/licenses/",
+        "languageCode": "en"
+      },
+      "files": [
+        {
+          "filename": "202401.tsv.gz",
+          "bytes": 2027753443,
+          "file_id": 11692099
+        },
+        {
+          "filename": "202402.tsv.gz",
+          "bytes": 1770911606,
+          "file_id": 11692103
+        },
+        {
+          "filename": "202403.tsv.gz",
+          "bytes": 2375921007,
+          "file_id": 11692105
+        },
+        {
+          "filename": "202404.tsv.gz",
+          "bytes": 2230708652,
+          "file_id": 11692107
+        },
+        {
+          "filename": "202405.tsv.gz",
+          "bytes": 2167881542,
+          "file_id": 11692106
+        },
+        {
+          "filename": "202406.tsv.gz",
+          "bytes": 2263727688,
+          "file_id": 11712536
+        },
+        {
+          "filename": "202407.tsv.gz",
+          "bytes": 2406807944,
+          "file_id": 11712537
+        },
+        {
+          "filename": "202408.tsv.gz",
+          "bytes": 2409379613,
+          "file_id": 11712538
+        },
+        {
+          "filename": "202409.tsv.gz",
+          "bytes": 2388957423,
+          "file_id": 11712539
+        },
+        {
+          "filename": "202410.tsv.gz",
+          "bytes": 2495965938,
+          "file_id": 11712540
+        },
+        {
+          "filename": "202411.tsv.gz",
+          "bytes": 2472836344,
+          "file_id": 11712541
+        },
+        {
+          "filename": "202412.tsv.gz",
+          "bytes": 2499253658,
+          "file_id": 11712542
+        }
+      ]
+    },
+    "erc20_auxiliary": {
+      "persistent_id": "doi:10.7910/DVN/MBF0GC",
+      "title": "erc20 Auxiliary data",
+      "version": 2,
+      "license": {
+        "name": "CC0 1.0",
+        "uri": "http://creativecommons.org/publicdomain/zero/1.0",
+        "iconUri": "https://licensebuttons.net/p/zero/1.0/88x31.png",
+        "rightsIdentifier": "CC0-1.0",
+        "rightsIdentifierScheme": "SPDX",
+        "schemeUri": "https://spdx.org/licenses/",
+        "languageCode": "en"
+      },
+      "files": [
+        {
+          "filename": "bigQuery_token_adds.csv",
+          "bytes": 72765470,
+          "file_id": 11704609
+        },
+        {
+          "filename": "blockchain_scraper.ipynb",
+          "bytes": 10755,
+          "file_id": 11591078
+        },
+        {
+          "filename": "erc20_token_adds.csv",
+          "bytes": 78324696,
+          "file_id": 11704611
+        },
+        {
+          "filename": "etherscan_API_query.ipynb",
+          "bytes": 2259,
+          "file_id": 11704610
+        },
+        {
+          "filename": "labeled_addresses__enriched.csv",
+          "bytes": 1045693,
+          "file_id": 11591077
+        },
+        {
+          "filename": "README ERC-20 data.pdf",
+          "bytes": 249055,
+          "file_id": 11704608
+        }
+      ]
+    },
+    "aws_public_blockchain": {
+      "representative_date": "2022-02-01",
+      "tables": {
+        "transactions": [
+          {
+            "key": "v1.0/eth/transactions/date=2022-02-01/part-00000-73bd9f88-43ab-4aac-a8ec-6979027b4be6-c000.snappy.parquet",
+            "bytes": 358940138
+          }
+        ],
+        "token_transfers": [
+          {
+            "key": "v1.0/eth/token_transfers/date=2022-02-01/part-00000-a7f7f02b-651e-4303-bc3f-82a163851a98-c000.snappy.parquet",
+            "bytes": 119530128
+          }
+        ],
+        "traces": [
+          {
+            "key": "v1.0/eth/traces/date=2022-02-01/part-00000-058b1f70-db88-4275-b578-772b75ede5ae-c000.snappy.parquet",
+            "bytes": 1351584084
+          }
+        ],
+        "logs": [
+          {
+            "key": "v1.0/eth/logs/date=2022-02-01/part-00000-047c5fa2-72b2-4f53-b4e3-e310e44d50b7-c000.snappy.parquet",
+            "bytes": 322859071
+          }
+        ],
+        "blocks": [
+          {
+            "key": "v1.0/eth/blocks/date=2022-02-01/part-00000-e32ebc33-edae-4df5-ba9e-386716dafaa1-c000.snappy.parquet",
+            "bytes": 5460439
+          }
+        ]
+      },
+      "note": "Public S3 partition listing; schema and coverage must be frozen before extraction."
+    },
+    "bigquery_blockchain_analytics": {
+      "tables": [
+        "transactions",
+        "token_transfers",
+        "traces",
+        "logs",
+        "blocks"
+      ],
+      "note": "Use current official table namespace/schema and save dry-run plus exported result metadata."
+    },
+    "livegraphlab": {
+      "zenodo_record": "8267012",
+      "metadata_archive_bytes": 5842468644,
+      "license": "CC BY 4.0",
+      "coverage_note": "Live Graph Lab code states blocks before 2022-08-01 and metadata fields include block/from/to/token/tx hash/value/timestamp."
+    },
+    "tgs": {
+      "zenodo_record": "11480106",
+      "raw_archive_bytes": 602246035,
+      "license": "CC BY 4.0",
+      "note": "Selected ERC-20 token networks; development pilot only."
+    }
+  }
+}

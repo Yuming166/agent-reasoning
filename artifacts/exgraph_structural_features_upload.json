@@ -1,0 +1,71 @@
+{
+  "run_seconds": 5.8,
+  "source_csv_bytes": 2361724,
+  "uploaded_body_bytes": 1085361,
+  "compression": "GZIP",
+  "job_reference": {
+    "projectId": "ictdata-507912",
+    "jobId": "exgraph_structural_load_5d922e0d9a554483",
+    "location": "US"
+  },
+  "status": "DONE",
+  "errors": null,
+  "table": {
+    "id": "ictdata-507912:exgraph.exgraph_structural_features_v1",
+    "type": "TABLE",
+    "num_rows": 27613,
+    "num_bytes": 3009817,
+    "schema_fields": [
+      {
+        "name": "ethereum_address",
+        "type": "STRING",
+        "mode": "REQUIRED"
+      },
+      {
+        "name": "exgraph_node_id",
+        "type": "INTEGER",
+        "mode": "REQUIRED"
+      },
+      {
+        "name": "graph_node_present",
+        "type": "BOOLEAN",
+        "mode": "REQUIRED"
+      },
+      {
+        "name": "in_degree",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "out_degree",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "w_in_degree",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "w_out_degree",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "degree",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "w_degree",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+      },
+      {
+        "name": "pagerank",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+      }
+    ]
+  }
+}

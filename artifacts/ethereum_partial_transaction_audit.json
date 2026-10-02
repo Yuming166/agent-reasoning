@@ -1,0 +1,76 @@
+{
+  "archive": "./data/raw/ethereum_partial_transaction_dataset.zip",
+  "target_address_count": 27613,
+  "graphs": {
+    "EthereumG1": {
+      "address_map_rows": 9855,
+      "edge_list_file": "Ethereum Partial Transaction Dataset/EthereumG1/LPsubG1_0.5_TransEdgelist.txt",
+      "address_map_file": "Ethereum Partial Transaction Dataset/EthereumG1/addr2Idx.txt",
+      "edge_rows": 225714,
+      "bad_rows": 0,
+      "endpoint_node_count": 3832,
+      "unique_directed_pairs": 6829,
+      "timestamp_min": 1438919949,
+      "timestamp_max": 1459233236,
+      "timestamp_min_utc": "2015-08-07T03:59:09+00:00",
+      "timestamp_max_utc": "2016-03-29T06:33:56+00:00",
+      "value_min": 1e-18,
+      "value_max": 1400000.0,
+      "mapped_target_address_count": 1,
+      "mapped_target_addresses": [
+        "4b43041e418b16bb7dcf94a09f721cc73574fc04"
+      ],
+      "edge_rows_touching_target": 0,
+      "outgoing_target_rows": 0,
+      "incoming_target_rows": 0
+    },
+    "EthereumG2": {
+      "address_map_rows": 23847,
+      "edge_list_file": "Ethereum Partial Transaction Dataset/EthereumG2/LPsubG2_0.45_TransEdgelist.txt",
+      "address_map_file": "Ethereum Partial Transaction Dataset/EthereumG2/addr2Idx.txt",
+      "edge_rows": 222876,
+      "bad_rows": 0,
+      "endpoint_node_count": 10628,
+      "unique_directed_pairs": 13479,
+      "timestamp_min": 1438269973,
+      "timestamp_max": 1470092300,
+      "timestamp_min_utc": "2015-07-30T15:26:13+00:00",
+      "timestamp_max_utc": "2016-08-01T22:58:20+00:00",
+      "value_min": 1e-18,
+      "value_max": 1379750.2755557103,
+      "mapped_target_address_count": 1,
+      "mapped_target_addresses": [
+        "7bb26b220fe5de852e63ed22e692fb07ef17b188"
+      ],
+      "edge_rows_touching_target": 0,
+      "outgoing_target_rows": 0,
+      "incoming_target_rows": 0
+    },
+    "EthereumG3": {
+      "address_map_rows": 103916,
+      "edge_list_file": "Ethereum Partial Transaction Dataset/EthereumG3/LPsubG3_0.5_TransEdgelist.txt",
+      "address_map_file": "Ethereum Partial Transaction Dataset/EthereumG3/addr2Idx.txt",
+      "edge_rows": 679574,
+      "bad_rows": 0,
+      "endpoint_node_count": 26175,
+      "unique_directed_pairs": 33051,
+      "timestamp_min": 1438269973,
+      "timestamp_max": 1468694984,
+      "timestamp_min_utc": "2015-07-30T15:26:13+00:00",
+      "timestamp_max_utc": "2016-07-16T18:49:44+00:00",
+      "value_min": 1e-18,
+      "value_max": 1400000.0,
+      "mapped_target_address_count": 1,
+      "mapped_target_addresses": [
+        "4b43041e418b16bb7dcf94a09f721cc73574fc04"
+      ],
+      "edge_rows_touching_target": 10,
+      "outgoing_target_rows": 2,
+      "incoming_target_rows": 8
+    }
+  },
+  "dataset_level": {
+    "license_observed_in_kaggle_metadata": "Unknown",
+    "source_description": "XBlock/Kaggle Ethereum Partial Transaction Dataset"
+  }
+}

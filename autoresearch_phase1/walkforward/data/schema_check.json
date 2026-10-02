@@ -1,0 +1,54 @@
+{
+  "dev_rows": 78786,
+  "holdout_rows": 18519,
+  "shared_columns": [
+    "snapshot_date",
+    "target_address",
+    "target_exgraph_node_id",
+    "target_is_x_matched",
+    "evt_cnt_90d",
+    "evt_out_90d",
+    "evt_in_90d",
+    "evt_self_90d",
+    "evt_native_90d",
+    "evt_token_90d",
+    "active_days_90d",
+    "tx_cnt_90d",
+    "active_span_days_90d",
+    "cp_distinct_90d",
+    "cp_out_distinct_90d",
+    "cp_in_distinct_90d",
+    "cp_out_interact_90d",
+    "cp_in_interact_90d",
+    "token_distinct_90d",
+    "cp_entropy_90d",
+    "cp_new_30d",
+    "cp_new_rate_30d",
+    "cp_both_dir_90d",
+    "cp_reciprocity_90d",
+    "self_tx_rate_90d",
+    "token_event_rate_90d",
+    "token_hhi_90d",
+    "events_per_active_day_90d",
+    "fwd30_evt_cnt",
+    "fwd30_cp_distinct",
+    "fwd30_cp_out_distinct",
+    "fwd30_new_cp"
+  ],
+  "n_shared": 32,
+  "dtype_mismatches": [],
+  "label_parity_holdout_vs_bcsv": {
+    "evt_cnt_max_abs_diff": 2.9103830456733704e-11,
+    "new_cp_max_abs_diff": 5.115907697472721e-13
+  },
+  "dev_cutoff_counts": {
+    "2022-05-01": 19649,
+    "2022-06-01": 20341,
+    "2022-07-01": 19734,
+    "2022-08-01": 19062
+  },
+  "holdout_cutoff_counts": {
+    "2022-09-01": 18519
+  },
+  "note": "33 same-name fields type-aligned; holdout has extra trajectory/network/USD features not present in dev; importance_proxy_p3 excluded"
+}

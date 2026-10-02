@@ -1,0 +1,50 @@
+{
+  "project_id": "ictdata-507912",
+  "dataset": "ictdata-507912:exgraph",
+  "target_table": "ictdata-507912.exgraph.target_addresses",
+  "public_source": "bigquery-public-data.goog_blockchain_ethereum_mainnet_us",
+  "window_utc": {
+    "start_inclusive": "2022-03-01",
+    "end_exclusive": "2022-09-01"
+  },
+  "target_csv": "data/metadata/target_addresses.csv",
+  "target_csv_bytes": 1412793,
+  "dataset_metadata": {
+    "dataset_id": "ictdata-507912:exgraph",
+    "location": "US"
+  },
+  "load_job": {
+    "job_id": "exgraph_target_load_5048249760474ef8",
+    "output_rows": "27613",
+    "input_file_bytes": "1412793"
+  },
+  "dry_run": {
+    "total_bytes_processed": 38836926968,
+    "total_bytes_billed": 0,
+    "job_reference": {
+      "projectId": "ictdata-507912",
+      "location": "US"
+    },
+    "location": "US"
+  },
+  "query_sql": "-- Count-only coverage validation; no source rows are downloaded.\nDECLARE start_ts TIMESTAMP DEFAULT TIMESTAMP('2022-03-01 00:00:00+00');\nDECLARE end_ts TIMESTAMP DEFAULT TIMESTAMP('2022-09-01 00:00:00+00');\n\nWITH target AS (\n  SELECT DISTINCT LOWER(ethereum_address) AS address\n  FROM `ictdata-507912.exgraph.target_addresses`\n),\nexternal_observed AS (\n  SELECT DISTINCT LOWER(t.from_address) AS address\n  FROM `bigquery-public-data.goog_blockchain_ethereum_mainnet_us.transactions` AS t\n  JOIN target AS a ON LOWER(t.from_address) = a.address\n  WHERE t.block_timestamp >= start_ts AND t.block_timestamp < end_ts\n  UNION DISTINCT\n  SELECT DISTINCT LOWER(t.to_address) AS address\n  FROM `bigquery-public-data.goog_blockchain_ethereum_mainnet_us.transactions` AS t\n  JOIN target AS a ON LOWER(t.to_address) = a.address\n  WHERE t.block_timestamp >= start_ts AND t.block_timestamp < end_ts\n),\ntoken_observed AS (\n  SELECT DISTINCT LOWER(tt.from_address) AS address\n  FROM `bigquery-public-data.goog_blockchain_ethereum_mainnet_us.token_transfers` AS tt\n  JOIN target AS a ON LOWER(tt.from_address) = a.address\n  WHERE tt.block_timestamp >= start_ts AND tt.block_timestamp < end_ts\n  UNION DISTINCT\n  SELECT DISTINCT LOWER(tt.to_address) AS address\n  FROM `bigquery-public-data.goog_blockchain_ethereum_mainnet_us.token_transfers` AS tt\n  JOIN target AS a ON LOWER(tt.to_address) = a.address\n  WHERE tt.block_timestamp >= start_ts AND tt.block_timestamp < end_ts\n),\nobserved_any AS (\n  SELECT address FROM external_observed\n  UNION DISTINCT\n  SELECT address FROM token_observed\n)\nSELECT\n  (SELECT COUNT(*) FROM target) AS target_addresses,\n  (SELECT COUNT(*) FROM external_observed) AS external_tx_observed,\n  (SELECT COUNT(*) FROM token_observed) AS token_transfer_observed,\n  (SELECT COUNT(*) FROM observed_any) AS observed_in_any_source,\n  SAFE_DIVIDE((SELECT COUNT(*) FROM observed_any), (SELECT COUNT(*) FROM target)) AS coverage_ratio;\n",
+  "actual_query": {
+    "job_reference": {
+      "projectId": "ictdata-507912",
+      "jobId": "job_k6p1rUbE3P7X6Wstzfc2cezzyveG",
+      "location": "US"
+    },
+    "total_bytes_processed": 38836926968,
+    "total_bytes_billed": 38837157888,
+    "cache_hit": null,
+    "rows": [
+      {
+        "target_addresses": "27613",
+        "external_tx_observed": "20969",
+        "token_transfer_observed": "19940",
+        "observed_in_any_source": "21421",
+        "coverage_ratio": "0.7757577952413718"
+      }
+    ]
+  }
+}

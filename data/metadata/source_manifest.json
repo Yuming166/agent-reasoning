@@ -1,0 +1,37 @@
+{
+  "retrieved_at": "2026-09-07",
+  "repository": {
+    "name": "Persdre/EX-Graph",
+    "commit": "298a52564f5d7f8e30f7f8e6919ae1b3168db481"
+  },
+  "ethereum_graph": {
+    "google_drive_file_id": "1VWUGTUniv7-uDISXvJcMLE4OMCtQFPn6",
+    "filename": "ethereum_graph.gpickle",
+    "bytes": 11616467480,
+    "sha256": "27c86772e260291863f2d39fe475840b8ef0bcb54d198cea344f8f8f682d5db2",
+    "observed_graph_type": "networkx.classes.digraph.DiGraph",
+    "observed_nodes": 1810641,
+    "observed_edges": 11876618,
+    "observed_edge_keys": ["weight"],
+    "observed_missing_block_number_edges": 11876618,
+    "weight_sum": 16004443,
+    "weight_min": 1,
+    "weight_median": 1,
+    "weight_max": 17173,
+    "readme_claimed_nodes": 2610465,
+    "readme_claimed_edges": 29585858,
+    "readme_claimed_edge_keys": ["from_address", "to_address", "weight", "block_number"]
+  },
+  "crypto_influencer_input": {
+    "status": "downloaded_for_schema_audit",
+    "mendeley_dataset_id": "8fbdhh72gs",
+    "version": 5,
+    "csv": "data/raw/crypto_influencer_v5/dataset_52-person-from-2021-02-05_2023-06-12_21-34-17-266_with_sentiment.csv",
+    "csv_rows": 16512,
+    "csv_time_min": "2021-02-01",
+    "csv_time_max": "2023-06-12",
+    "csv_has_twitter_name_or_author_id": false,
+    "note": "The companion legacy XLS has TwitterName, but no EX-Graph node_id crosswalk; exact six-month subset boundaries and author-wallet crosswalk must be frozen before joining.",
+    "csv_sha256": "3cd10be6ff4d806e889093868fd511c1f60c8f6434e4257c45e4787999b51a9e"
+  }
+}

@@ -1,0 +1,56 @@
+experiment_id,audit,split,selector,K,value,status,detail
+AUDIT_ADV_001,forbidden_primary_feature_scan,all,primary_feature_contract,100,0.0,PASS,[]
+AUDIT_ADV_001,static_full_window_prior,all,static_degree/static_pagerank,100,1.0,CONTEXT_ONLY_LEAKY_PRIOR,artifacts/exgraph_structural_features.csv is full-window aggregate; excluded from primary learned features
+AUDIT_ADV_001,score_volume_spearman,test_aug,hybrid,100,0.33345559041276257,DESCRIPTIVE,score vs as-of wallet_volume
+AUDIT_ADV_001,volume_residual_selected_gain,test_aug,hybrid,100,0.30727349484485694,DESCRIPTIVE,rv residual after train-only OLS on log1p(wallet_volume)
+AUDIT_ADV_001,volume_selected_mean,test_aug,hybrid,100,911.4715199999997,DESCRIPTIVE,selected mean as-of volume
+AUDIT_ADV_001,score_volume_spearman,test_aug,reasoning_value,100,0.18273835642434827,DESCRIPTIVE,score vs as-of wallet_volume
+AUDIT_ADV_001,volume_residual_selected_gain,test_aug,reasoning_value,100,0.32389649453080355,DESCRIPTIVE,rv residual after train-only OLS on log1p(wallet_volume)
+AUDIT_ADV_001,volume_selected_mean,test_aug,reasoning_value,100,791.7139199999998,DESCRIPTIVE,selected mean as-of volume
+AUDIT_ADV_001,score_volume_spearman,test_aug,dynamic_influence,100,0.6673344544186207,DESCRIPTIVE,score vs as-of wallet_volume
+AUDIT_ADV_001,volume_residual_selected_gain,test_aug,dynamic_influence,100,-0.14042789897339558,DESCRIPTIVE,rv residual after train-only OLS on log1p(wallet_volume)
+AUDIT_ADV_001,volume_selected_mean,test_aug,dynamic_influence,100,951.4571999999997,DESCRIPTIVE,selected mean as-of volume
+AUDIT_ADV_001,score_volume_spearman,test_aug,volume,100,1.0,DESCRIPTIVE,score vs as-of wallet_volume
+AUDIT_ADV_001,volume_residual_selected_gain,test_aug,volume,100,-0.07354703086102216,DESCRIPTIVE,rv residual after train-only OLS on log1p(wallet_volume)
+AUDIT_ADV_001,volume_selected_mean,test_aug,volume,100,1345.704,DESCRIPTIVE,selected mean as-of volume
+AUDIT_ADV_001,score_volume_spearman,test_aug,static_pagerank,100,0.4463281669617196,DESCRIPTIVE,score vs as-of wallet_volume
+AUDIT_ADV_001,volume_residual_selected_gain,test_aug,static_pagerank,100,-0.10868246968466093,DESCRIPTIVE,rv residual after train-only OLS on log1p(wallet_volume)
+AUDIT_ADV_001,volume_selected_mean,test_aug,static_pagerank,100,906.0889599999999,DESCRIPTIVE,selected mean as-of volume
+AUDIT_ADV_001,low_volume_high_influence_share_selected,test_aug,hybrid,100,0.02,SUPERVISION_AUDIT,selected share; future I_new_hist used only for audit; quadrant_n=47
+AUDIT_ADV_001,low_volume_high_influence_recall,test_aug,hybrid,100,0.0425531914893617,SUPERVISION_AUDIT,recall among low-volume/high-influence wallets
+AUDIT_ADV_001,low_volume_high_influence_share_selected,test_aug,reasoning_value,100,0.02,SUPERVISION_AUDIT,selected share; future I_new_hist used only for audit; quadrant_n=47
+AUDIT_ADV_001,low_volume_high_influence_recall,test_aug,reasoning_value,100,0.0425531914893617,SUPERVISION_AUDIT,recall among low-volume/high-influence wallets
+AUDIT_ADV_001,low_volume_high_influence_share_selected,test_aug,dynamic_influence,100,0.0,SUPERVISION_AUDIT,selected share; future I_new_hist used only for audit; quadrant_n=47
+AUDIT_ADV_001,low_volume_high_influence_recall,test_aug,dynamic_influence,100,0.0,SUPERVISION_AUDIT,recall among low-volume/high-influence wallets
+AUDIT_ADV_001,low_volume_high_influence_share_selected,test_aug,volume,100,0.0,SUPERVISION_AUDIT,selected share; future I_new_hist used only for audit; quadrant_n=47
+AUDIT_ADV_001,low_volume_high_influence_recall,test_aug,volume,100,0.0,SUPERVISION_AUDIT,recall among low-volume/high-influence wallets
+AUDIT_ADV_001,low_volume_high_influence_share_selected,test_aug,static_pagerank,100,0.0,SUPERVISION_AUDIT,selected share; future I_new_hist used only for audit; quadrant_n=47
+AUDIT_ADV_001,low_volume_high_influence_recall,test_aug,static_pagerank,100,0.0,SUPERVISION_AUDIT,recall among low-volume/high-influence wallets
+AUDIT_ADV_001,score_volume_spearman,holdout_sep,hybrid,100,0.34094237686283374,DESCRIPTIVE,score vs as-of wallet_volume
+AUDIT_ADV_001,volume_residual_selected_gain,holdout_sep,hybrid,100,0.1227075866410725,DESCRIPTIVE,rv residual after train-only OLS on log1p(wallet_volume)
+AUDIT_ADV_001,volume_selected_mean,holdout_sep,hybrid,100,772.30808,DESCRIPTIVE,selected mean as-of volume
+AUDIT_ADV_001,score_volume_spearman,holdout_sep,reasoning_value,100,0.03918285280440996,DESCRIPTIVE,score vs as-of wallet_volume
+AUDIT_ADV_001,volume_residual_selected_gain,holdout_sep,reasoning_value,100,0.012502374258842269,DESCRIPTIVE,rv residual after train-only OLS on log1p(wallet_volume)
+AUDIT_ADV_001,volume_selected_mean,holdout_sep,reasoning_value,100,594.7563999999999,DESCRIPTIVE,selected mean as-of volume
+AUDIT_ADV_001,score_volume_spearman,holdout_sep,dynamic_influence,100,0.7073925641427822,DESCRIPTIVE,score vs as-of wallet_volume
+AUDIT_ADV_001,volume_residual_selected_gain,holdout_sep,dynamic_influence,100,-0.09498005430623122,DESCRIPTIVE,rv residual after train-only OLS on log1p(wallet_volume)
+AUDIT_ADV_001,volume_selected_mean,holdout_sep,dynamic_influence,100,841.94096,DESCRIPTIVE,selected mean as-of volume
+AUDIT_ADV_001,score_volume_spearman,holdout_sep,volume,100,1.0,DESCRIPTIVE,score vs as-of wallet_volume
+AUDIT_ADV_001,volume_residual_selected_gain,holdout_sep,volume,100,-0.012846433714903389,DESCRIPTIVE,rv residual after train-only OLS on log1p(wallet_volume)
+AUDIT_ADV_001,volume_selected_mean,holdout_sep,volume,100,1353.7440000000001,DESCRIPTIVE,selected mean as-of volume
+AUDIT_ADV_001,score_volume_spearman,holdout_sep,static_pagerank,100,0.430978396198158,DESCRIPTIVE,score vs as-of wallet_volume
+AUDIT_ADV_001,volume_residual_selected_gain,holdout_sep,static_pagerank,100,-0.07354254704725818,DESCRIPTIVE,rv residual after train-only OLS on log1p(wallet_volume)
+AUDIT_ADV_001,volume_selected_mean,holdout_sep,static_pagerank,100,722.2277599999999,DESCRIPTIVE,selected mean as-of volume
+AUDIT_ADV_001,low_volume_high_influence_share_selected,holdout_sep,hybrid,100,0.02,SUPERVISION_AUDIT,selected share; future I_new_hist used only for audit; quadrant_n=27
+AUDIT_ADV_001,low_volume_high_influence_recall,holdout_sep,hybrid,100,0.07407407407407407,SUPERVISION_AUDIT,recall among low-volume/high-influence wallets
+AUDIT_ADV_001,low_volume_high_influence_share_selected,holdout_sep,reasoning_value,100,0.01,SUPERVISION_AUDIT,selected share; future I_new_hist used only for audit; quadrant_n=27
+AUDIT_ADV_001,low_volume_high_influence_recall,holdout_sep,reasoning_value,100,0.037037037037037035,SUPERVISION_AUDIT,recall among low-volume/high-influence wallets
+AUDIT_ADV_001,low_volume_high_influence_share_selected,holdout_sep,dynamic_influence,100,0.0,SUPERVISION_AUDIT,selected share; future I_new_hist used only for audit; quadrant_n=27
+AUDIT_ADV_001,low_volume_high_influence_recall,holdout_sep,dynamic_influence,100,0.0,SUPERVISION_AUDIT,recall among low-volume/high-influence wallets
+AUDIT_ADV_001,low_volume_high_influence_share_selected,holdout_sep,volume,100,0.05,SUPERVISION_AUDIT,selected share; future I_new_hist used only for audit; quadrant_n=27
+AUDIT_ADV_001,low_volume_high_influence_recall,holdout_sep,volume,100,0.18518518518518517,SUPERVISION_AUDIT,recall among low-volume/high-influence wallets
+AUDIT_ADV_001,low_volume_high_influence_share_selected,holdout_sep,static_pagerank,100,0.0,SUPERVISION_AUDIT,selected share; future I_new_hist used only for audit; quadrant_n=27
+AUDIT_ADV_001,low_volume_high_influence_recall,holdout_sep,static_pagerank,100,0.0,SUPERVISION_AUDIT,recall among low-volume/high-influence wallets
+AUDIT_ADV_001,wallet_reuse_across_4000_events,all,none,0,0.20494233937397036,DESCRIPTIVE,622 wallets repeat; wallet/address identity not a model feature
+AUDIT_ADV_001,permuted_label_placebo_ndcg,test_aug,rv_pred_placebo,100,0.23014170190648867,NEGATIVE_CONTROL,June+July RV labels permuted before fitting; no future columns
+AUDIT_ADV_001,permuted_label_placebo_ndcg,holdout_sep,rv_pred_placebo,100,0.13359619890611132,NEGATIVE_CONTROL,June+July RV labels permuted before fitting; no future columns

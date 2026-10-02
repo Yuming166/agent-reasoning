@@ -1,0 +1,19 @@
+{
+  "total_dev_cases": 150,
+  "active_cases": 52,
+  "inactive_cases": 98,
+  "active_target_in_pool": 40,
+  "active_supported": 28,
+  "active_unsupported": 24,
+  "visibility_breakdown": {
+    "own_seen": 32,
+    "global_seen": 11,
+    "open_world": 9
+  },
+  "pool_size_active": {
+    "min": 3830,
+    "median": 4077.0,
+    "max": 4633
+  },
+  "note": "主指标分母=全部active案例(52), rank<=0(不在池)按0计; supported_only分母=40; 两阶段top50->top5会改变分母语义"
+}

@@ -1,0 +1,23 @@
+{
+  "nodes": 1103509,
+  "directed_follow_edges": 3768281,
+  "indegree": {
+    "mean": 3.414816734616573,
+    "median": 1.0,
+    "max": 4476,
+    "p99": 45.0,
+    "zero": 312106
+  },
+  "outdegree": {
+    "mean": 3.414816734616573,
+    "median": 0.0,
+    "max": 21621,
+    "p99": 30.0,
+    "zero": 639846
+  },
+  "reciprocal_edge_ends": 102088,
+  "weakly_connected_components": 2,
+  "largest_cc_nodes": 1103430,
+  "isolated_nodes": 0,
+  "load_seconds": 6.2
+}

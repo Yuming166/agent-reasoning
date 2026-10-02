@@ -1,0 +1,160 @@
+# Temporal Protocol — Group 0 (Data & Leakage Audit), Phase I
+# Frozen on 2026-09-11. No Phase-I result is valid unless it references this file.
+# Companion evidence: research/audit/DATA_AUDIT.md, research/audit/bq_metadata_2026-09-11.json
+# All timestamps are UTC. All BigQuery objects live in project ictdata-507912, dataset exgraph.
+
+version: 1.0
+status: FROZEN
+owner: Group 0 — Data & Leakage Audit
+valid_from: 2026-09-11
+project: ictdata-507912
+dataset: exgraph
+bigquery_location: US
+query_policy:
+  runner: research/audit/audit_query.py   # read-only wrapper; do not mutate tables
+  partition_filter: REQUIRED             # every query on partitioned tables must predicate block_timestamp/snapshot_date/month
+  maximum_bytes_billed: REQUIRED         # set an explicit cap per query; never export whole tables
+  no_full_table_export: true
+
+# ---------------------------------------------------------------------------
+# 1. Data windows (all half-open [start, end))
+# ---------------------------------------------------------------------------
+windows:
+  development_events: {start: "2022-03-01T00:00:00Z", end: "2022-09-01T00:00:00Z", inclusive: "start", label: DEV}
+  holdout_events:     {start: "2022-09-01T00:00:00Z", end: "2022-10-01T00:00:00Z", inclusive: "start", label: FINAL_HOLDOUT}
+  feature_lookback:   {duration_days: 90, end_relation: "strictly before cutoff t", label: LOOKBACK}
+  label_horizon:      {duration_days: 30, start_relation: "at or after cutoff t", label: FORWARD}
+  social_tweets_available: {start: "2021-02-01T00:00:00Z", end: "2023-06-12T23:59:59Z"}   # external context only
+  eth_price_available: {start: "2017-08-16T16:45:00Z", end: "2026-09-10T02:24:00Z"}        # must be clipped as-of
+
+# ---------------------------------------------------------------------------
+# 2. Cutoffs (snapshot dates; all features must be computable strictly before t)
+# ---------------------------------------------------------------------------
+cutoffs:
+  walk_forward: ["2022-05-01", "2022-06-01", "2022-07-01", "2022-08-01"]   # wallet_asof_features_v1
+  frozen_split:
+    train: "2022-06-01"
+    validation: "2022-07-01"
+    frozen_test: "2022-08-01"
+  final_untouched_holdout: "2022-09-01"                                     # wallet_asof_features_20220901
+
+cutoff_semantics:
+  cutoff_t: "selection and feature computation may use ONLY information with timestamp strictly < t"
+  label_window: "[t, t + 30d) for each cutoff t"
+  label_source_primary_only: "labels are built from primary event families (external_tx, token_transfer); internal_trace is auxiliary"
+  label_excludes: "counterparty_present=false rows and self_transactions are excluded from next-counterparty labels"
+
+# ---------------------------------------------------------------------------
+# 3. Feature availability rules (no-future-leakage contract)
+# ---------------------------------------------------------------------------
+feature_availability:
+  event_features: "any *_90d feature at cutoff t uses only events in [t-90d, t) from the sequence tables/views"
+  static_graph_prior_only: "ethereum_graph.gpickle / exgraph_structural_features_v1 (degree, PageRank) are full-window static priors; they may seed candidate pools or serve as baselines but MUST NOT be used as as-of prediction features at cutoff t"
+  social_context: "influencer tweets are external market/asset context only (no author->wallet mapping exists); only tweets with created_at <= t may be used at cutoff t; never claim they are wallet-owner statements"
+  price: "any price feature at cutoff t uses only rows with timestamp <= t (as-of join); the local minute price file extends to 2026-09-10 and MUST be clipped"
+  candidate_pool: "candidate/negative pools must be built from events strictly before t (see nc_ranker_samples_v2 construction); prefer target pools defined over < t"
+  forbidden_features:
+    - future transactions (block_timestamp >= t)
+    - future wallet labels / future network statistics
+    - future prices or future social information
+    - full-window static centrality as as-of prediction feature
+    - same-snapshot future labels as a leak-free selector (P3 demo only)
+
+# ---------------------------------------------------------------------------
+# 4. No-leakage rules
+# ---------------------------------------------------------------------------
+no_leakage_rules:
+  - "chronological split only: train < validation < frozen_test < final_holdout; never random splits"
+  - "no circularity: historical data <= t -> estimate importance -> freeze top-K -> observe future -> evaluate"
+  - "any feature at cutoff t must be recomputable from data strictly before t; post-hoc analyses must be labeled post-hoc"
+  - "dev and holdout windows are disjoint: dev max partition 20220831 < holdout min partition 20220901 (verified)"
+  - "sentinel handling: nc_ranker_samples_v2 g_rank=99999 marks positives outside historical global-popularity support; report supported-pool and full-vocabulary metrics SEPARATELY; never report naive full-pool MRR as performance"
+  - "schema guard: dev sequence table stores trace_address as REPEATED INTEGER, holdout as STRING; any cross-window union MUST use the combined view target_event_sequences_20220301_20221001 or an explicit CAST"
+  - "no tuning on the final holdout: frozen_test 2022-08-01 is the last tunable boundary; 2022-09-01 holdout is evaluated exactly once"
+
+# ---------------------------------------------------------------------------
+# 5. Evaluation protocol (frozen)
+# ---------------------------------------------------------------------------
+evaluation_protocol:
+  procedure:
+    - "1. For each cutoff t in walk_forward + final_holdout, build as-of features from [t-90d, t) primary events"
+    - "2. Train on snapshot 2022-06-01, tune on 2022-07-01, freeze on 2022-08-01"
+    - "3. Freeze the selected top-K sets at each cutoff using only information < t"
+    - "4. Observe future window [t, t+30d) and compute metrics against next-counterparty / activity labels"
+    - "5. Evaluate the final untouched holdout snapshot 2022-09-01 exactly once"
+  budgets_k: [10, 25, 50, 100, 250, 500, 1000]
+  metrics:
+    - MRR
+    - Recall@K
+    - NDCG
+    - coverage (event / hard-event / headroom)
+    - support coverage (share of positives inside candidate support) and full-vocabulary variant
+    - utility per selected wallet U(K)/K
+  baselines:
+    - random
+    - volume / ETH flow / activity (size)
+    - degree / weighted degree / PageRank / k-core (structural, static-prior baselines only)
+    - behavioral (cluster/anomaly)
+    - temporal (recent activity, acceleration, persistence)
+    - predictive influence
+    - information gain
+  reporting_rules:
+    - "always report support-restricted and broad/full-candidate boundaries separately"
+    - "P1/P2/P3 are proxies, not causal influence; no causal claim without a valid identification strategy"
+    - "selection-layer results (coverage/headroom) must not be presented as end-task prediction superiority"
+    - "report cost axis as proxy units unless real LLM tokens/latency are measured"
+
+# ---------------------------------------------------------------------------
+# 6. Canonical table / view manifest (verified 2026-09-11, see bq_metadata_2026-09-11.json)
+# ---------------------------------------------------------------------------
+tables:
+  mapping:
+    target_addresses: "ictdata-507912.exgraph.target_addresses (27,613 rows)"
+    exgraph_x_matches_v1: "ictdata-507912.exgraph.exgraph_x_matches_v1 (27,613 rows; address+node_id only)"
+  events_dev:
+    external: "ictdata-507912.exgraph.external_transactions_20220301_20220901 (2,877,009 rows)"
+    token: "ictdata-507912.exgraph.token_transfers_20220301_20220901 (4,275,544 rows)"
+    trace: "ictdata-507912.exgraph.internal_traces_20220301_20220901 (4,478,515 rows)"
+  events_holdout:
+    external: "ictdata-507912.exgraph.external_transactions_20220901_20221001 (333,303 rows)"
+    token: "ictdata-507912.exgraph.token_transfers_20220901_20221001 (497,746 rows)"
+    trace: "ictdata-507912.exgraph.internal_traces_20220901_20221001 (571,343 rows)"
+  sequences:
+    dev_table: "ictdata-507912.exgraph.target_event_sequences_20220301_20220901 (11,836,196 rows)"
+    holdout_table: "ictdata-507912.exgraph.target_event_sequences_20220901_20221001 (1,428,845 rows)"
+    combined_view: "ictdata-507912.exgraph.target_event_sequences_20220301_20221001 (LOGICAL VIEW; canonical cross-window source)"
+    events_view: "ictdata-507912.exgraph.target_events_20220301_20220901 (LOGICAL VIEW)"
+  asof_features:
+    wallet_asof_features_v1: "ictdata-507912.exgraph.wallet_asof_features_v1 (78,786 rows; snapshots 2022-05-01..08-01)"
+    wallet_asof_features_20220901: "ictdata-507912.exgraph.wallet_asof_features_20220901 (18,519 rows; snapshot 2022-09-01)"
+  selection:
+    wallet_importance_ranking_v1: "ictdata-507912.exgraph.wallet_importance_ranking_v1 (60,260 rows; P3 demo, same-snapshot fwd labels)"
+    router_dataset_v1: "ictdata-507912.exgraph.router_dataset_v1 (59,137 rows; train/val/frozen-test)"
+    selection_eval_v1: "ictdata-507912.exgraph.selection_eval_v1 (14,386 rows; frozen Aug evaluation)"
+    wallet_future_headroom_v1: "ictdata-507912.exgraph.wallet_future_headroom_v1 (40,036 rows)"
+  influence_proxies:
+    p1_wallet_icf_v2: "ictdata-507912.exgraph.p1_wallet_icf_v2 (17,433 rows; as-of, proxy only)"
+    p2_trigger_v2: "ictdata-507912.exgraph.p2_trigger_v2 (42,871 rows; proxy only, NULL trigger_score_p2 for wallets without signal)"
+  candidate_ranker:
+    nc_ranker_samples_v2: "ictdata-507912.exgraph.nc_ranker_samples_v2 (28,472,717 rows; snapshots 06/07/08; sentinel g_rank=99999 on positives outside support)"
+    nc_events_v1: "ictdata-507912.exgraph.nc_events_v1 (3,532,237 rows; monthly)"
+    nc_edges_hist_v1: "ictdata-507912.exgraph.nc_edges_hist_v1 (1,156,621 rows; history strictly before 2022-08-01)"
+    nc_global_pop_v1: "ictdata-507912.exgraph.nc_global_pop_v1 (352,623 rows)"
+    nc_bridge_cand_v1: "ictdata-507912.exgraph.nc_bridge_cand_v1 (64,624,260 rows)"
+
+# ---------------------------------------------------------------------------
+# 7. Reproducibility checklist
+# ---------------------------------------------------------------------------
+reproducibility:
+  workspace_git: "NOT a git repo (verified); publish repo /home/gaoym/agent-reasoning-publish-20260907 main HEAD 35f294bb7d0b223eafd2f0f1ee93f6558670a624"
+  metadata_snapshot: "research/audit/bq_metadata_2026-09-11.json (created this audit)"
+  source_manifests:
+    - "data/metadata/source_manifest.json (EX-Graph repo 298a52564f5d7f8e30f7f8e6919ae1b3168db481; gpickle sha256 27c86772...d5db2)"
+    - "data/metadata/crypto_influencer_v5_sha256.txt (csv sha256 3cd10be6...1a9e)"
+    - "data/raw/prices/convert_eth_1min_manifest.json (1min price sha256 faa76408...e73)"
+  build_evidence:
+    - "artifacts/google_event_prep_2022-03_2022-09.json (CTAS job_wDlAf8KR5DT-AmjXucoAmbbuumc3, billed 48,076,161,024 B)"
+    - "artifacts/google_trace_prep_2022-03_2022-09.json"
+    - "artifacts/google_sequence_tables_2022-03_2022-09.json (CTAS job_M_9CsnopVIaacN8DAHtATutjbTDO, billed 3,125,805,056 B)"
+  sql_sources: "src/sql/create_*_ictdata.sql (authoritative DDL for all tables above)"
+  freeze_rule: "tables/views listed above are treated as frozen data artifacts; any rebuild must produce identical schema+row counts and be recorded with job id and bytes billed"

@@ -1,0 +1,3 @@
+3cd10be6ff4d806e889093868fd511c1f60c8f6434e4257c45e4787999b51a9e  ./data/raw/crypto_influencer_v5/dataset_52-person-from-2021-02-05_2023-06-12_21-34-17-266_with_sentiment.csv
+ffddc65118a4a4234e5aff0a02f9bf743b83c3f61baad782612df291b5d92ded  ./data/raw/crypto_influencer_v5/Column_Description.docx
+98198049a92a69634c542eb3fe0e40972fe6af58415b7c132bd74f6220d52a3f  ./data/raw/crypto_influencer_v5/tweets-data.rar
