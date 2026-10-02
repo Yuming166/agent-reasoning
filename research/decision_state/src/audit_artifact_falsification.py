@@ -7,6 +7,7 @@ regenerate LLM responses, select cases by outcome, reopen August, or overwrite
 any source result.  Its outputs are a new, append-only runtime directory.
 """
 from __future__ import annotations
+import os
 
 import argparse
 import datetime as dt
@@ -20,7 +21,7 @@ import numpy as np
 import pandas as pd
 from scipy.stats import pearsonr, spearmanr
 
-ROOT = Path("/storage/gaoym/ex-graph-microtransaction-analysis")
+ROOT = Path(os.environ.get('EXGRAPH_PROJECT_ROOT', Path(__file__).resolve().parents[3]))
 RES = ROOT / "research/decision_state/results"
 TARGETS = ["activity", "active_days", "counterparty_breadth", "new_counterparties"]
 SPLITS = ["dev", "test"]

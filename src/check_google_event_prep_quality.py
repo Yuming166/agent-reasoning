@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -87,7 +88,7 @@ def main() -> int:
     ap.add_argument("--end", default="2022-09-01")
     ap.add_argument("--max-bytes-billed", type=int, default=10_000_000_000)
     ap.add_argument("--output", type=Path, required=True)
-    ap.add_argument("--gcloud-bin", default="/storage/gaoym/tools/google-cloud-sdk/bin/gcloud")
+    ap.add_argument("--gcloud-bin", default=os.environ.get("GCLOUD_BIN", "gcloud"))
     args = ap.parse_args()
 
     client = BigQueryClient(args.project_id, args.gcloud_bin)

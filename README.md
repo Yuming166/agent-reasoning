@@ -1,127 +1,496 @@
-# EX-Graph 微观交易行为分析
+# EX-Graph microtransaction analysis
 
-这个目录用于核查 EX-Graph 的 Ethereum Graph 是否保留单笔交易，评估其是否适合做带时间顺序的账户级交易分析，并为后续接入 Crypto Influencer 推文数据、反事实节点筛选和交易对象预测准备数据审计脚本。
+Reproducible data preparation and research code for **wallet-level next-transaction
+forecasting** that combines temporal Ethereum events with external social
+context through **counterfactual, step-level multi-agent reasoning**. The
+repository targets an **ACL Rolling Review submission for the NAACL 2027 cycle**.
 
-## 当前进展
+The repository keeps large/raw data outside Git while preserving the code,
+schemas, manifests, checksums, and bounded validation results needed to
+reproduce the workflow and to rerun the planned experiments.
 
-- 已建立独立项目目录：`/storage/gaoym/ex-graph-microtransaction-analysis`
-- 已固定 EX-Graph 官方仓库快照：`vendor/EX-Graph-repo`
-- 已保存 EX-Graph 论文 arXiv source：`data/metadata/paper/src`
-- 已下载官方链接当前返回的 `ethereum_graph.gpickle`（11,616,467,480 bytes）：`data/raw/ethereum_graph.gpickle`
-- 已完成本地 pickle/NetworkX 审计：`artifacts/ethereum_graph_audit.json`、`artifacts/weight_distribution.json`
-- 已完成时间交易数据集候选调研：`notes/temporal-dataset-options.md`
-- 已完成第二轮数据集决策（补充 Google Cloud、AWS Public Blockchain、Harvard ERC-20 Trading）：`notes/dataset-selection-recommendation.md`
-- 已保存外部数据集当前版本/文件大小/代表性 S3 分区清单：`data/metadata/temporal_dataset_catalog.json`
-- 已补充 BigQuery 费用、Sandbox 限制与开放数据候选：`notes/cost-and-open-data-options.md`
-- 已添加 Google 数据源的 target-address overlap count-only 验证查询：`src/sql/validate_exgraph_address_coverage_bigquery.sql`
-- 已在 BigQuery 项目 `ictdata-507912` 中物化六个月逐事件表（不下载源表到跳板机）：`exgraph.external_transactions_20220301_20220901`、`exgraph.token_transfers_20220301_20220901`、`exgraph.internal_traces_20220301_20220901`
-- 已建立 EX-Graph 官方匹配维表和有方向的事件序列表：`exgraph.exgraph_x_matches_v1`、`exgraph.target_event_sequences_20220301_20220901`；SQL 与执行清单见 `src/sql/create_exgraph_sequence_tables_ictdata.sql`、`artifacts/google_sequence_tables_2022-03_2022-09.json`
-- 已下载并审计可能对应的 XBlock/Kaggle `Ethereum Partial Transaction Dataset`：`notes/xblock-temporal-dataset-audit.md`、`artifacts/ethereum_partial_transaction_audit.json`
-- 已下载并审计 Crypto Influencer Mendeley v5 的 schema/时间范围；原始文件位于 `data/raw/crypto_influencer_v5/`
-- 官方 README 标注该图为 `networkx.DiGraph`，有 2,610,465 个节点、29,585,858 条边，边字段为 `from_address, to_address, weight, block_number`。
+## At a glance
 
-## 已确认结论（2026-09-07）
+This README separates **validated components** from the proposed end-to-end
+research system. The project is not yet claiming a complete market simulator or
+that deeper reasoning helps every wallet.
 
-我下载并成功加载了官方 README 所链接的 Google Drive 文件。当前二进制文件实际是 `networkx.classes.digraph.DiGraph`，不是 `MultiDiGraph`；实际有 1,810,641 个节点、11,876,618 条边，所有 11,876,618 条边都有且只有一个 `weight` 字段，**没有任何边包含 `block_number`**。`weight` 全部是整数，范围为 1--17,173，中位数为 1；所有 edge 的 `weight` 总和为 16,004,443，其中 1,079,058 条边的 weight 大于 1。
+| Area | Current state | Boundary |
+|---|---|---|
+| Temporal event substrate | **Validated** | Six months of BigQuery event families have been materialized and converted into directional target/counterparty sequences for 27,613 mapped addresses. |
+| One-step counterfactual reasoning | **Component result** | Corrected v2 Full/NoCF/cheap panels cover four 1,000-event snapshots; June has an anomalously low parse rate. |
+| Wallet influence selection | **In progress** | Dynamic future-spillover labels and chronological evaluation are specified, but are not yet an end-to-end result. |
+| Adaptive reasoning depth | **In progress** | The intended policy selects low/medium/high depth under a matched budget; the binary v2 component does not validate the final policy. |
+| K-step wallet/group rollout | **Planned** | Shared-state recursive transitions, abstention, and trajectory evaluation remain to be implemented and tested. |
+| Market-level aggregation | **Planned** | Flow, protocol-exposure, and network-state forecasts are a downstream evaluation layer, not a current claim. |
+| Social modality | **Available context** | Crypto Influencer text is asset/project/market context; it is not a verified wallet-owner tweet corpus. |
 
-因此，针对“weight 是逐笔还是聚合”的问题，结论是：**发布的这个文件是按有向地址对聚合后的静态加权图，不是逐笔交易事件流。** 同一 `(from, to)` 地址对最多一条边；整数 `weight` 的形状与“该地址对在数据窗口内发生过多少次交易”的 multiplicity/count 高度一致。README 没有给出 weight 的构造代码，所以这里把“计数型聚合”标为基于二进制证据的结论，而不是声称有官方字段说明。
+**Core contribution in one sentence:** allocate bounded, auditable reasoning to
+the wallet-events where counterfactual influence and expected predictive value
+justify it, then evaluate whether those local forecasts remain reliable when
+rolled forward from micro behavior to group and market state.
 
-另外，当前 Google Drive 二进制与仓库 README 的表格不一致：README 写的是 2,610,465 节点、29,585,858 边，并列出 `block_number`；实际下载文件是 1,810,641 节点、11,876,618 边且无 `block_number`。这可能是文件被替换、版本落后/不同，或 README 与 Drive 没同步。后续论文/实验中必须把下载文件 hash、节点边计数和字段审计写进 manifest，不能只引用 README 表格。
+## Autoresearch Phase I — dynamic wallet importance (2026-09)
 
-这意味着：当前文件无法恢复交易发生的先后顺序，也无法按 block 或交易哈希做时间切分。它仍适合做静态关系、频次/强度和候选影响节点筛选；如果要预测“下一笔交易对象”或做反事实时间推演，需要另找逐笔交易表（至少包含 `tx_hash, from, to, block_number/timestamp`，最好还有 transaction index/value/token contract）。
+A parallel research-tournament run (`autoresearch_phase1.md`) completed all
+Phase-I tasks **before** high-order recursive reasoning. Full outputs, runnable
+scripts, SQL, and compact results live in [`autoresearch_phase1/`](autoresearch_phase1/);
+a dated summary is in [`WORKLOG.md`](WORKLOG.md).
 
-## 运行审计
+Verified positive results (independently re-run, official protocol):
 
-建议先安装轻量依赖（不会下载模型）：
+- **Multi-cutoff walk-forward**: a predictive-influence wallet selector
+  significantly beats volume/activity baselines on out-of-sample future utility
+  (U(K) mean diff +78.6, 95% CI [50.0, 114.2], dev cutoffs 06/07/08, frozen
+  09-01 holdout). [`autoresearch_phase1/walkforward/WALK_REPORT.md`](autoresearch_phase1/walkforward/WALK_REPORT.md)
+- **TGB tgbl-coin-v2**: a leak-free 23-feature, torch-only MLP scores test MRR
+  **0.8550** under the official split/evaluator/negative sampling, above the
+  current leaderboard top (TPNet 0.832±0.001, as of 2026-09-11). This is a
+  local official-protocol measurement, not an official leaderboard submission.
+  [`autoresearch_phase1/benchmark_tgb_v2/TGB2_REPORT.md`](autoresearch_phase1/benchmark_tgb_v2/TGB2_REPORT.md)
+
+Empirical/audit findings with evidence labels: static EX-Graph is an aggregated
+graph (no `block_number`); the official LP graph is the training subgraph;
+low-volume/high-structure wallets are essentially absent; structural importance
+is not predictive influence; information-gain defines an orthogonal dimension.
+Except for the two verified items above, all numbers are single-cutoff
+(2022-09-01) descriptive diagnostics, not superiority/causal claims; support-set
+boundaries are reported per artifact.
+
+
+
+## Latest research status — 2026-09-24
+
+The current public handoff includes the later result boundaries, not only the
+original Phase-I proposal:
+
+- **Phase II-A reasoning-worthiness:** reasoning gain is heterogeneous and a
+  pre-reasoning selector beats random at matched event-count budget on August
+  and September; September versus volume remains statistically inconclusive,
+  and formal K-step entry is **NO-GO**.
+- **OW-010B open-world branch:** recent temporal dynamics improve future
+  behavioral-change prediction, but the preregistered independent structural
+  signal gate fails; the Temporal-GNN/latent-strategy branch is closed.
+- **Decision-State V1:** structured LLM hypotheses are parse-valid and
+  intervention-responsive, but the verified LLM augmentation worsens frozen
+  August future-behavior log loss; Level-1 effectiveness is **NO-GO**.
+
+See [`research/phase2/FINAL_SYNTHESIS.md`](research/phase2/FINAL_SYNTHESIS.md),
+[`research/openworld/ow010b/reports/OW010B_DECISION.md`](research/openworld/ow010b/reports/OW010B_DECISION.md),
+and [`research/decision_state/DECISION_STATE_DECISION_20260919.md`](research/decision_state/DECISION_STATE_DECISION_20260919.md).
+Raw event-level data, LLM panels, credentials, relay responses, and local
+runtime files remain intentionally outside Git.
+
+## Research mainline
+
+The project has been upgraded from a single next-counterparty ranker into an
+**influence-adaptive, trustworthy recursive reasoning system** for temporal
+wallet graphs. The central premise is that deeper reasoning is not uniformly
+useful: only some wallet-events have enough market relevance or counterfactual
+headroom to justify high-cost recursion.
+
+The research pipeline is:
+
+1. **Dynamic wallet influence** — identify wallet addresses or wallet clusters
+   whose future behavior is likely to create measurable downstream spillover.
+   Static degree/PageRank are priors; the main selection target must be built
+   from strict pre-snapshot history and evaluated on future spillover.
+2. **Adaptive reasoning depth** — choose low, medium, or high depth per
+   `(wallet, event, time)` under a fixed token/latency budget. Low depth uses the
+   cheap predictor; medium depth uses one counterfactual FSM; high depth performs
+   a bounded shared-state recursive rollout.
+3. **Step-level trustworthy reasoning** — every recursive transition records
+   evidence event IDs, the intervention, belief update, confidence, temporal
+   validity, candidate support, and a stop/continue decision. Invalid or
+   unverifiable calls abstain and fall back to the cheap path; this is not an
+   unrestricted chain-of-thought requirement.
+4. **Micro-to-macro outputs** — predict the next counterparty/action at the
+   micro level, a short wallet/community strategy at the meso level, and
+   aggregated flow, protocol-exposure, and network-state statistics at the macro
+   level. The rollout updates a shared state so agents are not simulated as
+   independent isolated forecasts.
+
+The formal mainline is documented in
+[`notes/RESEARCH_MAINLINE.md`](notes/RESEARCH_MAINLINE.md). The main claim under
+evaluation is:
+
+> Under a matched reasoning budget, influence-adaptive selective recursion with
+> counterfactual and step-level verification should outperform uniform shallow
+> or uniform deep reasoning on multi-step wallet/action forecasting per unit of
+> cost.
+
+This claim is deliberately narrower than “LLM is better for every wallet.”
+The current v2 experiment validates the one-step counterfactual component; the
+adaptive depth policy, future-spillover influence label, coupled multi-step
+rollout, and market aggregation are the next experiments.
+
+## Data scope
+
+Available and used in this repository:
+
+- **EX-Graph official matching**: 27,613 Ethereum addresses matched to
+  anonymized X/Twitter accounts (`vendor/EX-Graph-repo/twitter_matching.csv`,
+  released as part of Persdre/EX-Graph). This provides the address-to-X
+  match dimension, not raw tweet text.
+- **Temporal Ethereum events**: Google Blockchain Analytics materializations
+  for the primary 2022-03-01 (inclusive) through 2022-09-01 (exclusive) window,
+  plus a separately materialized 2022-09 holdout extension through 2022-10-01.
+- **External social context**: the Crypto Influencer tweet dataset is used as a
+  second modality for asset- and market-level sentiment, **not** as a
+  "wallet owner's tweets". We do not require influencers to own the sampled
+  EX-Graph addresses; we require the tweets to be temporally aligned with the
+  asset/contract context of a wallet.
+
+Important distinction:
+
+- EX-Graph supplies the address-to-X matching and the X follower/following
+  graph, but does **not** ship a large historical tweet-text corpus.
+- The Crypto Influencer dataset supplies tweet text and sentiment, but does
+  **not** supply a reliable author-to-wallet crosswalk.
+
+Consequently the first paper version treats social information as **external
+social context** (asset-conditioned or global sentiment) rather than claiming to
+recover a wallet owner's personal tweets or intentions.
+
+## How to read the evidence
+
+- **Data preparation is not prediction.** The BigQuery materializations and
+  directional sequences establish a leakage-aware temporal substrate; they do
+  not by themselves show that any model predicts future transactions.
+- **Component gains are not end-to-end superiority.** The corrected v2 numbers
+  test the one-step counterfactual component on a bounded candidate panel. They
+  do not validate the future-spillover selector, adaptive depth policy, K-step
+  rollout, or market aggregation.
+- **Operational fallback is part of the protocol.** Parse failures are retained
+  and scored through the cheap fallback rather than silently dropped. Results
+  should therefore be read together with parse yield, failure rate, token use,
+  latency, and support coverage.
+- **Predictive influence is not causal influence.** A wallet can be selected for
+  measurable downstream predictive spillover without establishing that it
+  causes market behavior or that an X account owns the wallet.
+
+## Validated data preparation
+
+The development materialization covers **2022-03-01 (inclusive) through
+2022-09-01 (exclusive), UTC** and uses 27,613 EX-Graph-mapped addresses.
+
+| Event family | Rows |
+|---|---:|
+| Native transactions | 2,877,009 |
+| Token transfers | 4,275,544 |
+| Internal traces | 4,478,515 |
+| **Source total** | **11,631,068** |
+
+Derived tables in BigQuery (`ictdata-507912.exgraph`):
+
+| Table | Description |
+|---|---|
+| `external_transactions_20220301_20220901` | Native transactions touching a mapped address |
+| `token_transfers_20220301_20220901` | Token transfers touching a mapped address |
+| `internal_traces_20220301_20220901` | Internal traces touching a mapped address |
+| `target_events_20220301_20220901` | `UNION ALL` unified view over the three families |
+| `exgraph_x_matches_v1` | Official address-to-X match dimension with provenance |
+| `target_event_sequences_20220301_20220901` | Directional target/counterparty role rows |
+| `exgraph_structural_features_v1` | Per-mapped-address static-graph structural features (degree / weighted degree) |
+
+`target_event_sequences_*` semantics:
+
+- `target_address` is the matched endpoint; `counterparty_address` is the other
+  endpoint.
+- A source event with two distinct matched endpoints produces two role rows; a
+  self-transaction produces one `self` row.
+- `external_tx` and `token_transfer` are `sequence_role=primary`;
+  `internal_trace` is retained as `sequence_role=auxiliary` for ablations.
+- `target_sequence_index` is deterministic per target address. Cross-family
+  ordering inside one transaction is a deterministic tie-breaker, not a
+  canonical EVM event order.
+- Rows without a destination address are retained with
+  `counterparty_present=false` and must be excluded from next-counterparty
+  labels.
+
+Reproduction SQL and manifests:
+
+- `src/sql/create_target_events_view_ictdata.sql`
+- `src/sql/create_exgraph_sequence_tables_ictdata.sql`
+- `src/create_target_events_view.py`
+- `src/create_exgraph_sequence_tables.py`
+- `artifacts/google_event_prep_2022-03_2022-09.json`
+- `artifacts/google_trace_prep_2022-03_2022-09.json`
+- `artifacts/google_target_events_view_2022-03_2022-09.json`
+- `artifacts/google_sequence_tables_2022-03_2022-09.json`
+
+### Static-graph structural features (2026-09-08)
+
+Computed locally from the released static weighted graph without re-downloading
+it. Graph nodes are integer EX-Graph node ids, so the features are emitted for
+the 27,613 mapped addresses through the `twitter_matching.csv` address bridge.
+
+- `artifacts/exgraph_structural_features.csv` (27,613 rows):
+  `ethereum_address, exgraph_node_id, graph_node_present, in_degree,
+  out_degree, w_in_degree, w_out_degree, degree, w_degree, pagerank`.
+  `pagerank` is weighted PageRank (alpha 0.85, edge `weight` =
+  transaction multiplicity), computed over the full directed graph.
+- `artifacts/exgraph_structural_features_manifest.json`: provenance, hashes,
+  counts, and degree summary.
+- `exgraph.exgraph_structural_features_v1` in BigQuery (27,613 rows), joined to
+  `exgraph_x_matches_v1` on `ethereum_address` + `exgraph_node_id` with zero
+  mismatches.
+
+Reproduce:
 
 ```bash
-cd /storage/gaoym/ex-graph-microtransaction-analysis
-python -m venv .venv
-. .venv/bin/activate
-pip install networkx
-python src/audit_ethereum_graph.py \
-  --graph data/raw/ethereum_graph.gpickle \
-  --output artifacts/ethereum_graph_audit.json
+# extraction needs networkx (see the analysis virtualenv)
+python src/extract_graph_structural_features.py \
+  --graph /path/to/ethereum_graph.gpickle \
+  --target-addresses data/metadata/target_addresses.csv \
+  --output artifacts/exgraph_structural_features.csv \
+  --manifest artifacts/exgraph_structural_features_manifest.json \
+  --pagerank
+
+# upload needs requests + gcloud Application Default Credentials
+python3 src/upload_graph_structural_features.py \
+  --project-id ictdata-507912 --dataset-id exgraph \
+  --csv artifacts/exgraph_structural_features.csv \
+  --output artifacts/exgraph_structural_features_upload.json \
+  --gcloud-bin "${GCLOUD_BIN:-gcloud}"
 ```
 
-审计脚本会报告：
 
-- 图类型、是否 directed/multigraph；
-- 节点/边数量与官方 README 对照；
-- 边字段、字段类型和样例；
-- `block_number` 的范围、缺失和唯一值情况；
-- `weight` 的类型、范围和缺失情况；
-- 对重复地址对的可表示性结论。
+### Learned candidate ranker and event gate (2026-09-09 pilot)
 
-## 数据来源与版本记录
+The next-counterparty pilot uses monthly snapshots (June train, July
+gate-tuning, August frozen test) and features for `(source wallet, candidate)`:
+historical global popularity rank/count, 90-day personal interaction count and
+recency, and 2-hop bridge path/weight signals. BigQuery materialization and
+local training/evaluation code are in:
 
-- EX-Graph 官方仓库：`vendor/EX-Graph-repo`
-- EX-Graph Ethereum Graph Google Drive file id：`1VWUGTUniv7-uDISXvJcMLE4OMCtQFPn6`
-- 论文 source：`data/metadata/paper/src`
-- 二进制数据文件大小和下载 URL 的确认信息：`data/metadata/ethereum_graph_download_metadata.txt`
-- 二进制 SHA-256：`data/metadata/ethereum_graph_sha256.txt`
-- 可复现实验 manifest：`data/metadata/source_manifest.json`
-- 去重后的 27,613 个 target 地址：`data/metadata/target_addresses.csv`
+- `src/pipeline/build_rankertables.py` -> `exgraph.nc_ranker_samples_v2`.
+- `src/pipeline/train_candidate_ranker.py`.
+- `src/pipeline/gate_and_budget.py` (leakage-safe event-level gate prototype).
+- `src/pipeline/evaluate_supported_pool.py` (support-restricted audit).
 
-## 当前数据集选择建议
+The exported development table contained 28,472,717 compressed CSV rows
+(966 MB across 30 gzip shards; the data itself is not committed). The first
+naive sampled-pool result (August MRR .896) is **not** a valid full-task
+result: negatives were drawn from the historical global top-2000 support while
+82.2% of observed positives were outside it and received sentinel
+`g_rank=99999`, making them trivially separable.
 
-- 完整 Ethereum 行为：优先 Google Cloud Blockchain Analytics；
-- 无 GCP 时的公共本地备选：AWS Public Blockchain Data；
-- 最快可运行的 ERC-20 pilot：Harvard Dataverse ERC-20 Trading 2022；
-- 若将研究限定为 NFT：Live Graph Lab。
+The valid support-restricted comparison retains 30,610/171,700 August new-event
+instances whose positive is in top-2000. On the comparable approximately-50-row
+sampled pool, global popularity scores MRR .448 and the learned ranker .456
+(+0.0083 absolute; +1.85% relative); oracle best-of-two has MRR .505. A gate
+trained on July out-of-sample events is weak on August (AUROC .557; AUPRC .278
+at 23.0% winner base rate), and captures only a small part of oracle headroom
+at a 10% deliberation budget (+.0029 learned gate vs +.0528 oracle). The cost
+axis uses fixed token-units (32 cheap / 96 deliberation), not measured LLM
+tokens. See `artifacts/nc_v1/RESULTS.md` and `supported_pool_v1.json`.
 
-推荐第一年窗口：`[2021-08-01 00:00:00 UTC, 2022-08-01 00:00:00 UTC)`。交易表应保留 `event_type`，并分别处理 external transaction、token transfer、internal trace 和 log/event，不能把它们无标注地 union 成一类交易。
+## Corrected v2 LLM panel (2026-09-09)
 
-## 研究边界
+The corrected v2 run completed four 1,000-event snapshots with `glm-5.3`:
+June, July, August, and an independent September temporal holdout. Exact score
+ties use average competition ranks. Parse failures are retained and fall back
+to the cheap ranker for operational scoring.
 
-本项目先做数据可用性/时间顺序审计，不把图结构本身包装成“已能预测交易”或“已证明影响者导致交易”。后续若接入推文和反事实推演，应明确区分：
+| Snapshot | Full parse | NoCF parse | Cheap MRR | NoCF MRR | Full MRR | Full-Cheap |
+|---|---:|---:|---:|---:|---:|---:|
+| 2022-06 | 0.322 | 0.339 | 0.3281 | 0.4647 | 0.5088 | +0.1807 |
+| 2022-07 | 0.959 | 0.974 | 0.2831 | 0.3579 | 0.5029 | +0.2198 |
+| 2022-08 | 1.000 | 0.999 | 0.2795 | 0.3797 | 0.5605 | +0.2810 |
+| 2022-09 | 1.000 | 1.000 | 0.3003 | 0.4089 | 0.5499 | +0.2496 |
 
-1. 图数据能否重建事件时间线；
-2. 交易对象预测的训练/验证是否严格按时间切分；
-3. 反事实结果是模型模拟还是因果效果；
-4. 节点影响力筛选是否使用了未来信息。
-## EX-Graph match and directional event sequences (2026-09-07)
+The corrected results support the counterfactual component, with the largest
+benefits concentrated in difficult repeated interactions and much smaller
+benefits on `new_tail`. They do **not** yet establish that a learned budget
+router beats simple routing policies. June also has an anomalously low parse
+rate and must be diagnosed or rerun before it is treated as clean router
+training evidence.
 
-已根据官方 `twitter_matching.csv` 建立：
+Reproducible compact artifacts are under
+`artifacts/llm_panel_v2/RESULTS_CORRECTED_V2.md`. The old
+`artifacts/llm_panel_v2/router_dataset_v2.csv` is intentionally not published:
+it was generated before the reciprocal-rank correction and must be rebuilt.
 
-- `ictdata-507912.exgraph.exgraph_x_matches_v1`：27,613 个官方 EX-Graph 匹配地址，附带来源 commit、文件 hash 和版本信息；不包含原始 Twitter/X handle。
-- `ictdata-507912.exgraph.target_event_sequences_20220301_20220901`：11,836,196 条有方向事件角色记录。一个事件的两个不同匹配端点会生成 outgoing/incoming 两条记录；self-transaction 只生成一条 self 记录。
-- `external_tx` 与 `token_transfer` 标记为 `sequence_role=primary`；`internal_trace` 标记为 `sequence_role=auxiliary`。
-- 无目的地址的合约创建/相关记录保留在表中，`counterparty_present=false`；建立 next-counterparty 标签时应过滤这些记录。
+## Reproduction order
 
-详细 schema、查询成本、行数校验和序号唯一性检查见 `notes/google-event-preparation.md` 与 `artifacts/google_sequence_tables_2022-03_2022-09.json`。
+The intended low-egress, audit-first workflow is:
 
-## Google temporal event preparation (2026-09-07)
+1. Read [`DATA_ACCESS.md`](DATA_ACCESS.md) and inspect the data manifests before
+   querying or downloading large files.
+2. Reproduce the address overlap, event-family materializations, and directional
+   sequence tables with the SQL under `src/sql/`.
+3. Rebuild static structural features and cheap candidate baselines, keeping
+   full-window graph statistics labelled as priors rather than as-of features.
+4. Reproduce the corrected Full/NoCF/cheap component panel from the compact
+   artifacts and the runner under `src/agent/`.
+5. Only after the validity checks pass, train the budget router and add the
+   future-spillover, adaptive-depth, K-step, and macro experiments in the
+   roadmap below.
 
-The first six-month pilot is stored in BigQuery rather than on the jump host:
+Expensive model calls require an explicitly configured, approved
+OpenAI-compatible project endpoint. Credentials and machine-specific endpoint
+configuration must remain in environment variables or local configuration and
+must never be committed to this repository.
 
-- `ictdata-507912.exgraph.external_transactions_20220301_20220901`: 2,877,009 rows, partitioned by `DATE(block_timestamp)` and clustered by endpoints.
-- `ictdata-507912.exgraph.token_transfers_20220301_20220901`: 4,275,544 rows, partitioned by `DATE(block_timestamp)` and clustered by endpoints and token contract.
-- `ictdata-507912.exgraph.internal_traces_20220301_20220901`: 4,478,515 rows, partitioned by `DATE(block_timestamp)` and clustered by endpoints.
+## What is included
 
-All three tables retain counterparties for any event touching a mapped address. Native transactions, token transfers, and internal traces remain separate event families. See `notes/google-event-preparation.md`, `artifacts/google_event_prep_2022-03_2022-09.json`, and `artifacts/google_trace_prep_2022-03_2022-09.json`.
+- EX-Graph graph and temporal-dataset audits under `src/` and `notes/`.
+- The 27,613-address mapping at `data/metadata/target_addresses.csv`.
+- BigQuery SQL and Python scripts for address upload, overlap validation,
+  event-table materialization, quality checks, the unified view, and the
+  directional sequence table.
+- Small JSON execution manifests, candidate-model summaries, and budget curves under `artifacts/`.
+- The corrected v2 Full/NoCF/cheap runner, tie-aware evaluator, operational
+  fallback evaluator, frozen ranker utilities, and router-training utilities
+  under `src/agent/`.
+- v2 panel construction scripts under `src/pipeline/`, plus compact corrected
+  per-event audit outputs and evaluation summaries.
+- Data provenance, checksums, and third-party notices.
 
-## 重要节点选择机制验证（2026-09-10）
+## What is intentionally not included
 
-已完成 Stage 1 的重要节点/事件选择验证，主结果目录为
-`artifacts/llm_panel_v2/node_selection_v2_final_audited_20260910/`，完整报告见
-`notes/node-selection-go-no-go-20260910.md`。
+The raw 11.6 GB `ethereum_graph.gpickle`, raw Crypto Influencer files, Python
+virtual environment, and BigQuery event tables are not part of this GitHub
+repository. See [`DATA_ACCESS.md`](DATA_ACCESS.md) for shared-table access and
+reproduction in another Google Cloud project. Raw tweet text is not published;
+derived embeddings/labels and rehydration instructions are used instead.
 
-- 协议：2022-06 train、2022-07 validation/tuning、2022-08 frozen test、2022-09 额外时间外检验；每月 1,000 个分层事件。
-- 四个月均使用授权 `Qwen3.5-4B` vLLM 配置；full/no-CF parse rate 均为 100%，候选 truth support 均为 100%。
-- 50% 预算的加权 MRR：learned `0.4606`，最佳非学习 baseline（degree）`0.4205`，paired bootstrap 差值 `+0.0401`，95% CI `[+0.0209,+0.0607]`。
-- learned 在 5 个预算点中 4 个超过最佳非学习 baseline；5% 点与 volume 基本持平但略低 `0.0001`。
-- 结论：`GO_STAGE_2_RECURSIVE_REASONING`。该结论仅支持“选择值得分配 deliberation 预算的事件/节点”，不证明因果影响力或 X 到链上行为的因果关系。
-- 冻结输入：`frozen_test_selector_input.csv`（只含调用前特征/分数）；下一阶段候选节点：`frozen_test_important_nodes_b50.csv`；结果审计单独保存在 `frozen_test_outcomes_for_audit.csv`。
+## Planned experiments
 
-评估脚本：`src/agent/evaluate_node_selection.py`。不要将 August 的 `gain_full`、truth rank、oracle 选择结果带入递归推理阶段。
+### Main hypothesis tests
 
-## LLM 服务配置与使用限制
+| Question | Required comparison |
+|---|---|
+| Does the counterfactual operator help? | Full FSM vs NoCF vs Cheap |
+| Is deeper reasoning selectively useful? | learned depth vs all-low, all-high, random, uncertainty, repeat-only |
+| Does dynamic influence improve selection? | future-spillover scorer vs degree/PageRank/activity-only |
+| Does verification stabilize recursion? | verified vs unverified recursive rollout |
+| Does micro behavior aggregate to market state? | coupled shared-state rollout vs independent wallet forecasts |
 
-默认使用 `Qwen3.5-4B`，Base URL 为 `http://10.63.0.82:31518/v1`；客户端自动追加 `/chat/completions`。如需替换，可在有权使用的计算资源上自行通过 vLLM 部署模型，或使用自费购买、授权用于本项目的 API 服务。
+### Prediction and influence baselines
 
-切换服务时，通过 `LLM_BASE_URL` 或 `chat(..., base_url=...)` 设置 Base URL（不含 `/chat/completions`），同步更新运行脚本的 `--model` 或 `chat(..., model=...)`。鉴权凭据仅通过 `LLM_BEARER` 提供，不得写入代码、文档或版本库。
+- Most-recent counterparty;
+- global popularity;
+- wallet-level frequency and recency-frequency;
+- first-order Markov;
+- temporal sequence ranker;
+- degree/PageRank and transaction-volume influence;
+- uncertainty-only and repeat-only selection;
+- unstructured recursive LLM calls at matched depth and budget.
 
-Qwen/vLLM 的 JSON 任务默认不发送可选的 `reasoning_effort` 字段：部分服务会把 `reasoning_effort=low` 当作隐藏思考预算，在冻结的 `max_tokens=700` 下耗尽输出而不返回 JSON。若确实需要显式控制该字段，可设置 `LLM_REASONING_EFFORT`；设置为空值（`LLM_REASONING_EFFORT=`）表示省略。
+### Depth/routing policies
 
-禁止使用 `http://10.63.0.72:8317/v1`，客户端保留对该主机和端口的拦截。不得借用其他用户的推理服务或 Codex、Claude Code 的服务地址及凭据；默认服务不可用时，请按上述方式配置替代服务。
+| Setting | Policy |
+|---|---|
+| All-cheap | No LLM / low-depth predictor for every event |
+| All-FSM | Full counterfactual FSM for every event |
+| Random | Random events at equal budget |
+| Centrality | Route structurally influential wallets |
+| Uncertainty | Route high cheap-ranker uncertainty |
+| Repeat-only | Route repeated interactions first |
+| Influence-only | Route high predicted future spillover |
+| Learned adaptive depth | Main policy: choose low/medium/high depth from as-of features |
+| Oracle | Upper bound only; uses realized gain and is never a deployable policy |
+
+### Trust and recursive ablations
+
+- remove the counterfactual mask;
+- remove belief update;
+- remove evidence/constraint verification;
+- fixed recursion depth;
+- independent rather than shared-state rollouts;
+- no influence features;
+- no external context;
+- failure deletion versus explicit cheap fallback (the latter is the
+  production protocol).
+
+### Outputs and metrics
+
+- Micro: next-counterparty/action `Recall@1/5/10`, `MRR`, `NDCG`, direction and
+  event-family accuracy;
+- Meso: K-step path likelihood, trajectory hit rate, strategy calibration, and
+  error accumulation across recursion depth;
+- Macro: future flow/protocol-exposure error, concentration and graph-statistic
+  distance, and interval calibration;
+- Influence: future-spillover Recall@K, NDCG, AUROC, and reach/flow impact;
+- Trust: evidence coverage, as-of violations, invalid transition rate,
+  counterfactual consistency, abstention risk/coverage;
+- Efficiency: measured token usage, latency, failure/fallback rate, and utility
+  per budget.
+
+All main deltas must be paired, bootstrap-tested, reported by
+`new_popular`, `new_tail`, `repeat_easy`, and `repeat_hard`, and evaluated on
+both August and the September temporal holdout.
+
+## Temporal split
+
+No random splitting; chronological evaluation only:
+
+- Historical feature construction: strict as-of windows before each event;
+- Router training: June 2022;
+- Router/treatment tuning: July 2022;
+- Frozen primary test: August 2022;
+- Independent temporal holdout: September 2022.
+
+The current four-month LLM panel contains 1,000 events per snapshot. Any
+future-spillover or market-impact label is computed after the prediction time
+and is never used as an input feature. Static full-window graph statistics may
+be used only as explicitly labelled priors, not as time-valid dynamic features.
+
+## NAACL 2027 execution roadmap
+
+1. **Protocol and validity freeze** — preserve the v2 candidate-support and
+   tie-aware rules; diagnose the June parse anomaly; rebuild the router data with
+   explicit fallback.
+2. **Budget router** — train on June, tune on July, freeze on August, and test
+   again on September against all routing baselines.
+3. **Influence selection** — add strict as-of future-spillover labels and test
+   dynamic influence against static centrality/activity baselines.
+4. **Adaptive recursion** — replace binary routing with low/medium/high depth and
+   matched-cost evaluation.
+5. **Trustworthy rollout** — implement evidence-backed K-step shared-state
+   transitions, stop/abstain checks, and failure analysis.
+6. **Micro-to-macro evaluation** — aggregate selected wallet trajectories into
+   group and market-relevant flow/network forecasts.
+7. **Robustness and paper freeze** — add strong non-LLM baselines, cross-model
+   checks, ablations, dated novelty audit, appendix, and reproducibility package.
+
+## Status boundary
+
+### Completed
+
+- Leakage-audited Ethereum temporal event preparation and directional
+  next-counterparty sequence construction;
+- EX-Graph structural/address feature extraction and wallet-selection pilots;
+- v2 candidate-pool repair with unknown-tail negatives and tie-aware ranking;
+- frozen June-trained v2 cheap ranker;
+- Full counterfactual FSM, one-shot NoCF ablation, strict parsing, measured
+  token/latency logging, and explicit failure fallback;
+- corrected v2 LLM runs for June, July, August, and September, with compact
+  per-event audit outputs and paired by-stratum evaluation.
+
+### In progress or not yet complete
+
+- Diagnose or rerun the anomalously low June parse-rate run;
+- rebuild and freeze the v2 budget router from corrected outputs;
+- dynamic future-spillover influence labels and adaptive low/medium/high depth;
+- strong temporal/sequence baselines and cross-model robustness;
+- verified K-step shared-state wallet/group rollout;
+- macro flow/network aggregation and a frozen end-to-end NAACL result.
+
+### Claim boundaries
+
+The earlier `.896` candidate-ranker MRR is a support artifact, not a
+full-vocabulary result; the honest support-restricted gain is documented in
+`artifacts/nc_v1/RESULTS.md`. The corrected v2 Full-vs-Cheap result is a
+candidate-panel component result, not proof that a budget router or a complete
+market simulator is superior. We do not claim causal influencer effects,
+real-person identity, trading alpha, full-market coverage, or realized token
+savings without the corresponding as-of, causal, coverage, and frozen-budget
+evidence.
+
+The GitHub repository contains code, manifests, compact evaluation outputs, and
+research notes. Raw graph pickles, BigQuery tables, candidate shards, full
+panel-scoring tables, credentials, virtual environments, and runtime logs stay
+outside Git; see [`DATA_ACCESS.md`](DATA_ACCESS.md).

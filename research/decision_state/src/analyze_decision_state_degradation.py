@@ -16,6 +16,7 @@ are reported only for rows with already-existing out-of-sample predictions
 losses after the effectiveness gate.
 """
 from __future__ import annotations
+import os
 
 import hashlib
 import json
@@ -27,7 +28,7 @@ import numpy as np
 import pandas as pd
 from scipy.stats import pearsonr, spearmanr
 
-ROOT = Path("/storage/gaoym/ex-graph-microtransaction-analysis")
+ROOT = Path(os.environ.get('EXGRAPH_PROJECT_ROOT', Path(__file__).resolve().parents[3]))
 RES = ROOT / "research/decision_state/results"
 PLOT_DIR = RES / "plots_degradation"
 TARGETS = ["activity", "active_days", "counterparty_breadth", "new_counterparties"]

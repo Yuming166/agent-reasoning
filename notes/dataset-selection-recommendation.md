@@ -214,4 +214,3 @@ Twitter/X author identifier -> EX-Graph X node id -> Ethereum address
 2. **Harvard ERC-20 Trading**：6 个月 ERC-20 pilot；
 3. **Live Graph Lab**：如果确定做 NFT 版本；
 4. **AWS Public Blockchain Data**：无 GCP 时的本地备选。
-

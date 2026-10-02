@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
+import os
 """Write reasoning_gain_manifest.json + dynamic_influence_manifest.json."""
 import json
 from pathlib import Path
 import pandas as pd, numpy as np
 
-ROOT = Path("/storage/gaoym/ex-graph-microtransaction-analysis")
+ROOT = Path(os.environ.get('EXGRAPH_PROJECT_ROOT', Path(__file__).resolve().parents[2]))
 PH2 = ROOT / "research" / "phase2"
 
 rg = pd.read_parquet(PH2 / "reasoning_gain_dataset.parquet")

@@ -7,6 +7,7 @@ artifacts, computes the preregistered intervention summaries, and writes
 stratified/paired diagnostics for the final scientific decision.
 """
 from __future__ import annotations
+import os
 
 import hashlib
 import json
@@ -16,7 +17,7 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics import balanced_accuracy_score, f1_score, log_loss
 
-ROOT = Path("/storage/gaoym/ex-graph-microtransaction-analysis")
+ROOT = Path(os.environ.get('EXGRAPH_PROJECT_ROOT', Path(__file__).resolve().parents[3]))
 RES = ROOT / "research/decision_state/results"
 TARGETS = ["activity", "active_days", "counterparty_breadth", "new_counterparties"]
 CLASSES = ["down", "same", "up"]

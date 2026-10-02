@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Evaluate B0-B4 decision-state baselines after the LLM panel is frozen."""
 from __future__ import annotations
+import os
 
 import argparse
 import hashlib
@@ -13,7 +14,7 @@ import pandas as pd
 from sklearn.ensemble import HistGradientBoostingClassifier
 from sklearn.metrics import balanced_accuracy_score, f1_score, log_loss
 
-ROOT = Path('/storage/gaoym/ex-graph-microtransaction-analysis')
+ROOT = Path(os.environ.get('EXGRAPH_PROJECT_ROOT', Path(__file__).resolve().parents[3]))
 RES = ROOT / 'research/decision_state/results'
 CLASSES = ['down', 'same', 'up']
 TARGETS = ['activity', 'active_days', 'counterparty_breadth', 'new_counterparties']

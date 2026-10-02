@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
+import os
 import json, re
 from pathlib import Path
 import pandas as pd
 
-ROOT=Path('/storage/gaoym/ex-graph-microtransaction-analysis')
+ROOT = Path(os.environ.get('EXGRAPH_PROJECT_ROOT', Path(__file__).resolve().parents[3]))
 RES=ROOT/'research/decision_state/results'
 PROMPT=RES/'decision_state_prompt_cases.csv'
 EVAL=RES/'decision_state_eval_cases.csv'

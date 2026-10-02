@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import os
 """Build research/phase2/dynamic_influence_dataset.parquet (P2DATA, Phase II-A).
 
 Wallet-level dynamic predictive influence (plan Sec.8, non-causal):
@@ -17,7 +18,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler
 
-ROOT = Path("/storage/gaoym/ex-graph-microtransaction-analysis")
+ROOT = Path(os.environ.get('EXGRAPH_PROJECT_ROOT', Path(__file__).resolve().parents[2]))
 OUT = ROOT / "research" / "phase2" / "dynamic_influence_dataset.parquet"
 MANIFEST = ROOT / "research" / "phase2" / "dynamic_influence_manifest.json"
 

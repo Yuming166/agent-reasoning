@@ -1,6 +1,6 @@
 # Decision-State V1 Scientific Decision
 
-**Decision date: 2026-09-19**  
+**Decision date: 2026-09-19**
 **Decision: NO-GO for Level-1 effectiveness claim**
 
 ## 1. Decision question

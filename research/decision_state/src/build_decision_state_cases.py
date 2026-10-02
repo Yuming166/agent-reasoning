@@ -5,6 +5,7 @@ The prompt table intentionally excludes all future outcome fields. Evaluation
 outcomes are written to a separate file and joined only by the evaluator.
 """
 from __future__ import annotations
+import os
 
 import hashlib
 import json
@@ -13,7 +14,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-ROOT = Path('/storage/gaoym/ex-graph-microtransaction-analysis')
+ROOT = Path(os.environ.get('EXGRAPH_PROJECT_ROOT', Path(__file__).resolve().parents[3]))
 DATA = ROOT / 'research/openworld/ow010b/data'
 OUT = ROOT / 'research/decision_state/results'
 OUT.mkdir(parents=True, exist_ok=True)

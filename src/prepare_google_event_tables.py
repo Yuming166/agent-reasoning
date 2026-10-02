@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 import time
 from pathlib import Path
@@ -184,7 +185,7 @@ def main() -> int:
     ap.add_argument("--max-bytes-billed", type=int, default=100_000_000_000)
     ap.add_argument("--dry-run-only", action="store_true", help="do not materialize output tables")
     ap.add_argument("--output", type=Path, required=True)
-    ap.add_argument("--gcloud-bin", default="/storage/gaoym/tools/google-cloud-sdk/bin/gcloud")
+    ap.add_argument("--gcloud-bin", default=os.environ.get("GCLOUD_BIN", "gcloud"))
     args = ap.parse_args()
 
     client = BigQueryClient(args.project_id, args.gcloud_bin)
