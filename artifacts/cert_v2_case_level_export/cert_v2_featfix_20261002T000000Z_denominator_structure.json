@@ -1,0 +1,25 @@
+{
+  "run_id": "cert_v2_featfix_20261002T000000Z",
+  "total_cases": 150,
+  "active_cases": 52,
+  "inactive_cases": 98,
+  "active_target_in_pool": 40,
+  "active_supported": 28,
+  "active_unsupported": 24,
+  "visibility_breakdown_active": {
+    "own_seen": 32,
+    "global_seen": 11,
+    "open_world": 9
+  },
+  "visibility_breakdown_inactive": {
+    "none": 98
+  },
+  "rank_semantics": "rank>0: rank within candidate pool; rank==-1: target not in pool / not active (excluded from R@k numerator, included in denominator for active cases); rank mean over available seeds",
+  "per_variant_seed_coverage": {
+    "chain_all": 3,
+    "direct_global_legacy": 3,
+    "own_frequency": 1,
+    "graphmixer": 3
+  },
+  "metric_denominator_main": "active_cases (n=52) for R@k / MRR; supported_only subset (n=28) reported separately"
+}
