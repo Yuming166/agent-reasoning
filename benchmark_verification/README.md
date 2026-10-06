@@ -1,4 +1,4 @@
-# benchmark_verification — eth-actions-benchmark v1.0.0-candidate 验证包
+# FACTS(eth-actions-benchmark v1.0.0-candidate)— benchmark 验证包
 
 **用途**:ARR October 2026(截稿 2026-10-12)投稿的 benchmark contribution 验证材料。
 **状态**:本地发布候选;**未公开发布**;人工审查 pending。本目录是工作验证副本,不是正式发布物。
@@ -27,7 +27,7 @@
 | `STAGE_STATUS.json` | 六阶段 A–F 状态与证据 |
 | `evaluator/` | 评分器 + 全部构建/评分/复现脚本 |
 | `annotation_pack/` | 盲审指南 + 未执行预算方案。pilot20 工作表含链上视图数据,按纪律仅本地分发(不进公开仓库);标注结果文件回传后计算一致性 |
-| `RELEASE_PACKAGE_DOCS/` | README / DATASET_CARD / LICENSE_MATRIX / KNOWN_LIMITATIONS / AI_USE_DISCLOSURE / CORRECTIONS_PROCESS |
+| `RELEASE_PACKAGE_DOCS/`(含 CITATION.bib,数据集展示名 **FACTS**)| README / DATASET_CARD / LICENSE_MATRIX / KNOWN_LIMITATIONS / AI_USE_DISCLOSURE / CORRECTIONS_PROCESS |
 
 ## 需要作者验证的最小集
 

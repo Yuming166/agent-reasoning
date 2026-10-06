@@ -1,7 +1,7 @@
-# Dataset Card:eth-actions-benchmark v1.0.0-candidate
+# Dataset Card:FACTS (eth-actions-benchmark v1.0.0-candidate)
 
 ## 概要
-- **名称**:eth-actions-benchmark;版本 1.0.0-candidate;构建日期 2026-10-06。
+- **名称**:**FACTS**(First-Attempt Counterparty Forecasting from Sequences)——展示名;工件名 `eth-actions-benchmark`,版本 1.0.0-candidate;构建日期 2026-10-06。所有版本字符串、manifest 键与冻结文件保持 `eth-actions-benchmark-v1.0.0-candidate` 不变。
 - **任务**:给定链上钱包在日历截止前的本地可见历史,预测未来 7 天内首笔合格外部交易的目标地址;附历史角色绑定事实诊断。
 - **域**:Ethereum 主网,2022-03-01 至 2022-06-08 声明来源窗口;1000 抽样钱包、2200 查询。
 

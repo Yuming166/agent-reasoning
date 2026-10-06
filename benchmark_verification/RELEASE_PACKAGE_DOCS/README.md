@@ -1,4 +1,4 @@
-# eth-actions-benchmark v1.0.0-candidate(本地发布候选)
+# FACTS (eth-actions-benchmark v1.0.0-candidate) — 发布文档
 
 **状态:本地发布候选,未公开发布,人工审查未完成。** 本目录是 `VERSIONED_DATASET/` 的说明与合同;评分器见 `../SCORER_VALIDATION.json` 与代码 `research/benchmark_release_candidate_v1_20261006/`。
 
