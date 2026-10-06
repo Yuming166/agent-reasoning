@@ -28,7 +28,7 @@
 | `REPRODUCTION_RECEIPT.json` | 洁净室搬迁复现回执(passed) |
 | `STAGE_STATUS.json` | 六阶段 A–F 状态与证据 |
 | `evaluator/` | 评分器 + 全部构建/评分/复现脚本 |
-| `annotation_pack/` | 盲审指南 + 未执行预算方案。pilot20 工作表含链上视图数据,按纪律仅本地分发(不进公开仓库);标注结果文件回传后计算一致性 |
+| `annotation_pack/` | 盲审指南(中/EN)+ 未执行预算方案。pilot20 工作表含链上视图数据,按纪律仅本地分发(不进公开仓库) |
 | `RELEASE_PACKAGE_DOCS/`(含 CITATION.bib,数据集展示名 **FACTS**)| README / DATASET_CARD / LICENSE_MATRIX / KNOWN_LIMITATIONS / AI_USE_DISCLOSURE / CORRECTIONS_PROCESS |
 
 ## 需要作者验证的最小集
