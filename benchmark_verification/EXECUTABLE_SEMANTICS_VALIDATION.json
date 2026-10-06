@@ -1,0 +1,61 @@
+{
+ "schema": "executable-semantics-validation-v1",
+ "date": "2026-10-06",
+ "inputs": {
+  "grounding_facts": "action_evidence_rerank_v27_20261006/GROUNDING_FACTS.pkl (frozen)",
+  "action_store": "action_evidence_rerank_v27_20261006/COMPLETE_ACTION_STORE.pkl (frozen)",
+  "n_examples": 3755
+ },
+ "L1_round_trip": {
+  "definition": "independent regex parser maps each claim sentence back to formal slots (task/modality/role/asset/owner) and checks them against the example's structured fields and independently re-derived alias map",
+  "counts": {
+   "ok": 3755
+  },
+  "parse_fail_examples": []
+ },
+ "L2_dual_implementation": {
+  "definition": "second executor re-derives fact label and scope evidence from the candidate's full record set rebuilt from the frozen action store, following the written spec (event-scan ordering), with no code shared with the generator beyond data formats",
+  "counts": {
+   "label_ok": 3755
+  },
+  "scope_agreement": {
+   "claim_required_ok": 3755,
+   "latest_ok": 3755,
+   "candidate_relevant_ok": 3755
+  },
+  "n_executed": 3755,
+  "n_skipped": 0,
+  "label_agreement_rate": 1.0,
+  "label_diff_examples": []
+ },
+ "claim_language": {
+  "controlled_templates": 3,
+  "free_rewrite": false,
+  "note": "guarantee covers the controlled language only"
+ },
+ "mutation_tests": {
+  "purpose": "guard against a vacuous pass: tampered inputs must produce diffs",
+  "M1_swap_fact_label": {
+   "expected": "L1 diff",
+   "observed": "l1_conflicted_but_role_matches",
+   "pass": true
+  },
+  "M2_tamper_claim_role": {
+   "expected": "L1 diff",
+   "observed": "l1_supported_but_role_not_in_newest",
+   "pass": true
+  },
+  "M3_tamper_claim_role_vs_executor": {
+   "expected": "L2 label flip to conflicted",
+   "observed": "conflicted",
+   "pass": true
+  }
+ },
+ "verdict": {
+  "L1_round_trip": "PASS 3755/3755 — every claim sentence re-parses to exactly the formal slots of its example (task/modality/role/asset/owner), against an independently re-derived alias map",
+  "L2_dual_implementation": "PASS 3755/3755 — an independently written executor (event-scan over the frozen action store, no code shared with the generator) reproduces every fact label and all three scope evidence sets",
+  "controlled_language": "3 templates, no free rewrite; guarantee covers the controlled language only",
+  "human_role_remaining": "spec-level review of the written task semantics (30 min), not per-example annotation"
+ },
+ "code_sha256": "a02f5e8d6c585fb7541a39127fe889bd89ca6cd78910e64b5c4eaef549bcbabc"
+}

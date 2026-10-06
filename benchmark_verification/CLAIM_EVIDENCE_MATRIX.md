@@ -14,12 +14,13 @@
 | C6 | 语义覆盖缺口被量化:角色包 train 30494 / dev 0 / test 0;unknown 记账规则落实 | SEMANTIC_COVERAGE.json; QUALITY_AUDIT.json coverage | 0=来源缺位,不代表无角色关系 |
 | C7 | 盲审材料就绪且无泄漏:20 钱包 pilot(115 grounding + 60 窗口),人类字段全空;预算方案(200+80)未执行 | ANNOTATION_PACK/; 泄漏检查输出(本会话) | 人工审查 pending,无人工数据 |
 | C8 | 本地洁净室复现:临时目录+隔离进程+相对路径,评分/重算/自检全部一致 | REPRODUCTION_RECEIPT.json (reproduction_passed=true) | **不是**外部第三方复现 |
+| C9 | grounding gold 按"可执行语义"验证:受控语言(3 模板,无自由改写)+ 回程解析(L1)3755/3755 + 独立第二实现重执行(L2)3755/3755(标签、claim_required、latest、candidate_relevant 四项全一致)+ 变异测试证明检查非空转 | EXECUTABLE_SEMANTICS_VALIDATION.json | 措辞为 executable semantics / dual-implementation agreement,**不得写成 human verification**(见 N5);保证范围=受控语言 |
 
 ## Pending(材料就绪但需人工/外部步骤)
 
 | # | 事项 | 阻塞点 |
 |---|---|---|
-| P1 | grounding gold 的人工验证 | 无人工标注;automatic labels 不得称 verified |
+| P1 | grounding gold 的人工验证 → **主路径已转自动(2026-10-06)**:executable-semantics 三层验证 L1 回程解析 3755/3755 + L2 双实现重执行 3755/3755(标签+三 scope 证据全一致)+ 变异测试 3/3;剩余人工部分收敛为书面规范审阅(~30 分钟)。逐例人工 pilot 降级为可选增强 | EXECUTABLE_SEMANTICS_VALIDATION.json |
 | P2 | dev/test 的 fixed_pool 基线 | 无冻结角色参考池(reference_pools 标 pending) |
 | P3 | 逐例 grounding 基线评分 | 冻结 v27lean 只有聚合诊断,无逐例预测;重跑方法超出阶段预算 |
 | P4 | ~~许可矩阵逐项确认~~ **已决定(2026-10-06)**:代码 MIT、文档与 grounding gold CC BY 4.0、链上事实数据 CC0 1.0;唯一复核点=BigQuery 转存条款(发布前一次只读复核) | LICENSE_MATRIX.md;LICENSE-CODE-MIT.txt;LICENSE-DATA-CC0.txt |
