@@ -14,6 +14,7 @@
 | `SCORER_VALIDATION.json` | 评分器验证(15 合同测试;fixed_pool 复现冻结结果 5/5 分支) |
 | `EXECUTABLE_SEMANTICS_VALIDATION.json` | grounding gold 可执行语义验证:L1 回程解析 + L2 双实现重执行,全部 3755/3755;变异测试 3/3 |
 | `BASELINES_RETRIEVAL.json` | 三个免训练基线(频率/最近性/随机合法域)× 三 split,同一评测器 retrieval 轨;random_legal 0 命中为期望模态结果(E[hits]≈0.09) |
+| `ERROR_ANALYSIS_RETRIEVAL.json` | 四类错误按目标流行度×钱包历史长度分层(G2.2);hits5 随两者单调上升,稀有目标是错误主体 |
 | `SCORING_V27LEAN_TRAIN.json` | 冻结基线重评分(fixed_pool + retrieval 双轨) |
 | `scoring/` | 钱包聚类配对诊断 + bootstrap CI(含首次缺陷跑的存档与 NOTICE) |
 | `DATASET_MANIFEST.json` | 数据集契约:标签定义/split 统计/暴露/隔离/单位 |

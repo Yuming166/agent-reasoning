@@ -1,0 +1,619 @@
+{
+ "schema": "error-analysis-retrieval-v1",
+ "date": "2026-10-06",
+ "seed_random_legal": 20261006,
+ "track": "retrieval",
+ "k": 50,
+ "note": "four-category errors stratified by target popularity (prior-wallet counterpart rank) and by wallet history size; same evaluator per-query output as BASELINES_RETRIEVAL.json",
+ "splits": {
+  "train": {
+   "frequency": {
+    "summary": {
+     "sampled_queries": 1800,
+     "unqualified_window_queries": 0,
+     "eligible_queries": 1800,
+     "valid_predictions": 1800,
+     "missing_or_invalid_predictions": 0,
+     "inactive_queries": 815,
+     "inactive_valid_predictions": 815,
+     "active_queries": 985,
+     "observable_active_targets": 847,
+     "hits5": 385,
+     "hits50": 546,
+     "target_outside_legal_index": 138,
+     "observable_target_invalid_or_missing_prediction": 0,
+     "observable_target_outside_proposed50": 301,
+     "target_in50_outside5": 161,
+     "target_in5": 385,
+     "Top5": 0.39086294416243655,
+     "MRR5": 0.26076142131979696,
+     "Recall50": 0.5543147208121827,
+     "format_valid_rate": 1.0,
+     "sampled_wallets": 600,
+     "active_wallets": 378,
+     "extra_prediction_queries": [],
+     "track": "retrieval",
+     "denominator": "all qualifying active queries",
+     "pooloutside_and_invalid_are_failures": true
+    },
+    "by_target_popularity_quintile": {
+     "pop_q3|target_in50_outside5": 101,
+     "pop_q3|observable_target_outside_proposed50": 208,
+     "pop_q3|target_in5": 308,
+     "pop_q0|target_in50_outside5": 51,
+     "pop_q0|target_outside_legal_index": 121,
+     "pop_q0|target_in5": 68,
+     "pop_q2|target_in50_outside5": 9,
+     "pop_q3|target_outside_legal_index": 14,
+     "pop_q0|observable_target_outside_proposed50": 77,
+     "pop_q2|observable_target_outside_proposed50": 16,
+     "pop_q2|target_in5": 9,
+     "pop_q2|target_outside_legal_index": 3
+    },
+    "by_wallet_history_size_quintile": {
+     "hist_q2|target_in50_outside5": 34,
+     "hist_q2|observable_target_outside_proposed50": 80,
+     "hist_q2|target_in5": 62,
+     "hist_q3|target_in5": 283,
+     "hist_q3|observable_target_outside_proposed50": 143,
+     "hist_q3|target_outside_legal_index": 73,
+     "hist_q3|target_in50_outside5": 119,
+     "hist_q1|target_outside_legal_index": 30,
+     "hist_q1|observable_target_outside_proposed50": 52,
+     "hist_q0|observable_target_outside_proposed50": 26,
+     "hist_q1|target_in5": 31,
+     "hist_q2|target_outside_legal_index": 29,
+     "hist_q0|target_in5": 9,
+     "hist_q1|target_in50_outside5": 8,
+     "hist_q0|target_outside_legal_index": 6
+    },
+    "target_popularity_quintile_edges(distinct_wallets)": [
+     1.0,
+     1.0,
+     2.0,
+     6.0
+    ],
+    "wallet_history_quintile_edges(parents)": [
+     4.0,
+     14.0,
+     31.0,
+     73.0
+    ]
+   },
+   "recency": {
+    "summary": {
+     "sampled_queries": 1800,
+     "unqualified_window_queries": 0,
+     "eligible_queries": 1800,
+     "valid_predictions": 1800,
+     "missing_or_invalid_predictions": 0,
+     "inactive_queries": 815,
+     "inactive_valid_predictions": 815,
+     "active_queries": 985,
+     "observable_active_targets": 847,
+     "hits5": 85,
+     "hits50": 546,
+     "target_outside_legal_index": 138,
+     "observable_target_invalid_or_missing_prediction": 0,
+     "observable_target_outside_proposed50": 301,
+     "target_in50_outside5": 461,
+     "target_in5": 85,
+     "Top5": 0.08629441624365482,
+     "MRR5": 0.03908629441624366,
+     "Recall50": 0.5543147208121827,
+     "format_valid_rate": 1.0,
+     "sampled_wallets": 600,
+     "active_wallets": 378,
+     "extra_prediction_queries": [],
+     "track": "retrieval",
+     "denominator": "all qualifying active queries",
+     "pooloutside_and_invalid_are_failures": true
+    },
+    "by_target_popularity_quintile": {
+     "pop_q3|target_in50_outside5": 355,
+     "pop_q3|observable_target_outside_proposed50": 208,
+     "pop_q0|target_in50_outside5": 92,
+     "pop_q3|target_in5": 54,
+     "pop_q0|target_outside_legal_index": 121,
+     "pop_q0|target_in5": 28,
+     "pop_q2|target_in50_outside5": 14,
+     "pop_q3|target_outside_legal_index": 14,
+     "pop_q0|observable_target_outside_proposed50": 76,
+     "pop_q2|observable_target_outside_proposed50": 17,
+     "pop_q2|target_outside_legal_index": 3,
+     "pop_q2|target_in5": 3
+    },
+    "by_wallet_history_size_quintile": {
+     "hist_q2|target_in50_outside5": 66,
+     "hist_q2|observable_target_outside_proposed50": 80,
+     "hist_q3|target_in50_outside5": 388,
+     "hist_q3|observable_target_outside_proposed50": 143,
+     "hist_q2|target_in5": 30,
+     "hist_q3|target_outside_legal_index": 73,
+     "hist_q1|target_outside_legal_index": 30,
+     "hist_q1|observable_target_outside_proposed50": 52,
+     "hist_q0|observable_target_outside_proposed50": 26,
+     "hist_q3|target_in5": 14,
+     "hist_q1|target_in5": 32,
+     "hist_q2|target_outside_legal_index": 29,
+     "hist_q1|target_in50_outside5": 7,
+     "hist_q0|target_in5": 9,
+     "hist_q0|target_outside_legal_index": 6
+    },
+    "target_popularity_quintile_edges(distinct_wallets)": [
+     1.0,
+     1.0,
+     2.0,
+     6.0
+    ],
+    "wallet_history_quintile_edges(parents)": [
+     4.0,
+     14.0,
+     31.0,
+     73.0
+    ]
+   },
+   "random_legal": {
+    "summary": {
+     "sampled_queries": 1800,
+     "unqualified_window_queries": 0,
+     "eligible_queries": 1800,
+     "valid_predictions": 1800,
+     "missing_or_invalid_predictions": 0,
+     "inactive_queries": 815,
+     "inactive_valid_predictions": 815,
+     "active_queries": 985,
+     "observable_active_targets": 847,
+     "hits5": 0,
+     "hits50": 0,
+     "target_outside_legal_index": 138,
+     "observable_target_invalid_or_missing_prediction": 0,
+     "observable_target_outside_proposed50": 847,
+     "target_in50_outside5": 0,
+     "target_in5": 0,
+     "Top5": 0.0,
+     "MRR5": 0.0,
+     "Recall50": 0.0,
+     "format_valid_rate": 1.0,
+     "sampled_wallets": 600,
+     "active_wallets": 378,
+     "extra_prediction_queries": [],
+     "track": "retrieval",
+     "denominator": "all qualifying active queries",
+     "pooloutside_and_invalid_are_failures": true
+    },
+    "by_target_popularity_quintile": {
+     "pop_q3|observable_target_outside_proposed50": 617,
+     "pop_q0|observable_target_outside_proposed50": 196,
+     "pop_q0|target_outside_legal_index": 121,
+     "pop_q2|observable_target_outside_proposed50": 34,
+     "pop_q3|target_outside_legal_index": 14,
+     "pop_q2|target_outside_legal_index": 3
+    },
+    "by_wallet_history_size_quintile": {
+     "hist_q2|observable_target_outside_proposed50": 176,
+     "hist_q3|observable_target_outside_proposed50": 545,
+     "hist_q3|target_outside_legal_index": 73,
+     "hist_q1|target_outside_legal_index": 30,
+     "hist_q1|observable_target_outside_proposed50": 91,
+     "hist_q0|observable_target_outside_proposed50": 35,
+     "hist_q2|target_outside_legal_index": 29,
+     "hist_q0|target_outside_legal_index": 6
+    },
+    "target_popularity_quintile_edges(distinct_wallets)": [
+     1.0,
+     1.0,
+     2.0,
+     6.0
+    ],
+    "wallet_history_quintile_edges(parents)": [
+     4.0,
+     14.0,
+     31.0,
+     73.0
+    ]
+   }
+  },
+  "dev": {
+   "frequency": {
+    "summary": {
+     "sampled_queries": 150,
+     "unqualified_window_queries": 0,
+     "eligible_queries": 150,
+     "valid_predictions": 150,
+     "missing_or_invalid_predictions": 0,
+     "inactive_queries": 66,
+     "inactive_valid_predictions": 66,
+     "active_queries": 84,
+     "observable_active_targets": 67,
+     "hits5": 27,
+     "hits50": 42,
+     "target_outside_legal_index": 17,
+     "observable_target_invalid_or_missing_prediction": 0,
+     "observable_target_outside_proposed50": 25,
+     "target_in50_outside5": 15,
+     "target_in5": 27,
+     "Top5": 0.32142857142857145,
+     "MRR5": 0.19365079365079363,
+     "Recall50": 0.5,
+     "format_valid_rate": 1.0,
+     "sampled_wallets": 150,
+     "active_wallets": 84,
+     "extra_prediction_queries": [],
+     "track": "retrieval",
+     "denominator": "all qualifying active queries",
+     "pooloutside_and_invalid_are_failures": true
+    },
+    "by_target_popularity_quintile": {
+     "pop_q0|observable_target_outside_proposed50": 15,
+     "pop_q3|target_in5": 21,
+     "pop_q3|target_in50_outside5": 8,
+     "pop_q0|target_outside_legal_index": 17,
+     "pop_q3|observable_target_outside_proposed50": 8,
+     "pop_q2|target_in5": 6,
+     "pop_q2|target_in50_outside5": 7,
+     "pop_q2|observable_target_outside_proposed50": 2
+    },
+    "by_wallet_history_size_quintile": {
+     "hist_q1|observable_target_outside_proposed50": 4,
+     "hist_q1|target_in5": 6,
+     "hist_q3|target_in50_outside5": 12,
+     "hist_q3|target_outside_legal_index": 8,
+     "hist_q3|target_in5": 15,
+     "hist_q1|target_outside_legal_index": 4,
+     "hist_q0|observable_target_outside_proposed50": 2,
+     "hist_q2|observable_target_outside_proposed50": 6,
+     "hist_q3|observable_target_outside_proposed50": 13,
+     "hist_q2|target_outside_legal_index": 4,
+     "hist_q2|target_in50_outside5": 3,
+     "hist_q2|target_in5": 6,
+     "hist_q0|target_outside_legal_index": 1
+    },
+    "target_popularity_quintile_edges(distinct_wallets)": [
+     0.0,
+     0.0,
+     1.0,
+     2.6000000000000014
+    ],
+    "wallet_history_quintile_edges(parents)": [
+     5.0,
+     15.600000000000001,
+     29.39999999999999,
+     69.60000000000001
+    ]
+   },
+   "recency": {
+    "summary": {
+     "sampled_queries": 150,
+     "unqualified_window_queries": 0,
+     "eligible_queries": 150,
+     "valid_predictions": 150,
+     "missing_or_invalid_predictions": 0,
+     "inactive_queries": 66,
+     "inactive_valid_predictions": 66,
+     "active_queries": 84,
+     "observable_active_targets": 67,
+     "hits5": 10,
+     "hits50": 41,
+     "target_outside_legal_index": 17,
+     "observable_target_invalid_or_missing_prediction": 0,
+     "observable_target_outside_proposed50": 26,
+     "target_in50_outside5": 31,
+     "target_in5": 10,
+     "Top5": 0.11904761904761904,
+     "MRR5": 0.06765873015873017,
+     "Recall50": 0.4880952380952381,
+     "format_valid_rate": 1.0,
+     "sampled_wallets": 150,
+     "active_wallets": 84,
+     "extra_prediction_queries": [],
+     "track": "retrieval",
+     "denominator": "all qualifying active queries",
+     "pooloutside_and_invalid_are_failures": true
+    },
+    "by_target_popularity_quintile": {
+     "pop_q0|observable_target_outside_proposed50": 15,
+     "pop_q3|target_in5": 6,
+     "pop_q3|target_in50_outside5": 22,
+     "pop_q0|target_outside_legal_index": 17,
+     "pop_q3|observable_target_outside_proposed50": 9,
+     "pop_q2|target_in50_outside5": 9,
+     "pop_q2|target_in5": 4,
+     "pop_q2|observable_target_outside_proposed50": 2
+    },
+    "by_wallet_history_size_quintile": {
+     "hist_q1|observable_target_outside_proposed50": 4,
+     "hist_q1|target_in5": 5,
+     "hist_q3|target_in50_outside5": 24,
+     "hist_q3|target_outside_legal_index": 8,
+     "hist_q1|target_outside_legal_index": 4,
+     "hist_q0|observable_target_outside_proposed50": 2,
+     "hist_q2|observable_target_outside_proposed50": 6,
+     "hist_q3|observable_target_outside_proposed50": 14,
+     "hist_q1|target_in50_outside5": 1,
+     "hist_q2|target_outside_legal_index": 4,
+     "hist_q2|target_in5": 3,
+     "hist_q3|target_in5": 2,
+     "hist_q2|target_in50_outside5": 6,
+     "hist_q0|target_outside_legal_index": 1
+    },
+    "target_popularity_quintile_edges(distinct_wallets)": [
+     0.0,
+     0.0,
+     1.0,
+     2.6000000000000014
+    ],
+    "wallet_history_quintile_edges(parents)": [
+     5.0,
+     15.600000000000001,
+     29.39999999999999,
+     69.60000000000001
+    ]
+   },
+   "random_legal": {
+    "summary": {
+     "sampled_queries": 150,
+     "unqualified_window_queries": 0,
+     "eligible_queries": 150,
+     "valid_predictions": 150,
+     "missing_or_invalid_predictions": 0,
+     "inactive_queries": 66,
+     "inactive_valid_predictions": 66,
+     "active_queries": 84,
+     "observable_active_targets": 67,
+     "hits5": 0,
+     "hits50": 0,
+     "target_outside_legal_index": 17,
+     "observable_target_invalid_or_missing_prediction": 0,
+     "observable_target_outside_proposed50": 67,
+     "target_in50_outside5": 0,
+     "target_in5": 0,
+     "Top5": 0.0,
+     "MRR5": 0.0,
+     "Recall50": 0.0,
+     "format_valid_rate": 1.0,
+     "sampled_wallets": 150,
+     "active_wallets": 84,
+     "extra_prediction_queries": [],
+     "track": "retrieval",
+     "denominator": "all qualifying active queries",
+     "pooloutside_and_invalid_are_failures": true
+    },
+    "by_target_popularity_quintile": {
+     "pop_q0|observable_target_outside_proposed50": 15,
+     "pop_q3|observable_target_outside_proposed50": 37,
+     "pop_q0|target_outside_legal_index": 17,
+     "pop_q2|observable_target_outside_proposed50": 15
+    },
+    "by_wallet_history_size_quintile": {
+     "hist_q1|observable_target_outside_proposed50": 10,
+     "hist_q3|observable_target_outside_proposed50": 40,
+     "hist_q3|target_outside_legal_index": 8,
+     "hist_q1|target_outside_legal_index": 4,
+     "hist_q0|observable_target_outside_proposed50": 2,
+     "hist_q2|observable_target_outside_proposed50": 15,
+     "hist_q2|target_outside_legal_index": 4,
+     "hist_q0|target_outside_legal_index": 1
+    },
+    "target_popularity_quintile_edges(distinct_wallets)": [
+     0.0,
+     0.0,
+     1.0,
+     2.6000000000000014
+    ],
+    "wallet_history_quintile_edges(parents)": [
+     5.0,
+     15.600000000000001,
+     29.39999999999999,
+     69.60000000000001
+    ]
+   }
+  },
+  "test": {
+   "frequency": {
+    "summary": {
+     "sampled_queries": 250,
+     "unqualified_window_queries": 0,
+     "eligible_queries": 250,
+     "valid_predictions": 250,
+     "missing_or_invalid_predictions": 0,
+     "inactive_queries": 155,
+     "inactive_valid_predictions": 155,
+     "active_queries": 95,
+     "observable_active_targets": 69,
+     "hits5": 37,
+     "hits50": 44,
+     "target_outside_legal_index": 26,
+     "observable_target_invalid_or_missing_prediction": 0,
+     "observable_target_outside_proposed50": 25,
+     "target_in50_outside5": 7,
+     "target_in5": 37,
+     "Top5": 0.3894736842105263,
+     "MRR5": 0.28192982456140353,
+     "Recall50": 0.4631578947368421,
+     "format_valid_rate": 1.0,
+     "sampled_wallets": 250,
+     "active_wallets": 95,
+     "extra_prediction_queries": [],
+     "track": "retrieval",
+     "denominator": "all qualifying active queries",
+     "pooloutside_and_invalid_are_failures": true
+    },
+    "by_target_popularity_quintile": {
+     "pop_q2|target_in50_outside5": 4,
+     "pop_q0|target_outside_legal_index": 26,
+     "pop_q3|target_in5": 21,
+     "pop_q3|observable_target_outside_proposed50": 15,
+     "pop_q2|target_in5": 16,
+     "pop_q3|target_in50_outside5": 3,
+     "pop_q0|observable_target_outside_proposed50": 6,
+     "pop_q2|observable_target_outside_proposed50": 4
+    },
+    "by_wallet_history_size_quintile": {
+     "hist_q3|target_in50_outside5": 6,
+     "hist_q3|target_outside_legal_index": 20,
+     "hist_q3|target_in5": 24,
+     "hist_q3|observable_target_outside_proposed50": 19,
+     "hist_q1|target_in5": 3,
+     "hist_q2|target_in50_outside5": 1,
+     "hist_q2|target_in5": 9,
+     "hist_q0|target_outside_legal_index": 1,
+     "hist_q2|target_outside_legal_index": 4,
+     "hist_q2|observable_target_outside_proposed50": 2,
+     "hist_q0|observable_target_outside_proposed50": 3,
+     "hist_q0|target_in5": 1,
+     "hist_q1|observable_target_outside_proposed50": 1,
+     "hist_q1|target_outside_legal_index": 1
+    },
+    "target_popularity_quintile_edges(distinct_wallets)": [
+     0.0,
+     0.0,
+     1.0,
+     2.0
+    ],
+    "wallet_history_quintile_edges(parents)": [
+     4.0,
+     9.600000000000009,
+     27.400000000000006,
+     66.60000000000005
+    ]
+   },
+   "recency": {
+    "summary": {
+     "sampled_queries": 250,
+     "unqualified_window_queries": 0,
+     "eligible_queries": 250,
+     "valid_predictions": 250,
+     "missing_or_invalid_predictions": 0,
+     "inactive_queries": 155,
+     "inactive_valid_predictions": 155,
+     "active_queries": 95,
+     "observable_active_targets": 69,
+     "hits5": 13,
+     "hits50": 44,
+     "target_outside_legal_index": 26,
+     "observable_target_invalid_or_missing_prediction": 0,
+     "observable_target_outside_proposed50": 25,
+     "target_in50_outside5": 31,
+     "target_in5": 13,
+     "Top5": 0.1368421052631579,
+     "MRR5": 0.037719298245614034,
+     "Recall50": 0.4631578947368421,
+     "format_valid_rate": 1.0,
+     "sampled_wallets": 250,
+     "active_wallets": 95,
+     "extra_prediction_queries": [],
+     "track": "retrieval",
+     "denominator": "all qualifying active queries",
+     "pooloutside_and_invalid_are_failures": true
+    },
+    "by_target_popularity_quintile": {
+     "pop_q2|target_in50_outside5": 10,
+     "pop_q0|target_outside_legal_index": 26,
+     "pop_q3|target_in50_outside5": 21,
+     "pop_q3|observable_target_outside_proposed50": 15,
+     "pop_q2|target_in5": 10,
+     "pop_q0|observable_target_outside_proposed50": 6,
+     "pop_q2|observable_target_outside_proposed50": 4,
+     "pop_q3|target_in5": 3
+    },
+    "by_wallet_history_size_quintile": {
+     "hist_q3|target_in50_outside5": 29,
+     "hist_q3|target_outside_legal_index": 20,
+     "hist_q3|observable_target_outside_proposed50": 19,
+     "hist_q3|target_in5": 1,
+     "hist_q1|target_in5": 3,
+     "hist_q2|target_in5": 8,
+     "hist_q2|target_in50_outside5": 2,
+     "hist_q0|target_outside_legal_index": 1,
+     "hist_q2|target_outside_legal_index": 4,
+     "hist_q2|observable_target_outside_proposed50": 2,
+     "hist_q0|observable_target_outside_proposed50": 3,
+     "hist_q0|target_in5": 1,
+     "hist_q1|observable_target_outside_proposed50": 1,
+     "hist_q1|target_outside_legal_index": 1
+    },
+    "target_popularity_quintile_edges(distinct_wallets)": [
+     0.0,
+     0.0,
+     1.0,
+     2.0
+    ],
+    "wallet_history_quintile_edges(parents)": [
+     4.0,
+     9.600000000000009,
+     27.400000000000006,
+     66.60000000000005
+    ]
+   },
+   "random_legal": {
+    "summary": {
+     "sampled_queries": 250,
+     "unqualified_window_queries": 0,
+     "eligible_queries": 250,
+     "valid_predictions": 250,
+     "missing_or_invalid_predictions": 0,
+     "inactive_queries": 155,
+     "inactive_valid_predictions": 155,
+     "active_queries": 95,
+     "observable_active_targets": 69,
+     "hits5": 0,
+     "hits50": 0,
+     "target_outside_legal_index": 26,
+     "observable_target_invalid_or_missing_prediction": 0,
+     "observable_target_outside_proposed50": 69,
+     "target_in50_outside5": 0,
+     "target_in5": 0,
+     "Top5": 0.0,
+     "MRR5": 0.0,
+     "Recall50": 0.0,
+     "format_valid_rate": 1.0,
+     "sampled_wallets": 250,
+     "active_wallets": 95,
+     "extra_prediction_queries": [],
+     "track": "retrieval",
+     "denominator": "all qualifying active queries",
+     "pooloutside_and_invalid_are_failures": true
+    },
+    "by_target_popularity_quintile": {
+     "pop_q2|observable_target_outside_proposed50": 24,
+     "pop_q0|target_outside_legal_index": 26,
+     "pop_q3|observable_target_outside_proposed50": 39,
+     "pop_q0|observable_target_outside_proposed50": 6
+    },
+    "by_wallet_history_size_quintile": {
+     "hist_q3|observable_target_outside_proposed50": 49,
+     "hist_q3|target_outside_legal_index": 20,
+     "hist_q1|observable_target_outside_proposed50": 4,
+     "hist_q2|observable_target_outside_proposed50": 12,
+     "hist_q0|target_outside_legal_index": 1,
+     "hist_q2|target_outside_legal_index": 4,
+     "hist_q0|observable_target_outside_proposed50": 4,
+     "hist_q1|target_outside_legal_index": 1
+    },
+    "target_popularity_quintile_edges(distinct_wallets)": [
+     0.0,
+     0.0,
+     1.0,
+     2.0
+    ],
+    "wallet_history_quintile_edges(parents)": [
+     4.0,
+     9.600000000000009,
+     27.400000000000006,
+     66.60000000000005
+    ]
+   }
+  }
+ },
+ "interpretation": {
+  "quintile_labeling_note": "target-popularity edges collapse at low end ([1,1,2,6] distinct-wallet quantiles), so q0 aggregates the two lowest quintiles and q1 is empty; labels are popularity TIERS, sizes unequal by construction",
+  "headline_train_frequency": {
+   "by_popularity": "targets seen at >=6 prior wallets (pop_q3, n=631): hits5 308/631=0.488; rare targets (pop_q0, n=317): 68/317=0.215 — error mass concentrates on unpopular targets",
+   "out_domain_by_popularity": "121/317 of rare-target misses are y-not-in-legal-index vs 14/631 for popular targets — unpopular targets are disproportionately first-seen after cutoff",
+   "by_wallet_history": "hits5 rises monotonically with history size: 0.220 (q0, <=4 parents) -> 0.458 (q3, >73 parents); short-history wallets are the hard core",
+   "paper_usage": "supports: (1) difficulty is concentrated in rare-target/short-history cells; (2) y-not-in-D is a real error mode tied to target novelty, not prediction randomness"
+  },
+  "cross_split": "frequency hits5 train 0.455 / dev 0.403 / test 0.536; category proportions stable across splits"
+ }
+}
