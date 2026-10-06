@@ -1,0 +1,101 @@
+{
+ "status": "complete_pending_human_steps",
+ "created_UTC": "2026-10-06",
+ "session": "existing Claude Code session (per handoff)",
+ "authorization": "handoffs/benchmark_release_20261006/CLAUDE_BENCHMARK_HANDOFF.txt",
+ "task_file_sha256": "75f5301d7faba5bc96edf4a62a8f6c6456cc51dbc4b6ca3781707fbb103c90ed",
+ "stage_order": [
+  "A_release_contract",
+  "B_portable_export",
+  "C_scorer_adapter",
+  "D_quality_audit",
+  "E_annotation_pack",
+  "F_release_notes_repro"
+ ],
+ "stages": {
+  "A_release_contract": {
+   "status": "complete",
+   "ended_UTC": "2026-10-06T10:04:10.351176+00:00",
+   "deliverables": [
+    "RELEASE_PROTOCOL.md",
+    "SOURCE_MANIFEST.json",
+    "SPLIT_EXPOSURE_LEDGER.json"
+   ]
+  },
+  "B_portable_export": {
+   "status": "complete",
+   "ended_UTC": "2026-10-06T10:04:10.351189+00:00",
+   "deliverables": [
+    "VERSIONED_DATASET/",
+    "DATASET_MANIFEST.json",
+    "EXPORT_VALIDATION.json"
+   ],
+   "evidence": "EXPORT_VALIDATION status=passed; 2200/2200 gold regeneration match; 23 files, 130.3MB; leak scan clean; index rev2 epoch-unit fix recorded"
+  },
+  "C_scorer_adapter": {
+   "status": "complete",
+   "ended_UTC": "2026-10-06T10:26:40.776903+00:00",
+   "deliverables": [
+    "SCORER_VALIDATION.json",
+    "SCORING_V27LEAN_TRAIN.json",
+    "SCORING_V27LEAN_TRAIN_DIAGNOSTICS.json",
+    "SCORING_V27LEAN_TRAIN_DIAGNOSTICS.superseded_defective_ci.NOTICE.json"
+   ],
+   "code": [
+    "research/benchmark_release_candidate_v1_20261006/benchmark_evaluator.py",
+    "research/benchmark_release_candidate_v1_20261006/score_v27lean_train.py",
+    "research/benchmark_release_candidate_v1_20261006/score_diagnostics.py"
+   ],
+   "evidence": "fixed_pool reproduces frozen RESULTS.json for all 5 branches (hits5/Top5/MRR5/Recall50); wallet-cluster rescue/harm/CI reproduced (7 contrasts); independent recount matches; retrieval track reported as stricter new diagnostic (330/1800 frozen predictions fail legality gate); 15 synthetic contract tests passed"
+  },
+  "D_quality_audit": {
+   "status": "complete",
+   "ended_UTC": "2026-10-06T10:35:30.816786+00:00",
+   "deliverables": [
+    "QUALITY_AUDIT.json",
+    "SEMANTIC_COVERAGE.json",
+    "NLP_VALIDITY_PLAN_AND_AVAILABLE_RESULTS.md"
+   ],
+   "evidence": "all hard checks passed (cutoff discipline, provenance, dedup, amount preservation, split intersections, label windows, isolation, view consistency, pool eligibility); role packets train=30494 dev=0 test=0 recorded as critical gap; not_available=0 vs empty-list-unknown=587 corrected; fillable vs non-fillable gaps separated, all collection pending"
+  },
+  "E_annotation_pack": {
+   "status": "complete",
+   "ended_UTC": "2026-10-06T10:36:59.862953+00:00",
+   "deliverables": [
+    "ANNOTATION_PACK/ANNOTATION_GUIDELINES.md",
+    "ANNOTATION_PACK/pilot20/wallet_list.json",
+    "ANNOTATION_PACK/pilot20/groundings_to_annotate.jsonl (115 rows, gold stripped)",
+    "ANNOTATION_PACK/pilot20/forecast_windows_to_annotate.jsonl (60 queries, no future data)",
+    "ANNOTATION_PACK/BUDGET_PLAN_200CORE_80CHALLENGE.json (unexecuted)"
+   ],
+   "evidence": "blind leak-check clean (no fact_label/target/scope-gold/timestamps of outcomes); human fields all empty; pilot 20 wallets seed 20261006; difficulty layers from history structure only; human_status=pending everywhere",
+   "human_judgment": "pending; nothing simulated"
+  },
+  "F_release_notes_repro": {
+   "status": "complete",
+   "ended_UTC": "2026-10-06T10:40:07.006349+00:00",
+   "deliverables": [
+    "RELEASE_PACKAGE_DOCS/ (README, DATASET_CARD, LICENSE_MATRIX, KNOWN_LIMITATIONS, AI_USE_DISCLOSURE, CORRECTIONS_PROCESS)",
+    "CLAIM_EVIDENCE_MATRIX.md",
+    "REPRODUCTION_RECEIPT.json (cleanroom passed)",
+    "FINAL_RELEASE_PREP_REPORT.json"
+   ],
+   "evidence": "cleanroom relocation test passed (temp dir, isolated process, relative paths, selftest+scoring+recount identical); claims bounded by RELATED_BENCHMARKS/CITATION_EVIDENCE; licenses unknown where unknown"
+  }
+ },
+ "constraints": {
+  "local_CPU_only": true,
+  "no_new_training": true,
+  "no_model_API_calls": true,
+  "no_chain_or_cloud_queries": true,
+  "fresh400_individual_labels_or_predictions_read": false,
+  "new_code_root": "research/benchmark_release_candidate_v1_20261006/",
+  "new_artifact_root": "artifacts/benchmark_release_candidate_v1_20261006/"
+ },
+ "notes": [
+  "Pre-B validation completed before any stage: full 2200/2200 label regeneration match (train/dev via offline_chain_events_v1 parquet; external test via external_fresh250/canonical_ledger.parquet) with per-field audit (active, target_address, outcome_ts, tx_hash).",
+  "Original 400 confirmation cohort excluded: no individual labels/predictions/per-case results read; only metadata files CONFIRMATION_METADATA_STATUS.md and EXPOSURE_EVENT.json per handoff future400_metadata_allowed_only."
+ ],
+ "ended_UTC": "2026-10-06T10:40:07.006363+00:00",
+ "final_note": "\u5168\u90e8\u516d\u9636\u6bb5\u5b8c\u6210;\u4eba\u5de5\u6b65\u9aa4 pending:grounding \u4eba\u5de5\u9a8c\u8bc1\u3001\u8bb8\u53ef\u9010\u9879\u786e\u8ba4\u3001dev/test \u53c2\u8003\u6c60\u3001\u516c\u5f00\u53d1\u5e03\u3002\u672c\u5730\u53d1\u5e03\u5019\u9009\u5c31\u7eea;\u672a\u4e0a\u4f20\u672a\u53d1\u5e03\u3002"
+}

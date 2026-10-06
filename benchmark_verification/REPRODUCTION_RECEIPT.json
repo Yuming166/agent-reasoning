@@ -1,0 +1,62 @@
+{
+ "schema": "reproduction_receipt_v1",
+ "created_UTC": "2026-10-06T10:39:19.636518+00:00",
+ "mode": "local cleanroom relocation test (temp dir, isolated process, relative paths only)",
+ "temp_root": "ethbench_cleanroom_ek79mx_x",
+ "environment": {
+  "python": "3.13.13",
+  "numpy": "2.5.3",
+  "os": "linux"
+ },
+ "inputs_copied": {
+  "dataset_files": 23,
+  "dataset_bytes": 130310277,
+  "evaluator_sha256": "a278e5b90937676e066b985c195b63e0ef1491f238c41920f2d6d065e09f0b7e",
+  "predictions_sha256": "1812e9e1d3cacebd56356bf8a805be3ed0f55e9f4ac116228a04cb99054b60af"
+ },
+ "checks": {
+  "cleanroom_fixed_pool_matches_inrepo_scoring": true,
+  "mismatches": [],
+  "cleanroom_fixed_pool_recount_matches_frozen": {
+   "r0scores": true,
+   "all_history_seed0": true,
+   "recent_actions_seed0": true,
+   "program_roles_seed0": true,
+   "learned_locator_seed0": true
+  },
+  "retrieval_hits5_by_branch": {
+   "r0scores": 305,
+   "all_history_seed0": 305,
+   "recent_actions_seed0": 305,
+   "program_roles_seed0": 306,
+   "learned_locator_seed0": 297
+  },
+  "absolute_repo_paths_in_cleanroom_code": false
+ },
+ "selftest_in_cleanroom": "contract selftest runs from moved copies (see checks.below)",
+ "scope_statement": "本地搬迁/隔离进程复现;不是外部第三方复现;不声明已公开发布",
+ "selftest_result": {
+  "status": "passed",
+  "checks": [
+   "binding_scope_errors_flagged",
+   "duplicate_address_fails",
+   "empty_denominator_undefined",
+   "extra_predictions_reported",
+   "fixed_pool_complete_same_50",
+   "future_invisible_address_fails",
+   "grounding_scopes_and_unknown",
+   "inactive_separate",
+   "missing_prediction_fails",
+   "more_than_50_fails",
+   "out_of_pool_target_fails",
+   "pool_artifact_outside_domain_allowed",
+   "rank_and_mrr",
+   "time_units_utc_seconds",
+   "unknown_token_not_parent_id"
+  ],
+  "real_data_read": false
+ },
+ "verdict": {
+  "reproduction_passed": true
+ }
+}

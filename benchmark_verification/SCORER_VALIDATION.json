@@ -1,0 +1,64 @@
+{
+ "schema": "scorer_validation_v1",
+ "created_UTC": "2026-10-06T10:26:33.747555+00:00",
+ "evaluator": {
+  "file": "research/benchmark_release_candidate_v1_20261006/benchmark_evaluator.py",
+  "sha256": "a278e5b90937676e066b985c195b63e0ef1491f238c41920f2d6d065e09f0b7e",
+  "prototype_source": "research/benchmark_roles_temporal_v1_20261006/benchmark_scorer.py (synthetic-only prototype, untouched)",
+  "selftest": "15 synthetic contract checks passed (duplicate IDs, illegal/future-invisible addresses, missing predictions, out-of-pool targets, complete-50 fixed pool, time units, unknown state, empty denominators, multi-action binding scope errors)",
+  "contract_deviations_from_prototype": [
+   "gold field target_address instead of target_candidate_id (release schema)",
+   "fixed_pool: complete-same-pool predictions are valid without per-address legality because the frozen pools are method artifacts (RELEASE_PROTOCOL section 2); pool-outside-domain counted as pool property (454 address slots), never as prediction failure; any deviation from the complete pool fails closed",
+   "grounding evaluates the three localization scopes separately with not_available rows excluded-but-counted and empty-set metrics undefined (None), never faked as 1",
+   "cutoff/first-seen values sanity-gated to UTC seconds (integer, 2001-2033) to catch unit errors"
+  ]
+ },
+ "shared_index_adapter": {
+  "design": "one global first-seen table (451,742 endpoints, hashed in EXPORT_VALIDATION); per-query legality is O(1) via first_seen(address) < cutoff; no per-query address materialization",
+  "legal_domain_index_sha256": "a02ac657a07ecd667f8f7560df0dccd7cc306b33948b2400bd3887613b27919f"
+ },
+ "baseline_scoring": {
+  "baseline": "action_evidence_rerank_v27lean_20261006 frozen TRAIN predictions (5 branches, 1800 queries)",
+  "scoring_script": "research/benchmark_release_candidate_v1_20261006/score_v27lean_train.py",
+  "scoring_script_sha256": "9258e6febee96a8293ec9362ccecd6e748aeea7db639a32eb65f044585931e4a",
+  "diagnostics_script": "research/benchmark_release_candidate_v1_20261006/score_diagnostics.py",
+  "diagnostics_script_sha256": "ba897a79d8701dc8c38b963ea82ad8cccfb4cb51886beea347c3af9595d0f869",
+  "outputs": {
+   "SCORING_V27LEAN_TRAIN.json": "49a2ae28ca2643f78efbaee72b8004f093ec0bf052ad752864df886ea9ad53e9",
+   "SCORING_V27LEAN_TRAIN_DIAGNOSTICS.json": "6794b64c4834c9ad6aad01f39d9fec2e862429705d4cf2038c629c5f840cd804",
+   "superseded_note": "6a6e76d8d7fbaaa4db7752f8d2b1ef71d818f888c8c998071911157a861d4fdc"
+  },
+  "fixed_pool_agreement_with_frozen_RESULTS": {
+   "r0scores/fixed_pool": true,
+   "all_history_seed0/fixed_pool": true,
+   "recent_actions_seed0/fixed_pool": true,
+   "program_roles_seed0/fixed_pool": true,
+   "learned_locator_seed0/fixed_pool": true
+  },
+  "wallet_cluster_diagnostics_reproduced": true,
+  "independent_recount": "structurally separate recount (list membership + inline legality gate, no shared helper) matches evaluator on hits5/hits50/supported50 for every branch/track",
+  "retrieval_track_note": "The frozen RESULTS.json numbers (e.g. all_history_seed0 hits5=416, Recall50=674/985) were produced by ranking the complete frozen v27lean pool with no per-address legality gate. Under the release contract that corresponds to the fixed_pool track. The retrieval track additionally requires every emitted address to be legal (first_seen < cutoff) in the shared first-seen domain; 330/1800 frozen predictions include cutoff-invisible addresses and therefore fail closed there, with lower but honestly-denominated retrieval scores reported alongside. Both tracks are reported; neither overwrites the frozen record."
+ },
+ "tracks_semantics": {
+  "fixed_pool": "frozen numbers live here: complete same reference 50 required, pool-outside target fails, all 985 active queries denominator",
+  "retrieval": "stricter new diagnostic under release legality gate: 330/1800 frozen predictions include cutoff-invisible addresses and fail closed (hits5 305-306/985 vs frozen-style 416); reported alongside, does not overwrite frozen record",
+  "dev_test_status": "dev/test have no frozen role pool (reference_top50 marks pending) -> only retrieval track can score future methods there; fixed_pool requires a frozen pool per split before release"
+ },
+ "grounding_status": {
+  "status": "aggregate_diagnostics_only_in_v27lean",
+  "detail": "v27lean LOCATORS/*/DIAGNOSTICS.json hold aggregate metrics on a 1232-example subset without per-example ids, so per-example release-schema grounding predictions cannot be reconstructed; no per-example predictions exist in the frozen package. Scoring this baseline on grounding would require re-running the method, which stage C must not do.",
+  "evaluator_ready": true,
+  "human_annotation": "pending (stage E); automatic labels only"
+ },
+ "activity_head_status": {
+  "baseline_emits_full_50_for_every_query": true,
+  "evaluated": false,
+  "reason": "frozen baseline has no emptiness signal; activity evaluated separately only when a method provides one"
+ },
+ "what_is_pending": [
+  "no per-example grounding predictions exist in the frozen v27lean package (locator diagnostics are aggregates on a 1232-example subset); scoring grounding requires re-running a method under the release schema - not done in stage C (no retraining/no model runs)",
+  "dev/test fixed_pool baselines pending a frozen reference pool for those splits",
+  "human annotation of grounding/labels pending (stage E); all current fact labels are automatic"
+ ],
+ "resource_boundary": "local CPU only; 0 training, 0 model API calls, 0 chain/cloud queries; original400 cohort untouched"
+}

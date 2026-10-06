@@ -1,0 +1,262 @@
+{
+ "schema": "quality_audit_v1",
+ "dataset_root": "artifacts/benchmark_release_candidate_v1_20261006/VERSIONED_DATASET",
+ "checks": {
+  "train/cutoff_discipline": {
+   "parent_rows": 53024,
+   "queries": 1800,
+   "parent_refs_missing": 0,
+   "refs_at_or_after_cutoff": 0,
+   "duplicate_wallet_parent_keys": 0,
+   "passed": true
+  },
+  "dev/cutoff_discipline": {
+   "parent_rows": 13411,
+   "queries": 150,
+   "parent_refs_missing": 0,
+   "refs_at_or_after_cutoff": 0,
+   "duplicate_wallet_parent_keys": 0,
+   "passed": true
+  },
+  "test/cutoff_discipline": {
+   "parent_rows": 25270,
+   "queries": 250,
+   "parent_refs_missing": 0,
+   "refs_at_or_after_cutoff": 0,
+   "duplicate_wallet_parent_keys": 0,
+   "passed": true
+  },
+  "train/provenance_ledger_rows": {
+   "parents": 53024,
+   "with_ledger_provenance": 53024,
+   "passed": true
+  },
+  "dev/provenance_ledger_rows": {
+   "parents": 13411,
+   "with_ledger_provenance": 13411,
+   "passed": true
+  },
+  "test/provenance_ledger_rows": {
+   "parents": 25270,
+   "with_ledger_provenance": 25270,
+   "passed": true
+  },
+  "train/role_parent_hash": {
+   "parents_with_role_packet": 30494,
+   "parents_with_missing_hash_flag": 0,
+   "note": "role packets carry source_role_record_ids; cross-parent copying is structurally prevented at build and re-checked by unknown rules; zero role packets in a split is reported, NOT read as absence of role relations",
+   "passed": true
+  },
+  "dev/role_parent_hash": {
+   "parents_with_role_packet": 0,
+   "parents_with_missing_hash_flag": 0,
+   "note": "role packets carry source_role_record_ids; cross-parent copying is structurally prevented at build and re-checked by unknown rules; zero role packets in a split is reported, NOT read as absence of role relations",
+   "passed": true
+  },
+  "test/role_parent_hash": {
+   "parents_with_role_packet": 0,
+   "parents_with_missing_hash_flag": 0,
+   "note": "role packets carry source_role_record_ids; cross-parent copying is structurally prevented at build and re-checked by unknown rules; zero role packets in a split is reported, NOT read as absence of role relations",
+   "passed": true
+  },
+  "train/dedup_exact_rows": {
+   "rows": 53024,
+   "distinct": 53024,
+   "exact_duplicates": 0,
+   "passed": true
+  },
+  "dev/dedup_exact_rows": {
+   "rows": 13411,
+   "distinct": 13411,
+   "exact_duplicates": 0,
+   "passed": true
+  },
+  "test/dedup_exact_rows": {
+   "rows": 25270,
+   "distinct": 25270,
+   "exact_duplicates": 0,
+   "passed": true
+  },
+  "train/amount_preservation": {
+   "parents": 53024,
+   "source_with_token_flows": 35438,
+   "canonical_with_token_flows": 35438,
+   "source_canonical_agree": 53024,
+   "passed": true,
+   "note": "token flows carried verbatim; cross-asset amounts never summed"
+  },
+  "dev/amount_preservation": {
+   "parents": 13411,
+   "source_with_token_flows": 9583,
+   "canonical_with_token_flows": 9583,
+   "source_canonical_agree": 13411,
+   "passed": true,
+   "note": "token flows carried verbatim; cross-asset amounts never summed"
+  },
+  "test/amount_preservation": {
+   "parents": 25270,
+   "source_with_token_flows": 11371,
+   "canonical_with_token_flows": 11371,
+   "source_canonical_agree": 25270,
+   "passed": true,
+   "note": "token flows carried verbatim; cross-asset amounts never summed"
+  },
+  "split_intersections": {
+   "wallet_overlap": {
+    "train&dev": 0,
+    "train&test": 0,
+    "dev&test": 0
+   },
+   "physical_tx_overlap": {
+    "train&dev": 0,
+    "train&test": 0,
+    "dev&test": 0
+   },
+   "note": "shared physical transactions are reported, not auto-classified as leakage (protocol section 5)"
+  },
+  "train/label_window_eligibility": {
+   "gold_rows": 1800,
+   "window_start_mismatch": 0,
+   "inactive_with_target": 0,
+   "active_without_target": 0,
+   "passed": true
+  },
+  "dev/label_window_eligibility": {
+   "gold_rows": 150,
+   "window_start_mismatch": 0,
+   "inactive_with_target": 0,
+   "active_without_target": 0,
+   "passed": true
+  },
+  "test/label_window_eligibility": {
+   "gold_rows": 250,
+   "window_start_mismatch": 0,
+   "inactive_with_target": 0,
+   "active_without_target": 0,
+   "passed": true
+  },
+  "train/input_gold_isolation": {
+   "leak_markers": {},
+   "passed": true
+  },
+  "dev/input_gold_isolation": {
+   "leak_markers": {},
+   "passed": true
+  },
+  "test/input_gold_isolation": {
+   "leak_markers": {},
+   "passed": true
+  },
+  "train/shared_input_scope": {
+   "query_parent_refs": 153805,
+   "distinct_physical_tx": 0,
+   "refs_are_wallet_views_not_physical_events": true
+  },
+  "dev/shared_input_scope": {
+   "query_parent_refs": 13411,
+   "distinct_physical_tx": 0,
+   "refs_are_wallet_views_not_physical_events": true
+  },
+  "test/shared_input_scope": {
+   "query_parent_refs": 25270,
+   "distinct_physical_tx": 0,
+   "refs_are_wallet_views_not_physical_events": true
+  },
+  "train/view_query_parent_consistency": {
+   "query_parent_refs": 153805,
+   "action_views": 153805,
+   "duplicate_query_parent_views": 0,
+   "refs_without_view": 0,
+   "views_without_ref": 0,
+   "passed": true,
+   "note": "views are per (query,parent); the same physical parent appears once per query that references it (age_seconds is query-relative), so wallet-level key duplicates across a wallet's cutoffs are the intended semantics"
+  },
+  "dev/view_query_parent_consistency": {
+   "query_parent_refs": 13411,
+   "action_views": 13411,
+   "duplicate_query_parent_views": 0,
+   "refs_without_view": 0,
+   "views_without_ref": 0,
+   "passed": true,
+   "note": "views are per (query,parent); the same physical parent appears once per query that references it (age_seconds is query-relative), so wallet-level key duplicates across a wallet's cutoffs are the intended semantics"
+  },
+  "test/view_query_parent_consistency": {
+   "query_parent_refs": 25270,
+   "action_views": 25270,
+   "duplicate_query_parent_views": 0,
+   "refs_without_view": 0,
+   "views_without_ref": 0,
+   "passed": true,
+   "note": "views are per (query,parent); the same physical parent appears once per query that references it (age_seconds is query-relative), so wallet-level key duplicates across a wallet's cutoffs are the intended semantics"
+  },
+  "train/reference_pool_domain_eligibility": {
+   "pools_complete_50": 1800,
+   "pool_address_slots": 90000,
+   "slots_outside_declared_domain": 454,
+   "interpretation": "frozen pools are method artifacts; outside-domain slots are pool properties (reported), never prediction failures (protocol section 2)",
+   "passed": true
+  },
+  "dev/reference_pool_domain_eligibility": {
+   "pools_complete_50": 0,
+   "pool_address_slots": 0,
+   "slots_outside_declared_domain": 0,
+   "interpretation": "frozen pools are method artifacts; outside-domain slots are pool properties (reported), never prediction failures (protocol section 2)",
+   "passed": true
+  },
+  "test/reference_pool_domain_eligibility": {
+   "pools_complete_50": 0,
+   "pool_address_slots": 0,
+   "slots_outside_declared_domain": 0,
+   "interpretation": "frozen pools are method artifacts; outside-domain slots are pool properties (reported), never prediction failures (protocol section 2)",
+   "passed": true
+  }
+ },
+ "coverage": {
+  "train": {
+   "parent_rows": 53024,
+   "raw_logs_empty_list": 27271,
+   "abi_decoded": 53024,
+   "external_status_unknown": 19175,
+   "complete_local_parent": 53024,
+   "has_missing_fields": 53024,
+   "raw_external_rows": 33849,
+   "raw_transaction_present": 30507,
+   "raw_logs_present": 25753,
+   "role_packet_present": 30494,
+   "external_failed_true": 1188,
+   "note": "raw_transaction null != no call; empty raw logs != zero logs; role_packet absent = unknown, never role=false"
+  },
+  "dev": {
+   "parent_rows": 13411,
+   "raw_logs_empty_list": 13409,
+   "abi_decoded": 13411,
+   "external_status_unknown": 6425,
+   "complete_local_parent": 13411,
+   "has_missing_fields": 13411,
+   "raw_external_rows": 6986,
+   "external_failed_true": 234,
+   "raw_transaction_present": 12,
+   "raw_logs_present": 2,
+   "note": "raw_transaction null != no call; empty raw logs != zero logs; role_packet absent = unknown, never role=false"
+  },
+  "test": {
+   "parent_rows": 25270,
+   "raw_logs_empty_list": 25261,
+   "abi_decoded": 25270,
+   "external_status_unknown": 6137,
+   "complete_local_parent": 25270,
+   "has_missing_fields": 25270,
+   "raw_external_rows": 19133,
+   "external_failed_true": 634,
+   "raw_transaction_present": 10,
+   "raw_logs_present": 9,
+   "note": "raw_transaction null != no call; empty raw logs != zero logs; role_packet absent = unknown, never role=false"
+  }
+ },
+ "violations": {},
+ "notes": [],
+ "verdict": {
+  "all_hard_checks_passed": true,
+  "failed_checks": {}
+ }
+}

@@ -1,0 +1,66 @@
+{
+  "schema": "split_exposure_ledger_v1",
+  "created_UTC": "2026-10-06",
+  "purpose": "状态增补(append-only) for prior 1000-wallet snapshots; references latest reviews and the 400-exposure event. Existing files untouched.",
+  "splits": [
+    {
+      "split": "train",
+      "wallets": 600, "queries": 1800, "active_queries": 985,
+      "cutoffs": ["2022-05-01", "2022-05-03", "2022-05-05"],
+      "status_addendum": "explored_development; wallet-grouped nested OOF results published in v19/v23/v24/v27 lines; not fresh, not confirmation",
+      "sources": [
+        "artifacts/temporal_candidates_v19_1000_20261005/COHORT_FROZEN.json (sha256 f980c83c4d6f04cb6814f5d416ea3d3ddb90b5ddf85f3190cdcb64b2f8ee4327)",
+        "artifacts/benchmark_views_v1_20261006/train/ (uniform-local-parent-action-view-v1)"
+      ]
+    },
+    {
+      "split": "dev",
+      "wallets": 150, "queries": 150, "active_queries": 84,
+      "cutoffs": ["2022-05-15"],
+      "status_addendum": "explored forward-time development; used for selector/ablation development in v22-v27; not fresh",
+      "sources": [
+        "artifacts/temporal_candidates_v19_1000_20261005/COHORT_FROZEN.json",
+        "artifacts/benchmark_views_v1_20261006/dev/"
+      ]
+    },
+    {
+      "split": "external_test_250",
+      "wallets": 250, "queries": 250, "active_queries": 95,
+      "cutoffs": ["2022-06-01"],
+      "status_addendum": "explored forward-time holdout opened once under v19 TEST_OPEN_AUTHORIZATION (TEST_OPENED.json); remains explored; never rename to fresh",
+      "sources": [
+        "artifacts/temporal_candidates_v19_1000_20261005/TEST_COHORT_FROZEN.json (sha256 b5f9257c1a03c07400f5b8cb8dd2173a8f779d793310a00481261bb096f54c2b)",
+        "artifacts/temporal_candidates_v19_1000_20261005/TEST_OPEN_AUTHORIZATION.json",
+        "artifacts/temporal_candidates_v19_1000_20261005/TEST_OPENED.json",
+        "artifacts/benchmark_views_v1_20261006/test/"
+      ]
+    }
+  ],
+  "original400_confirmation_cohort": {
+    "included_in_this_release_candidate": false,
+    "label_acquisition_and_opening_registered": "2026-10-06T08:37:31Z (billing-project-deviation opening record under temporal_role_rerank_v24_20261005)",
+    "root_exposure_event": {
+      "file": "artifacts/benchmark_views_v1_20261006/EXPOSURE_EVENT.json",
+      "sha256": "5d83e5067ae910bd8abe8648922e2beaf20b1d88a010054410e2831c18749349",
+      "recorded_utc": "2026-10-06T08:50:43Z",
+      "summary": "root partially saw individual future 400-label rows via truncated full cat; exact scope unknown; registered, not disputed"
+    },
+    "consequence_for_this_candidate": "The 400 cohort is not used for method/config/challenge selection and cannot back any unseen-confirmation claim in this candidate; pre-opening V24/V26 frozen predictions remain under their original protocol untouched",
+    "individual_labels_or_predictions_read_by_this_release_session": false
+  },
+  "cross_split_sharing": {
+    "wallet_parent_views_total": 91705,
+    "query_parent_views_total": 192486,
+    "distinct_physical_parent_ids": 83065,
+    "parent_ids_shared_across_wallets": 3912,
+    "parent_ids_shared_across_splits": 1934,
+    "interpretation": "shared physical transactions are not new independent events and are not by themselves leakage; always reported separately"
+  },
+  "views_postbuild_review_reference": {
+    "file": "artifacts/benchmark_views_v1_20261006/POSTBUILD_REVIEW.json",
+    "sha256": "d375c67b303a3de548a200e65fbf37a00f7274f4b295089b33e808c5b5b3fd07",
+    "recorded_UTC": "2026-10-06T09:15:45Z",
+    "status": "passed_offline_uniform_views_postbuild"
+  },
+  "append_only_note": "This ledger only adds status addenda; it does not modify any frozen record, protocol, or prediction file."
+}
