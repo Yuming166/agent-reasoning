@@ -22,6 +22,7 @@
 | `SOURCE_MANIFEST.json` | 41 个声明来源(链上转存口径) |
 | `FINAL_RELEASE_PREP_REPORT.json` | 六阶段收尾报告:50 个交付文件哈希 |
 | `CLAIM_EVIDENCE_MATRIX.md` | 9 可主张 / 4 pending / 8 不可主张 |
+| `METHOD_BENCHMARK_ALIGNMENT.md` | **G1.3 方法–benchmark 对齐表**:论文每个数字的 split/track/评分器出处;7 项数字已对源文件核验;5 行待作者确认 |
 | `NLP_VALIDITY_PLAN_AND_AVAILABLE_RESULTS.md` | NLP 有效性:已有 automatic 结果 vs pending 计划 |
 | `SPLIT_EXPOSURE_LEDGER.json` | split 探索状态台账(400 队列排除记录) |
 | `REPRODUCTION_RECEIPT.json` | 洁净室搬迁复现回执(passed) |
