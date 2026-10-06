@@ -22,7 +22,7 @@
 | P1 | grounding gold 的人工验证 | 无人工标注;automatic labels 不得称 verified |
 | P2 | dev/test 的 fixed_pool 基线 | 无冻结角色参考池(reference_pools 标 pending) |
 | P3 | 逐例 grounding 基线评分 | 冻结 v27lean 只有聚合诊断,无逐例预测;重跑方法超出阶段预算 |
-| P4 | 许可矩阵逐项确认 | LICENSE_MATRIX.md 多项 unknown/pending 人工决定 |
+| P4 | ~~许可矩阵逐项确认~~ **已决定(2026-10-06)**:代码 MIT、文档与 grounding gold CC BY 4.0、链上事实数据 CC0 1.0;唯一复核点=BigQuery 转存条款(发布前一次只读复核) | LICENSE_MATRIX.md;LICENSE-CODE-MIT.txt;LICENSE-DATA-CC0.txt |
 | P5 | 公开发布 | 无上传/push;发布渠道与联系点未定 |
 
 ## 不可主张(证据不支持)

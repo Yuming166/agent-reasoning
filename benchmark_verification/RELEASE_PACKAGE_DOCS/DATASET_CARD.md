@@ -28,7 +28,7 @@
 - 无个人信息字段;若下游自行链接链外身份,责任在下游。
 
 ## 许可
-见 LICENSE_MATRIX.md;unknown 保持 unknown,不默认整包 MIT。
+代码 **MIT**;文档与 grounding gold **CC BY 4.0**;链上事实数据 **CC0 1.0**(作者决定 2026-10-06,见 LICENSE_MATRIX.md 与 LICENSE-CODE-MIT.txt / LICENSE-DATA-CC0.txt)。
 
 ## 维护与勘误
 勘误流程见 CORRECTIONS_PROCESS.md;联系渠道在正式发布时随发布渠道确定(本候选仅本地)。

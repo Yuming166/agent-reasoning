@@ -19,12 +19,12 @@
 | `REPRODUCTION_RECEIPT.json` | 洁净室搬迁复现回执(passed) |
 | `STAGE_STATUS.json` | 六阶段 A–F 状态与证据 |
 | `evaluator/` | 评分器 + 全部构建/评分/复现脚本 |
-| `annotation_pack/` | 盲审指南 + 未执行预算方案(pilot 数据不入库,仅本地) |
+| `annotation_pack/` | 盲审指南 + 未执行预算方案。pilot20 工作表含链上视图数据,按纪律仅本地分发(不进公开仓库);标注结果文件回传后计算一致性 |
 | `RELEASE_PACKAGE_DOCS/` | README / DATASET_CARD / LICENSE_MATRIX / KNOWN_LIMITATIONS / AI_USE_DISCLOSURE / CORRECTIONS_PROCESS |
 
 ## 需要作者验证的最小集
 
-1. License 选择(代码/文档)
+1. ~~License 选择~~ **已决定(2026-10-06):代码 MIT、文档与 grounding gold CC BY 4.0、链上事实数据 CC0 1.0**
 2. dev/test fixed_pool 主张口径((a) 仅 train 或 (b) 补冻结)
 3. 审稿期匿名发布渠道
 4. 20-wallet 人工 pilot 启动(≥30 例)
