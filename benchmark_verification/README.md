@@ -13,6 +13,11 @@
 | `SEMANTIC_COVERAGE.json` | 语义覆盖缺口(角色包 train 30494 / dev 0 / test 0) |
 | `SCORER_VALIDATION.json` | 评分器验证(15 合同测试;fixed_pool 复现冻结结果 5/5 分支) |
 | `SCORING_V27LEAN_TRAIN.json` | 冻结基线重评分(fixed_pool + retrieval 双轨) |
+| `scoring/` | 钱包聚类配对诊断 + bootstrap CI(含首次缺陷跑的存档与 NOTICE) |
+| `DATASET_MANIFEST.json` | 数据集契约:标签定义/split 统计/暴露/隔离/单位 |
+| `EXPORT_VALIDATION.json` | 导出校验(status=passed;gold 独立重生成 2200/2200) |
+| `SOURCE_MANIFEST.json` | 41 个声明来源(链上转存口径) |
+| `FINAL_RELEASE_PREP_REPORT.json` | 六阶段收尾报告:50 个交付文件哈希 |
 | `CLAIM_EVIDENCE_MATRIX.md` | 8 可主张 / 5 pending / 8 不可主张 |
 | `NLP_VALIDITY_PLAN_AND_AVAILABLE_RESULTS.md` | NLP 有效性:已有 automatic 结果 vs pending 计划 |
 | `SPLIT_EXPOSURE_LEDGER.json` | split 探索状态台账(400 队列排除记录) |

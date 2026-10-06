@@ -1,0 +1,65 @@
+{
+ "schema": "dataset_manifest_v1",
+ "dataset_version": "eth-actions-benchmark-v1.0.0-candidate",
+ "created_UTC": "2026-10-06T10:04:10.350753+00:00",
+ "source_version": "benchmark_views_v1_20261006 (uniform-local-parent-action-view-v1) + original 1000 forecast labels + v27lean frozen pools + GROUNDING_FACTS v27-real-parent-grounding-1",
+ "label_definition": "main target = first qualifying wallet-initiated external ATTEMPT in [cutoff, cutoff+7d); qualifying excludes null/empty/zero/self targets; failed receipts (receipt_status=0) retained; canonical order (block_number, transaction_index, event_index); inactive = no such action within declared source window only",
+ "source_scope": "declared local endpoint sources only (offline_chain_events_v1_20260929_full 2022-03..06 parquet; external_fresh250/canonical_ledger.parquet to 2022-06-08); never full Ethereum history, full EVM execution, current allowances, or subjective intent",
+ "history_windows": "strict timestamp < cutoff for all inputs; future windows only in forecast_gold/",
+ "first_seen_index_hash": "a02ac657a07ecd667f8f7560df0dccd7cc306b33948b2400bd3887613b27919f",
+ "split": {
+  "train": {
+   "wallets": 600,
+   "queries": 1800,
+   "active": 985,
+   "cutoffs": [
+    "2022-05-01",
+    "2022-05-03",
+    "2022-05-05"
+   ]
+  },
+  "dev": {
+   "wallets": 150,
+   "queries": 150,
+   "active": 84,
+   "cutoffs": [
+    "2022-05-15"
+   ]
+  },
+  "test": {
+   "wallets": 250,
+   "queries": 250,
+   "active": 95,
+   "cutoffs": [
+    "2022-06-01"
+   ]
+  }
+ },
+ "exposure": "see SPLIT_EXPOSURE_LEDGER.json; all three splits explored; original400 cohort excluded entirely",
+ "license": "per-file license matrix in final package LICENSE_MATRIX.md (stage F); upstream sources keep their own licenses; unknown stays unknown",
+ "unknown_schema": "missing semantic sources are explicit unknown states (receipt unknown, raw_transaction null != no call, empty raw logs != zero logs, unknown_missing_packet != role=false)",
+ "semantic_coverage_caveat": "uniform schema is NOT uniform semantic coverage: trusted wallet-role parents train 30483/53024, dev 0/13411, test 0/25270; DEV/TEST only 22 shared raw matches from other senders",
+ "units": {
+  "wallet_parent_views": 91705,
+  "query_parent_views": 192486,
+  "distinct_physical_parent_ids": 83065,
+  "shared_parent_wallet": 3912,
+  "shared_parent_cross_split": 1934
+ },
+ "eval_entries": {
+  "retrieval_track": "full search over legal domain, <=50 distinct legal objects, all qualifying active queries denominator",
+  "fixed_pool_track": "rank the same frozen reference 50, out-of-pool fails; reference pool is a frozen method artifact, not the world"
+ },
+ "isolation": {
+  "inputs_free_of_answer_markers": true,
+  "gold_dirs": [
+   "forecast_gold/",
+   "grounding_gold/",
+   "gold_crosswalk/"
+  ],
+  "relative_paths_only": true,
+  "no_pickle": true,
+  "no_absolute_repo_paths_in_data": true
+ },
+ "export_validation": "EXPORT_VALIDATION.json"
+}

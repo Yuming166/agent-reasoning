@@ -1,0 +1,1 @@
+{"reason": "superseded by corrected run: wallet bootstrap drew fresh samples per contrast instead of the frozen shared resample matrix; CI endpoints differed from frozen RESULTS.json. Point estimates and rescue/harm were correct. Kept for audit; not a frozen record.", "date": "2026-10-06"}

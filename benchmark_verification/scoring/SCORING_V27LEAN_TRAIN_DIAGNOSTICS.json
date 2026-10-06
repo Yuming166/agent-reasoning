@@ -1,0 +1,256 @@
+{
+ "created_for": "eth-actions-benchmark-v1.0.0-candidate",
+ "scope": "fixed_pool scoring of frozen v27lean TRAIN baseline; nominal development intervals",
+ "bootstrap": {
+  "replicates": 2000,
+  "seed": 27061006,
+  "shared_resample_matrix": true,
+  "resampling": "complete sampled wallets; active-query-weighted ratio",
+  "interpretation": "shared targets/calendar events remain dependent; no multiplicity adjustment; not stable-efficacy evidence"
+ },
+ "primary_comparisons": {
+  "program_roles_minus_all_history": {
+   "rescues": 6,
+   "harms": 6,
+   "net_hits": 0,
+   "Top5": {
+    "difference": 0.0,
+    "wallet_bootstrap95": [
+     -0.007049701086210944,
+     0.00717268398396037
+    ],
+    "replicates": 2000
+   },
+   "MRR5": {
+    "difference": -0.0007952622673434858,
+    "wallet_bootstrap95": [
+     -0.005975701233847302,
+     0.004423693007747579
+    ],
+    "replicates": 2000
+   }
+  },
+  "learned_locator_minus_all_history": {
+   "rescues": 1,
+   "harms": 11,
+   "net_hits": -10,
+   "Top5": {
+    "difference": -0.01015228426395939,
+    "wallet_bootstrap95": [
+     -0.019881705781248763,
+     -0.0020181634712411706
+    ],
+    "replicates": 2000
+   },
+   "MRR5": {
+    "difference": -0.005803722504230119,
+    "wallet_bootstrap95": [
+     -0.011299445719814187,
+     -0.0006332289960181894
+    ],
+    "replicates": 2000
+   }
+  },
+  "learned_locator_minus_program_roles": {
+   "rescues": 6,
+   "harms": 16,
+   "net_hits": -10,
+   "Top5": {
+    "difference": -0.01015228426395939,
+    "wallet_bootstrap95": [
+     -0.021672437271389403,
+     0.0
+    ],
+    "replicates": 2000
+   },
+   "MRR5": {
+    "difference": -0.005008460236886632,
+    "wallet_bootstrap95": [
+     -0.01128295844015585,
+     0.0006080370575051413
+    ],
+    "replicates": 2000
+   }
+  }
+ },
+ "versus_R0": {
+  "all_history": {
+   "rescues": 0,
+   "harms": 0,
+   "net_hits": 0,
+   "Top5": {
+    "difference": 0.0,
+    "wallet_bootstrap95": [
+     0.0,
+     0.0
+    ],
+    "replicates": 2000
+   },
+   "MRR5": {
+    "difference": 0.0,
+    "wallet_bootstrap95": [
+     0.0,
+     0.0
+    ],
+    "replicates": 2000
+   }
+  },
+  "recent_actions": {
+   "rescues": 0,
+   "harms": 0,
+   "net_hits": 0,
+   "Top5": {
+    "difference": 0.0,
+    "wallet_bootstrap95": [
+     0.0,
+     0.0
+    ],
+    "replicates": 2000
+   },
+   "MRR5": {
+    "difference": 0.0,
+    "wallet_bootstrap95": [
+     0.0,
+     0.0
+    ],
+    "replicates": 2000
+   }
+  },
+  "program_roles": {
+   "rescues": 6,
+   "harms": 6,
+   "net_hits": 0,
+   "Top5": {
+    "difference": 0.0,
+    "wallet_bootstrap95": [
+     -0.007049701086210944,
+     0.00717268398396037
+    ],
+    "replicates": 2000
+   },
+   "MRR5": {
+    "difference": -0.0007952622673434858,
+    "wallet_bootstrap95": [
+     -0.005975701233847302,
+     0.004423693007747579
+    ],
+    "replicates": 2000
+   }
+  },
+  "learned_locator": {
+   "rescues": 1,
+   "harms": 11,
+   "net_hits": -10,
+   "Top5": {
+    "difference": -0.01015228426395939,
+    "wallet_bootstrap95": [
+     -0.019881705781248763,
+     -0.0020181634712411706
+    ],
+    "replicates": 2000
+   },
+   "MRR5": {
+    "difference": -0.005803722504230119,
+    "wallet_bootstrap95": [
+     -0.011299445719814187,
+     -0.0006332289960181894
+    ],
+    "replicates": 2000
+   }
+  }
+ },
+ "agreement_with_frozen": {
+  "primary/program_roles_minus_all_history": {
+   "rescues": true,
+   "harms": true,
+   "net_hits": true,
+   "Top5_diff_close": true,
+   "Top5_ci_close": true,
+   "MRR5_diff_close": true
+  },
+  "primary/learned_locator_minus_all_history": {
+   "rescues": true,
+   "harms": true,
+   "net_hits": true,
+   "Top5_diff_close": true,
+   "Top5_ci_close": true,
+   "MRR5_diff_close": true
+  },
+  "primary/learned_locator_minus_program_roles": {
+   "rescues": true,
+   "harms": true,
+   "net_hits": true,
+   "Top5_diff_close": true,
+   "Top5_ci_close": true,
+   "MRR5_diff_close": true
+  },
+  "versus_R0/all_history": {
+   "rescues": true,
+   "harms": true,
+   "net_hits": true,
+   "Top5_diff_close": true
+  },
+  "versus_R0/recent_actions": {
+   "rescues": true,
+   "harms": true,
+   "net_hits": true,
+   "Top5_diff_close": true
+  },
+  "versus_R0/program_roles": {
+   "rescues": true,
+   "harms": true,
+   "net_hits": true,
+   "Top5_diff_close": true
+  },
+  "versus_R0/learned_locator": {
+   "rescues": true,
+   "harms": true,
+   "net_hits": true,
+   "Top5_diff_close": true
+  }
+ },
+ "per_cutoff_all_history": {
+  "2022-05-01": {
+   "active_queries": 341,
+   "Top5": 0.4252199413489736,
+   "MRR5": 0.2958455522971652,
+   "Recall50": 0.7067448680351907
+  },
+  "2022-05-03": {
+   "active_queries": 330,
+   "Top5": 0.42424242424242425,
+   "MRR5": 0.30454545454545456,
+   "Recall50": 0.6909090909090909
+  },
+  "2022-05-05": {
+   "active_queries": 314,
+   "Top5": 0.4171974522292994,
+   "MRR5": 0.2990976645435244,
+   "Recall50": 0.6528662420382165
+  }
+ },
+ "target_concentration_all_history": {
+  "unique_target": {
+   "active_queries": 188,
+   "Top5": 0.16489361702127658,
+   "Recall50": 0.5159574468085106,
+   "distinct_targets": 188
+  },
+  "shared_target": {
+   "active_queries": 797,
+   "Top5": 0.48306148055207027,
+   "Recall50": 0.7239648682559598,
+   "distinct_targets": 159
+  }
+ },
+ "label_reporting": {
+  "active_queries": 985,
+  "distinct_future_tx_hashes": 734,
+  "target_addresses_reused_across_queries": 159,
+  "note": "shared targets are reported per protocol section 5; wallet-cluster bootstrap is the paired inference unit"
+ },
+ "verdict": {
+  "rescue_harm_and_ci_reproduced": true,
+  "any_disagreement": {}
+ }
+}

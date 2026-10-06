@@ -1,0 +1,300 @@
+{
+ "schema": "final_release_prep_report_v1",
+ "created_UTC": "2026-10-06T10:39:57.005061+00:00",
+ "authorization": "handoffs/benchmark_release_20261006/CLAUDE_BENCHMARK_HANDOFF.txt",
+ "dataset_version": "eth-actions-benchmark-v1.0.0-candidate (local candidate, not published)",
+ "stages": {
+  "A_release_contract": {
+   "status": "complete",
+   "ended_UTC": "2026-10-06T10:04:10.351176+00:00",
+   "deliverables": [
+    "RELEASE_PROTOCOL.md",
+    "SOURCE_MANIFEST.json",
+    "SPLIT_EXPOSURE_LEDGER.json"
+   ]
+  },
+  "B_portable_export": {
+   "status": "complete",
+   "ended_UTC": "2026-10-06T10:04:10.351189+00:00",
+   "deliverables": [
+    "VERSIONED_DATASET/",
+    "DATASET_MANIFEST.json",
+    "EXPORT_VALIDATION.json"
+   ],
+   "evidence": "EXPORT_VALIDATION status=passed; 2200/2200 gold regeneration match; 23 files, 130.3MB; leak scan clean; index rev2 epoch-unit fix recorded"
+  },
+  "C_scorer_adapter": {
+   "status": "complete",
+   "ended_UTC": "2026-10-06T10:26:40.776903+00:00",
+   "deliverables": [
+    "SCORER_VALIDATION.json",
+    "SCORING_V27LEAN_TRAIN.json",
+    "SCORING_V27LEAN_TRAIN_DIAGNOSTICS.json",
+    "SCORING_V27LEAN_TRAIN_DIAGNOSTICS.superseded_defective_ci.NOTICE.json"
+   ],
+   "code": [
+    "research/benchmark_release_candidate_v1_20261006/benchmark_evaluator.py",
+    "research/benchmark_release_candidate_v1_20261006/score_v27lean_train.py",
+    "research/benchmark_release_candidate_v1_20261006/score_diagnostics.py"
+   ],
+   "evidence": "fixed_pool reproduces frozen RESULTS.json for all 5 branches (hits5/Top5/MRR5/Recall50); wallet-cluster rescue/harm/CI reproduced (7 contrasts); independent recount matches; retrieval track reported as stricter new diagnostic (330/1800 frozen predictions fail legality gate); 15 synthetic contract tests passed"
+  },
+  "D_quality_audit": {
+   "status": "complete",
+   "ended_UTC": "2026-10-06T10:35:30.816786+00:00",
+   "deliverables": [
+    "QUALITY_AUDIT.json",
+    "SEMANTIC_COVERAGE.json",
+    "NLP_VALIDITY_PLAN_AND_AVAILABLE_RESULTS.md"
+   ],
+   "evidence": "all hard checks passed (cutoff discipline, provenance, dedup, amount preservation, split intersections, label windows, isolation, view consistency, pool eligibility); role packets train=30494 dev=0 test=0 recorded as critical gap; not_available=0 vs empty-list-unknown=587 corrected; fillable vs non-fillable gaps separated, all collection pending"
+  },
+  "E_annotation_pack": {
+   "status": "complete",
+   "ended_UTC": "2026-10-06T10:36:59.862953+00:00",
+   "deliverables": [
+    "ANNOTATION_PACK/ANNOTATION_GUIDELINES.md",
+    "ANNOTATION_PACK/pilot20/wallet_list.json",
+    "ANNOTATION_PACK/pilot20/groundings_to_annotate.jsonl (115 rows, gold stripped)",
+    "ANNOTATION_PACK/pilot20/forecast_windows_to_annotate.jsonl (60 queries, no future data)",
+    "ANNOTATION_PACK/BUDGET_PLAN_200CORE_80CHALLENGE.json (unexecuted)"
+   ],
+   "evidence": "blind leak-check clean (no fact_label/target/scope-gold/timestamps of outcomes); human fields all empty; pilot 20 wallets seed 20261006; difficulty layers from history structure only; human_status=pending everywhere",
+   "human_judgment": "pending; nothing simulated"
+  },
+  "F_release_notes_repro": {
+   "status": "pending"
+  }
+ },
+ "completed": [
+  "A: RELEASE_PROTOCOL.md + SOURCE_MANIFEST.json (41 sources hashed) + SPLIT_EXPOSURE_LEDGER.json",
+  "B: VERSIONED_DATASET (23 files, 130.3MB) + EXPORT_VALIDATION (passed; 2200/2200 gold regeneration match; leak scan clean)",
+  "C: release evaluator + contract tests (15/15) + v27lean baseline rescoring (fixed_pool reproduces frozen RESULTS.json 5/5 branches; wallet-cluster diagnostics 7/7) + independent recounts + SCORER_VALIDATION.json",
+  "D: QUALITY_AUDIT (all hard checks passed) + SEMANTIC_COVERAGE (role packets train=30494 dev=0 test=0; unknown accounting corrected) + NLP_VALIDITY_PLAN_AND_AVAILABLE_RESULTS.md",
+  "E: ANNOTATION_PACK (pilot20 blind, leak-checked, human fields empty) + BUDGET_PLAN_200CORE_80CHALLENGE (unexecuted) + guidelines",
+  "F: README/DATASET_CARD/LICENSE_MATRIX/KNOWN_LIMITATIONS/AI_USE_DISCLOSURE/CORRECTIONS_PROCESS + CLAIM_EVIDENCE_MATRIX + cleanroom REPRODUCTION_RECEIPT (passed)"
+ ],
+ "partial_or_blocked": [
+  "P1 human annotation of grounding gold: blocked on human resources (materials ready)",
+  "P2 dev/test fixed_pool baselines: blocked on frozen reference pools for those splits",
+  "P3 per-example grounding baseline scoring: frozen v27lean has aggregates only; rerunning the method was out of stage budget (0 training/0 API)",
+  "P4 license matrix item-by-item confirmation: pending human decision; unknowns explicit",
+  "P5 public release: out of scope for this session (no upload/publish)"
+ ],
+ "negative_results_kept": [
+  "frozen v27lean retrieval-track scores are lower than frozen fixed_pool numbers (330/1800 predictions fail the legality gate): honest re-denomination, frozen record untouched",
+  "DEV/TEST have zero role packets: role-method cross-split comparisons are coverage-limited",
+  "claim_required not_available count is 0; the 587 unknown examples carry EMPTY required-evidence lists (state, not not_available)",
+  "defective first diagnostics run preserved as SCORING_V27LEAN_TRAIN_DIAGNOSTICS.superseded_defective_ci.json + NOTICE"
+ ],
+ "resource_compliance": {
+  "local_CPU_only": true,
+  "new_training_fits": 0,
+  "model_API_calls": 0,
+  "chain_or_cloud_queries": 0,
+  "uploads_or_publish": 0,
+  "fresh400_individual_labels_or_predictions_read": false
+ },
+ "deliverable_hashes": {
+  "ANNOTATION_PACK/ANNOTATION_GUIDELINES.md": {
+   "sha256": "34fb7f906ed411c4fd40d9c814e9da5841a1c9047a234f5d64144e9cca5ab5c8",
+   "bytes": 4274
+  },
+  "ANNOTATION_PACK/BUDGET_PLAN_200CORE_80CHALLENGE.json": {
+   "sha256": "9f5ef64b2afe46fccc47e9305c7c648201f684defe6e13f3b6441fc1be3cdb29",
+   "bytes": 14364
+  },
+  "ANNOTATION_PACK/pilot20/forecast_windows_to_annotate.jsonl": {
+   "sha256": "d4257a23ab05c6b5fbde6faba01ddf19dc30eefefa6530a893cfbe2098802949",
+   "bytes": 36960
+  },
+  "ANNOTATION_PACK/pilot20/groundings_to_annotate.jsonl": {
+   "sha256": "73884e0f1804d5be7db889feaea43f7b37d57ae5918859b806175c98dc7d6bc6",
+   "bytes": 1013465
+  },
+  "ANNOTATION_PACK/pilot20/wallet_list.json": {
+   "sha256": "a3671377994957ee31c8dc90bad7cacc7a86babb29b5584822e6d8321d93be06",
+   "bytes": 1072
+  },
+  "CLAIM_EVIDENCE_MATRIX.md": {
+   "sha256": "f707bcf403b010ec48450f956301375ec38072c78dfbb0b83b900c6dd0942991",
+   "bytes": 3348
+  },
+  "DATASET_MANIFEST.json": {
+   "sha256": "3d94aba7647ea9865653933dcaf0d27b1f0d877060276dc95dde714188dcbc5e",
+   "bytes": 2944
+  },
+  "EXPORT_VALIDATION.json": {
+   "sha256": "28fdd1ff03e3c5f6109e9244e42a90e43cd8164bb04eba05baac610c396f2c73",
+   "bytes": 4658
+  },
+  "NLP_VALIDITY_PLAN_AND_AVAILABLE_RESULTS.md": {
+   "sha256": "ac87311736b66b97f652ef273df04ef706414e6c94cbf06a2c4762a549b8b688",
+   "bytes": 3973
+  },
+  "QUALITY_AUDIT.json": {
+   "sha256": "dceb971f657f838b923546419148205878b0da4376182d5bce6b4f56e08d02ee",
+   "bytes": 8626
+  },
+  "RELEASE_PACKAGE_DOCS/AI_USE_DISCLOSURE.md": {
+   "sha256": "c57d29c92b2faba71c3b33dbea85b08ca6db93dce2eff3b4d131b3966cd93169",
+   "bytes": 869
+  },
+  "RELEASE_PACKAGE_DOCS/CORRECTIONS_PROCESS.md": {
+   "sha256": "044901e1049e413e079c2557be9b60cd46b8d98c5ee2fd349c9ad3f13c643ffc",
+   "bytes": 816
+  },
+  "RELEASE_PACKAGE_DOCS/DATASET_CARD.md": {
+   "sha256": "004679d57bbe060297e2ac00f515352fb53899160d2091722152ab8122978394",
+   "bytes": 2333
+  },
+  "RELEASE_PACKAGE_DOCS/KNOWN_LIMITATIONS.md": {
+   "sha256": "a04a96d7f31944eb6a1f88ac065e2c308e1149a631461a9b1cd625725b2980ac",
+   "bytes": 1449
+  },
+  "RELEASE_PACKAGE_DOCS/LICENSE_MATRIX.md": {
+   "sha256": "e17be14c37a99cb5042855df863c6758b404622633590e35b63cfc2b2ca02e91",
+   "bytes": 1518
+  },
+  "RELEASE_PACKAGE_DOCS/README.md": {
+   "sha256": "189d9c9fcd07094acd2f9f21f2e63fae697bf8c7ecabbc69848a0f28819af631",
+   "bytes": 3009
+  },
+  "RELEASE_PROTOCOL.md": {
+   "sha256": "dc141bb9fba9a8d93de3fa24f6a5bc8b9b65ebefb3f3a1776b69546ca7512c64",
+   "bytes": 5930
+  },
+  "REPRODUCTION_RECEIPT.json": {
+   "sha256": "1d80a303434984a900935e8408e96a1f1cd40d495450a9c66daf146111f00bad",
+   "bytes": 1909
+  },
+  "SCORER_VALIDATION.json": {
+   "sha256": "d7e29785f2dfbe6ab9a5f652c4ea5acc2975e85d037fe215484e257bd31084e8",
+   "bytes": 5620
+  },
+  "SCORING_V27LEAN_TRAIN.json": {
+   "sha256": "49a2ae28ca2643f78efbaee72b8004f093ec0bf052ad752864df886ea9ad53e9",
+   "bytes": 14625
+  },
+  "SCORING_V27LEAN_TRAIN_DIAGNOSTICS.json": {
+   "sha256": "6794b64c4834c9ad6aad01f39d9fec2e862429705d4cf2038c629c5f840cd804",
+   "bytes": 5487
+  },
+  "SCORING_V27LEAN_TRAIN_DIAGNOSTICS.superseded_defective_ci.NOTICE.json": {
+   "sha256": "6a6e76d8d7fbaaa4db7752f8d2b1ef71d818f888c8c998071911157a861d4fdc",
+   "bytes": 291
+  },
+  "SCORING_V27LEAN_TRAIN_DIAGNOSTICS.superseded_defective_ci.json": {
+   "sha256": "e71a528a7045d703b1ea09de68ce613c1fa03bec9c998c40f7bc5fce8441fdb7",
+   "bytes": 5866
+  },
+  "SEMANTIC_COVERAGE.json": {
+   "sha256": "f8d05c6e682ccc5d696fd58c138ad2c2216dd2c8eec726e357137f97543891e2",
+   "bytes": 5599
+  },
+  "SOURCE_MANIFEST.json": {
+   "sha256": "9f2d6ece91e25315a667be4d17057ca9d46d370d11c03e602436193fd51f29ef",
+   "bytes": 8444
+  },
+  "SPLIT_EXPOSURE_LEDGER.json": {
+   "sha256": "cabfe9c86b102f5a0a1f2790dd7d4669e79522b77aed3641977b7763e7cdec0c",
+   "bytes": 3731
+  },
+  "STAGE_STATUS.json": {
+   "sha256": "7e94c286142f95fdc71331ba408b4060171322ae0788efe311c6e74a59212968",
+   "bytes": 4247
+  },
+  "VERSIONED_DATASET/action_views/dev.jsonl.gz": {
+   "sha256": "e99dd902a2be05f3f44a0ac0c6442d07980e9c222c664ab331f323f0b6643ebd",
+   "bytes": 1464562
+  },
+  "VERSIONED_DATASET/action_views/test.jsonl.gz": {
+   "sha256": "b299d76f9a8bf25900e9bac5a4739114b77491dbd6756da57d9def63f9f14222",
+   "bytes": 2721949
+  },
+  "VERSIONED_DATASET/action_views/train.jsonl.gz": {
+   "sha256": "70f9ce167be9bd1964bccfaf592e0e30f0d1991649fc4885bf1cdaa06e5b26da",
+   "bytes": 29426989
+  },
+  "VERSIONED_DATASET/candidate_index/legal_domain_dev.jsonl.gz": {
+   "sha256": "06e2cb3cb62546acc76503e1e1569683275b94faa5fc3117c5e37e290ee8935b",
+   "bytes": 3921
+  },
+  "VERSIONED_DATASET/candidate_index/legal_domain_index.jsonl.gz": {
+   "sha256": "a02ac657a07ecd667f8f7560df0dccd7cc306b33948b2400bd3887613b27919f",
+   "bytes": 13320304
+  },
+  "VERSIONED_DATASET/candidate_index/legal_domain_test.jsonl.gz": {
+   "sha256": "78f80afe5458c0e1425fca437c97da239b7b89b887263219827eefb723256c80",
+   "bytes": 6588
+  },
+  "VERSIONED_DATASET/candidate_index/legal_domain_train.jsonl.gz": {
+   "sha256": "920378c1562f090be8c1e18ef6587db8e4d9ddf319a77cc48a578dd20e00b2b4",
+   "bytes": 19142
+  },
+  "VERSIONED_DATASET/forecast_gold/dev.jsonl": {
+   "sha256": "37b6e91e2090d1b72f028b9682fabe6a81a2cf6f55e1675969612f229a215827",
+   "bytes": 77154
+  },
+  "VERSIONED_DATASET/forecast_gold/test.jsonl": {
+   "sha256": "efbc48a474bfa4df6182298914045da3feb8a854e1bb49763e7cad8c30973dff",
+   "bytes": 127320
+  },
+  "VERSIONED_DATASET/forecast_gold/train.jsonl": {
+   "sha256": "42828e615458897f75e2b7bc690b915b6fa5045578e7f3ab86f4f73ec77021cb",
+   "bytes": 923410
+  },
+  "VERSIONED_DATASET/gold_crosswalk/dev.jsonl": {
+   "sha256": "a1b83f18c1d29bb37763ae7f9f3e7b46274031cd0844f97b617406f105c84fd2",
+   "bytes": 33210
+  },
+  "VERSIONED_DATASET/gold_crosswalk/test.jsonl": {
+   "sha256": "dadbe04f398cef867ec5b69a56c5ba857797c17d92139fa45039727ec3a8f75b",
+   "bytes": 57050
+  },
+  "VERSIONED_DATASET/gold_crosswalk/train.jsonl": {
+   "sha256": "267f50f0eb1661d3fbb7a30222af4ea1cb78fe65570c93eb4b70cd1ef0bd3b0f",
+   "bytes": 396926
+  },
+  "VERSIONED_DATASET/grounding_gold/train.jsonl": {
+   "sha256": "e26b4df069199c55ed698d9a1c1f082135c31d9dacc6c325431a3cd02e8a6246",
+   "bytes": 5892506
+  },
+  "VERSIONED_DATASET/parent_actions/dev.jsonl.gz": {
+   "sha256": "5a73c2ce4edb9a60a85fa2dca81cecbf2b4d1797c5d35cfac448f95d103c7dc3",
+   "bytes": 2454717
+  },
+  "VERSIONED_DATASET/parent_actions/test.jsonl.gz": {
+   "sha256": "1fe2b882a155b3295b0de745f519b7b85ea830e1aeda4a64d9db440c677437c9",
+   "bytes": 4581121
+  },
+  "VERSIONED_DATASET/parent_actions/train.jsonl.gz": {
+   "sha256": "8b84081a3d35b369338e3102e397132a6ae0d9800ed0ac0166e9e66c5c6325b0",
+   "bytes": 34660835
+  },
+  "VERSIONED_DATASET/queries/dev.jsonl": {
+   "sha256": "6e451b1292e03509b23253edf100e7df7c4f361f414b72877a0c0e43da4f9d36",
+   "bytes": 2023989
+  },
+  "VERSIONED_DATASET/queries/test.jsonl": {
+   "sha256": "2a4cdfbf7964a8b52090729eeca7d5fec37ccb713f8d84d1a009b4548bb7e743",
+   "bytes": 3635637
+  },
+  "VERSIONED_DATASET/queries/train.jsonl": {
+   "sha256": "25284b0ddace2e4602774bb87a922aec2814ea766e88b960a77dba54d0e4dc91",
+   "bytes": 24039247
+  },
+  "VERSIONED_DATASET/reference_pools/reference_top50_dev.jsonl": {
+   "sha256": "d8809d71fdb09af38562a08862e33a744572f0340c4176882640c18368883c1c",
+   "bytes": 22800
+  },
+  "VERSIONED_DATASET/reference_pools/reference_top50_test.jsonl": {
+   "sha256": "78d538fa27ba6bb04b7672ac155adf695e8ad638328f6da7cbf5476fe7a3e5d5",
+   "bytes": 41500
+  },
+  "VERSIONED_DATASET/reference_pools/reference_top50_train.jsonl": {
+   "sha256": "952d67fe2b390d61713973ba6330de831f24ce1fad0a581e6c61a8d362765997",
+   "bytes": 4379400
+  }
+ }
+}
