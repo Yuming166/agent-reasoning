@@ -11,7 +11,7 @@
 | G1.1 | **许可逐项确认**(LICENSE_MATRIX 中 unknown/pending 项):本项目代码/文档选哪个 license(建议 MIT 或 CC-BY-4.0,二选一);链上事实数据转存条款声明 | 矩阵已写,决定全 pending | **[你验]** 拍板 license;我改文件 | 30 分钟(你的时间) |
 | G1.2 | **20-wallet 人工 pilot 至少启动**:哪怕只完成 30–50 例 grounding 人工标注,就能把"automatic labels"升级为"human-audited subset",这是 benchmark 文章可信度的最低门槛 | 材料就绪(盲审包+指南),0 人工数据 | **[你验]** 按指南标;或者你+一位同学各标一份 | 2–4 小时/人 |
 | G1.3 | **文章与 benchmark 的对齐声明**:主文方法(哪些模型/哪些 track)在 benchmark 的哪个 split 上评,数字必须出自本包评分器;不得引用 v27lean 之外的未冻结数字 | 评分器就绪;对齐表未写 | **[自动]** 我起草 CLAIM 对齐表 → **[你验]** 确认方法选择 | 1 小时 |
-| G1.4 | **dev/test 冻结参考池决策**:fixed_pool track 在 dev/test 不可用(无冻结池)。要么 (a) 文章只主张 train fixed_pool + 全 split retrieval,要么 (b) 用已冻结构建器给 dev/test 出池并补记录。(a) 快且诚实 | 参考池 pending;决策未做 | **[你验]** 选 (a) 或 (b) | (a) 0;(b) 数小时+冻结记录 |
+| G1.4 | ~~dev/test 冻结参考池决策~~ **已决定(2026-10-06):选 (a)** — 文章只主张 train fixed_pool + 全 split retrieval;dev/test 池不构建,该决策已写入 DATASET_MANIFEST 与 DATASET_CARD | 已关闭 | ~~[你验]~~ 作者已拍板 | 0 |
 | G1.5 | **匿名化检查(ARR 双盲)**:推送/发布物不得含作者身份线索。本仓库 `agent-reasoning` 是**公开仓库**且含作者实名历史——benchmark 材料如需在审稿期公开,须放**匿名仓库**(Anonymous GitHub / 新匿名账号),或者仅以"材料可获得"声明+审稿后公开 | agent-reasoning 为公开、实名 | **[你验]** 决定发布渠道;我可以另外准备匿名版 zip | 1 小时 |
 
 ## G2 强烈建议(评审质量)
@@ -44,7 +44,7 @@
 ## 你需要验证/拍板的清单(汇总,按优先级)
 
 1. **[你验]** License:代码 `MIT`?文档 `CC-BY-4.0`?(G1.1)
-2. **[你验]** dev/test fixed_pool:选 (a) 只主张 train fixed_pool 还是 (b) 现在补冻结构建(G1.4)
+2. ~~[你验]~~ dev/test fixed_pool:**已决定选 (a)**(G1.4 关闭)
 3. **[你验]** 匿名渠道:Anonymous GitHub / 匿名账号 / 审稿后公开?(G1.5)
 4. **[你验]** 人工 pilot:你能否在 10-11 前完成 30+ 例标注(或找一位共同标注者)?(G1.2)
 5. **[你验]** 频率/最近性/随机基线进文章主表:确认后我离线跑(G2.1)

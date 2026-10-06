@@ -48,7 +48,8 @@
  },
  "eval_entries": {
   "retrieval_track": "full search over legal domain, <=50 distinct legal objects, all qualifying active queries denominator",
-  "fixed_pool_track": "rank the same frozen reference 50, out-of-pool fails; reference pool is a frozen method artifact, not the world"
+  "fixed_pool_track": "rank the same frozen reference 50, out-of-pool fails; reference pool is a frozen method artifact, not the world",
+  "claim_scope_decision_2026_10_06": "author decision (a): paper claims fixed_pool on TRAIN only + retrieval on all splits; dev/test reference pools remain explicit null placeholders (pool_kind=pending_no_frozen_role_pool_for_this_split) and are NOT to be built for this submission"
  },
  "isolation": {
   "inputs_free_of_answer_markers": true,

@@ -27,6 +27,10 @@
 - 地址是**可链接的公开标识符**;简单 hash 不实现不可逆身份匿名。本包不含真实人身份映射;不含 X/Twitter 社交特征;
 - 无个人信息字段;若下游自行链接链外身份,责任在下游。
 
+## 主张口径(作者决定 2026-10-06)
+
+选 (a):论文中 fixed_pool 轨**仅在 train 上主张**;retrieval 轨在 train/dev/test 全部报告。dev/test 的 reference_pools 为显式 null 占位(`pending_no_frozen_role_pool_for_this_split`),本次投稿不构建。
+
 ## 许可
 代码 **MIT**;文档与 grounding gold **CC BY 4.0**;链上事实数据 **CC0 1.0**(作者决定 2026-10-06,见 LICENSE_MATRIX.md 与 LICENSE-CODE-MIT.txt / LICENSE-DATA-CC0.txt)。
 

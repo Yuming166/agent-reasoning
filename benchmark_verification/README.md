@@ -34,6 +34,7 @@
 
 1. ~~License 选择~~ **已决定(2026-10-06):代码 MIT、文档与 grounding gold CC BY 4.0、链上事实数据 CC0 1.0**
 2. ~~人工 pilot~~ **已由可执行语义验证替代主路径**(EXECUTABLE_SEMANTICS_VALIDATION.json):逐例标注降级为可选增强;剩余人工=书面规范审阅(~30 分钟)
+3. ~~dev/test fixed_pool~~ **已决定选 (a)**(2026-10-06):论文只主张 train fixed_pool + 全 split retrieval
 2. dev/test fixed_pool 主张口径((a) 仅 train 或 (b) 补冻结)
 3. 审稿期匿名发布渠道
 4. 20-wallet 人工 pilot 启动(≥30 例)

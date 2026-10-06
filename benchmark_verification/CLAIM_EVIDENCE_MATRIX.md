@@ -21,7 +21,7 @@
 | # | 事项 | 阻塞点 |
 |---|---|---|
 | P1 | grounding gold 的人工验证 → **主路径已转自动(2026-10-06)**:executable-semantics 三层验证 L1 回程解析 3755/3755 + L2 双实现重执行 3755/3755(标签+三 scope 证据全一致)+ 变异测试 3/3;剩余人工部分收敛为书面规范审阅(~30 分钟)。逐例人工 pilot 降级为可选增强 | EXECUTABLE_SEMANTICS_VALIDATION.json |
-| P2 | dev/test 的 fixed_pool 基线 | 无冻结角色参考池(reference_pools 标 pending) |
+| P2 | ~~dev/test 的 fixed_pool 基线~~ **已决定(2026-10-06)选 (a)**:文章只主张 train fixed_pool + 全 split retrieval;dev/test 不构建参考池,该 pending 项永久关闭(除非未来显式重新立项) | 作者决定记录于 STAGE_STATUS.json |
 | P3 | 逐例 grounding 基线评分 | 冻结 v27lean 只有聚合诊断,无逐例预测;重跑方法超出阶段预算 |
 | P4 | ~~许可矩阵逐项确认~~ **已决定(2026-10-06)**:代码 MIT、文档与 grounding gold CC BY 4.0、链上事实数据 CC0 1.0;唯一复核点=BigQuery 转存条款(发布前一次只读复核) | LICENSE_MATRIX.md;LICENSE-CODE-MIT.txt;LICENSE-DATA-CC0.txt |
 | P5 | 公开发布 | 无上传/push;发布渠道与联系点未定 |
